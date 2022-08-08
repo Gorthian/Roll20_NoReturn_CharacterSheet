@@ -1,0 +1,77 @@
+/*
+	CREATED by 			Gorthian
+	Version				1.0
+	Letzte Änderung		2022-08-08
+	
+	GitHub				https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet
+	Wiki				https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/wiki
+	Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
+*/
+
+div.sheet-noreturn {
+    max-width               : 800px;
+    background-color        : #CCB081;
+    display                 : grid;
+    grid-template-rows      : 25% 25% auto;
+    grid-auto-flow          : dense;
+    font-size               : 12px;
+}
+
+div.sheet-noreturn .sheet-3cols {
+    display                 : grid;
+    grid-template-columns   : repeat(3, 33%);
+}
+
+div.sheet-noreturn .sheet-2cols {
+    display                 : grid;
+    grid-template-columns   : 66% 33%;
+}
+
+div.sheet-noreturn h1 {
+    text-transform          : uppercase;
+    font-size               : 14px;
+    font-weight             : bold;
+    color                   : whitesmoke;
+    text-shadow             : -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    width                   : 100%;
+    text-align              : center;
+    position                : relative;
+    top                     : -18px;
+}
+
+div.sheet-noreturn div.sheet-box {
+    background-color        : #EEE8E0;
+    margin                  : 10px;
+}
+
+div.sheet-noreturn .sheet-input-line {
+    border-bottom           : 1px solid black;
+    width                   : 100% ;
+    white-space             : nowrap;
+    display                 : table;
+}
+
+div.sheet-noreturn .sheet-input-line div {
+    display                 : table-cell;
+}
+
+div.sheet-noreturn .sheet-input-line span.sheet-input-label {
+    text-transform          : uppercase;
+    font-weight             : bold;
+    position                : relative;
+    top                     : 7px;
+}
+
+div.sheet-noreturn .sheet-input-line input {
+    border                  : none;
+    background-color        : transparent;
+    width                   : 100%;
+    position                : relative;
+    top                     : 5px;
+}
+
+div.sheet-noreturn .sheet-input-line textarea {
+    border                  : none;
+    background-color        : transparent;
+    width                   : 95%;
+}
