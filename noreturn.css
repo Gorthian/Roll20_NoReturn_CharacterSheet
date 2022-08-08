@@ -12,7 +12,6 @@ div.sheet-noreturn {
     max-width               : 800px;
     background-color        : #CCB081;
     display                 : grid;
-    grid-template-rows      : 25% 25% auto;
     grid-auto-flow          : dense;
     font-size               : 12px;
 }
