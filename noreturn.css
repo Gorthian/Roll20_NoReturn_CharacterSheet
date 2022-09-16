@@ -1,7 +1,7 @@
 /*
 	CREATED by 			Gorthian
 	Version				1.0
-	Letzte Änderung		2022-08-08
+	Letzte Änderung		2022-09-16
 	
 	GitHub				https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet
 	Wiki				https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/wiki
@@ -26,9 +26,8 @@ div.sheet-noreturn .sheet-2cols {
     grid-template-columns   : 66% 33%;
 }
 
-div.sheet-noreturn h1 {
+div.sheet-noreturn h1, div.sheet-noreturn h2 {
     text-transform          : uppercase;
-    font-size               : 14px;
     font-weight             : bold;
     color                   : whitesmoke;
     text-shadow             : -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
@@ -38,9 +37,32 @@ div.sheet-noreturn h1 {
     top                     : -18px;
 }
 
+div.sheet-noreturn h1 {font-size : 14px;}
+div.sheet-noreturn h2 {font-size : 12px;}
+
 div.sheet-noreturn div.sheet-box {
     background-color        : #EEE8E0;
     margin                  : 10px;
+}
+
+div.sheet-noreturn div.sheet-max-current {
+    background-color        : #EEE8E0;
+    margin                  : 10px 0px 0px 0px;
+}
+
+div.sheet-noreturn div.sheet-max-current div.sheet-max-current-box {
+    border                  : 2px solid black;
+    margin                  : 0 auto auto 0;
+    padding                 : 5px;
+}
+
+div.sheet-noreturn div.sheet-max-current p {
+    font-size               : 10px;
+}
+
+div.sheet-noreturn div.sheet-max-current input[type="number"] {
+    width                    : 2em;
+    top                      : -5px;
 }
 
 div.sheet-noreturn .sheet-input-line {
@@ -61,7 +83,7 @@ div.sheet-noreturn .sheet-input-line span.sheet-input-label {
     top                     : 7px;
 }
 
-div.sheet-noreturn .sheet-input-line input {
+div.sheet-noreturn input {
     border                  : none;
     background-color        : transparent;
     width                   : 100%;
@@ -69,8 +91,20 @@ div.sheet-noreturn .sheet-input-line input {
     top                     : 5px;
 }
 
-div.sheet-noreturn .sheet-input-line textarea {
+div.sheet-noreturn textarea {
     border                  : none;
     background-color        : transparent;
     width                   : 95%;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }

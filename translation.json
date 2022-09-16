@@ -16,5 +16,14 @@
    "spieler" : "Spieler",
    "chronik" : "Chronik / SL",
    "erstellungsdatum" : "Erstellungsdatum",
-   "charakterkonzept" : "Charakterkonzept"
+   "charakterkonzept" : "Charakterkonzept",
+   "organismus" : "Organismus",
+   "psyche" : "Psyche",
+   "infektionsresistenz" : "Infektionsresistenz",
+   "butterflyeffekt" : "Butterfly Effect",
+   "erfahrung" : "Erfahrung",
+   "justicepoints" : "Justice",
+   "chaospoints" : "Chaos",
+   "gesamt" : "Gesamt",
+   "aktuell" : "Aktuell"
 }
