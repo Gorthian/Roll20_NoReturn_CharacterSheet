@@ -12,5 +12,9 @@
    "geschlecht" : "Geschlecht",
    "alter" : "Alter",
    "größe" : "Größe",
-   "gewicht" : "Gewicht"
+   "gewicht" : "Gewicht",
+   "spieler" : "Spieler",
+   "chronik" : "Chronik / SL",
+   "erstellungsdatum" : "Erstellungsdatum",
+   "charakterkonzept" : "Charakterkonzept"
 }
