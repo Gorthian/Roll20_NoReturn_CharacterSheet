@@ -8,11 +8,37 @@
 	Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
 */
 
+@font face {
+    font-family "downcome";
+    src: url("http://roll20.gorthian.de/noreturn/fonts/DOWNCOME.TTF") format ("truetype");
+}
+
+@font face {
+    font-family "erasbd";
+    src: url("http://roll20.gorthian.de/noreturn/fonts/ERASBD.TTF") format ("truetype");
+}
+
+@font face {
+    font-family "erasdemi";
+    src: url("http://roll20.gorthian.de/noreturn/fonts/ERASDEMI.TTF") format ("truetype");
+}
+
+@font face {
+    font-family "eraslght";
+    src: url("http://roll20.gorthian.de/noreturn/fonts/ERASLGHT.TTF") format ("truetype");
+}
+
+@font face {
+    font-family "erasmd";
+    src: url("http://roll20.gorthian.de/noreturn/fonts/ERASMD.TTF") format ("truetype");
+}
+
 div.sheet-noreturn {
     max-width               : 800px;
     background-color        : white;
     display                 : grid;
     grid-auto-flow          : dense;
+	font-family				: "erasbd";
     font-size               : 12px;
 	background-image		: url("http://roll20.gorthian.de/noreturn/background_800px.png");
 	background-repeat		: no-repeat;
@@ -38,8 +64,8 @@ div.sheet-noreturn .sheet-2cols {
 }
 
 div.sheet-noreturn h1, div.sheet-noreturn h2 {
-    text-transform          : uppercase;
-    font-weight             : bold;
+    font-family				: "downcome";
+	text-transform          : uppercase;
     color                   : whitesmoke;
     text-shadow             : -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     width                   : 100%;
@@ -48,8 +74,8 @@ div.sheet-noreturn h1, div.sheet-noreturn h2 {
     top                     : -18px;
 }
 
-div.sheet-noreturn h1 {font-size : 14px;}
-div.sheet-noreturn h2 {font-size : 12px;}
+div.sheet-noreturn h1 {font-size : 20px;}
+div.sheet-noreturn h2 {font-size : 18px;}
 
 div.sheet-noreturn div.sheet-box {
     background-image		: url("http://roll20.gorthian.de/noreturn/white60tranz_10x10.png");
@@ -64,13 +90,11 @@ div.sheet-noreturn .sheet-attribute {
 
 div.sheet-noreturn .sheet-attribut-zeile {
 	text-transform          : uppercase;
-    font-weight             : bold;
-	font-size				: 11px;
 	display                 : grid;
-    grid-template-columns   : 90px 40px 92px 20px;
+    grid-template-columns   : 100px 40px 85px 10px;
 }
 
-div.sheet-noreturn .sheet-attribut-zeile div{
+div.sheet-noreturn .sheet-attribut-zeile div {
     white-space				: nowrap;
 }
 
@@ -81,9 +105,16 @@ div.sheet-noreturn div.sheet-attribut-zeile input[type="number"] {
 	top						: -3px;
 }
 
+div.sheet-noreturn div.sheet-attribut-zeile div.sheet-attribut-kopfzeile {
+    text-transform          : uppercase;
+	font-weight				: bold;
+	font-size				: 9px;
+}
+
 div.sheet-noreturn div.sheet-attribut-zeile div.sheet-attribut-titel {
     text-transform          : uppercase;
-    font-weight             : bold;
+	font-weight				: bold;
+	font-size				: 11px;
 	height					: 1.5em;
 }
 
