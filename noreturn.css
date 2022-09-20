@@ -1,7 +1,7 @@
 /*
 	CREATED by 			Gorthian
 	Version				1.0
-	Letzte Änderung		2022-09-16
+	Letzte Änderung		2022-09-20
 	
 	GitHub				https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet
 	Wiki				https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/wiki
@@ -10,20 +10,31 @@
 
 div.sheet-noreturn {
     max-width               : 800px;
-    background-color        : #CCB081;
+    background-color        : white;
     display                 : grid;
     grid-auto-flow          : dense;
     font-size               : 12px;
+	background-image		: url("http://roll20.gorthian.de/noreturn/background_800px.png");
+	background-repeat		: no-repeat;
+	padding					: 15px;
+	
+	--max-line-width		: 98%;
+}
+
+div.sheet-noreturn .sheet-logo {
+	text-align				: center;
 }
 
 div.sheet-noreturn .sheet-3cols {
     display                 : grid;
     grid-template-columns   : repeat(3, 33%);
+	width					: var(--max-line-width);
 }
 
 div.sheet-noreturn .sheet-2cols {
     display                 : grid;
     grid-template-columns   : 66% 33%;
+	width					: var(--max-line-width);
 }
 
 div.sheet-noreturn h1, div.sheet-noreturn h2 {
@@ -41,8 +52,46 @@ div.sheet-noreturn h1 {font-size : 14px;}
 div.sheet-noreturn h2 {font-size : 12px;}
 
 div.sheet-noreturn div.sheet-box {
-    background-color        : #EEE8E0;
-    margin                  : 10px;
+    background-image		: url("http://roll20.gorthian.de/noreturn/white60tranz_10x10.png");
+	background-repeat		: repeat;
+    margin                  : 5px;
+}
+
+div.sheet-noreturn .sheet-attribute {
+    display                 : grid;
+    grid-template-columns   : 50% 50%;
+}
+
+div.sheet-noreturn .sheet-attribut-zeile {
+	text-transform          : uppercase;
+    font-weight             : bold;
+	font-size				: 11px;
+	display                 : grid;
+    grid-template-columns   : 90px 40px 92px 20px;
+}
+
+div.sheet-noreturn .sheet-attribut-zeile div{
+    white-space				: nowrap;
+}
+
+div.sheet-noreturn div.sheet-attribut-zeile input[type="number"] {
+    border                  : 2px solid black;
+	height					: 1.5em;
+	width					: 40px;
+	top						: -3px;
+}
+
+div.sheet-noreturn div.sheet-attribut-zeile div.sheet-attribut-titel {
+    text-transform          : uppercase;
+    font-weight             : bold;
+	height					: 1.5em;
+}
+
+div.sheet-noreturn div.sheet-trefferzonen {
+    background-image		: url("http://roll20.gorthian.de/noreturn/trefferzonen_300px.png");
+	background-repeat		: no-repeat;
+	background-size			: contain;
+	height					: 270px;
 }
 
 div.sheet-noreturn div.sheet-max-current {
