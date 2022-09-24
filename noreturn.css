@@ -38,7 +38,6 @@ div.sheet-noreturn {
 	min-width              	: 800px;
     background-color        : white;
     display                 : grid;
-    grid-auto-flow          : dense;
 	font-family				: "erasbd";
     font-size               : 12px;
 	background-image		: url("https://gorthian.de/roll20/noreturn/background_800px.png");
@@ -164,11 +163,15 @@ div.sheet-noreturn div.sheet-sonderattribut-zeile div.sheet-sonderattribut-titel
 	height					: 1.5em;
 }
 
-div.sheet-noreturn div.sheet-trefferzonen {
-    background-image		: url("https://gorthian.de/roll20/noreturn/trefferzonen_300px.png");
-	background-repeat		: no-repeat;
-	background-size			: contain;
-	height					: 270px;
+div.sheet-noreturn div.sheet-trefferzonen-bild {
+    z-index					: 0;
+	position				: relative;
+	display					: inline-block;
+	top						: -75px;
+}
+
+div.sheet-noreturn div.sheet-trefferzonen-bild img {
+    width					: 400px;
 }
 
 div.sheet-noreturn div.sheet-max-current {
