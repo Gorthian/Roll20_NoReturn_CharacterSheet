@@ -10,27 +10,27 @@
 
 @font face {
     font-family "downcome";
-    src: url("http://roll20.gorthian.de/noreturn/fonts/DOWNCOME.TTF") format ("truetype");
+    src: url("https://gorthian.de/roll20/noreturn/fonts/DOWNCOME.TTF") format ("truetype");
 }
 
-@font face {
+@font face {	
     font-family "erasbd";
-    src: url("http://roll20.gorthian.de/noreturn/fonts/ERASBD.TTF") format ("truetype");
+    src: url("https://gorthian.de/roll20/noreturn/fonts/ERASBD.TTF") format ("truetype");
 }
 
 @font face {
     font-family "erasdemi";
-    src: url("http://roll20.gorthian.de/noreturn/fonts/ERASDEMI.TTF") format ("truetype");
+    src: url("https://gorthian.de/roll20/noreturn/fonts/ERASDEMI.TTF") format ("truetype");
 }
 
 @font face {
     font-family "eraslght";
-    src: url("http://roll20.gorthian.de/noreturn/fonts/ERASLGHT.TTF") format ("truetype");
+    src: url("https://gorthian.de/roll20/noreturn/fonts/ERASLGHT.TTF") format ("truetype");
 }
 
 @font face {
     font-family "erasmd";
-    src: url("http://roll20.gorthian.de/noreturn/fonts/ERASMD.TTF") format ("truetype");
+    src: url("https://gorthian.de/roll20/noreturn/fonts/ERASMD.TTF") format ("truetype");
 }
 
 div.sheet-noreturn {
@@ -40,7 +40,7 @@ div.sheet-noreturn {
     grid-auto-flow          : dense;
 	font-family				: "erasbd";
     font-size               : 12px;
-	background-image		: url("http://roll20.gorthian.de/noreturn/background_800px.png");
+	background-image		: url("https://gorthian.de/roll20/noreturn/background_800px.png");
 	background-repeat		: no-repeat;
 	background-size			: cover;
 	padding					: 15px;
@@ -79,7 +79,7 @@ div.sheet-noreturn h1 {font-size : 20px;}
 div.sheet-noreturn h2 {font-size : 18px;}
 
 div.sheet-noreturn div.sheet-box {
-    background-image		: url("http://roll20.gorthian.de/noreturn/white60tranz_10x10.png");
+    background-image		: url("https://gorthian.de/roll20/noreturn/white60tranz_10x10.png");
 	background-repeat		: repeat;
     margin                  : 5px;
 }
@@ -142,7 +142,7 @@ div.sheet-noreturn div.sheet-sonderattribut-zeile div.sheet-sonderattribut-titel
 }
 
 div.sheet-noreturn div.sheet-trefferzonen {
-    background-image		: url("http://roll20.gorthian.de/noreturn/trefferzonen_300px.png");
+    background-image		: url("https://gorthian.de/roll20/noreturn/trefferzonen_300px.png");
 	background-repeat		: no-repeat;
 	background-size			: contain;
 	height					: 270px;
