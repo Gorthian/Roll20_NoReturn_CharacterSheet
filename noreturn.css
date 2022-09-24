@@ -1,7 +1,7 @@
 /*
 	CREATED by 			Gorthian
 	Version				1.0
-	Letzte Änderung		2022-09-20
+	Letzte Änderung		2022-09-24
 	
 	GitHub				https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet
 	Wiki				https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/wiki
@@ -85,7 +85,12 @@ div.sheet-noreturn div.sheet-box {
 
 div.sheet-noreturn .sheet-attribute {
     display                 : grid;
-    grid-template-columns   : 50% 50%;
+    grid-template-columns   : repeat(2, auto);
+}
+
+div.sheet-noreturn .sheet-sonderattribute {
+    display                 : grid;
+    grid-template-columns   : repeat(3, auto);
 }
 
 div.sheet-noreturn .sheet-attribut-zeile {
@@ -94,24 +99,41 @@ div.sheet-noreturn .sheet-attribut-zeile {
     grid-template-columns   : 100px 40px 85px 10px;
 }
 
-div.sheet-noreturn .sheet-attribut-zeile div {
+div.sheet-noreturn .sheet-sonderattribut-zeile {
+	text-transform          : uppercase;
+	display                 : grid;
+    grid-template-columns   : 120px 40px;
+}
+
+div.sheet-noreturn .sheet-fertigkeiten-zeile {
+	text-transform          : none;
+	display                 : grid;
+    grid-template-columns   : 120px repeat(3, 40px);
+}
+
+div.sheet-noreturn .sheet-attribut-zeile div,
+div.sheet-noreturn .sheet-sonderattribut-zeile div,
+div.sheet-noreturn .sheet-fertigkeiten-zeile div {
     white-space				: nowrap;
 }
 
-div.sheet-noreturn div.sheet-attribut-zeile input[type="number"] {
+div.sheet-noreturn div.sheet-attribut-zeile input[type="number"],
+div.sheet-noreturn div.sheet-sonderattribut-zeile input[type="number"],
+div.sheet-noreturn div.sheet-fertigkeiten-zeile input[type="number"] {
     border                  : 2px solid black;
 	height					: 1.5em;
 	width					: 40px;
 	top						: -3px;
 }
 
-div.sheet-noreturn div.sheet-attribut-zeile div.sheet-attribut-kopfzeile {
+div.sheet-noreturn div.sheet-kopfzeile {
     text-transform          : uppercase;
 	font-weight				: bold;
 	font-size				: 9px;
 }
 
-div.sheet-noreturn div.sheet-attribut-zeile div.sheet-attribut-titel {
+div.sheet-noreturn div.sheet-attribut-zeile div.sheet-attribut-titel,
+div.sheet-noreturn div.sheet-sonderattribut-zeile div.sheet-sonderattribut-titel {
     text-transform          : uppercase;
 	font-weight				: bold;
 	font-size				: 11px;
