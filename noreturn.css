@@ -42,6 +42,7 @@ div.sheet-noreturn {
     font-size               : 12px;
 	background-image		: url("http://roll20.gorthian.de/noreturn/background_800px.png");
 	background-repeat		: no-repeat;
+	background-size			: cover;
 	padding					: 15px;
 	
 	--max-line-width		: 98%;
