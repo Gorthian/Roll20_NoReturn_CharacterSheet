@@ -113,7 +113,8 @@
    "charaktermerkmal": "Charaktermerkmal",
    "jp-cp": "JP/CP",
    "zone": "Zone",
-   "ruestungswert-mk": "Rüstungswert & MK",
+   "ruestungswert_kurz": "RW",
+   "materialkomponente_kurz": "MK",
    "seite-1": "Seite 1",
    "seite-2": "Seite 2"
 }
