@@ -38,6 +38,7 @@ div.sheet-noreturn {
 	min-width              	: 800px;
     background-color        : white;
     display                 : grid;
+	grid-template-columns	: 20px auto;
 	font-family				: "erasbd";
     font-size               : 12px;
 	background-image		: url("https://gorthian.de/roll20/noreturn/background_800px.png");
@@ -265,4 +266,27 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type=number] {
   -moz-appearance: textfield;
+}
+
+/*Configure the tab buttons*/
+button.sheet-toggle-button {
+	transform				: rotate(-90deg);
+	font-family				: "downcome";
+	text-transform          : uppercase;
+	font-size				: 22px;
+	white-space				: nowrap;
+	position				: relative;
+	left					: -50px;
+	margin-bottom			: 50px;
+}
+
+.sheet-page-one,
+.sheet-page-two {
+    display: none;
+}
+
+/* TAB MENU */
+.sheet-tabstoggle[value="page-one"] ~ div.sheet-page-one,
+.sheet-tabstoggle[value="page-two"] ~ div.sheet-page-two {
+    display: block;
 }

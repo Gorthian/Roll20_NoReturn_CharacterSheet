@@ -9,233 +9,239 @@
 //-->
 
 <div class="sheet-noreturn">
-    <div class="sheet-3cols">
-        <div class="sheet-box">
-            <h1 data-i18n="charakterdaten">Charakterdaten</h1>
-            <div class="sheet-input-line">
-                <div>
-                    <span class="sheet-input-label" data-i18n="charaktername">Charaktername</span>
-                </div>
-                <div>
-                    <input type="text" name="attr_character_name" />
-                </div>
-            </div>
-            <div class="sheet-input-line">
-                <div>
-                    <span class="sheet-input-label" data-i18n="spezies">Spezies</span>
-                </div>
-                <div>
-                    <input type="text" name="attr_spezies" />
-                </div>
-            </div>
-            <div class="sheet-input-line">
-                <div>
-                    <span class="sheet-input-label" data-i18n="geschlecht">Geschlecht</span>
-                </div>
-                <div>
-                    <input type="text" name="attr_geschlecht" />
-                </div>
-                <div>
-                    <span class="sheet-input-label" data-i18n="alter">Alter</span>
-                </div>
-                <div>
-                    <input type="text" name="attr_alter" />
-                </div>
-            </div>
-            <div class="sheet-input-line">
-                <div>
-                    <span class="sheet-input-label" data-i18n="größe">Größe</span>
-                </div>
-                <div>
-                    <input type="text" name="attr_größe" />
-                </div>
-                <div>
-                    <span class="sheet-input-label" data-i18n="gewicht">Gewicht</span>
-                </div>
-                <div>
-                    <input type="text" name="attr_gewicht" />
-                </div>
-            </div>
-            <div class="sheet-input-line">
-                <textarea name="attr_aussehen"></textarea>
-            </div>
-        </div>
-        <div class="sheet-box">
-            <div class="sheet-logo">
-                <img src="http://roll20.gorthian.de/noreturn/logo_200px.png" />
-            </div>
-            <div class="sheet-input-line">
-                <div>
-                    <span class="sheet-input-label" data-i18n="spieler">Spieler</span>
-                </div>
-                <div>
-                    <input type="text" name="attr_player_name" />
-                </div>
-            </div>
-            <div class="sheet-input-line">
-                <div>
-                    <span class="sheet-input-label" data-i18n="chronik">Chronik / SL</span>
-                </div>
-                <div>
-                    <input type="text" name="attr_chronik" />
-                </div>
-            </div>
-            <div class="sheet-input-line">
-                <div>
-                    <span class="sheet-input-label" data-i18n="erstellungsdatum">Erstellungsdatum</span>
-                </div>
-                <div>
-                    <input type="text" name="attr_erstellungsdatum" />
-                </div>
-            </div>
-            <div class="sheet-input-line">
-                <div>
-                    <span class="sheet-input-label" data-i18n="charakterkonzept">Charakterkonzept</span>
-                </div>
-                <div>
-                    <input type="text" name="attr_charakterkonzept" />
-                </div>
-            </div>
-        </div class="sheet-box">
-        <div class="sheet-box">
-            <h1 data-i18n="charakterkonditionen">Charakterkonditionen</h1>
-            <div class="sheet-input-line">
-                <div>
-                    <span class="sheet-input-label" data-i18n="organismus">Organismus</span>
-                </div>
-                <div>
-                    <input type="text" name="attr_organismus" />
-                </div>
-            </div>
-            <div class="sheet-input-line">
-                <div>
-                    <span class="sheet-input-label" data-i18n="psyche">Psyche</span>
-                </div>
-                <div>
-                    <input type="text" name="attr_psyche" />
-                </div>
-            </div>
-            <div class="sheet-input-line">
-                <div>
-                    <span class="sheet-input-label" data-i18n="infektionsresistenz">Infektionsresistenz</span>
-                </div>
-                <div>
-                    <input type="text" name="attr_infektionsresistenz" />
-                </div>
-            </div>
-            <div class="sheet-input-line">
-                <div>
-                    <span class="sheet-input-label" data-i18n="butterflyeffekt">Butterfly Effect</span>
-                </div>
-                <div>
-                    <input type="text" name="attr_butterflyeffekt" />
-                </div>
-            </div>
-            <div class="sheet-3cols">
-                <div class="sheet-max-current">
-                    <h2 data-i18n="erfahrung">Erfahrung</h2>
-                    <p><span data-i18n="gesamt">Gesamt</span>/<span data-i18n="aktuell">Aktuell</span></p>
-                    <div class="sheet-max-current-box">
-                        <input type="number" name="attr_erfahrung_max" /> | <input type="number" name="attr_erfahrung_current" />
-                    </div>
+	<input type="hidden" class="sheet-tabstoggle" name="attr_sheetTab"  value="page-one"  />
+	<div class="sheet-tabs">
+		<button class="sheet-toggle-button" type="action" name="act_page-one" data-i18n="seite-1">Seite 1</button>
+		<button class="sheet-toggle-button" type="action" name="act_page-two" data-i18n="seite-2">Seite 2</button>
+	</div>
+	<div class="sheet-page-one">
+		<div class="sheet-3cols">
+			<div class="sheet-box">
+				<h1 data-i18n="charakterdaten">Charakterdaten</h1>
+				<div class="sheet-input-line">
+					<div>
+						<span class="sheet-input-label" data-i18n="charaktername">Charaktername</span>
+					</div>
+					<div>
+						<input type="text" name="attr_character_name" />
+					</div>
+				</div>
+				<div class="sheet-input-line">
+					<div>
+						<span class="sheet-input-label" data-i18n="spezies">Spezies</span>
+					</div>
+					<div>
+						<input type="text" name="attr_spezies" />
+					</div>
+				</div>
+				<div class="sheet-input-line">
+					<div>
+						<span class="sheet-input-label" data-i18n="geschlecht">Geschlecht</span>
+					</div>
+					<div>
+						<input type="text" name="attr_geschlecht" />
+					</div>
+					<div>
+						<span class="sheet-input-label" data-i18n="alter">Alter</span>
+					</div>
+					<div>
+						<input type="text" name="attr_alter" />
+					</div>
+				</div>
+				<div class="sheet-input-line">
+					<div>
+						<span class="sheet-input-label" data-i18n="größe">Größe</span>
+					</div>
+					<div>
+						<input type="text" name="attr_größe" />
+					</div>
+					<div>
+						<span class="sheet-input-label" data-i18n="gewicht">Gewicht</span>
+					</div>
+					<div>
+						<input type="text" name="attr_gewicht" />
+					</div>
+				</div>
+				<div class="sheet-input-line">
+					<textarea name="attr_aussehen"></textarea>
+				</div>
+			</div>
+			<div class="sheet-box">
+				<div class="sheet-logo">
+					<img src="http://roll20.gorthian.de/noreturn/logo_200px.png" />
+				</div>
+				<div class="sheet-input-line">
+					<div>
+						<span class="sheet-input-label" data-i18n="spieler">Spieler</span>
+					</div>
+					<div>
+						<input type="text" name="attr_player_name" />
+					</div>
+				</div>
+				<div class="sheet-input-line">
+					<div>
+						<span class="sheet-input-label" data-i18n="chronik">Chronik / SL</span>
+					</div>
+					<div>
+						<input type="text" name="attr_chronik" />
+					</div>
+				</div>
+				<div class="sheet-input-line">
+					<div>
+						<span class="sheet-input-label" data-i18n="erstellungsdatum">Erstellungsdatum</span>
+					</div>
+					<div>
+						<input type="text" name="attr_erstellungsdatum" />
+					</div>
+				</div>
+				<div class="sheet-input-line">
+					<div>
+						<span class="sheet-input-label" data-i18n="charakterkonzept">Charakterkonzept</span>
+					</div>
+					<div>
+						<input type="text" name="attr_charakterkonzept" />
+					</div>
+				</div>
+			</div class="sheet-box">
+			<div class="sheet-box">
+				<h1 data-i18n="charakterkonditionen">Charakterkonditionen</h1>
+				<div class="sheet-input-line">
+					<div>
+						<span class="sheet-input-label" data-i18n="organismus">Organismus</span>
+					</div>
+					<div>
+						<input type="text" name="attr_organismus" />
+					</div>
+				</div>
+				<div class="sheet-input-line">
+					<div>
+						<span class="sheet-input-label" data-i18n="psyche">Psyche</span>
+					</div>
+					<div>
+						<input type="text" name="attr_psyche" />
+					</div>
+				</div>
+				<div class="sheet-input-line">
+					<div>
+						<span class="sheet-input-label" data-i18n="infektionsresistenz">Infektionsresistenz</span>
+					</div>
+					<div>
+						<input type="text" name="attr_infektionsresistenz" />
+					</div>
+				</div>
+				<div class="sheet-input-line">
+					<div>
+						<span class="sheet-input-label" data-i18n="butterflyeffekt">Butterfly Effect</span>
+					</div>
+					<div>
+						<input type="text" name="attr_butterflyeffekt" />
+					</div>
+				</div>
+				<div class="sheet-3cols">
+					<div class="sheet-max-current">
+						<h2 data-i18n="erfahrung">Erfahrung</h2>
+						<p><span data-i18n="gesamt">Gesamt</span>/<span data-i18n="aktuell">Aktuell</span></p>
+						<div class="sheet-max-current-box">
+							<input type="number" name="attr_erfahrung_max" /> | <input type="number" name="attr_erfahrung_current" />
+						</div>
 
-                </div>
-                <div class="sheet-max-current">
-                    <h2 data-i18n="justicepoints">Justicepoints</h2>
-                    <p><span data-i18n="gesamt">Gesamt</span>/<span data-i18n="aktuell">Aktuell</span></p>
-                    <div class="sheet-max-current-box">
-                        <input type="number" name="attr_justicepoints_max" /> | <input type="number" name="attr_justicepoints_current" />
-                    </div>
-                </div>
-                <div class="sheet-max-current">
-                    <h2 data-i18n="chaospoints">Chaospoints</h2>
-                    <p><span data-i18n="gesamt">Gesamt</span>/<span data-i18n="aktuell">Aktuell</span></p>
-                    <div class="sheet-max-current-box">
-                        <input type="number" name="attr_chaospoints_max" /> | <input type="number" name="attr_chaospoints_current" />
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="sheet-2cols">
-        <div class="sheet-box">
-            <h1 data-i18n="attribute">Attribute</h1>
-			<div class="sheet-attribute">
-				<div>
-					<div class="sheet-attribut-zeile">
-						<div>&nbsp;</div><div class="sheet-kopfzeile"><span data-i18n="stufe">Stufe</span></div><div class="sheet-kopfzeile"><span data-i18n="modifikatoren">Modifikatoren</span></div><div>&nbsp;</div>
 					</div>
-					<div class="sheet-attribut-zeile">
-						<div class="sheet-attribut-titel"><span data-i18n="geschick">Geschick</span></div><div><input type="number" name="attr_geschick" /></div><div><input type="number" name="attr_geschick_mod1" /><input type="number" name="attr_geschick_mod2" /></div><div>[<span data-i18n="geschick_kurz">GE</span>]</div>
+					<div class="sheet-max-current">
+						<h2 data-i18n="justicepoints">Justicepoints</h2>
+						<p><span data-i18n="gesamt">Gesamt</span>/<span data-i18n="aktuell">Aktuell</span></p>
+						<div class="sheet-max-current-box">
+							<input type="number" name="attr_justicepoints_max" /> | <input type="number" name="attr_justicepoints_current" />
+						</div>
 					</div>
-					<div class="sheet-attribut-zeile">
-						<div class="sheet-attribut-titel"><span data-i18n="staerke">Stärke</span></div><div><input type="number" name="attr_staerke" /></div><div><input type="number" name="attr_staerke_mod1" /><input type="number" name="attr_staerke_mod2" /></div><div>[<span data-i18n="staerke_kurz">ST</span>]</div>
-					</div>
-					<div class="sheet-attribut-zeile">
-						<div class="sheet-attribut-titel"><span data-i18n="konstitution">Konstitution</span></div><div><input type="number" name="attr_konstitution" /></div><div><input type="number" name="attr_konstitution_mod1" /><input type="number" name="attr_konstitution_mod2" /></div><div>[<span data-i18n="konstitution_kurz">KO</span>]</div>
-					</div>
-					<div class="sheet-attribut-zeile">
-						<div class="sheet-attribut-titel"><span data-i18n="beweglichkeit">Beweglichkeit</span></div><div><input type="number" name="attr_beweglichkeit" /></div><div><input type="number" name="attr_beweglichkeit_mod1" /><input type="number" name="attr_beweglichkeit_mod2" /></div><div>[<span data-i18n="beweglichkeit_kurz">BE</span>]</div>
-					</div>
-				</div>
-				<div>
-					<div class="sheet-attribut-zeile">
-						<div>&nbsp;</div><div class="sheet-kopfzeile"><span data-i18n="stufe">Stufe</span></div><div class="sheet-kopfzeile"><span data-i18n="modifikatoren">Modifikatoren</span></div><div>&nbsp;</div>
-					</div>
-					<div class="sheet-attribut-zeile">
-						<div class="sheet-attribut-titel"><span data-i18n="wahrnehmung">Wahrnehmung</span></div><div><input type="number" name="attr_wahrnehmung" /></div><div><input type="number" name="attr_wahrnehmung_mod1" /><input type="number" name="attr_wahrnehmung_mod2" /></div><div>[<span data-i18n="wahrnehmung_kurz">WA</span>]</div>
-					</div>
-					<div class="sheet-attribut-zeile">
-						<div class="sheet-attribut-titel"><span data-i18n="wissen">Wissen</span></div><div><input type="number" name="attr_wissen" /></div><div><input type="number" name="attr_wissen_mod1" /><input type="number" name="attr_wissen_mod2" /></div><div>[<span data-i18n="wissen_kurz">WI</span>]</div>
-					</div>
-					<div class="sheet-attribut-zeile">
-						<div class="sheet-attribut-titel"><span data-i18n="charisma">Charisma</span></div><div><input type="number" name="attr_charisma" /></div><div><input type="number" name="attr_charisma_mod1" /><input type="number" name="attr_charisma_mod2" /></div><div>[<span data-i18n="charisma_kurz">CH</span>]</div>
-					</div>
-					<div class="sheet-attribut-zeile">
-						<div class="sheet-attribut-titel"><span data-i18n="handwerk">Handwerk</span></div><div><input type="number" name="attr_handwerk" /></div><div><input type="number" name="attr_handwerk_mod1" /><input type="number" name="attr_handwerk_mod2" /></div><div>[<span data-i18n="handwerk_kurz">HA</span>]</div>
+					<div class="sheet-max-current">
+						<h2 data-i18n="chaospoints">Chaospoints</h2>
+						<p><span data-i18n="gesamt">Gesamt</span>/<span data-i18n="aktuell">Aktuell</span></p>
+						<div class="sheet-max-current-box">
+							<input type="number" name="attr_chaospoints_max" /> | <input type="number" name="attr_chaospoints_current" />
+						</div>
 					</div>
 				</div>
 			</div>
-			<p>&nbsp;</p>
-			<div class="sheet-sonderattribute">
-				<div>
-					<div class="sheet-sonderattribut-zeile">
-						<div>&nbsp;</div><div>&nbsp;</div>
+		</div>
+		<div class="sheet-2cols">
+			<div class="sheet-box">
+				<h1 data-i18n="attribute">Attribute</h1>
+				<div class="sheet-attribute">
+					<div>
+						<div class="sheet-attribut-zeile">
+							<div>&nbsp;</div><div class="sheet-kopfzeile"><span data-i18n="stufe">Stufe</span></div><div class="sheet-kopfzeile"><span data-i18n="modifikatoren">Modifikatoren</span></div><div>&nbsp;</div>
+						</div>
+						<div class="sheet-attribut-zeile">
+							<div class="sheet-attribut-titel"><span data-i18n="geschick">Geschick</span></div><div><input type="number" name="attr_geschick" /></div><div><input type="number" name="attr_geschick_mod1" /><input type="number" name="attr_geschick_mod2" /></div><div>[<span data-i18n="geschick_kurz">GE</span>]</div>
+						</div>
+						<div class="sheet-attribut-zeile">
+							<div class="sheet-attribut-titel"><span data-i18n="staerke">Stärke</span></div><div><input type="number" name="attr_staerke" /></div><div><input type="number" name="attr_staerke_mod1" /><input type="number" name="attr_staerke_mod2" /></div><div>[<span data-i18n="staerke_kurz">ST</span>]</div>
+						</div>
+						<div class="sheet-attribut-zeile">
+							<div class="sheet-attribut-titel"><span data-i18n="konstitution">Konstitution</span></div><div><input type="number" name="attr_konstitution" /></div><div><input type="number" name="attr_konstitution_mod1" /><input type="number" name="attr_konstitution_mod2" /></div><div>[<span data-i18n="konstitution_kurz">KO</span>]</div>
+						</div>
+						<div class="sheet-attribut-zeile">
+							<div class="sheet-attribut-titel"><span data-i18n="beweglichkeit">Beweglichkeit</span></div><div><input type="number" name="attr_beweglichkeit" /></div><div><input type="number" name="attr_beweglichkeit_mod1" /><input type="number" name="attr_beweglichkeit_mod2" /></div><div>[<span data-i18n="beweglichkeit_kurz">BE</span>]</div>
+						</div>
 					</div>
-					<div class="sheet-sonderattribut-zeile">
-						<div class="sheet-sonderattribut-titel"><span data-i18n="trefferpunkte">Trefferpunkte</span></div><div><input type="number" name="attr_trefferpunkte" /></div>
-					</div>
-					<div class="sheet-sonderattribut-zeile">
-						<div class="sheet-sonderattribut-titel"><span data-i18n="dmg_schwellwert">DMG Schwellwert</span></div><div><input type="number" name="attr_dmg_schwellwert" /></div>
+					<div>
+						<div class="sheet-attribut-zeile">
+							<div>&nbsp;</div><div class="sheet-kopfzeile"><span data-i18n="stufe">Stufe</span></div><div class="sheet-kopfzeile"><span data-i18n="modifikatoren">Modifikatoren</span></div><div>&nbsp;</div>
+						</div>
+						<div class="sheet-attribut-zeile">
+							<div class="sheet-attribut-titel"><span data-i18n="wahrnehmung">Wahrnehmung</span></div><div><input type="number" name="attr_wahrnehmung" /></div><div><input type="number" name="attr_wahrnehmung_mod1" /><input type="number" name="attr_wahrnehmung_mod2" /></div><div>[<span data-i18n="wahrnehmung_kurz">WA</span>]</div>
+						</div>
+						<div class="sheet-attribut-zeile">
+							<div class="sheet-attribut-titel"><span data-i18n="wissen">Wissen</span></div><div><input type="number" name="attr_wissen" /></div><div><input type="number" name="attr_wissen_mod1" /><input type="number" name="attr_wissen_mod2" /></div><div>[<span data-i18n="wissen_kurz">WI</span>]</div>
+						</div>
+						<div class="sheet-attribut-zeile">
+							<div class="sheet-attribut-titel"><span data-i18n="charisma">Charisma</span></div><div><input type="number" name="attr_charisma" /></div><div><input type="number" name="attr_charisma_mod1" /><input type="number" name="attr_charisma_mod2" /></div><div>[<span data-i18n="charisma_kurz">CH</span>]</div>
+						</div>
+						<div class="sheet-attribut-zeile">
+							<div class="sheet-attribut-titel"><span data-i18n="handwerk">Handwerk</span></div><div><input type="number" name="attr_handwerk" /></div><div><input type="number" name="attr_handwerk_mod1" /><input type="number" name="attr_handwerk_mod2" /></div><div>[<span data-i18n="handwerk_kurz">HA</span>]</div>
+						</div>
 					</div>
 				</div>
-				<div>
-					<div class="sheet-sonderattribut-zeile">
-						<div>&nbsp;</div><div class="sheet-kopfzeile"><span data-i18n="stufe">Stufe</span></div>
+				<p>&nbsp;</p>
+				<div class="sheet-sonderattribute">
+					<div>
+						<div class="sheet-sonderattribut-zeile">
+							<div>&nbsp;</div><div>&nbsp;</div>
+						</div>
+						<div class="sheet-sonderattribut-zeile">
+							<div class="sheet-sonderattribut-titel"><span data-i18n="trefferpunkte">Trefferpunkte</span></div><div><input type="number" name="attr_trefferpunkte" /></div>
+						</div>
+						<div class="sheet-sonderattribut-zeile">
+							<div class="sheet-sonderattribut-titel"><span data-i18n="dmg_schwellwert">DMG Schwellwert</span></div><div><input type="number" name="attr_dmg_schwellwert" /></div>
+						</div>
 					</div>
-					<div class="sheet-sonderattribut-zeile">
-						<div class="sheet-sonderattribut-titel"><span data-i18n="schmerztoleranz">Schmerztoleranz</span></div><div><input type="number" name="attr_schmerztoleranz" /></div>
+					<div>
+						<div class="sheet-sonderattribut-zeile">
+							<div>&nbsp;</div><div class="sheet-kopfzeile"><span data-i18n="stufe">Stufe</span></div>
+						</div>
+						<div class="sheet-sonderattribut-zeile">
+							<div class="sheet-sonderattribut-titel"><span data-i18n="schmerztoleranz">Schmerztoleranz</span></div><div><input type="number" name="attr_schmerztoleranz" /></div>
+						</div>
+					</div>
+					<div>
+						<div class="sheet-sonderattribut-zeile">
+							<div>&nbsp;</div><div class="sheet-kopfzeile"><span data-i18n="stufe">Stufe</span></div>
+						</div>
+						<div class="sheet-sonderattribut-zeile">
+							<div class="sheet-sonderattribut-titel"><span data-i18n="adrenalin">Adrenalin</span></div><div><input type="number" name="attr_adrenalin" /></div>
+						</div>
+						<div class="sheet-sonderattribut-zeile">
+							<div class="sheet-sonderattribut-titel"><span data-i18n="meditation">Meditation</span></div><div><input type="number" name="attr_meditation" /></div>
+						</div>
 					</div>
 				</div>
-				<div>
-					<div class="sheet-sonderattribut-zeile">
-						<div>&nbsp;</div><div class="sheet-kopfzeile"><span data-i18n="stufe">Stufe</span></div>
-					</div>
-					<div class="sheet-sonderattribut-zeile">
-						<div class="sheet-sonderattribut-titel"><span data-i18n="adrenalin">Adrenalin</span></div><div><input type="number" name="attr_adrenalin" /></div>
-					</div>
-					<div class="sheet-sonderattribut-zeile">
-						<div class="sheet-sonderattribut-titel"><span data-i18n="meditation">Meditation</span></div><div><input type="number" name="attr_meditation" /></div>
-					</div>
-				</div>
+			</div class="sheet-box">        
+			<div class="sheet-trefferzonen">			
+				<h1 data-i18n="körperzonen">Körperzonen</h1>
+				<div class="sheet-trefferzonen-bild"><img src="https://gorthian.de/roll20/noreturn/trefferzonen_300px.png"/></div>
 			</div>
-		</div class="sheet-box">        
-        <div class="sheet-trefferzonen">			
-            <h1 data-i18n="körperzonen">Körperzonen</h1>
-			<div class="sheet-trefferzonen-bild"><img src="https://gorthian.de/roll20/noreturn/trefferzonen_300px.png"/></div>
-        </div>
-    </div>
-    <div class="sheet-3cols">
+		</div>
+		<div class="sheet-3cols">
         <div class="sheet-box">
             <h1 data-i18n="fertigkeiten">Fertigkeiten</h1>
 			<div class="sheet-fertigkeiten-zeile">
@@ -521,4 +527,21 @@
             </div>
         </div>
     </div>
+	</div>
+	<div class="sheet-page-two">
+		Seite 2
+	</div>
 </div>
+
+<script type="text/worker">
+	/* TAB MENU */
+	const buttonlist = ["page-one","page-two"];
+    buttonlist.forEach(button => {
+        on(`clicked:${button}`, function() {
+            console.log(button);
+			setAttrs({
+                sheetTab: button
+            });
+        });
+    });
+</script>
