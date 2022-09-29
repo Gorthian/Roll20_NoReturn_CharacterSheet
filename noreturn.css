@@ -166,7 +166,7 @@ div.sheet-noreturn div.sheet-kopfzeile {
 	font-size				: 9px;
 }
 
-div.sheet-noreturn div.sheet-attribut-zeile div.sheet-attribut-titel,
+div.sheet-noreturn div.sheet-titel,
 div.sheet-noreturn div.sheet-sonderattribut-zeile div.sheet-sonderattribut-titel {
     text-transform          : uppercase;
 	font-weight				: bold;
@@ -178,11 +178,31 @@ div.sheet-noreturn div.sheet-trefferzonen-bild {
     z-index					: 0;
 	position				: relative;
 	display					: inline-block;
-	top						: -75px;
 }
 
 div.sheet-noreturn div.sheet-trefferzonen-bild img {
-    width					: 400px;
+    display					: block;
+	margin					: auto;
+}
+
+div.sheet-noreturn div.sheet-trefferzonen-regeneration {
+    position				: absolute;
+	bottom					: 45px;
+	right					: 50px;
+}
+
+div.sheet-noreturn div.sheet-trefferzonen-regeneration div:nth-child(3) {
+    border					: 2px solid black;
+	text-align				: center;
+}
+
+div.sheet-noreturn div.sheet-trefferzonen-regeneration input[type="number"],
+div.sheet-noreturn div.sheet-trefferzonen-regeneration input[type="text"] {
+	top						: -2px;
+	width					: 35px;
+	height					: 17px;
+	font-size				: 17px;
+	text-align				: center;
 }
 
 div.sheet-noreturn div.sheet-trefferzonen-liste {

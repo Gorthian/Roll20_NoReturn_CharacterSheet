@@ -116,5 +116,8 @@
    "ruestungswert_kurz": "RW",
    "materialkomponente_kurz": "MK",
    "seite-1": "Seite 1",
-   "seite-2": "Seite 2"
+   "seite-2": "Seite 2",
+   "regeneration": "Regeneration",
+   "geschwindigkeit": "Geschwindigkeit",
+   "pool": "Pool"
 }
