@@ -1,7 +1,7 @@
 <!--
 	CREATED by 			Gorthian
 	Version				1.0
-	Letzte Änderung		2022-09-24
+	Letzte Änderung		2022-09-29
 	
 	GitHub				https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet
 	Wiki				https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/wiki
@@ -442,13 +442,33 @@
         </div>
         <div>
             <div class="sheet-box">
-                KÖRPERZONEN-WERTE
+                Körperzonen-Felder
             </div>
             <div class="sheet-box">
-                <h1 data-i18n="style-skills">Style Skills</h1>
+                <h1 data-i18n="style-skills">Style-Skills</h1>
+				<div class="sheet-style-skills-zeile">
+					<div class="sheet-kopfzeile"><span data-i18n="style-skill">Style-Skill</span></div>					
+					<div class="sheet-kopfzeile"><span data-i18n="stufe">Stufe</span></div>
+				</div>
+				<fieldset class="repeating_style-skills">
+					<div class="sheet-style-skills-zeile">
+						<div><input type="text" name="attr_style-skill-name" /></div>
+						<div><input type="number" name="attr_style-skill-stufe" /></div>
+					</div>
+				</fieldset>
             </div>
             <div class="sheet-box">
                 <h1 data-i18n="charaktermerkmale">Charaktermerkmale</h1>
+				<div class="sheet-charaktermerkmale-zeile">
+					<div class="sheet-kopfzeile"><span data-i18n="charaktermerkmal">Charaktermerkmale</span></div>					
+					<div class="sheet-kopfzeile"><span data-i18n="jp-cp">JP/CP</span></div>
+				</div>
+				<fieldset class="repeating_charaktermerkmale">
+					<div class="sheet-charaktermerkmale-zeile">
+						<div><input type="text" name="attr_charaktermerkmal-name" /></div>
+						<div><input type="number" name="attr_charaktermerkmal-stufe" /></div>
+					</div>
+				</fieldset>
             </div>
         </div>
     </div>

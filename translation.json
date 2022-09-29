@@ -6,7 +6,6 @@
    "fertigkeiten": "Fertigkeiten",
    "fertigkeit": "Fertigkeit",
    "besondere-fertigkeiten": "Besondere Fertigkeiten",
-   "style-skills": "Style Skills",
    "charaktermerkmale": "Charaktermerkmale",
    "charaktername": "Charaktername",
    "spezies": "Spezies",
@@ -108,5 +107,9 @@
    "wasserfahrzeuge": "Wasserfahrzeuge",
    "willenskraft": "Willenskraft",
    "wurfwaffen": "Wurfwaffen",
-   "zero-g": "Zero G"
+   "zero-g": "Zero G",
+   "style-skills": "Style-Skills",
+   "style-skill": "Style-Skill",
+   "charaktermerkmal": "Charaktermerkmal",
+   "jp-cp": "JP/CP"
 }

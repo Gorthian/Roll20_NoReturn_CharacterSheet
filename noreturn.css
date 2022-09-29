@@ -1,7 +1,7 @@
 /*
 	CREATED by 			Gorthian
 	Version				1.0
-	Letzte Änderung		2022-09-24
+	Letzte Änderung		2022-09-29
 	
 	GitHub				https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet
 	Wiki				https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/wiki
@@ -112,7 +112,9 @@ div.sheet-noreturn .sheet-fertigkeiten-zeile {
     grid-template-columns   : 120px repeat(3, 40px);
 }
 
-div.sheet-noreturn .sheet-besondere-fertigkeiten-zeile {
+div.sheet-noreturn .sheet-besondere-fertigkeiten-zeile,
+div.sheet-noreturn .sheet-style-skills-zeile,
+div.sheet-noreturn .sheet-charaktermerkmale-zeile {
 	text-transform          : none;
 	display                 : grid;
     grid-template-columns   : 200px 40px;
@@ -121,7 +123,9 @@ div.sheet-noreturn .sheet-besondere-fertigkeiten-zeile {
 div.sheet-noreturn .sheet-attribut-zeile div,
 div.sheet-noreturn .sheet-sonderattribut-zeile div,
 div.sheet-noreturn .sheet-fertigkeiten-zeile div,
-div.sheet-noreturn .sheet-besondere-fertigkeiten-zeile div {
+div.sheet-noreturn .sheet-besondere-fertigkeiten-zeile div,
+div.sheet-noreturn .sheet-style-skills-zeile div,
+div.sheet-noreturn .sheet-charaktermerkmale-zeile div {
     white-space				: nowrap;
 }
 
@@ -135,7 +139,11 @@ div.sheet-noreturn div.sheet-fertigkeiten-zeile input[type="number"] {
 }
 
 div.sheet-noreturn div.sheet-besondere-fertigkeiten-zeile input[type="number"],
-div.sheet-noreturn div.sheet-besondere-fertigkeiten-zeile input[type="text"] {
+div.sheet-noreturn div.sheet-besondere-fertigkeiten-zeile input[type="text"],
+div.sheet-noreturn div.sheet-style-skills-zeile input[type="number"],
+div.sheet-noreturn div.sheet-style-skills-zeile input[type="text"],
+div.sheet-noreturn div.sheet-charaktermerkmale-zeile input[type="number"],
+div.sheet-noreturn div.sheet-charaktermerkmale-zeile input[type="text"] {
     border-style			: none none solid none;
 	border-width       		: 1px;
 	border-color			: black;
@@ -143,7 +151,9 @@ div.sheet-noreturn div.sheet-besondere-fertigkeiten-zeile input[type="text"] {
 	top						: -3px;
 }
 
-div.sheet-noreturn div.sheet-besondere-fertigkeiten-zeile input[type="number"] {
+div.sheet-noreturn div.sheet-besondere-fertigkeiten-zeile input[type="number"],
+div.sheet-noreturn div.sheet-style-skills-zeile input[type="number"],
+div.sheet-noreturn div.sheet-charaktermerkmale-zeile input[type="number"] {
 	height					: 1.5em;
 	width					: 40px;
 	top						: 4px;
