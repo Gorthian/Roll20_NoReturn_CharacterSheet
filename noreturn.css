@@ -184,6 +184,25 @@ div.sheet-noreturn div.sheet-trefferzonen-bild img {
     width					: 400px;
 }
 
+div.sheet-noreturn div.sheet-trefferzonen-liste > div {
+	display                 : grid;
+    grid-template-columns   : 40px 200px;
+	white-space				: nowrap;
+}
+
+div.sheet-noreturn div.sheet-trefferzonen-liste div.sheet-trefferzone-zeile {
+	border					: 1px solid black;
+}
+
+div.sheet-noreturn div.sheet-trefferzonen-liste div.sheet-trefferzone-zeile div:first-child {
+	border-style			: none solid none none;
+	border-width       		: 2px;
+	border-color			: black;
+	text-align				: center;
+	font-weight				: bold;
+	
+}
+
 div.sheet-noreturn div.sheet-max-current {
     background-color        : #EEE8E0;
     margin                  : 10px 0px 0px 0px;
