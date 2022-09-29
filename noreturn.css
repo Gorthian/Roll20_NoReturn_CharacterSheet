@@ -186,14 +186,21 @@ div.sheet-noreturn div.sheet-trefferzonen-bild img {
 }
 
 div.sheet-noreturn div.sheet-trefferzonen-regeneration {
-    position				: absolute;
-	bottom					: 45px;
-	right					: 50px;
+    position				: relative;
+	bottom					: 150px;
+	left					: 150px;
+	width					: 50%;
+	height					: 0;
 }
 
 div.sheet-noreturn div.sheet-trefferzonen-regeneration div:nth-child(3) {
     border					: 2px solid black;
 	text-align				: center;
+}
+
+div.sheet-noreturn div.sheet-trefferzonen-regeneration div {
+    background-image		: url("https://gorthian.de/roll20/noreturn/white60tranz_10x10.png");
+	background-repeat		: repeat;
 }
 
 div.sheet-noreturn div.sheet-trefferzonen-regeneration input[type="number"],
