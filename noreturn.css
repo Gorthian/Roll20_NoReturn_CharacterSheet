@@ -1,7 +1,7 @@
 /*
 	CREATED by 			Gorthian
 	Version				1.0
-	Letzte Änderung		2022-09-29
+	Letzte Änderung		2022-10-04
 	
 	GitHub				https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet
 	Wiki				https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/wiki
@@ -14,22 +14,22 @@
 }
 
 @font face {	
-    font-family "erasbd";
+    font-family "eras bold itc";
     src: url("https://gorthian.de/roll20/noreturn/fonts/ERASBD.TTF") format ("truetype");
 }
 
 @font face {
-    font-family "erasdemi";
+    font-family "eras demi itc";
     src: url("https://gorthian.de/roll20/noreturn/fonts/ERASDEMI.TTF") format ("truetype");
 }
 
 @font face {
-    font-family "eraslght";
+    font-family "eras light itc";
     src: url("https://gorthian.de/roll20/noreturn/fonts/ERASLGHT.TTF") format ("truetype");
 }
 
 @font face {
-    font-family "erasmd";
+    font-family "eras medium itc";
     src: url("https://gorthian.de/roll20/noreturn/fonts/ERASMD.TTF") format ("truetype");
 }
 
@@ -39,7 +39,7 @@ div.sheet-noreturn {
     background-color        : white;
     display                 : grid;
 	grid-template-columns	: 20px auto;
-	font-family				: "erasbd";
+	font-family				: "eras bold itc";
     font-size               : 12px;
 	background-image		: url("https://gorthian.de/roll20/noreturn/background_800px.png");
 	background-repeat		: no-repeat;
