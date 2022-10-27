@@ -1,0 +1,25 @@
+//
+    CREATED by          Gorthian
+    Version				1.0
+    Letzte Änderung		2022-10-27
+    GitHub				https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet
+    Wiki				https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/wiki
+    Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
+
+-
+    var pages = [
+        {name:'one', i18n:'seite-1'},
+        {name:'two', i18n:'seite-2'},
+    ];
+
+div(class="sheet-noreturn")
+    input(type="hidden" class="sheet-tabstoggle" name="attr_sheetTab" value="page-one")
+    div(class="sheet-tabs")
+        each page in pages
+            button(class="sheet-toggle-button" type="action" name="act_page-"+page.name data-i18n=page.i18n)
+    include src/html/page-one.pug
+    include src/html/page-two.pug
+
+// SHEET WORKERS
+script(type="text/worker")
+    include src/js/sheetworker.js

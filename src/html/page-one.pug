@@ -1,0 +1,132 @@
+//-
+    CREATED by          Gorthian
+    Version				1.0
+    Letzte Änderung		2022-10-27
+    GitHub				https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet
+    Wiki				https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/wiki
+    Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
+
+mixin input-text(attribute, i18n)
+    div 
+        span(class="sheet-input-label" data-i18n=i18n)
+    div
+        input(type="text" name="attr_"+attribute)
+
+mixin max-current(attribute)
+    div(class="sheet-max-current")
+        h2(data-i18n=attribute)
+        p
+            span(data-i18n="gesamt")            
+            span(data-i18n="aktuell")
+        div(class="sheet-max-current-box")
+            input(type="number" name="attr_"+attribute+"_max") 
+            input(type="number" name="attr_"+attribute+"_current")
+
+mixin kopfzeile
+    div(class="sheet-attribut-zeile")
+        div 
+        div(class="sheet-kopfzeile")
+            span(data-i18n="stufe")
+        div(class="sheet-kopfzeile")
+            span(data-i18n="modifikatoren")
+        div    
+
+mixin attributszeile(attribute)
+    div(class="sheet-attribut-zeile")
+        div(class="sheet-titel")
+            span(data-i18n=attribute)
+        div
+            input(type="number" name="attr_"+attribute)
+        div
+            input(type="number" name="attr_"+attribute+"mod1")
+            input(type="number" name="attr_"+attribute+"mod2")
+        div 
+            span(data-i18n=attribute+"_kurz")
+
+mixin sonderattributskopfzeile()
+    div(class="sheet-sonderattribut-zeile")
+        div 
+        div(class="sheet-kopfzeile")
+            span(data-i18n="stufe")
+
+mixin sonderattributszeile(attribute)
+    div(class="sheet-sonderattribut-zeile")
+        div(class="sheet-sonderattribut-titel")
+            span(data-i18n=attribute)
+        div
+            input(type="number" name="attr_"+attribute)
+
+div(class="sheet-page-one")
+    div(class="sheet-3cols")
+        div(class="sheet-box")
+            h1(data-i18n="charakterdaten")
+            div(class="sheet-input-line")
+                +input-text("character_name","charaktername")
+            div(class="sheet-input-line")
+                +input-text("spezies","spezies")
+            div(class="sheet-input-line")
+                +input-text("geschlecht","geschlecht")
+                +input-text("alter","alter")
+            div(class="sheet-input-line")
+                +input-text("größe","größe")
+                +input-text("gewicht","gewicht")
+            div(class="sheet-input-line")
+                textarea(name="attr_aussehen") 
+        div(class="sheet-box")
+        div(classs="sheet-logo")
+            img(src="http://roll20.gorthian.de/noreturn/logo_200px.png")
+        div(class="sheet-input-line")
+            +input-text("player_name","spieler")
+        div(class="sheet-input-line")
+            +input-text("erstellungsdatum","erstellungsdatum")
+        div(class="sheet-input-line")
+            +input-text("charakterkonzept","charakterkonzept")
+        div(class="sheet-box")
+        h1(data-i18n="charakterkonditionen")
+        div(class="sheet-input-line")
+            +input-text("organismus","organismus")
+        div(class="sheet-input-line")
+            +input-text("psyche","psyche")
+        div(class="sheet-input-line")
+            +input-text("infektionsresistenz","infektionsresistenz")
+        div(class="sheet-input-line")
+            +input-text("butterflyeffekt","butterflyeffekt")
+        div(class="sheet-3cols")
+            +max-current("erfahrung")
+            +max-current("justicepoints")
+            +max-current("chaospoints")
+    div(class="sheet-2cols")
+        div(class="sheet-box")
+            h1(data-i18n="attribute")
+            div(class="sheet-attribute")
+                div
+                    +kopfzeile
+                    +attributszeile("geschick")
+                    +attributszeile("staerke")
+                    +attributszeile("konstitution")
+                    +attributszeile("beweglichkeit")
+                div
+                    +kopfzeile
+                    +attributszeile("wahrnehmung")
+                    +attributszeile("wissen")
+                    +attributszeile("charisma")
+                    +attributszeile("handwerk")
+            p 
+            div(class="sheet-sonderattribute")
+                div
+                    div(class="sheet-sonderattribut-zeile")
+                        div 
+                        div 
+                    +sonderattributszeile("trefferpunkte")
+                    +sonderattributszeile("dmg_schwellwert")
+                div 
+                    +sonderattributskopfzeile()
+                    +sonderattributszeile("schmerztoleranz")
+                div 
+                    +sonderattributskopfzeile()
+                    +sonderattributszeile("adrenalin")
+                    +sonderattributszeile("meditation")
+        div(class="sheet-trefferzonen")
+            // Noch zu migrieren
+    div(class="sheet-3cols")
+        // Noch zu migrieren
