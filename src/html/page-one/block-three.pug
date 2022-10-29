@@ -39,90 +39,9 @@ mixin trefferzone(zone)
 
 //- SEITENINHALT
 div(class="sheet-3cols")
-    div(class="sheet-box")
-        h1(data-i18n="fertigkeiten")
-        div(class="sheet-fertigkeiten-zeile")
-            div(class="sheet-kopfzeile")
-                span(data-i18n="fertigkeit")
-            div(class="sheet-kopfzeile")
-                span(data-i18n="attr")
-            div(class="sheet-kopfzeile")
-                span(data-i18n="stufe")
-            div(class="sheet-kopfzeile")
-                span(data-i18n="mod")
-            each skill in skills
-                if skill.id < 37
-                    +fertigkeitszeile(skill.name,skill.attribute)                        
-    div(class="sheet-box")
-        h1(data-i18n="fertigkeiten")
-        div(class="sheet-fertigkeiten-zeile")
-            div(class="sheet-kopfzeile")
-                span(data-i18n="fertigkeit")
-            div(class="sheet-kopfzeile")
-                span(data-i18n="attr")
-            div(class="sheet-kopfzeile")
-                span(data-i18n="stufe")
-            div(class="sheet-kopfzeile")
-                span(data-i18n="mod")
-            each skill in skills
-                if skill.id > 36
-                    +fertigkeitszeile(skill.name,skill.attribute)
-    div(class="sheet-box")
-        h1(data-i18n="besondere-fertigkeiten")
-            div(class="sheet-besondere-fertigkeiten-zeile")
-                div(class="sheet-kopfzeile")
-                    span(data-i18n="fertigkeit")
-                div(class="sheet-kopfzeile")
-                    span(data-i18n="stufe")
-            fieldset(class="repeating_besondere-fertigkeiten")
-                div(class="sheet-besondere-fertigkeiten-zeile")
-                    div
-                        input(type="text" name="attr_besondere-fertigkeit-name")
-                    div
-                        input(type="number" name="attr_besondere-fertigkeit-stufe")
-    div
-        div(class="sheet-box")
-            div(class="sheet-trefferzonen-liste")
-                +trefferzone(12)
-                +trefferzone(11)
-                +trefferzone(6)
-                +trefferzone(10)
-                +trefferzone(5)
-                +trefferzone(9)
-                +trefferzone(4)
-                +trefferzone(8)
-                +trefferzone(3)
-                +trefferzone(7)
-                +trefferzone(2)
-        
-        div(class="sheet-box")
-            h1(data-i18n="style-skills")
-            div(class="sheet-style-skills-zeile")
-                div(class="sheet-kopfzeile")
-                    span(data-i18n="style-skill")
-                div(class="sheet-kopfzeile")
-                    span(data-i18n="stufe")
-            fieldset(class="repeating_style-skills")
-                div(class="sheet-style-skills-zeile")
-                    div
-                        input(type="text" name="attr_style-skill-name")
-                    div
-                        input(type="number" name="attr_style-skill-stufe")
-        
-        div(class="sheet-box")
-            h1(data-i18n="charaktermerkmale")
-            div(class="sheet-charaktermerkmale-zeile")
-                div(class="sheet-kopfzeile")
-                    span(data-i18n="charaktermerkmal")
-                div(class="sheet-kopfzeile")
-                    span(data-i18n="jp-cp")
-            fieldset(class="repeating_charaktermerkmale")
-                div(class="sheet-charaktermerkmale-zeile")
-                    div
-                        input(type="text" name="attr_charaktermerkmal-name")
-                    div
-                        input(type="number" name="attr_charaktermerkmal-stufe")
-
+    include block-three-first-row.pug
+    include block-three-second-row.pug
+    include block-three-third-row.pug    
 //
     ********************************
     * ENDE src/html/page-one/block-three.pug

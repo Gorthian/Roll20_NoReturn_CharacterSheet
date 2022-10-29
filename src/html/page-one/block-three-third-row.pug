@@ -1,0 +1,60 @@
+//-
+    CREATED by          Gorthian
+    Letzte Änderung		2022-10-29
+
+//
+    ********************************
+    * START src/html/page-one/block-three-third-row.pug
+    ********************************
+
+//- MIXINs
+
+//- SEITENINHALT
+div
+    div(class="sheet-box")
+        div(class="sheet-trefferzonen-liste")
+            +trefferzone(12)
+            +trefferzone(11)
+            +trefferzone(6)
+            +trefferzone(10)
+            +trefferzone(5)
+            +trefferzone(9)
+            +trefferzone(4)
+            +trefferzone(8)
+            +trefferzone(3)
+            +trefferzone(7)
+            +trefferzone(2)
+    
+    div(class="sheet-box")
+        h1(data-i18n="style-skills")
+        div(class="sheet-style-skills-zeile")
+            div(class="sheet-kopfzeile")
+                span(data-i18n="style-skill")
+            div(class="sheet-kopfzeile")
+                span(data-i18n="stufe")
+        fieldset(class="repeating_style-skills")
+            div(class="sheet-style-skills-zeile")
+                div
+                    input(type="text" name="attr_style-skill-name")
+                div
+                    input(type="number" name="attr_style-skill-stufe")
+    
+    div(class="sheet-box")
+        h1(data-i18n="charaktermerkmale")
+        div(class="sheet-charaktermerkmale-zeile")
+            div(class="sheet-kopfzeile")
+                span(data-i18n="charaktermerkmal")
+            div(class="sheet-kopfzeile")
+                span(data-i18n="jp-cp")
+        fieldset(class="repeating_charaktermerkmale")
+            div(class="sheet-charaktermerkmale-zeile")
+                div
+                    input(type="text" name="attr_charaktermerkmal-name")
+                div
+                    input(type="number" name="attr_charaktermerkmal-stufe")
+
+
+//
+    ********************************
+    * ENDE src/html/page-one/block-three-third-row.pug
+    ********************************

@@ -1,0 +1,48 @@
+//-
+    CREATED by          Gorthian
+    Letzte Änderung		2022-10-29
+
+//
+    ********************************
+    * START src/html/page-one/block-three-second-row.pug
+    ********************************
+
+//- MIXINs
+
+//- SEITENINHALT
+div 
+    //- Fortsetzung Fertigkeiten. Erster Teil in block-three-first-row.pug
+    div(class="sheet-box")
+        h1(data-i18n="fertigkeiten")
+        div(class="sheet-fertigkeiten-zeile")
+            div(class="sheet-kopfzeile")
+                span(data-i18n="fertigkeit")
+            div(class="sheet-kopfzeile")
+                span(data-i18n="attr")
+            div(class="sheet-kopfzeile")
+                span(data-i18n="stufe")
+            div(class="sheet-kopfzeile")
+                span(data-i18n="mod")
+        //- Die restlichen Skills anzeigen
+        each skill in skills
+            if skill.id > 36
+                +fertigkeitszeile(skill.name,skill.attribute)
+    //- Besondere Fertigkeiten
+    div(class="sheet-box")
+        h1(data-i18n="besondere-fertigkeiten")
+        div(class="sheet-besondere-fertigkeiten-zeile")
+            div(class="sheet-kopfzeile")
+                span(data-i18n="fertigkeit")
+            div(class="sheet-kopfzeile")
+                span(data-i18n="stufe")
+        fieldset(class="repeating_besondere-fertigkeiten")
+            div(class="sheet-besondere-fertigkeiten-zeile")
+                div
+                    input(type="text" name="attr_besondere-fertigkeit-name")
+                div
+                    input(type="number" name="attr_besondere-fertigkeit-stufe")
+    
+//
+    ********************************
+    * ENDE src/html/page-one/block-three-second-row.pug
+    ********************************
