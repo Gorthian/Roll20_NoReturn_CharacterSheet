@@ -269,6 +269,7 @@ div.sheet-noreturn div.sheet-max-current div.sheet-max-current-box {
     border                  : 2px solid black;
     margin                  : 0 auto auto 0;
     padding                 : 5px;
+	white-space				: nowrap;
 }
 
 div.sheet-noreturn div.sheet-max-current p {

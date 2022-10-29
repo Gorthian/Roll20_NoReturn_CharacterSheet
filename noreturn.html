@@ -79,87 +79,89 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
           <textarea name="attr_aussehen"> </textarea>
         </div>
       </div>
-      <div class="sheet-box"></div>
-      <div classs="sheet-logo"><img src="http://roll20.gorthian.de/noreturn/logo_200px.png"/></div>
-      <div class="sheet-input-line">
-            <!-- MIXIN : src/html/page-one/block-one.pug : input-text-->
-            <div> <span class="sheet-input-label" data-i18n="spieler"></span></div>
-            <div>
-              <input type="text" name="attr_player_name"/>
-            </div>
-      </div>
-      <div class="sheet-input-line">
-            <!-- MIXIN : src/html/page-one/block-one.pug : input-text-->
-            <div> <span class="sheet-input-label" data-i18n="erstellungsdatum"></span></div>
-            <div>
-              <input type="text" name="attr_erstellungsdatum"/>
-            </div>
-      </div>
-      <div class="sheet-input-line">
-            <!-- MIXIN : src/html/page-one/block-one.pug : input-text-->
-            <div> <span class="sheet-input-label" data-i18n="charakterkonzept"></span></div>
-            <div>
-              <input type="text" name="attr_charakterkonzept"/>
-            </div>
-      </div>
-      <div class="sheet-box"></div>
-      <h1 data-i18n="charakterkonditionen"></h1>
-      <div class="sheet-input-line">
-            <!-- MIXIN : src/html/page-one/block-one.pug : input-text-->
-            <div> <span class="sheet-input-label" data-i18n="organismus"></span></div>
-            <div>
-              <input type="text" name="attr_organismus"/>
-            </div>
-      </div>
-      <div class="sheet-input-line">
-            <!-- MIXIN : src/html/page-one/block-one.pug : input-text-->
-            <div> <span class="sheet-input-label" data-i18n="psyche"></span></div>
-            <div>
-              <input type="text" name="attr_psyche"/>
-            </div>
-      </div>
-      <div class="sheet-input-line">
-            <!-- MIXIN : src/html/page-one/block-one.pug : input-text-->
-            <div> <span class="sheet-input-label" data-i18n="infektionsresistenz"></span></div>
-            <div>
-              <input type="text" name="attr_infektionsresistenz"/>
-            </div>
-      </div>
-      <div class="sheet-input-line">
-            <!-- MIXIN : src/html/page-one/block-one.pug : input-text-->
-            <div> <span class="sheet-input-label" data-i18n="butterflyeffekt"></span></div>
-            <div>
-              <input type="text" name="attr_butterflyeffekt"/>
-            </div>
-      </div>
-      <div class="sheet-3cols">
-            <!-- MIXIN : src/html/page-one/block-one.pug : max-current-->
-            <div class="sheet-max-current">
-              <h2 data-i18n="erfahrung"></h2>
-              <p><span data-i18n="gesamt">           </span><span data-i18n="aktuell"></span></p>
-              <div class="sheet-max-current-box">
-                <input type="number" name="attr_erfahrung_max"/>
-                <input type="number" name="attr_erfahrung_current"/>
+      <div class="sheet-box">
+        <div classs="sheet-logo"><img src="http://gorthian.de/roll20/noreturn/logo_200px.png"/></div>
+        <div class="sheet-input-line">
+              <!-- MIXIN : src/html/page-one/block-one.pug : input-text-->
+              <div> <span class="sheet-input-label" data-i18n="spieler"></span></div>
+              <div>
+                <input type="text" name="attr_player_name"/>
               </div>
-            </div>
-            <!-- MIXIN : src/html/page-one/block-one.pug : max-current-->
-            <div class="sheet-max-current">
-              <h2 data-i18n="justicepoints"></h2>
-              <p><span data-i18n="gesamt">           </span><span data-i18n="aktuell"></span></p>
-              <div class="sheet-max-current-box">
-                <input type="number" name="attr_justicepoints_max"/>
-                <input type="number" name="attr_justicepoints_current"/>
+        </div>
+        <div class="sheet-input-line">
+              <!-- MIXIN : src/html/page-one/block-one.pug : input-text-->
+              <div> <span class="sheet-input-label" data-i18n="erstellungsdatum"></span></div>
+              <div>
+                <input type="text" name="attr_erstellungsdatum"/>
               </div>
-            </div>
-            <!-- MIXIN : src/html/page-one/block-one.pug : max-current-->
-            <div class="sheet-max-current">
-              <h2 data-i18n="chaospoints"></h2>
-              <p><span data-i18n="gesamt">           </span><span data-i18n="aktuell"></span></p>
-              <div class="sheet-max-current-box">
-                <input type="number" name="attr_chaospoints_max"/>
-                <input type="number" name="attr_chaospoints_current"/>
+        </div>
+        <div class="sheet-input-line">
+              <!-- MIXIN : src/html/page-one/block-one.pug : input-text-->
+              <div> <span class="sheet-input-label" data-i18n="charakterkonzept"></span></div>
+              <div>
+                <input type="text" name="attr_charakterkonzept"/>
               </div>
-            </div>
+        </div>
+      </div>
+      <div class="sheet-box">
+        <h1 data-i18n="charakterkonditionen"></h1>
+        <div class="sheet-input-line">
+              <!-- MIXIN : src/html/page-one/block-one.pug : input-text-->
+              <div> <span class="sheet-input-label" data-i18n="organismus"></span></div>
+              <div>
+                <input type="text" name="attr_organismus"/>
+              </div>
+        </div>
+        <div class="sheet-input-line">
+              <!-- MIXIN : src/html/page-one/block-one.pug : input-text-->
+              <div> <span class="sheet-input-label" data-i18n="psyche"></span></div>
+              <div>
+                <input type="text" name="attr_psyche"/>
+              </div>
+        </div>
+        <div class="sheet-input-line">
+              <!-- MIXIN : src/html/page-one/block-one.pug : input-text-->
+              <div> <span class="sheet-input-label" data-i18n="infektionsresistenz"></span></div>
+              <div>
+                <input type="text" name="attr_infektionsresistenz"/>
+              </div>
+        </div>
+        <div class="sheet-input-line">
+              <!-- MIXIN : src/html/page-one/block-one.pug : input-text-->
+              <div> <span class="sheet-input-label" data-i18n="butterflyeffekt"></span></div>
+              <div>
+                <input type="text" name="attr_butterflyeffekt"/>
+              </div>
+        </div>
+        <div class="sheet-3cols">
+              <!-- MIXIN : src/html/page-one/block-one.pug : max-current-->
+              <div class="sheet-max-current">
+                <h2 data-i18n="erfahrung"></h2>
+                <p><span data-i18n="gesamt"></span>&nbsp;/&nbsp;<span data-i18n="aktuell"></span></p>
+                <div class="sheet-max-current-box">
+                  <input type="number" name="attr_erfahrung_max"/>&nbsp;/&nbsp;
+                  <input type="number" name="attr_erfahrung_current"/>
+                </div>
+              </div>
+              <!-- MIXIN : src/html/page-one/block-one.pug : max-current-->
+              <div class="sheet-max-current">
+                <h2 data-i18n="justicepoints"></h2>
+                <p><span data-i18n="gesamt"></span>&nbsp;/&nbsp;<span data-i18n="aktuell"></span></p>
+                <div class="sheet-max-current-box">
+                  <input type="number" name="attr_justicepoints_max"/>&nbsp;/&nbsp;
+                  <input type="number" name="attr_justicepoints_current"/>
+                </div>
+              </div>
+              <!-- MIXIN : src/html/page-one/block-one.pug : max-current-->
+              <div class="sheet-max-current">
+                <h2 data-i18n="chaospoints"></h2>
+                <p><span data-i18n="gesamt"></span>&nbsp;/&nbsp;<span data-i18n="aktuell"></span></p>
+                <div class="sheet-max-current-box">
+                  <input type="number" name="attr_chaospoints_max"/>&nbsp;/&nbsp;
+                  <input type="number" name="attr_chaospoints_current"/>
+                </div>
+              </div>
+        </div>
       </div>
     </div>
     <!--
