@@ -147,7 +147,8 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                   <input type="number" name="attr_geschickmod1"/>
                   <input type="number" name="attr_geschickmod2"/>
                 </div>
-                <div> <span data-i18n="geschick_kurz"></span></div>
+                <div>
+                   [<span data-i18n="geschick_kurz"></span>]</div>
               </div>
               <div class="sheet-attribut-zeile">
                 <div class="sheet-titel"><span data-i18n="staerke"></span></div>
@@ -158,7 +159,8 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                   <input type="number" name="attr_staerkemod1"/>
                   <input type="number" name="attr_staerkemod2"/>
                 </div>
-                <div> <span data-i18n="staerke_kurz"></span></div>
+                <div>
+                   [<span data-i18n="staerke_kurz"></span>]</div>
               </div>
               <div class="sheet-attribut-zeile">
                 <div class="sheet-titel"><span data-i18n="konstitution"></span></div>
@@ -169,7 +171,8 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                   <input type="number" name="attr_konstitutionmod1"/>
                   <input type="number" name="attr_konstitutionmod2"/>
                 </div>
-                <div> <span data-i18n="konstitution_kurz"></span></div>
+                <div>
+                   [<span data-i18n="konstitution_kurz"></span>]</div>
               </div>
               <div class="sheet-attribut-zeile">
                 <div class="sheet-titel"><span data-i18n="beweglichkeit"></span></div>
@@ -180,7 +183,8 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                   <input type="number" name="attr_beweglichkeitmod1"/>
                   <input type="number" name="attr_beweglichkeitmod2"/>
                 </div>
-                <div> <span data-i18n="beweglichkeit_kurz"></span></div>
+                <div>
+                   [<span data-i18n="beweglichkeit_kurz"></span>]</div>
               </div>
           </div>
           <div>
@@ -199,7 +203,8 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                   <input type="number" name="attr_wahrnehmungmod1"/>
                   <input type="number" name="attr_wahrnehmungmod2"/>
                 </div>
-                <div> <span data-i18n="wahrnehmung_kurz"></span></div>
+                <div>
+                   [<span data-i18n="wahrnehmung_kurz"></span>]</div>
               </div>
               <div class="sheet-attribut-zeile">
                 <div class="sheet-titel"><span data-i18n="wissen"></span></div>
@@ -210,7 +215,8 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                   <input type="number" name="attr_wissenmod1"/>
                   <input type="number" name="attr_wissenmod2"/>
                 </div>
-                <div> <span data-i18n="wissen_kurz"></span></div>
+                <div>
+                   [<span data-i18n="wissen_kurz"></span>]</div>
               </div>
               <div class="sheet-attribut-zeile">
                 <div class="sheet-titel"><span data-i18n="charisma"></span></div>
@@ -221,7 +227,8 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                   <input type="number" name="attr_charismamod1"/>
                   <input type="number" name="attr_charismamod2"/>
                 </div>
-                <div> <span data-i18n="charisma_kurz"></span></div>
+                <div>
+                   [<span data-i18n="charisma_kurz"></span>]</div>
               </div>
               <div class="sheet-attribut-zeile">
                 <div class="sheet-titel"><span data-i18n="handwerk"></span></div>
@@ -232,7 +239,8 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                   <input type="number" name="attr_handwerkmod1"/>
                   <input type="number" name="attr_handwerkmod2"/>
                 </div>
-                <div> <span data-i18n="handwerk_kurz"></span></div>
+                <div>
+                   [<span data-i18n="handwerk_kurz"></span>]</div>
               </div>
           </div>
         </div>
@@ -289,11 +297,863 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
         </div>
       </div>
       <div class="sheet-trefferzonen">
-        <!-- Noch zu migrieren-->
+        <h1 data-i18n="körperzonen"></h1>
+        <div class="sheet-trefferzonen-bild"><img src="https://gorthian.de/roll20/noreturn/trefferzonen_300px.png"/>
+          <div class="sheet-trefferzonen-regeneration">
+            <div class="sheet-titel"><span data-i18n="regeneration"></span>
+              <div><span data-i18n="geschwindigkeit"></span>&nbsp;/&nbsp;<span data-i18n="pool"></span></div>
+              <div>
+                <input type="number" name="attr_regeneration-geschwindigkeit"/>&nbsp;/&nbsp;
+                <input type="number" name="attr_regeneration-pool"/>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="sheet-3cols">
-      <!-- Noch zu migrieren-->
+      <div class="sheet-box">
+        <h1 data-i18n="fertigkeiten"></h1>
+        <div class="sheet-fertigkeiten-zeile">
+          <div class="sheet-kopfzeile"><span data-i18n="fertigkeit"></span></div>
+          <div class="sheet-kopfzeile"><span data-i18n="attr"></span></div>
+          <div class="sheet-kopfzeile"><span data-i18n="stufe"></span></div>
+          <div class="sheet-kopfzeile"><span data-i18n="mod"></span></div>
+            <div class="sheet-fertigkeiten-zeile">
+              <div> <span data-i18n="akrobatik"></span></div>
+              <div><span data-i18n="beweglichkeit_kurz"></span></div>
+              <div>
+                <input type="number" name="attr_akrobatik"/>
+              </div>
+              <div>
+                <input type="number" name="attr_akrobatik_mod"/>
+              </div>
+            </div>
+            <div class="sheet-fertigkeiten-zeile">
+              <div> <span data-i18n="astronomie"></span></div>
+              <div><span data-i18n="wissen_kurz"></span></div>
+              <div>
+                <input type="number" name="attr_astronomie"/>
+              </div>
+              <div>
+                <input type="number" name="attr_astronomie_mod"/>
+              </div>
+            </div>
+            <div class="sheet-fertigkeiten-zeile">
+              <div> <span data-i18n="akrobatik"></span></div>
+              <div><span data-i18n="beweglichkeit_kurz"></span></div>
+              <div>
+                <input type="number" name="attr_akrobatik"/>
+              </div>
+              <div>
+                <input type="number" name="attr_akrobatik_mod"/>
+              </div>
+            </div>
+            <div class="sheet-fertigkeiten-zeile">
+              <div> <span data-i18n="ausdauer"></span></div>
+              <div><span data-i18n="konstitution_kurz"></span></div>
+              <div>
+                <input type="number" name="attr_ausdauer"/>
+              </div>
+              <div>
+                <input type="number" name="attr_ausdauer_mod"/>
+              </div>
+            </div>
+            <div class="sheet-fertigkeiten-zeile">
+              <div> <span data-i18n="ausweichen"></span></div>
+              <div><span data-i18n="beweglichkeit_kurz"></span></div>
+              <div>
+                <input type="number" name="attr_ausweichen"/>
+              </div>
+              <div>
+                <input type="number" name="attr_ausweichen_mod"/>
+              </div>
+            </div>
+            <div class="sheet-fertigkeiten-zeile">
+              <div> <span data-i18n="basteln"></span></div>
+              <div><span data-i18n="handwerk_kurz"></span></div>
+              <div>
+                <input type="number" name="attr_basteln"/>
+              </div>
+              <div>
+                <input type="number" name="attr_basteln_mod"/>
+              </div>
+            </div>
+            <div class="sheet-fertigkeiten-zeile">
+              <div> <span data-i18n="blocken"></span></div>
+              <div><span data-i18n="beweglichkeit_kurz"></span></div>
+              <div>
+                <input type="number" name="attr_blocken"/>
+              </div>
+              <div>
+                <input type="number" name="attr_blocken_mod"/>
+              </div>
+            </div>
+            <div class="sheet-fertigkeiten-zeile">
+              <div> <span data-i18n="bodenfahrzeuge"></span></div>
+              <div><span data-i18n="geschick_kurz"></span></div>
+              <div>
+                <input type="number" name="attr_bodenfahrzeuge"/>
+              </div>
+              <div>
+                <input type="number" name="attr_bodenfahrzeuge_mod"/>
+              </div>
+            </div>
+            <div class="sheet-fertigkeiten-zeile">
+              <div> <span data-i18n="chemie"></span></div>
+              <div><span data-i18n="wissen_kurz"></span></div>
+              <div>
+                <input type="number" name="attr_chemie"/>
+              </div>
+              <div>
+                <input type="number" name="attr_chemie_mod"/>
+              </div>
+            </div>
+            <div class="sheet-fertigkeiten-zeile">
+              <div> <span data-i18n="computer"></span></div>
+              <div><span data-i18n="wissen_kurz"></span></div>
+              <div>
+                <input type="number" name="attr_computer"/>
+              </div>
+              <div>
+                <input type="number" name="attr_computer_mod"/>
+              </div>
+            </div>
+            <div class="sheet-fertigkeiten-zeile">
+              <div> <span data-i18n="dressieren"></span></div>
+              <div><span data-i18n="charisma_kurz"></span></div>
+              <div>
+                <input type="number" name="attr_dressieren"/>
+              </div>
+              <div>
+                <input type="number" name="attr_dressieren_mod"/>
+              </div>
+            </div>
+            <div class="sheet-fertigkeiten-zeile">
+              <div> <span data-i18n="einschuechtern"></span></div>
+              <div><span data-i18n="charisma_kurz"></span></div>
+              <div>
+                <input type="number" name="attr_einschuechtern"/>
+              </div>
+              <div>
+                <input type="number" name="attr_einschuechtern_mod"/>
+              </div>
+            </div>
+            <div class="sheet-fertigkeiten-zeile">
+              <div> <span data-i18n="einschuechtern"></span></div>
+              <div><span data-i18n="staerke_kurz"></span></div>
+              <div>
+                <input type="number" name="attr_einschuechtern"/>
+              </div>
+              <div>
+                <input type="number" name="attr_einschuechtern_mod"/>
+              </div>
+            </div>
+            <div class="sheet-fertigkeiten-zeile">
+              <div> <span data-i18n="elektronik"></span></div>
+              <div><span data-i18n="handwerk_kurz"></span></div>
+              <div>
+                <input type="number" name="attr_elektronik"/>
+              </div>
+              <div>
+                <input type="number" name="attr_elektronik_mod"/>
+              </div>
+            </div>
+            <div class="sheet-fertigkeiten-zeile">
+              <div> <span data-i18n="feuerwaffen"></span></div>
+              <div><span data-i18n="handwerk_kurz"></span></div>
+              <div>
+                <input type="number" name="attr_feuerwaffen"/>
+              </div>
+              <div>
+                <input type="number" name="attr_feuerwaffen_mod"/>
+              </div>
+            </div>
+            <div class="sheet-fertigkeiten-zeile">
+              <div> <span data-i18n="fluggeräte"></span></div>
+              <div><span data-i18n="geschick_kurz"></span></div>
+              <div>
+                <input type="number" name="attr_fluggeräte"/>
+              </div>
+              <div>
+                <input type="number" name="attr_fluggeräte_mod"/>
+              </div>
+            </div>
+            <div class="sheet-fertigkeiten-zeile">
+              <div> <span data-i18n="gassenwissen"></span></div>
+              <div><span data-i18n="wissen_kurz"></span></div>
+              <div>
+                <input type="number" name="attr_gassenwissen"/>
+              </div>
+              <div>
+                <input type="number" name="attr_gassenwissen_mod"/>
+              </div>
+            </div>
+            <div class="sheet-fertigkeiten-zeile">
+              <div> <span data-i18n="geschütze"></span></div>
+              <div><span data-i18n="geschick_kurz"></span></div>
+              <div>
+                <input type="number" name="attr_geschütze"/>
+              </div>
+              <div>
+                <input type="number" name="attr_geschütze_mod"/>
+              </div>
+            </div>
+            <div class="sheet-fertigkeiten-zeile">
+              <div> <span data-i18n="großraumschiff"></span></div>
+              <div><span data-i18n="wissen_kurz"></span></div>
+              <div>
+                <input type="number" name="attr_großraumschiff"/>
+              </div>
+              <div>
+                <input type="number" name="attr_großraumschiff_mod"/>
+              </div>
+            </div>
+            <div class="sheet-fertigkeiten-zeile">
+              <div> <span data-i18n="heimlichkeit"></span></div>
+              <div><span data-i18n="wahrnehmung_kurz"></span></div>
+              <div>
+                <input type="number" name="attr_heimlichkeit"/>
+              </div>
+              <div>
+                <input type="number" name="attr_heimlichkeit_mod"/>
+              </div>
+            </div>
+            <div class="sheet-fertigkeiten-zeile">
+              <div> <span data-i18n="inspiration"></span></div>
+              <div><span data-i18n="charisma_kurz"></span></div>
+              <div>
+                <input type="number" name="attr_inspiration"/>
+              </div>
+              <div>
+                <input type="number" name="attr_inspiration_mod"/>
+              </div>
+            </div>
+            <div class="sheet-fertigkeiten-zeile">
+              <div> <span data-i18n="klettern"></span></div>
+              <div><span data-i18n="beweglichkeit_kurz"></span></div>
+              <div>
+                <input type="number" name="attr_klettern"/>
+              </div>
+              <div>
+                <input type="number" name="attr_klettern_mod"/>
+              </div>
+            </div>
+            <div class="sheet-fertigkeiten-zeile">
+              <div> <span data-i18n="kunst"></span></div>
+              <div><span data-i18n="handwerk_kurz"></span></div>
+              <div>
+                <input type="number" name="attr_kunst"/>
+              </div>
+              <div>
+                <input type="number" name="attr_kunst_mod"/>
+              </div>
+            </div>
+            <div class="sheet-fertigkeiten-zeile">
+              <div> <span data-i18n="mechanik"></span></div>
+              <div><span data-i18n="handwerk_kurz"></span></div>
+              <div>
+                <input type="number" name="attr_mechanik"/>
+              </div>
+              <div>
+                <input type="number" name="attr_mechanik_mod"/>
+              </div>
+            </div>
+            <div class="sheet-fertigkeiten-zeile">
+              <div> <span data-i18n="medizin"></span></div>
+              <div><span data-i18n="wissen_kurz"></span></div>
+              <div>
+                <input type="number" name="attr_medizin"/>
+              </div>
+              <div>
+                <input type="number" name="attr_medizin_mod"/>
+              </div>
+            </div>
+            <div class="sheet-fertigkeiten-zeile">
+              <div> <span data-i18n="menschenkenntnis"></span></div>
+              <div><span data-i18n="charisma_kurz"></span></div>
+              <div>
+                <input type="number" name="attr_menschenkenntnis"/>
+              </div>
+              <div>
+                <input type="number" name="attr_menschenkenntnis_mod"/>
+              </div>
+            </div>
+            <div class="sheet-fertigkeiten-zeile">
+              <div> <span data-i18n="nachforschen"></span></div>
+              <div><span data-i18n="wahrnehmung_kurz"></span></div>
+              <div>
+                <input type="number" name="attr_nachforschen"/>
+              </div>
+              <div>
+                <input type="number" name="attr_nachforschen_mod"/>
+              </div>
+            </div>
+            <div class="sheet-fertigkeiten-zeile">
+              <div> <span data-i18n="nahkampf"></span></div>
+              <div><span data-i18n="beweglichkeit_kurz"></span></div>
+              <div>
+                <input type="number" name="attr_nahkampf"/>
+              </div>
+              <div>
+                <input type="number" name="attr_nahkampf_mod"/>
+              </div>
+            </div>
+            <div class="sheet-fertigkeiten-zeile">
+              <div> <span data-i18n="naturkunde"></span></div>
+              <div><span data-i18n="wissen_kurz"></span></div>
+              <div>
+                <input type="number" name="attr_naturkunde"/>
+              </div>
+              <div>
+                <input type="number" name="attr_naturkunde_mod"/>
+              </div>
+            </div>
+            <div class="sheet-fertigkeiten-zeile">
+              <div> <span data-i18n="orientierung"></span></div>
+              <div><span data-i18n="wahrnehmung_kurz"></span></div>
+              <div>
+                <input type="number" name="attr_orientierung"/>
+              </div>
+              <div>
+                <input type="number" name="attr_orientierung_mod"/>
+              </div>
+            </div>
+            <div class="sheet-fertigkeiten-zeile">
+              <div> <span data-i18n="projektilwaffen"></span></div>
+              <div><span data-i18n="geschick_kurz"></span></div>
+              <div>
+                <input type="number" name="attr_projektilwaffen"/>
+              </div>
+              <div>
+                <input type="number" name="attr_projektilwaffen_mod"/>
+              </div>
+            </div>
+            <div class="sheet-fertigkeiten-zeile">
+              <div> <span data-i18n="raumjaeger"></span></div>
+              <div><span data-i18n="geschick_kurz"></span></div>
+              <div>
+                <input type="number" name="attr_raumjaeger"/>
+              </div>
+              <div>
+                <input type="number" name="attr_raumjaeger_mod"/>
+              </div>
+            </div>
+            <div class="sheet-fertigkeiten-zeile">
+              <div> <span data-i18n="raumschiff"></span></div>
+              <div><span data-i18n="geschick_kurz"></span></div>
+              <div>
+                <input type="number" name="attr_raumschiff"/>
+              </div>
+              <div>
+                <input type="number" name="attr_raumschiff_mod"/>
+              </div>
+            </div>
+            <div class="sheet-fertigkeiten-zeile">
+              <div> <span data-i18n="reaktion"></span></div>
+              <div><span data-i18n="wahrnehmung_kurz"></span></div>
+              <div>
+                <input type="number" name="attr_reaktion"/>
+              </div>
+              <div>
+                <input type="number" name="attr_reaktion_mod"/>
+              </div>
+            </div>
+            <div class="sheet-fertigkeiten-zeile">
+              <div> <span data-i18n="reiten"></span></div>
+              <div><span data-i18n="beweglichkeit_kurz"></span></div>
+              <div>
+                <input type="number" name="attr_reiten"/>
+              </div>
+              <div>
+                <input type="number" name="attr_reiten_mod"/>
+              </div>
+            </div>
+            <div class="sheet-fertigkeiten-zeile">
+              <div> <span data-i18n="rennen"></span></div>
+              <div><span data-i18n="beweglichkeit_kurz"></span></div>
+              <div>
+                <input type="number" name="attr_rennen"/>
+              </div>
+              <div>
+                <input type="number" name="attr_rennen_mod"/>
+              </div>
+            </div>
+            <div class="sheet-fertigkeiten-zeile">
+              <div> <span data-i18n="robotik"></span></div>
+              <div><span data-i18n="handwerk_kurz"></span></div>
+              <div>
+                <input type="number" name="attr_robotik"/>
+              </div>
+              <div>
+                <input type="number" name="attr_robotik_mod"/>
+              </div>
+            </div>
+        </div>
+      </div>
+      <div class="sheet-box">
+        <h1 data-i18n="fertigkeiten"></h1>
+        <div class="sheet-fertigkeiten-zeile">
+          <div class="sheet-kopfzeile"><span data-i18n="fertigkeit"></span></div>
+          <div class="sheet-kopfzeile"><span data-i18n="attr"></span></div>
+          <div class="sheet-kopfzeile"><span data-i18n="stufe"></span></div>
+          <div class="sheet-kopfzeile"><span data-i18n="mod"></span></div>
+            <div class="sheet-fertigkeiten-zeile">
+              <div> <span data-i18n="ruestungsbau"></span></div>
+              <div><span data-i18n="handwerk_kurz"></span></div>
+              <div>
+                <input type="number" name="attr_ruestungsbau"/>
+              </div>
+              <div>
+                <input type="number" name="attr_ruestungsbau_mod"/>
+              </div>
+            </div>
+            <div class="sheet-fertigkeiten-zeile">
+              <div> <span data-i18n="sagen-mythen"></span></div>
+              <div><span data-i18n="wissen_kurz"></span></div>
+              <div>
+                <input type="number" name="attr_sagen-mythen"/>
+              </div>
+              <div>
+                <input type="number" name="attr_sagen-mythen_mod"/>
+              </div>
+            </div>
+            <div class="sheet-fertigkeiten-zeile">
+              <div> <span data-i18n="saufen"></span></div>
+              <div><span data-i18n="konstitution_kurz"></span></div>
+              <div>
+                <input type="number" name="attr_saufen"/>
+              </div>
+              <div>
+                <input type="number" name="attr_saufen_mod"/>
+              </div>
+            </div>
+            <div class="sheet-fertigkeiten-zeile">
+              <div> <span data-i18n="schaetzen"></span></div>
+              <div><span data-i18n="wahrnehmung_kurz"></span></div>
+              <div>
+                <input type="number" name="attr_schaetzen"/>
+              </div>
+              <div>
+                <input type="number" name="attr_schaetzen_mod"/>
+              </div>
+            </div>
+            <div class="sheet-fertigkeiten-zeile">
+              <div> <span data-i18n="schauspiel"></span></div>
+              <div><span data-i18n="charisma_kurz"></span></div>
+              <div>
+                <input type="number" name="attr_schauspiel"/>
+              </div>
+              <div>
+                <input type="number" name="attr_schauspiel_mod"/>
+              </div>
+            </div>
+            <div class="sheet-fertigkeiten-zeile">
+              <div> <span data-i18n="schiessen"></span></div>
+              <div><span data-i18n="geschick_kurz"></span></div>
+              <div>
+                <input type="number" name="attr_schiessen"/>
+              </div>
+              <div>
+                <input type="number" name="attr_schiessen_mod"/>
+              </div>
+            </div>
+            <div class="sheet-fertigkeiten-zeile">
+              <div> <span data-i18n="schwere-waffen"></span></div>
+              <div><span data-i18n="geschick_kurz"></span></div>
+              <div>
+                <input type="number" name="attr_schwere-waffen"/>
+              </div>
+              <div>
+                <input type="number" name="attr_schwere-waffen_mod"/>
+              </div>
+            </div>
+            <div class="sheet-fertigkeiten-zeile">
+              <div> <span data-i18n="schwimmen"></span></div>
+              <div><span data-i18n="beweglichkeit_kurz"></span></div>
+              <div>
+                <input type="number" name="attr_schwimmen"/>
+              </div>
+              <div>
+                <input type="number" name="attr_schwimmen_mod"/>
+              </div>
+            </div>
+            <div class="sheet-fertigkeiten-zeile">
+              <div> <span data-i18n="sicherheitstechnik"></span></div>
+              <div><span data-i18n="handwerk_kurz"></span></div>
+              <div>
+                <input type="number" name="attr_sicherheitstechnik"/>
+              </div>
+              <div>
+                <input type="number" name="attr_sicherheitstechnik_mod"/>
+              </div>
+            </div>
+            <div class="sheet-fertigkeiten-zeile">
+              <div> <span data-i18n="spezies"></span></div>
+              <div><span data-i18n="wissen_kurz"></span></div>
+              <div>
+                <input type="number" name="attr_spezies"/>
+              </div>
+              <div>
+                <input type="number" name="attr_spezies_mod"/>
+              </div>
+            </div>
+            <div class="sheet-fertigkeiten-zeile">
+              <div> <span data-i18n="springen"></span></div>
+              <div><span data-i18n="beweglichkeit_kurz"></span></div>
+              <div>
+                <input type="number" name="attr_springen"/>
+              </div>
+              <div>
+                <input type="number" name="attr_springen_mod"/>
+              </div>
+            </div>
+            <div class="sheet-fertigkeiten-zeile">
+              <div> <span data-i18n="spruehwaffen"></span></div>
+              <div><span data-i18n="geschick_kurz"></span></div>
+              <div>
+                <input type="number" name="attr_spruehwaffen"/>
+              </div>
+              <div>
+                <input type="number" name="attr_spruehwaffen_mod"/>
+              </div>
+            </div>
+            <div class="sheet-fertigkeiten-zeile">
+              <div> <span data-i18n="stemmen"></span></div>
+              <div><span data-i18n="staerke_kurz"></span></div>
+              <div>
+                <input type="number" name="attr_stemmen"/>
+              </div>
+              <div>
+                <input type="number" name="attr_stemmen_mod"/>
+              </div>
+            </div>
+            <div class="sheet-fertigkeiten-zeile">
+              <div> <span data-i18n="taschendiebstahl"></span></div>
+              <div><span data-i18n="geschick_kurz"></span></div>
+              <div>
+                <input type="number" name="attr_taschendiebstahl"/>
+              </div>
+              <div>
+                <input type="number" name="attr_taschendiebstahl_mod"/>
+              </div>
+            </div>
+            <div class="sheet-fertigkeiten-zeile">
+              <div> <span data-i18n="ueberreden"></span></div>
+              <div><span data-i18n="charisma_kurz"></span></div>
+              <div>
+                <input type="number" name="attr_ueberreden"/>
+              </div>
+              <div>
+                <input type="number" name="attr_ueberreden_mod"/>
+              </div>
+            </div>
+            <div class="sheet-fertigkeiten-zeile">
+              <div> <span data-i18n="verhandeln"></span></div>
+              <div><span data-i18n="charisma_kurz"></span></div>
+              <div>
+                <input type="number" name="attr_verhandeln"/>
+              </div>
+              <div>
+                <input type="number" name="attr_verhandeln_mod"/>
+              </div>
+            </div>
+            <div class="sheet-fertigkeiten-zeile">
+              <div> <span data-i18n="waffenbau"></span></div>
+              <div><span data-i18n="handwerk_kurz"></span></div>
+              <div>
+                <input type="number" name="attr_waffenbau"/>
+              </div>
+              <div>
+                <input type="number" name="attr_waffenbau_mod"/>
+              </div>
+            </div>
+            <div class="sheet-fertigkeiten-zeile">
+              <div> <span data-i18n="waffenkampf"></span></div>
+              <div><span data-i18n="beweglichkeit_kurz"></span></div>
+              <div>
+                <input type="number" name="attr_waffenkampf"/>
+              </div>
+              <div>
+                <input type="number" name="attr_waffenkampf_mod"/>
+              </div>
+            </div>
+            <div class="sheet-fertigkeiten-zeile">
+              <div> <span data-i18n="wasserfahrzeuge"></span></div>
+              <div><span data-i18n="geschick_kurz"></span></div>
+              <div>
+                <input type="number" name="attr_wasserfahrzeuge"/>
+              </div>
+              <div>
+                <input type="number" name="attr_wasserfahrzeuge_mod"/>
+              </div>
+            </div>
+            <div class="sheet-fertigkeiten-zeile">
+              <div> <span data-i18n="willenskraft"></span></div>
+              <div><span data-i18n="wissen_kurz"></span></div>
+              <div>
+                <input type="number" name="attr_willenskraft"/>
+              </div>
+              <div>
+                <input type="number" name="attr_willenskraft_mod"/>
+              </div>
+            </div>
+            <div class="sheet-fertigkeiten-zeile">
+              <div> <span data-i18n="wurfwaffen"></span></div>
+              <div><span data-i18n="geschick_kurz"></span></div>
+              <div>
+                <input type="number" name="attr_wurfwaffen"/>
+              </div>
+              <div>
+                <input type="number" name="attr_wurfwaffen_mod"/>
+              </div>
+            </div>
+            <div class="sheet-fertigkeiten-zeile">
+              <div> <span data-i18n="zero-g"></span></div>
+              <div><span data-i18n="beweglichkeit_kurz"></span></div>
+              <div>
+                <input type="number" name="attr_zero-g"/>
+              </div>
+              <div>
+                <input type="number" name="attr_zero-g_mod"/>
+              </div>
+            </div>
+        </div>
+      </div>
+      <div class="sheet-box">
+        <h1 data-i18n="besondere-fertigkeiten">
+          <div class="sheet-besondere-fertigkeiten-zeile">
+            <div class="sheet-kopfzeile"><span data-i18n="fertigkeit"></span></div>
+            <div class="sheet-kopfzeile"><span data-i18n="stufe"></span></div>
+          </div>
+          <fieldset class="repeating_besondere-fertigkeiten">
+            <div class="sheet-besondere-fertigkeiten-zeile">
+              <div>
+                <input type="text" name="attr_besondere-fertigkeit-name"/>
+              </div>
+              <div>
+                <input type="number" name="attr_besondere-fertigkeit-stufe"/>
+              </div>
+            </div>
+          </fieldset>
+        </h1>
+      </div>
+    </div>
+    <div>
+      <div class="sheet-box">
+        <div class="sheet-trefferzonen-liste">
+            <div class="sheet-trefferzonen-eintrag">
+              <div class="sheet-trefferzone-kopfzeile">
+                <div class="sheet-kopfzeile"><span data-i18n="zone"></span></div>
+                <div class="sheet-kopfzeile"><span data-i18n="ruestungswert_kurz"></span></div>
+                <div class="sheet-kopfzeile"><span data-i18n="materialkomponente_kurz"></span></div>
+              </div>
+              <div class="sheet-trefferzone-zeile">
+                <div>zone</div>
+                <div>
+                  <input type="number" name="attr_ruestungswert-zone-12"/>
+                </div>
+                <div>
+                  <input type="text" maxlength="1" name="attr_mk-zone-12"/>
+                </div>
+              </div>
+            </div>
+            <div class="sheet-trefferzonen-eintrag">
+              <div class="sheet-trefferzone-kopfzeile">
+                <div class="sheet-kopfzeile"><span data-i18n="zone"></span></div>
+                <div class="sheet-kopfzeile"><span data-i18n="ruestungswert_kurz"></span></div>
+                <div class="sheet-kopfzeile"><span data-i18n="materialkomponente_kurz"></span></div>
+              </div>
+              <div class="sheet-trefferzone-zeile">
+                <div>zone</div>
+                <div>
+                  <input type="number" name="attr_ruestungswert-zone-11"/>
+                </div>
+                <div>
+                  <input type="text" maxlength="1" name="attr_mk-zone-11"/>
+                </div>
+              </div>
+            </div>
+            <div class="sheet-trefferzonen-eintrag">
+              <div class="sheet-trefferzone-kopfzeile">
+                <div class="sheet-kopfzeile"><span data-i18n="zone"></span></div>
+                <div class="sheet-kopfzeile"><span data-i18n="ruestungswert_kurz"></span></div>
+                <div class="sheet-kopfzeile"><span data-i18n="materialkomponente_kurz"></span></div>
+              </div>
+              <div class="sheet-trefferzone-zeile">
+                <div>zone</div>
+                <div>
+                  <input type="number" name="attr_ruestungswert-zone-6"/>
+                </div>
+                <div>
+                  <input type="text" maxlength="1" name="attr_mk-zone-6"/>
+                </div>
+              </div>
+            </div>
+            <div class="sheet-trefferzonen-eintrag">
+              <div class="sheet-trefferzone-kopfzeile">
+                <div class="sheet-kopfzeile"><span data-i18n="zone"></span></div>
+                <div class="sheet-kopfzeile"><span data-i18n="ruestungswert_kurz"></span></div>
+                <div class="sheet-kopfzeile"><span data-i18n="materialkomponente_kurz"></span></div>
+              </div>
+              <div class="sheet-trefferzone-zeile">
+                <div>zone</div>
+                <div>
+                  <input type="number" name="attr_ruestungswert-zone-10"/>
+                </div>
+                <div>
+                  <input type="text" maxlength="1" name="attr_mk-zone-10"/>
+                </div>
+              </div>
+            </div>
+            <div class="sheet-trefferzonen-eintrag">
+              <div class="sheet-trefferzone-kopfzeile">
+                <div class="sheet-kopfzeile"><span data-i18n="zone"></span></div>
+                <div class="sheet-kopfzeile"><span data-i18n="ruestungswert_kurz"></span></div>
+                <div class="sheet-kopfzeile"><span data-i18n="materialkomponente_kurz"></span></div>
+              </div>
+              <div class="sheet-trefferzone-zeile">
+                <div>zone</div>
+                <div>
+                  <input type="number" name="attr_ruestungswert-zone-5"/>
+                </div>
+                <div>
+                  <input type="text" maxlength="1" name="attr_mk-zone-5"/>
+                </div>
+              </div>
+            </div>
+            <div class="sheet-trefferzonen-eintrag">
+              <div class="sheet-trefferzone-kopfzeile">
+                <div class="sheet-kopfzeile"><span data-i18n="zone"></span></div>
+                <div class="sheet-kopfzeile"><span data-i18n="ruestungswert_kurz"></span></div>
+                <div class="sheet-kopfzeile"><span data-i18n="materialkomponente_kurz"></span></div>
+              </div>
+              <div class="sheet-trefferzone-zeile">
+                <div>zone</div>
+                <div>
+                  <input type="number" name="attr_ruestungswert-zone-9"/>
+                </div>
+                <div>
+                  <input type="text" maxlength="1" name="attr_mk-zone-9"/>
+                </div>
+              </div>
+            </div>
+            <div class="sheet-trefferzonen-eintrag">
+              <div class="sheet-trefferzone-kopfzeile">
+                <div class="sheet-kopfzeile"><span data-i18n="zone"></span></div>
+                <div class="sheet-kopfzeile"><span data-i18n="ruestungswert_kurz"></span></div>
+                <div class="sheet-kopfzeile"><span data-i18n="materialkomponente_kurz"></span></div>
+              </div>
+              <div class="sheet-trefferzone-zeile">
+                <div>zone</div>
+                <div>
+                  <input type="number" name="attr_ruestungswert-zone-4"/>
+                </div>
+                <div>
+                  <input type="text" maxlength="1" name="attr_mk-zone-4"/>
+                </div>
+              </div>
+            </div>
+            <div class="sheet-trefferzonen-eintrag">
+              <div class="sheet-trefferzone-kopfzeile">
+                <div class="sheet-kopfzeile"><span data-i18n="zone"></span></div>
+                <div class="sheet-kopfzeile"><span data-i18n="ruestungswert_kurz"></span></div>
+                <div class="sheet-kopfzeile"><span data-i18n="materialkomponente_kurz"></span></div>
+              </div>
+              <div class="sheet-trefferzone-zeile">
+                <div>zone</div>
+                <div>
+                  <input type="number" name="attr_ruestungswert-zone-8"/>
+                </div>
+                <div>
+                  <input type="text" maxlength="1" name="attr_mk-zone-8"/>
+                </div>
+              </div>
+            </div>
+            <div class="sheet-trefferzonen-eintrag">
+              <div class="sheet-trefferzone-kopfzeile">
+                <div class="sheet-kopfzeile"><span data-i18n="zone"></span></div>
+                <div class="sheet-kopfzeile"><span data-i18n="ruestungswert_kurz"></span></div>
+                <div class="sheet-kopfzeile"><span data-i18n="materialkomponente_kurz"></span></div>
+              </div>
+              <div class="sheet-trefferzone-zeile">
+                <div>zone</div>
+                <div>
+                  <input type="number" name="attr_ruestungswert-zone-3"/>
+                </div>
+                <div>
+                  <input type="text" maxlength="1" name="attr_mk-zone-3"/>
+                </div>
+              </div>
+            </div>
+            <div class="sheet-trefferzonen-eintrag">
+              <div class="sheet-trefferzone-kopfzeile">
+                <div class="sheet-kopfzeile"><span data-i18n="zone"></span></div>
+                <div class="sheet-kopfzeile"><span data-i18n="ruestungswert_kurz"></span></div>
+                <div class="sheet-kopfzeile"><span data-i18n="materialkomponente_kurz"></span></div>
+              </div>
+              <div class="sheet-trefferzone-zeile">
+                <div>zone</div>
+                <div>
+                  <input type="number" name="attr_ruestungswert-zone-7"/>
+                </div>
+                <div>
+                  <input type="text" maxlength="1" name="attr_mk-zone-7"/>
+                </div>
+              </div>
+            </div>
+            <div class="sheet-trefferzonen-eintrag">
+              <div class="sheet-trefferzone-kopfzeile">
+                <div class="sheet-kopfzeile"><span data-i18n="zone"></span></div>
+                <div class="sheet-kopfzeile"><span data-i18n="ruestungswert_kurz"></span></div>
+                <div class="sheet-kopfzeile"><span data-i18n="materialkomponente_kurz"></span></div>
+              </div>
+              <div class="sheet-trefferzone-zeile">
+                <div>zone</div>
+                <div>
+                  <input type="number" name="attr_ruestungswert-zone-2"/>
+                </div>
+                <div>
+                  <input type="text" maxlength="1" name="attr_mk-zone-2"/>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+      <div class="sheet-box">
+        <h1 data-i18n="style-skills"></h1>
+        <div class="sheet-style-skills-zeile">
+          <div class="sheet-kopfzeile"><span data-i18n="style-skill"></span></div>
+          <div class="sheet-kopfzeile"><span data-i18n="stufe"></span></div>
+        </div>
+        <fieldset class="repeating_style-skills">
+          <div class="sheet-style-skills-zeile">
+            <div>
+              <input type="text" name="attr_style-skill-name"/>
+            </div>
+            <div>
+              <input type="number" name="attr_style-skill-stufe"/>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <div class="sheet-box">
+        <h1 data-i18n="charaktermerkmale"></h1>
+        <div class="sheet-charaktermerkmale-zeile">
+          <div class="sheet-kopfzeile"><span data-i18n="charaktermerkmal"></span></div>
+          <div class="sheet-kopfzeile"><span data-i18n="jp-cp"></span></div>
+        </div>
+        <fieldset class="repeating_charaktermerkmale">
+          <div class="sheet-charaktermerkmale-zeile">
+            <div>
+              <input type="text" name="attr_charaktermerkmal-name"/>
+            </div>
+            <div>
+              <input type="number" name="attr_charaktermerkmal-stufe"/>
+            </div>
+          </div>
+        </fieldset>
+      </div>
     </div>
   </div>
   <div class="sheet-page-two">
