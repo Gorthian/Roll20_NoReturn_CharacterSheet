@@ -1,0 +1,73 @@
+//-
+    CREATED by          Gorthian
+    Letzte Änderung		2022-10-29
+
+//
+    ********************************
+    * START src/html/page-one/block-one.pug
+    ********************************
+
+//- MIXINs
+mixin input-text(attribute, i18n)
+    // MIXIN : src/html/page-one/block-one.pug : input-text
+    div 
+        span(class="sheet-input-label" data-i18n=i18n)
+    div
+        input(type="text" name="attr_"+attribute)
+
+mixin max-current(attribute)
+    // MIXIN : src/html/page-one/block-one.pug : max-current
+    div(class="sheet-max-current")
+        h2(data-i18n=attribute)
+        p
+            span(data-i18n="gesamt")            
+            span(data-i18n="aktuell")
+        div(class="sheet-max-current-box")
+            input(type="number" name="attr_"+attribute+"_max") 
+            input(type="number" name="attr_"+attribute+"_current")
+
+
+//- SEITENINHALT
+div(class="sheet-3cols")
+    div(class="sheet-box")
+        h1(data-i18n="charakterdaten")
+        div(class="sheet-input-line")
+            +input-text("character_name","charaktername")
+        div(class="sheet-input-line")
+            +input-text("spezies","spezies")
+        div(class="sheet-input-line")
+            +input-text("geschlecht","geschlecht")
+            +input-text("alter","alter")
+        div(class="sheet-input-line")
+            +input-text("größe","größe")
+            +input-text("gewicht","gewicht")
+        div(class="sheet-input-line")
+            textarea(name="attr_aussehen") 
+    div(class="sheet-box")
+    div(classs="sheet-logo")
+        img(src="http://roll20.gorthian.de/noreturn/logo_200px.png")
+    div(class="sheet-input-line")
+        +input-text("player_name","spieler")
+    div(class="sheet-input-line")
+        +input-text("erstellungsdatum","erstellungsdatum")
+    div(class="sheet-input-line")
+        +input-text("charakterkonzept","charakterkonzept")
+    div(class="sheet-box")
+    h1(data-i18n="charakterkonditionen")
+    div(class="sheet-input-line")
+        +input-text("organismus","organismus")
+    div(class="sheet-input-line")
+        +input-text("psyche","psyche")
+    div(class="sheet-input-line")
+        +input-text("infektionsresistenz","infektionsresistenz")
+    div(class="sheet-input-line")
+        +input-text("butterflyeffekt","butterflyeffekt")
+    div(class="sheet-3cols")
+        +max-current("erfahrung")
+        +max-current("justicepoints")
+        +max-current("chaospoints")
+
+//
+    ********************************
+    * ENDE src/html/page-one/block-one.pug
+    ********************************

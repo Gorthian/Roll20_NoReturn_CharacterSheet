@@ -1,0 +1,102 @@
+//-
+    CREATED by          Gorthian
+    Letzte Änderung		2022-10-29
+
+//
+    ********************************
+    * START src/html/page-one/block-two.pug
+    ********************************
+
+//- MIXINs
+mixin kopfzeile
+    // MIXIN : src/html/page-one/block-two.pug : kopfzeile
+    div(class="sheet-attribut-zeile")
+        div 
+        div(class="sheet-kopfzeile")
+            span(data-i18n="stufe")
+        div(class="sheet-kopfzeile")
+            span(data-i18n="modifikatoren")
+        div
+
+mixin attributszeile(attribute)
+    // MIXIN : src/html/page-one/block-two.pug : attributszeile
+    div(class="sheet-attribut-zeile")
+        div(class="sheet-titel")
+            span(data-i18n=attribute)
+        div
+            input(type="number" name="attr_"+attribute)
+        div
+            input(type="number" name="attr_"+attribute+"mod1")
+            input(type="number" name="attr_"+attribute+"mod2")
+        div 
+            | [
+            span(data-i18n=attribute+"_kurz")
+            | ]
+
+mixin sonderattributskopfzeile()
+    // MIXIN : src/html/page-one/block-two.pug : sonderattributskopfzeile
+    div(class="sheet-sonderattribut-zeile")
+        div 
+        div(class="sheet-kopfzeile")
+            span(data-i18n="stufe")
+
+mixin sonderattributszeile(attribute)
+    // MIXIN : src/html/page-one/block-two.pug : sonderattributszeile
+    div(class="sheet-sonderattribut-zeile")
+        div(class="sheet-sonderattribut-titel")
+            span(data-i18n=attribute)
+        div
+            input(type="number" name="attr_"+attribute)
+
+//- SEITENINHALT
+div(class="sheet-2cols")
+    div(class="sheet-box")
+        h1(data-i18n="attribute")
+        div(class="sheet-attribute")
+            div
+                +kopfzeile
+                +attributszeile("geschick")
+                +attributszeile("staerke")
+                +attributszeile("konstitution")
+                +attributszeile("beweglichkeit")
+            div
+                +kopfzeile
+                +attributszeile("wahrnehmung")
+                +attributszeile("wissen")
+                +attributszeile("charisma")
+                +attributszeile("handwerk")
+        p 
+        div(class="sheet-sonderattribute")
+            div
+                div(class="sheet-sonderattribut-zeile")
+                    div 
+                    div 
+                +sonderattributszeile("trefferpunkte")
+                +sonderattributszeile("dmg_schwellwert")
+            div 
+                +sonderattributskopfzeile()
+                +sonderattributszeile("schmerztoleranz")
+            div 
+                +sonderattributskopfzeile()
+                +sonderattributszeile("adrenalin")
+                +sonderattributszeile("meditation")
+    div(class="sheet-trefferzonen")
+        h1(data-i18n="körperzonen")
+        div(class="sheet-trefferzonen-bild")
+            img(src="https://gorthian.de/roll20/noreturn/trefferzonen_300px.png")
+            div(class="sheet-trefferzonen-regeneration")
+                div(class="sheet-titel")
+                    span(data-i18n="regeneration")
+                    div
+                        span(data-i18n="geschwindigkeit")
+                        | &nbsp;/&nbsp;
+                        span(data-i18n="pool")
+                    div
+                        input(type="number" name="attr_regeneration-geschwindigkeit")
+                        | &nbsp;/&nbsp;
+                        input(type="number" name="attr_regeneration-pool")
+
+//
+    ********************************
+    * ENDE src/html/page-one/block-two.pug
+    ********************************
