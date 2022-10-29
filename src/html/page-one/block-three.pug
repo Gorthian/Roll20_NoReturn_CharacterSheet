@@ -20,23 +20,6 @@ mixin fertigkeitszeile(skill,attribute)
         div
             input(type="number" name="attr_"+skill+"_mod")
 
-mixin trefferzone(zone)
-    // MIXIN : src/html/page-one/block-three.pug : trefferzone
-    div(class="sheet-trefferzonen-eintrag")
-        div(class="sheet-trefferzone-kopfzeile")
-            div(class="sheet-kopfzeile")
-                span(data-i18n="zone")
-            div(class="sheet-kopfzeile")
-                span(data-i18n="ruestungswert_kurz")
-            div(class="sheet-kopfzeile")
-                span(data-i18n="materialkomponente_kurz")
-        div(class="sheet-trefferzone-zeile")
-            div zone
-            div
-                input(type="number" name="attr_ruestungswert-zone-"+zone)
-            div
-                input(type="text" maxlength="1" name="attr_mk-zone-"+zone)
-
 //- SEITENINHALT
 div(class="sheet-3cols")
     include block-three-first-row.pug
