@@ -1,17 +1,20 @@
 //
     CREATED by          Gorthian
-    Version				1.0
-    Letzte Änderung		2022-10-27
+    Version				CF Release
+    Letzte Änderung		2022-10-29
     GitHub				https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet
     Wiki				https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/wiki
     Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
 
+// Globale Variablen
 -
+    //- Liste der verfügbaren Seiten. Bei Änderungen auch button-list ind src/js/sheetworker.js anpassen
     var pages = [
         {name:'one', i18n:'seite-1'},
         {name:'two', i18n:'seite-2'},
     ];
 
+    //- Liste der Fähigkeiten
     var i=0
     var skills = [
         {id:i++,name:'akrobatik', attribute:'beweglichkeit'},
@@ -75,6 +78,11 @@
         {id:i++,name:'zero-g', attribute:'beweglichkeit'},
     ]
 
+//
+    ********************************
+    * START noreturn.pug
+    ********************************
+
 div(class="sheet-noreturn")
     input(type="hidden" class="sheet-tabstoggle" name="attr_sheetTab" value="page-one")
     div(class="sheet-tabs")
@@ -86,3 +94,8 @@ div(class="sheet-noreturn")
 // SHEET WORKERS
 script(type="text/worker")
     include src/js/sheetworker.js
+
+//
+    ********************************
+    * ENDE noreturn.pug
+    ********************************

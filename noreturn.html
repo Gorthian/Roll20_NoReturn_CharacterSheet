@@ -1,11 +1,18 @@
 
 <!--
 CREATED by          Gorthian
-Version				1.0
+Version				CF Release
 Letzte Änderung		2022-10-27
 GitHub				https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet
 Wiki				https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/wiki
 Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
+
+-->
+<!-- Globale Variablen-->
+<!--
+********************************
+* START noreturn.pug
+********************************
 
 -->
 <div class="sheet-noreturn">
@@ -14,6 +21,12 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
     <button class="sheet-toggle-button" type="action" name="act_page-one" data-i18n="seite-1"></button>
     <button class="sheet-toggle-button" type="action" name="act_page-two" data-i18n="seite-2"></button>
   </div>
+  <!--
+  ********************************
+  * START src/html/page-one.pug
+  ********************************
+  
+  -->
   <div class="sheet-page-one">
     <div class="sheet-3cols">
       <div class="sheet-box">
@@ -1156,13 +1169,18 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
       </div>
     </div>
   </div>
+  <!--
+  ********************************
+  * ENDE src/html/page-one.pug
+  ********************************
+  -->
   <div class="sheet-page-two">
     <Seite>2</Seite>
   </div>
 </div>
 <!-- SHEET WORKERS-->
 <script type="text/worker">/* TAB MENU */
-const buttonlist = ["page-one","page-two"];
+const buttonlist = ["page-one","page-two"]; //Bei Änderungen auch doe globale Variable in noreturn.pug anpassen
 buttonlist.forEach(button => {
     on(`clicked:${button}`, function() {
         console.log(button);
@@ -1172,3 +1190,8 @@ buttonlist.forEach(button => {
     });
 });
 </script>
+<!--
+********************************
+* ENDE noreturn.pug
+********************************
+-->
