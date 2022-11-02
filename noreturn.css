@@ -65,6 +65,12 @@ div.sheet-noreturn .sheet-2cols {
 	width					: var(--max-line-width);
 }
 
+div.sheet-noreturn .sheet-2cols-50-50 {
+	display                 : grid;
+    grid-template-columns   : 50% 50%;
+	width					: var(--max-line-width);
+}
+
 div.sheet-noreturn h1, div.sheet-noreturn h2 {
     font-family				: "downcome";
 	text-transform          : uppercase;

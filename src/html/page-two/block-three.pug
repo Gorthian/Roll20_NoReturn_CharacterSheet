@@ -7,16 +7,23 @@
     * START src/html/page-two/block-three.pug
     ********************************
 //- MIXINs
+mixin repeating-textarea(name)
+    // MIXIN : src/html/page-two/block-three.pug : max-current
+    div(class="sheet-box")
+        h1(data-i18n=name)
+        fieldset(class="repeating_"+name)
+            textarea(name="attr_"+name)
 
 //- SEITENINHALT
 div(class="sheet-2cols")
     div 
         // include block-three-kampf.pug 
-        div(class="sheet-2cols")
-            // include block-three-bio.pug
+        div(class="sheet-2cols-50-50")
+            +repeating-textarea("bio-abnormitaeten")
+            +repeating-textarea("bio-eigenschaften")
     div 
-        // include block-three-notiz.pug 
-        // include block-three-physio.pug 
+        +repeating-textarea("wichtige-notiz")
+        +repeating-textarea("physiologische-stoerungen")
     
 //
     ********************************
