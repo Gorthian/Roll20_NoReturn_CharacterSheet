@@ -4,19 +4,18 @@
 
 //
     ********************************
-    * START src/html/page-two.pug
+    * START src/html/page-two/block-four.pug
     ********************************
-
 //- MIXINs
 
 //- SEITENINHALT
-div(class="sheet-page-two")
-    include page-two/block-one.pug
-    include page-two/block-two.pug
-    include page-two/block-three.pug
-    include page-two/block-four.pug
-
+div(class="sheet-2cols")
+    div(class="sheet-box")
+        h1(data-i18n="sprachkenntnisse")
+    div(class="sheet-box")
+        h1(data-i18n="vor-nachteile")
+    
 //
     ********************************
-    * ENDE src/html/page-two.pug
+    * ENDE src/html/page-two/block-four.pug
     ********************************

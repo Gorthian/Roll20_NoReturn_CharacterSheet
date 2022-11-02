@@ -82,7 +82,15 @@
     ********************************
     * START noreturn.pug
     ********************************
+//- MIXINs
+mixin input-text(attribute, i18n)
+    // MIXIN : noreturn.pug : input-text
+    div 
+        span(class="sheet-input-label" data-i18n=i18n)
+    div
+        input(type="text" name="attr_"+attribute)
 
+//- SEITENINHALT     
 div(class="sheet-noreturn")
     input(type="hidden" class="sheet-tabstoggle" name="attr_sheetTab" value="page-one")
     div(class="sheet-tabs")
