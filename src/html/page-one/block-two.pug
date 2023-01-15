@@ -1,6 +1,6 @@
 //-
     CREATED by          Gorthian
-    Letzte Änderung		2022-10-29
+    Letzte Änderung		2023-01-15
 
 //
     ********************************
@@ -28,7 +28,7 @@ mixin attributszeile(attribute)
         div
             input(type="number" name="attr_"+attribute+"mod1")
             input(type="number" name="attr_"+attribute+"mod2")
-        div 
+        div(class="sheet-font-darkgray-highlight") 
             | [
             span(data-i18n=attribute+"_kurz")
             | ]
@@ -87,7 +87,7 @@ div(class="sheet-2cols")
             div(class="sheet-trefferzonen-regeneration")
                 div(class="sheet-titel")
                     span(data-i18n="regeneration")
-                    div
+                    div(class="sheet-font-small-highlight")
                         span(data-i18n="geschwindigkeit")
                         | &nbsp;/&nbsp;
                         span(data-i18n="pool")

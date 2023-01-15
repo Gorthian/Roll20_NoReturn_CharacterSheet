@@ -329,7 +329,9 @@ div.sheet-noreturn {
 	--font-highlight		: "downcome";
 	--font-h1-size			: 14pt;
 	--font-h2-size			: 10pt;
+	--font-big-size			: 12pt;
 	--font-standard-size	: 10pt;
+	--font-middle-size		: 8pt;
 	--font-small-size		: 7pt;
 }
 
@@ -356,40 +358,34 @@ div.sheet-noreturn h2 {font-size : var(--font-h2-size);}
 	text-transform          : none;
 }
 
+div.sheet-noreturn div.sheet-kopfzeile,
+div.sheet-noreturn div.sheet-titel,
+div.sheet-noreturn div.sheet-sonderattribut-zeile div.sheet-sonderattribut-titel {
+    font-family				: var(--font-highlight);
+	text-transform          : uppercase;		
+}
+
 div.sheet-noreturn div.sheet-kopfzeile {
-    text-transform          : uppercase;
-	font-weight				: bold;
-	font-size				: 9px;
+	font-size				: var(--font-middle-size);
 }
 
 div.sheet-noreturn div.sheet-titel,
 div.sheet-noreturn div.sheet-sonderattribut-zeile div.sheet-sonderattribut-titel {
-    text-transform          : uppercase;
-	font-weight				: bold;
-	font-size				: 11px;
+	font-size				: var(--font-big-size);
 }
 
-div.sheet-noreturn div.sheet-trefferzonen-regeneration input[type="number"],
-div.sheet-noreturn div.sheet-trefferzonen-regeneration input[type="text"] {
-	font-size				: 17px;
+div.sheet-noreturn input {
+	font-family				: var(--font-standard);
+    font-size               : var(--font-standard-size);
 }
 
 div.sheet-noreturn div.sheet-trefferzonen-liste div.sheet-trefferzone-zeile div:first-child {
 	font-weight				: bold;	
 }
 
-div.sheet-noreturn div.sheet-trefferzone-zeile input[type="number"],
-div.sheet-noreturn div.sheet-trefferzone-zeile input[type="text"] {
-	font-size				: 17px;
-}
-
 div.sheet-noreturn div.sheet-trefferzone-zeile input[type="text"] {
 	text-transform          : uppercase;
 	font-weight				: bold;
-}
-
-div.sheet-noreturn div.sheet-max-current p {
-    font-size               : 10px;
 }
 
 div.sheet-noreturn .sheet-input-line span.sheet-input-label {
@@ -400,10 +396,13 @@ div.sheet-noreturn .sheet-input-line span.sheet-input-label {
 
 .sheet-font-small-highlight {
 	font-family				: var(--font-highlight);
-	font-size				: var(--font-small-size;
+	font-size				: var(--font-small-size);
 	text-transform          : uppercase;
 }
 
-
-
-
+.sheet-font-darkgray-highlight {
+	font-family				: var(--font-highlight);
+	font-size				: var(--font-big-size);
+	text-transform          : uppercase;
+	color					: darkgray;
+}
