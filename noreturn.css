@@ -1,52 +1,57 @@
 /*
 	CREATED by 			Gorthian
 	Version				1.0
-	Letzte Änderung		2022-10-04
+	Letzte Änderung		2023-01-15
 	
 	GitHub				https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet
 	Wiki				https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/wiki
 	Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
 */
 
-@font face {
+@font-face {
     font-family "downcome";
     src: url("https://gorthian.de/roll20/noreturn/fonts/DOWNCOME.TTF") format ("truetype");
 }
 
-@font face {	
-    font-family "eras bold itc";
+@font-face {	
+    font-family "eras bold";
     src: url("https://gorthian.de/roll20/noreturn/fonts/ERASBD.TTF") format ("truetype");
 }
 
-@font face {
-    font-family "eras demi itc";
+@font-face {
+    font-family "eras demi";
     src: url("https://gorthian.de/roll20/noreturn/fonts/ERASDEMI.TTF") format ("truetype");
 }
 
-@font face {
-    font-family "eras light itc";
+@font-face {
+    font-family "eras light";
     src: url("https://gorthian.de/roll20/noreturn/fonts/ERASLGHT.TTF") format ("truetype");
 }
 
-@font face {
-    font-family "eras medium itc";
+@font-face {
+    font-family "eras medium";
     src: url("https://gorthian.de/roll20/noreturn/fonts/ERASMD.TTF") format ("truetype");
 }
 
 div.sheet-noreturn {
+	--max-line-width		: 98%;
+	--font-standard			: "eras medium";
+	--font-highlight		: "downcome";
+	--font-h1-size			: 20px;
+	--font-h2-size			: 18px;
+	--font-standard-size	: 12px;
+
     width               	: auto;
 	min-width              	: 800px;
     background-color        : white;
     display                 : grid;
 	grid-template-columns	: 20px auto;
-	font-family				: "eras bold itc";
-    font-size               : 12px;
+	font-family				: var(--font-standard);
+    font-size               : var(--font-standard-size);
 	background-image		: url("https://gorthian.de/roll20/noreturn/background_800px.png");
 	background-repeat		: no-repeat;
 	background-size			: cover;
-	padding					: 15px;
-	
-	--max-line-width		: 98%;
+	padding					: 15px;	
 }
 
 div.sheet-noreturn .sheet-logo {
@@ -72,7 +77,7 @@ div.sheet-noreturn .sheet-2cols-50-50 {
 }
 
 div.sheet-noreturn h1, div.sheet-noreturn h2 {
-    font-family				: "downcome";
+    font-family				: var(--font-highlight);
 	text-transform          : uppercase;
     color                   : whitesmoke;
     text-shadow             : -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
@@ -82,8 +87,8 @@ div.sheet-noreturn h1, div.sheet-noreturn h2 {
     top                     : -18px;
 }
 
-div.sheet-noreturn h1 {font-size : 20px;}
-div.sheet-noreturn h2 {font-size : 18px;}
+div.sheet-noreturn h1 {font-size : var(--font-h1-size);}
+div.sheet-noreturn h2 {font-size : var(--font-h2-size);}
 
 div.sheet-noreturn div.sheet-box {
     background-image		: url("https://gorthian.de/roll20/noreturn/white60tranz_10x10.png");
@@ -334,7 +339,7 @@ input[type=number] {
 /*Configure the tab buttons*/
 button.sheet-toggle-button {
 	transform				: rotate(-90deg);
-	font-family				: "downcome";
+	font-family				: var(--font-highlight);
 	text-transform          : uppercase;
 	font-size				: 22px;
 	white-space				: nowrap;
