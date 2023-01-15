@@ -1,7 +1,7 @@
 //
     CREATED by          Gorthian
     Version				CF Release
-    Letzte Änderung		2022-10-29
+    Letzte Änderung		2023-01-15
     GitHub				https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet
     Wiki				https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/wiki
     Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
@@ -90,7 +90,7 @@ mixin input-text(attribute, i18n)
     div
         input(type="text" name="attr_"+attribute)
 
-//- SEITENINHALT     
+//- SEITENINHALT
 div(class="sheet-noreturn")
     input(type="hidden" class="sheet-tabstoggle" name="attr_sheetTab" value="page-one")
     div(class="sheet-tabs")
@@ -98,6 +98,9 @@ div(class="sheet-noreturn")
             button(class="sheet-toggle-button" type="action" name="act_page-"+page.name data-i18n=page.i18n)
     include src/html/page-one.pug
     include src/html/page-two.pug
+
+//- ROLL TEMPLATES
+include src/html/rolltemplates.pug
 
 // SHEET WORKERS
 script(type="text/worker")

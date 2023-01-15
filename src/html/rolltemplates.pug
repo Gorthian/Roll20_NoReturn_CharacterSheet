@@ -1,0 +1,33 @@
+//-
+    CREATED by          Gorthian
+    Letzte Änderung		2023-01-15
+
+//
+    ********************************
+    * START src/html/rolltemplate.pug
+    ********************************
+
+//- MIXINs
+mixin rolltemplate-header(text)
+    // MIXIN : rolltemplate.pug : rolltemplate-row
+    div(class="sheet-template-header")= text
+
+mixin rolltemplate-row(text, wert)
+    // MIXIN : rolltemplate.pug : rolltemplate-row
+    div(class="sheet-template-row") 
+        span= text 
+        span= wert
+
+//- SEITENINHALT
+
+//- Offene Probe auf Fertigkeiten
+rolltemplate(class="sheet-rolltemplate-offen-fertigkeit")
+    div(class="sheet-template-container")
+        +rolltemplate-header("{{fertigkeit}}")
+        +rolltemplate-row("Mindestwurf","{{mindestwurf}}")
+        +rolltemplate-row("Ergebnis","{{ergebnis}}")
+
+//
+    ********************************
+    * ENDE src/html/rolltemplate.pug
+    ********************************
