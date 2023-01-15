@@ -212,7 +212,7 @@ div.sheet-noreturn div.sheet-trefferzonen-liste div.sheet-trefferzonen-eintrag:f
 
 div.sheet-noreturn div.sheet-trefferzonen-liste div.sheet-trefferzonen-eintrag > div {
 	display                 : grid;
-    grid-template-columns   : repeat(3, 35px);
+    grid-template-columns   : repeat(4, 26px);
 	white-space				: nowrap;
 }
 

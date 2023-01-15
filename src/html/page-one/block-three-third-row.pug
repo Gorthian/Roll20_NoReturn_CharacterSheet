@@ -1,6 +1,6 @@
 //-
     CREATED by          Gorthian
-    Letzte Änderung		2022-10-29
+    Letzte Änderung		2023-01-15
 
 //
     ********************************
@@ -15,12 +15,16 @@ mixin trefferzone(zone)
             div(class="sheet-kopfzeile")
                 span(data-i18n="zone")
             div(class="sheet-kopfzeile")
+                span(data-i18n="trefferpunkte_kurz")
+            div(class="sheet-kopfzeile")
                 span(data-i18n="ruestungswert_kurz")
             div(class="sheet-kopfzeile")
                 span(data-i18n="materialkomponente_kurz")
         div(class="sheet-trefferzone-zeile")
             div 
                 span= zone
+            div
+                input(type="number" name="attr_trefferpunkte-zone-"+zone)
             div
                 input(type="number" name="attr_ruestungswert-zone-"+zone)
             div
