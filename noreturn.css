@@ -8,6 +8,7 @@
 	Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
 */
 
+/* Externe Schriftarten einbinden */
 @font-face {
     font-family "downcome";
     src: url("https://gorthian.de/roll20/noreturn/fonts/DOWNCOME.TTF") format ("truetype");
@@ -33,21 +34,17 @@
     src: url("https://gorthian.de/roll20/noreturn/fonts/ERASMD.TTF") format ("truetype");
 }
 
+/* CSS-Variablen für den Sheet */
 div.sheet-noreturn {
 	--max-line-width		: 98%;
-	--font-standard			: "eras medium";
-	--font-highlight		: "downcome";
-	--font-h1-size			: 20px;
-	--font-h2-size			: 18px;
-	--font-standard-size	: 12px;
+}
 
+div.sheet-noreturn {
     width               	: auto;
 	min-width              	: 800px;
     background-color        : white;
     display                 : grid;
 	grid-template-columns	: 20px auto;
-	font-family				: var(--font-standard);
-    font-size               : var(--font-standard-size);
 	background-image		: url("https://gorthian.de/roll20/noreturn/background_800px.png");
 	background-repeat		: no-repeat;
 	background-size			: cover;
@@ -76,19 +73,11 @@ div.sheet-noreturn .sheet-2cols-50-50 {
 	width					: var(--max-line-width);
 }
 
-div.sheet-noreturn h1, div.sheet-noreturn h2 {
-    font-family				: var(--font-highlight);
-	text-transform          : uppercase;
-    color                   : whitesmoke;
-    text-shadow             : -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+div.sheet-noreturn h1, div.sheet-noreturn h2 {    
     width                   : 100%;
-    text-align              : center;
     position                : relative;
     top                     : -18px;
 }
-
-div.sheet-noreturn h1 {font-size : var(--font-h1-size);}
-div.sheet-noreturn h2 {font-size : var(--font-h2-size);}
 
 div.sheet-noreturn div.sheet-box {
     background-image		: url("https://gorthian.de/roll20/noreturn/white60tranz_10x10.png");
@@ -107,19 +96,16 @@ div.sheet-noreturn .sheet-sonderattribute {
 }
 
 div.sheet-noreturn .sheet-attribut-zeile {
-	text-transform          : uppercase;
 	display                 : grid;
     grid-template-columns   : 100px 40px 85px 10px;
 }
 
 div.sheet-noreturn .sheet-sonderattribut-zeile {
-	text-transform          : uppercase;
 	display                 : grid;
     grid-template-columns   : 120px 40px;
 }
 
-div.sheet-noreturn .sheet-fertigkeiten-zeile {
-	text-transform          : none;
+div.sheet-noreturn .sheet-fertigkeiten-zeile {	
 	display                 : grid;
     grid-template-columns   : 120px repeat(3, 40px);
 }
@@ -127,7 +113,6 @@ div.sheet-noreturn .sheet-fertigkeiten-zeile {
 div.sheet-noreturn .sheet-besondere-fertigkeiten-zeile,
 div.sheet-noreturn .sheet-style-skills-zeile,
 div.sheet-noreturn .sheet-charaktermerkmale-zeile {
-	text-transform          : none;
 	display                 : grid;
     grid-template-columns   : 200px 40px;
 }
@@ -171,17 +156,8 @@ div.sheet-noreturn div.sheet-charaktermerkmale-zeile input[type="number"] {
 	top						: 4px;
 }
 
-div.sheet-noreturn div.sheet-kopfzeile {
-    text-transform          : uppercase;
-	font-weight				: bold;
-	font-size				: 9px;
-}
-
 div.sheet-noreturn div.sheet-titel,
 div.sheet-noreturn div.sheet-sonderattribut-zeile div.sheet-sonderattribut-titel {
-    text-transform          : uppercase;
-	font-weight				: bold;
-	font-size				: 11px;
 	height					: 1.5em;
 }
 
@@ -219,7 +195,6 @@ div.sheet-noreturn div.sheet-trefferzonen-regeneration input[type="text"] {
 	top						: -2px;
 	width					: 35px;
 	height					: 17px;
-	font-size				: 17px;
 	text-align				: center;
 }
 
@@ -254,7 +229,6 @@ div.sheet-noreturn div.sheet-trefferzonen-liste div.sheet-trefferzone-zeile div:
 	border-width       		: 2px;
 	border-color			: black;
 	text-align				: center;
-	font-weight				: bold;	
 }
 
 div.sheet-noreturn div.sheet-trefferzone-zeile input[type="number"],
@@ -262,13 +236,7 @@ div.sheet-noreturn div.sheet-trefferzone-zeile input[type="text"] {
 	top						: -2px;
 	width					: 35px;
 	height					: 17px;
-	font-size				: 17px;
 	text-align				: center;
-}
-
-div.sheet-noreturn div.sheet-trefferzone-zeile input[type="text"] {
-	text-transform          : uppercase;
-	font-weight				: bold;
 }
 
 div.sheet-noreturn div.sheet-max-current {
@@ -281,10 +249,6 @@ div.sheet-noreturn div.sheet-max-current div.sheet-max-current-box {
     margin                  : 0 auto auto 0;
     padding                 : 5px;
 	white-space				: nowrap;
-}
-
-div.sheet-noreturn div.sheet-max-current p {
-    font-size               : 10px;
 }
 
 div.sheet-noreturn div.sheet-max-current input[type="number"] {
@@ -304,8 +268,6 @@ div.sheet-noreturn .sheet-input-line div {
 }
 
 div.sheet-noreturn .sheet-input-line span.sheet-input-label {
-    text-transform          : uppercase;
-    font-weight             : bold;
     position                : relative;
     top                     : 7px;
 }
@@ -358,3 +320,90 @@ button.sheet-toggle-button {
 .sheet-tabstoggle[value="page-two"] ~ div.sheet-page-two {
     display: block;
 }
+
+/* Schriftarten definieren */
+
+/* Font-Variablen für den Sheet */
+div.sheet-noreturn {
+	--font-standard			: "eras medium";
+	--font-highlight		: "downcome";
+	--font-h1-size			: 14pt;
+	--font-h2-size			: 10pt;
+	--font-standard-size	: 10pt;
+	--font-small-size		: 7pt;
+}
+
+div.sheet-noreturn {
+    font-family				: var(--font-standard);
+    font-size               : var(--font-standard-size);	
+}
+
+div.sheet-noreturn h1, div.sheet-noreturn h2 {
+    font-family				: var(--font-highlight);
+	text-transform          : uppercase;
+    color                   : whitesmoke;
+    text-shadow             : -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    text-align              : center;
+}
+div.sheet-noreturn h1 {font-size : var(--font-h1-size);}
+div.sheet-noreturn h2 {font-size : var(--font-h2-size);}
+
+.sheet-attribut-zeile, .sheet-sonderattribut-zeile {
+	text-transform          : uppercase;
+}
+
+.sheet-fertigkeiten-zeile, .sheet-besondere-fertigkeiten-zeile, .sheet-style-skills-zeile, .sheet-charaktermerkmale-zeile {
+	text-transform          : none;
+}
+
+div.sheet-noreturn div.sheet-kopfzeile {
+    text-transform          : uppercase;
+	font-weight				: bold;
+	font-size				: 9px;
+}
+
+div.sheet-noreturn div.sheet-titel,
+div.sheet-noreturn div.sheet-sonderattribut-zeile div.sheet-sonderattribut-titel {
+    text-transform          : uppercase;
+	font-weight				: bold;
+	font-size				: 11px;
+}
+
+div.sheet-noreturn div.sheet-trefferzonen-regeneration input[type="number"],
+div.sheet-noreturn div.sheet-trefferzonen-regeneration input[type="text"] {
+	font-size				: 17px;
+}
+
+div.sheet-noreturn div.sheet-trefferzonen-liste div.sheet-trefferzone-zeile div:first-child {
+	font-weight				: bold;	
+}
+
+div.sheet-noreturn div.sheet-trefferzone-zeile input[type="number"],
+div.sheet-noreturn div.sheet-trefferzone-zeile input[type="text"] {
+	font-size				: 17px;
+}
+
+div.sheet-noreturn div.sheet-trefferzone-zeile input[type="text"] {
+	text-transform          : uppercase;
+	font-weight				: bold;
+}
+
+div.sheet-noreturn div.sheet-max-current p {
+    font-size               : 10px;
+}
+
+div.sheet-noreturn .sheet-input-line span.sheet-input-label {
+    font-family				: var(--font-highlight);
+	font-size				: var(--font-h2-size);
+	text-transform          : uppercase;
+}
+
+.sheet-font-small-highlight {
+	font-family				: var(--font-highlight);
+	font-size				: var(--font-small-size;
+	text-transform          : uppercase;
+}
+
+
+
+
