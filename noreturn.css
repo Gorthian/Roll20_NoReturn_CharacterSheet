@@ -1,7 +1,7 @@
 /*
 	CREATED by 			Gorthian
 	Version				1.0
-	Letzte Änderung		2023-01-15
+	Letzte Änderung		2023-01-18
 	
 	GitHub				https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet
 	Wiki				https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/wiki
@@ -37,6 +37,7 @@
 /* CSS-Variablen für den Sheet */
 div.sheet-noreturn {
 	--max-line-width		: 98%;
+	--box-background-image	: url("https://gorthian.de/roll20/noreturn/white60tranz_10x10.png");
 }
 
 div.sheet-noreturn {
@@ -80,7 +81,7 @@ div.sheet-noreturn h1, div.sheet-noreturn h2 {
 }
 
 div.sheet-noreturn div.sheet-box {
-    background-image		: url("https://gorthian.de/roll20/noreturn/white60tranz_10x10.png");
+    background-image		: var(--box-background-image);
 	background-repeat		: repeat;
     margin                  : 5px;
 }
@@ -186,7 +187,7 @@ div.sheet-noreturn div.sheet-trefferzonen-regeneration div:nth-child(3) {
 }
 
 div.sheet-noreturn div.sheet-trefferzonen-regeneration div {
-    background-image		: url("https://gorthian.de/roll20/noreturn/white60tranz_10x10.png");
+    background-image		: var(--box-background-image);
 	background-repeat		: repeat;
 }
 
@@ -321,6 +322,17 @@ button.sheet-toggle-button {
     display: block;
 }
 
+/* Buttons */
+
+.sheet-fertigkeiten-zeile button {
+	background-color	: transparent;
+    background-repeat	: no-repeat;
+    border				: none;
+    cursor				: pointer;
+    overflow			: hidden;
+    outline				: none;
+}
+
 /* Schriftarten definieren */
 
 /* Font-Variablen für den Sheet */
@@ -405,4 +417,43 @@ div.sheet-noreturn .sheet-input-line span.sheet-input-label {
 	font-size				: var(--font-big-size);
 	text-transform          : uppercase;
 	color					: darkgray;
+}
+
+/* Rolltemplates */
+.sheet-rolltemplate-probe_offen div.sheet-template-container {
+	background-color	: whitesmoke;
+	margin				: 5px;
+	border-radius		: 15px;
+	border				: 1px solid gray;
+}
+
+.sheet-rolltemplate-probe_offen div.sheet-template-header {
+	font-family			: "downcome";
+	font-size			: 14pt;
+	text-align			: center;
+}
+
+.sheet-rolltemplate-probe_offen div.sheet-template-row {
+	font-family				: "downcome";
+	font-size				: 12pt;
+	line-height				: 14pt;
+	margin					: 5px;
+
+	display					: grid;
+	grid-template-columns	: 80% 20%;
+}
+
+.sheet-rolltemplate-probe_offen .inlinerollresult {
+	background-color	: unset;
+	border				: unset;
+	padding				: unset;
+	font-weight			: unset;
+	cursor				: help;
+	font-size			: 12pt;
+}
+
+.sheet-rolltemplate-probe_offen .inlinerollresult.importantroll,
+.sheet-rolltemplate-probe_offen .inlinerollresult.fullcrit,
+.sheet-rolltemplate-probe_offen .inlinerollresult.fullfail {
+	border				: unset;
 }
