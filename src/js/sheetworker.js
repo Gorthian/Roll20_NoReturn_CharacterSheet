@@ -74,7 +74,22 @@ const skilllist = [
 
 skilllist.forEach(skills => {
     let skill = skills[0];
-    on(`clicked:offen-${skill}`, function() {
-        console.log("Roll "+skill);
+    let attribute = skills[1];
+    on(`clicked:probe-${skill}`, function() {
+        startRoll("&{template:probe_offen} {{fertigkeit="+getTranslationByKey(skill)+"}} {{attribut="+getTranslationByKey(attribute)+"}} {{mindestwurf=[[10]]}} {{hazard=[[?{"+getTranslationByKey("hazard-di")+"|1}d6!6]]}} {{wurf=[[?{"+getTranslationByKey("normale-wuerfel")+"|0}d6]]}} {{bonus=[[?{"+getTranslationByKey("bonus")+"|0}]]}} {{summe=[[0]]}}", (results) => {
+            const hazard = results.results.hazard.result;
+            const wurf = results.results.wurf.result;
+            const bonus = results.results.bonus.result;
+
+            let summe = hazard+wurf+bonus
+
+            finishRoll(
+                results.rollId,
+                {
+                    summe: summe,
+                }
+            );
+            
+        });
     });
 });

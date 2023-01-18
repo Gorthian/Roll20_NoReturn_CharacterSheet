@@ -1,6 +1,6 @@
 //-
     CREATED by          Gorthian
-    Letzte Änderung		2023-01-15
+    Letzte Änderung		2023-01-18
 
 //
     ********************************
@@ -12,7 +12,7 @@ mixin fertigkeitszeile(skill,attribute)
     // MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile
     div(class="sheet-fertigkeiten-zeile")
         div
-            button(type="action" name="act_offen-"+skill)
+            button(type="action" name="act_probe-"+skill)
                 span(data-i18n=skill)
         div
             span(data-i18n=attribute+"_kurz")

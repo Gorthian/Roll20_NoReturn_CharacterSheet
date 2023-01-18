@@ -1,6 +1,6 @@
 //-
     CREATED by          Gorthian
-    Letzte Änderung		2023-01-15
+    Letzte Änderung		2023-01-18
 
 //
     ********************************
@@ -21,11 +21,14 @@ mixin rolltemplate-row(text, wert)
 //- SEITENINHALT
 
 //- Offene Probe auf Fertigkeiten
-rolltemplate(class="sheet-rolltemplate-offen-fertigkeit")
+rolltemplate(class="sheet-rolltemplate-probe_offen")
     div(class="sheet-template-container")
         +rolltemplate-header("{{fertigkeit}}")
         +rolltemplate-row("Mindestwurf","{{mindestwurf}}")
-        +rolltemplate-row("Ergebnis","{{ergebnis}}")
+        +rolltemplate-row("Hazard","{{hazard}}")
+        +rolltemplate-row("Wurf","{{wurf}}")
+        +rolltemplate-row("Bonus","{{bonus}}")
+        +rolltemplate-row("Summe","{{computed::summe}}")
 
 //
     ********************************
