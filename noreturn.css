@@ -443,6 +443,10 @@ div.sheet-noreturn .sheet-input-line span.sheet-input-label {
 	grid-template-columns	: 80% 20%;
 }
 
+.sheet-rolltemplate-probe_offen hr {
+	margin					: unset;
+}
+
 .sheet-rolltemplate-probe_offen .inlinerollresult {
 	background-color	: unset;
 	border				: unset;
