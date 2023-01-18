@@ -2,7 +2,7 @@
 <!--
 CREATED by          Gorthian
 Version				CF Release
-Letzte Änderung		2023-01-15
+Letzte Änderung		2023-01-18
 GitHub				https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet
 Wiki				https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/wiki
 Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
@@ -425,19 +425,6 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
               </div>
               <div>
                 <input type="number" name="attr_astronomie_mod"/>
-              </div>
-            </div>
-            <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
-            <div class="sheet-fertigkeiten-zeile">
-              <div>
-                <button type="action" name="act_probe-akrobatik"><span data-i18n="akrobatik"></span></button>
-              </div>
-              <div><span data-i18n="beweglichkeit_kurz"></span></div>
-              <div>
-                <input type="number" name="attr_akrobatik"/>
-              </div>
-              <div>
-                <input type="number" name="attr_akrobatik_mod"/>
               </div>
             </div>
             <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
@@ -882,6 +869,19 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                 <input type="number" name="attr_robotik_mod"/>
               </div>
             </div>
+            <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
+            <div class="sheet-fertigkeiten-zeile">
+              <div>
+                <button type="action" name="act_probe-ruestungsbau"><span data-i18n="ruestungsbau"></span></button>
+              </div>
+              <div><span data-i18n="handwerk_kurz"></span></div>
+              <div>
+                <input type="number" name="attr_ruestungsbau"/>
+              </div>
+              <div>
+                <input type="number" name="attr_ruestungsbau_mod"/>
+              </div>
+            </div>
       </div>
       <!--
       ********************************
@@ -903,19 +903,6 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
             <div class="sheet-kopfzeile"><span data-i18n="stufe"></span></div>
             <div class="sheet-kopfzeile"><span data-i18n="mod"></span></div>
           </div>
-              <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
-              <div class="sheet-fertigkeiten-zeile">
-                <div>
-                  <button type="action" name="act_probe-ruestungsbau"><span data-i18n="ruestungsbau"></span></button>
-                </div>
-                <div><span data-i18n="handwerk_kurz"></span></div>
-                <div>
-                  <input type="number" name="attr_ruestungsbau"/>
-                </div>
-                <div>
-                  <input type="number" name="attr_ruestungsbau_mod"/>
-                </div>
-              </div>
               <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
               <div class="sheet-fertigkeiten-zeile">
                 <div>
@@ -1642,7 +1629,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
 <rolltemplate class="sheet-rolltemplate-probe_offen">
   <div class="sheet-template-container">
     <!-- MIXIN : rolltemplate.pug : rolltemplate-row-->
-    <div class="sheet-template-header">{{fertigkeit}}</div>
+    <div class="sheet-template-header">{{fertigkeit}} - {{attribut}}</div>
     <!-- MIXIN : rolltemplate.pug : rolltemplate-row-->
     <div class="sheet-template-row"> <span>Mindestwurf</span><span>{{mindestwurf}}</span></div>
     <!-- MIXIN : rolltemplate.pug : rolltemplate-row-->
@@ -1676,7 +1663,6 @@ buttonlist.forEach(button => {
 const skilllist = [
     ['akrobatik','beweglichkeit'],
     ['astronomie','wissen'],
-    ['akrobatik','beweglichkeit'],
     ['ausdauer','konstitution'],
     ['ausweichen','beweglichkeit'],
     ['basteln','handwerk'],
@@ -1737,23 +1723,42 @@ const skilllist = [
 
 skilllist.forEach(skills => {
     let skill = skills[0];
-    on(`clicked:probe-${skill}`, function() {
-        //startRoll("&{template:probe_offen} {{fertigkeit="+skill+"}} {{mindestwurf=[[10]]}} {{wurf=[[?{Hazard Di|1}d6!6 + ?{normale Würfel|0}d6 + ?{Bonuspunkte|0}]]}}", (results) => {
-            startRoll("&{template:probe_offen} {{fertigkeit="+getTranslationByKey(skill)+"}} {{mindestwurf=[[10]]}} {{hazard=[[?{"+getTranslationByKey("hazard-di")+"|1}d6!6]]}} {{wurf=[[?{"+getTranslationByKey("normale-wuerfel")+"|0}d6]]}} {{bonus=[[?{"+getTranslationByKey("bonus")+"|0}]]}} {{summe=[[0]]}}", (results) => {
-            const hazard = results.results.hazard.result;
-            const wurf = results.results.wurf.result;
-            const bonus = results.results.bonus.result;
+    let attribute = skills[1];
+    on(`clicked:probe-${skill}`, function() {        
+        getAttrs([skill, skill+"_mod", attribute, attribute+"mod1", attribute+"mod2"], function(values) {
+            let summeSkill = 0;
+            let summeAttribut = 0;
+            let summe = 0;
+            let roll = ""
 
-            let summe = hazard+wurf+bonus
+            summeSkill = parseInt(values[skill]|0) + parseInt(values[skill+"_mod"]|0);
+            summeAttribut = parseInt(values[attribute]|0) + parseInt(values[attribute+"mod1"]|0) + parseInt(values[attribute+"mod2"]|0);
+            summe = summeSkill + summeAttribut;
 
-            finishRoll(
-                results.rollId,
-                {
-                    summe: summe,
-                }
-            );
-            
-        });
+            roll = "&{template:probe_offen}"; //Das Rolltemplate festlegen
+            roll = roll + "{{fertigkeit="+getTranslationByKey(skill)+"}}"; //Die Fertigkeit auf die gewürfelt wird
+            roll = roll + "{{attribut="+getTranslationByKey(attribute)+"}}"; //Das Attribut auf das gewürfelt wird
+            roll = roll + "{{mindestwurf=[[?{"+getTranslationByKey("mindestwurf")+"|10}]]}}"; //Der Mindestwurf der erreicht werden muss
+            roll = roll + "{{hazard=[[?{"+getTranslationByKey("hazard-di")+"|1}d6!6]]}}"; //Der Hazard-Wurf            
+            roll = roll + "{{wurf=[[("+summe+"-?{"+getTranslationByKey("hazard-di")+"})d6]]}}"; //Der normale Wurf
+            roll = roll + "{{bonus=[[?{"+getTranslationByKey("bonus")+"|0}]]}}"; //Bonus abfragen
+            roll = roll + "{{summe=[[0]]}}"; //Platzhalter für die Summe
+
+            startRoll(roll, (results) => {
+                const hazard = results.results.hazard.result;
+                const wurf = results.results.wurf.result;
+                const bonus = results.results.bonus.result;
+    
+                let summe = hazard+wurf+bonus
+    
+                finishRoll(
+                    results.rollId,
+                    {
+                        summe: summe,
+                    }
+                );                
+            });
+        });        
     });
 });
 </script>

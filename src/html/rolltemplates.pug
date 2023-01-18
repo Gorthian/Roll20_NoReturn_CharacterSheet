@@ -23,7 +23,7 @@ mixin rolltemplate-row(text, wert)
 //- Offene Probe auf Fertigkeiten
 rolltemplate(class="sheet-rolltemplate-probe_offen")
     div(class="sheet-template-container")
-        +rolltemplate-header("{{fertigkeit}}")
+        +rolltemplate-header("{{fertigkeit}} - {{attribut}}")
         +rolltemplate-row("Mindestwurf","{{mindestwurf}}")
         +rolltemplate-row("Hazard","{{hazard}}")
         +rolltemplate-row("Wurf","{{wurf}}")

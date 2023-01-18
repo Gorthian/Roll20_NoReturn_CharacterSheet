@@ -13,7 +13,6 @@ buttonlist.forEach(button => {
 const skilllist = [
     ['akrobatik','beweglichkeit'],
     ['astronomie','wissen'],
-    ['akrobatik','beweglichkeit'],
     ['ausdauer','konstitution'],
     ['ausweichen','beweglichkeit'],
     ['basteln','handwerk'],
@@ -75,21 +74,40 @@ const skilllist = [
 skilllist.forEach(skills => {
     let skill = skills[0];
     let attribute = skills[1];
-    on(`clicked:probe-${skill}`, function() {
-        startRoll("&{template:probe_offen} {{fertigkeit="+getTranslationByKey(skill)+"}} {{attribut="+getTranslationByKey(attribute)+"}} {{mindestwurf=[[10]]}} {{hazard=[[?{"+getTranslationByKey("hazard-di")+"|1}d6!6]]}} {{wurf=[[?{"+getTranslationByKey("normale-wuerfel")+"|0}d6]]}} {{bonus=[[?{"+getTranslationByKey("bonus")+"|0}]]}} {{summe=[[0]]}}", (results) => {
-            const hazard = results.results.hazard.result;
-            const wurf = results.results.wurf.result;
-            const bonus = results.results.bonus.result;
+    on(`clicked:probe-${skill}`, function() {        
+        getAttrs([skill, skill+"_mod", attribute, attribute+"mod1", attribute+"mod2"], function(values) {
+            let summeSkill = 0;
+            let summeAttribut = 0;
+            let summe = 0;
+            let roll = ""
 
-            let summe = hazard+wurf+bonus
+            summeSkill = parseInt(values[skill]|0) + parseInt(values[skill+"_mod"]|0);
+            summeAttribut = parseInt(values[attribute]|0) + parseInt(values[attribute+"mod1"]|0) + parseInt(values[attribute+"mod2"]|0);
+            summe = summeSkill + summeAttribut;
 
-            finishRoll(
-                results.rollId,
-                {
-                    summe: summe,
-                }
-            );
-            
-        });
+            roll = "&{template:probe_offen}"; //Das Rolltemplate festlegen
+            roll = roll + "{{fertigkeit="+getTranslationByKey(skill)+"}}"; //Die Fertigkeit auf die gewürfelt wird
+            roll = roll + "{{attribut="+getTranslationByKey(attribute)+"}}"; //Das Attribut auf das gewürfelt wird
+            roll = roll + "{{mindestwurf=[[?{"+getTranslationByKey("mindestwurf")+"|10}]]}}"; //Der Mindestwurf der erreicht werden muss
+            roll = roll + "{{hazard=[[?{"+getTranslationByKey("hazard-di")+"|1}d6!6]]}}"; //Der Hazard-Wurf            
+            roll = roll + "{{wurf=[[("+summe+"-?{"+getTranslationByKey("hazard-di")+"})d6]]}}"; //Der normale Wurf
+            roll = roll + "{{bonus=[[?{"+getTranslationByKey("bonus")+"|0}]]}}"; //Bonus abfragen
+            roll = roll + "{{summe=[[0]]}}"; //Platzhalter für die Summe
+
+            startRoll(roll, (results) => {
+                const hazard = results.results.hazard.result;
+                const wurf = results.results.wurf.result;
+                const bonus = results.results.bonus.result;
+    
+                let summe = hazard+wurf+bonus
+    
+                finishRoll(
+                    results.rollId,
+                    {
+                        summe: summe,
+                    }
+                );                
+            });
+        });        
     });
 });
