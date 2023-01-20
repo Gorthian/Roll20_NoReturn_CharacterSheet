@@ -1,6 +1,6 @@
 //-
     CREATED by          Gorthian
-    Letzte Änderung		2023-01-18
+    Letzte Änderung		2023-01-20
 
 //
     ********************************
@@ -19,17 +19,25 @@ mixin rolltemplate-row(text, wert)
         span= text 
         span= wert
 
+mixin rolltemplate-row-hazard(text, wert)
+    // MIXIN : rolltemplate.pug : rolltemplate-row-hazard
+    div(class="sheet-template-row-hazard") 
+        img(src='https://gorthian.de/roll20/noreturn/dice_1.png' width='25px')
+        span= text 
+        span= wert
+
 //- SEITENINHALT
 
 //- Offene Probe auf Fertigkeiten
 rolltemplate(class="sheet-rolltemplate-probe_offen")
     div(class="sheet-template-container")
         +rolltemplate-header("{{fertigkeit}} - {{attribut}}")
-        +rolltemplate-row("Mindestwurf","{{mindestwurf}}")
-        +rolltemplate-row("Hazard","{{hazard}}")
-        +rolltemplate-row("Wurf","{{wurf}}")
-        +rolltemplate-row("Bonus","{{bonus}}")
-        +rolltemplate-row("Summe","{{computed::summe}}")
+        +rolltemplate-row("Hazard","")
+        +rolltemplate-row-hazard("{{computed::hazard}}","= {{hazard}}")
+        +rolltemplate-row("Wurf","")
+        +rolltemplate-row("{{computed::wurf}}","= {{wurf}}")
+        +rolltemplate-row("Bonus","+ {{bonus}}")
+        +rolltemplate-row("Summe","= {{computed::summe}}")        
 
 //
     ********************************

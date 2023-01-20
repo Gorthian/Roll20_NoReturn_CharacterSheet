@@ -88,23 +88,34 @@ skilllist.forEach(skills => {
             roll = "&{template:probe_offen}"; //Das Rolltemplate festlegen
             roll = roll + "{{fertigkeit="+getTranslationByKey(skill)+"}}"; //Die Fertigkeit auf die gewürfelt wird
             roll = roll + "{{attribut="+getTranslationByKey(attribute)+"}}"; //Das Attribut auf das gewürfelt wird
-            roll = roll + "{{mindestwurf=[[?{"+getTranslationByKey("mindestwurf")+"|10}]]}}"; //Der Mindestwurf der erreicht werden muss
             roll = roll + "{{hazard=[[?{"+getTranslationByKey("hazard-di")+"|1}d6!6]]}}"; //Der Hazard-Wurf            
             roll = roll + "{{wurf=[[("+summe+"-?{"+getTranslationByKey("hazard-di")+"})d6]]}}"; //Der normale Wurf
             roll = roll + "{{bonus=[[?{"+getTranslationByKey("bonus")+"|0}]]}}"; //Bonus abfragen
             roll = roll + "{{summe=[[0]]}}"; //Platzhalter für die Summe
 
             startRoll(roll, (results) => {
-                const hazard = results.results.hazard.result;
-                const wurf = results.results.wurf.result;
+                const hazard = results.results.hazard.result;                
+                const wurf = results.results.wurf.result;                
                 const bonus = results.results.bonus.result;
     
-                let summe = hazard+wurf+bonus
+                let summe = hazard+wurf+bonus;
+
+                let hazard_wuerfel = "";
+                for (const n of results.results.hazard.dice) {
+                    hazard_wuerfel = hazard_wuerfel + " "+n+" ";
+                }
+
+                let wurf_wuerfel = "";
+                for (const n of results.results.wurf.dice) {
+                    wurf_wuerfel = wurf_wuerfel + " "+n+" ";
+                }
     
                 finishRoll(
                     results.rollId,
                     {
                         summe: summe,
+                        hazard: hazard_wuerfel,
+                        wurf: wurf_wuerfel
                     }
                 );                
             });

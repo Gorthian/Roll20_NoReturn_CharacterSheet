@@ -1,7 +1,7 @@
 /*
 	CREATED by 			Gorthian
 	Version				1.0
-	Letzte Änderung		2023-01-18
+	Letzte Änderung		2023-01-20
 	
 	GitHub				https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet
 	Wiki				https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/wiki
@@ -433,15 +433,24 @@ div.sheet-noreturn .sheet-input-line span.sheet-input-label {
 	text-align			: center;
 }
 
-.sheet-rolltemplate-probe_offen div.sheet-template-row {
+.sheet-rolltemplate-probe_offen div.sheet-template-row,
+.sheet-rolltemplate-probe_offen div.sheet-template-row-hazard
+ {
 	font-family				: "downcome";
 	font-size				: 12pt;
 	line-height				: 14pt;
-	margin					: 5px;
-
+	margin					: 5px;	
+}
+.sheet-rolltemplate-probe_offen div.sheet-template-row {
 	display					: grid;
 	grid-template-columns	: 80% 20%;
 }
+
+.sheet-rolltemplate-probe_offen div.sheet-template-row-hazard {
+	display					: grid;
+	grid-template-columns	: 10% 70% 20%;
+}
+
 
 .sheet-rolltemplate-probe_offen hr {
 	margin					: unset;

@@ -1632,15 +1632,17 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
     <div class="sheet-template-header">{{fertigkeit}} - {{attribut}}</div>
     <hr/>
     <!-- MIXIN : rolltemplate.pug : rolltemplate-row-->
-    <div class="sheet-template-row"> <span>Mindestwurf</span><span>{{mindestwurf}}</span></div>
+    <div class="sheet-template-row"> <span>Hazard</span><span></span></div>
+    <!-- MIXIN : rolltemplate.pug : rolltemplate-row-hazard-->
+    <div class="sheet-template-row-hazard"> <img src="https://gorthian.de/roll20/noreturn/dice_1.png" width="25px"/><span>{{computed::hazard}}</span><span>= {{hazard}}</span></div>
     <!-- MIXIN : rolltemplate.pug : rolltemplate-row-->
-    <div class="sheet-template-row"> <span>Hazard</span><span>{{hazard}}</span></div>
+    <div class="sheet-template-row"> <span>Wurf</span><span></span></div>
     <!-- MIXIN : rolltemplate.pug : rolltemplate-row-->
-    <div class="sheet-template-row"> <span>Wurf</span><span>{{wurf}}</span></div>
+    <div class="sheet-template-row"> <span>{{computed::wurf}}</span><span>= {{wurf}}</span></div>
     <!-- MIXIN : rolltemplate.pug : rolltemplate-row-->
-    <div class="sheet-template-row"> <span>Bonus</span><span>{{bonus}}</span></div>
+    <div class="sheet-template-row"> <span>Bonus</span><span>+ {{bonus}}</span></div>
     <!-- MIXIN : rolltemplate.pug : rolltemplate-row-->
-    <div class="sheet-template-row"> <span>Summe</span><span>{{computed::summe}}</span></div>
+    <div class="sheet-template-row"> <span>Summe</span><span>= {{computed::summe}}</span></div>
   </div>
 </rolltemplate>
 <!--
@@ -1739,23 +1741,34 @@ skilllist.forEach(skills => {
             roll = "&{template:probe_offen}"; //Das Rolltemplate festlegen
             roll = roll + "{{fertigkeit="+getTranslationByKey(skill)+"}}"; //Die Fertigkeit auf die gewürfelt wird
             roll = roll + "{{attribut="+getTranslationByKey(attribute)+"}}"; //Das Attribut auf das gewürfelt wird
-            roll = roll + "{{mindestwurf=[[?{"+getTranslationByKey("mindestwurf")+"|10}]]}}"; //Der Mindestwurf der erreicht werden muss
             roll = roll + "{{hazard=[[?{"+getTranslationByKey("hazard-di")+"|1}d6!6]]}}"; //Der Hazard-Wurf            
             roll = roll + "{{wurf=[[("+summe+"-?{"+getTranslationByKey("hazard-di")+"})d6]]}}"; //Der normale Wurf
             roll = roll + "{{bonus=[[?{"+getTranslationByKey("bonus")+"|0}]]}}"; //Bonus abfragen
             roll = roll + "{{summe=[[0]]}}"; //Platzhalter für die Summe
 
             startRoll(roll, (results) => {
-                const hazard = results.results.hazard.result;
-                const wurf = results.results.wurf.result;
+                const hazard = results.results.hazard.result;                
+                const wurf = results.results.wurf.result;                
                 const bonus = results.results.bonus.result;
     
-                let summe = hazard+wurf+bonus
+                let summe = hazard+wurf+bonus;
+
+                let hazard_wuerfel = "";
+                for (const n of results.results.hazard.dice) {
+                    hazard_wuerfel = hazard_wuerfel + " "+n+" ";
+                }
+
+                let wurf_wuerfel = "";
+                for (const n of results.results.wurf.dice) {
+                    wurf_wuerfel = wurf_wuerfel + " "+n+" ";
+                }
     
                 finishRoll(
                     results.rollId,
                     {
                         summe: summe,
+                        hazard: hazard_wuerfel,
+                        wurf: wurf_wuerfel
                     }
                 );                
             });
