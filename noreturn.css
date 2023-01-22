@@ -43,6 +43,12 @@ div.sheet-noreturn {
 div.sheet-noreturn {
     width               	: auto;
 	min-width              	: 800px;
+    background-color        : white;    
+}
+
+div.sheet-noreturn-body {
+    width               	: auto;
+	min-width              	: 800px;
     background-color        : white;
     display                 : grid;
 	grid-template-columns	: 20px auto;
@@ -285,6 +291,19 @@ div.sheet-noreturn textarea {
     border                  : none;
     background-color        : transparent;
     width                   : 95%;
+}
+
+/******************************/
+/* Der Dicebot                */
+/******************************/
+div.sheet-dicebot {
+	z-index					: 100;
+	position				: sticky;
+	border					: 1px solid red;
+	background-color		: grey;
+	top						: 0;
+	margin-left				: 50%;
+	width					: 50%;
 }
 
 /* Chrome, Safari, Edge, Opera */

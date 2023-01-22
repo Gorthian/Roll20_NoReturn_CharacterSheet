@@ -15,886 +15,397 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
 ********************************
 -->
 <div class="sheet-noreturn">
-  <input class="sheet-tabstoggle" type="hidden" name="attr_sheetTab" value="page-one"/>
-  <div class="sheet-tabs">
-    <button class="sheet-toggle-button" type="action" name="act_page-one" data-i18n="seite-1"></button>
-    <button class="sheet-toggle-button" type="action" name="act_page-two" data-i18n="seite-2"></button>
-  </div>
   <!--
   ********************************
-  * START src/html/page-one.pug
+  * START src/html/dicebot.pug
   ********************************
   
   -->
-  <div class="sheet-page-one">
-    <!--
-    ********************************
-    * START src/html/page-one/block-one.pug
-    ********************************
-    
-    -->
-    <div class="sheet-3cols">
-      <div class="sheet-box">
-        <h1 data-i18n="charakterdaten"></h1>
-        <div class="sheet-input-line">
-          <!-- MIXIN : noreturn.pug : input-text-->
-          <div> <span class="sheet-input-label" data-i18n="charaktername"></span></div>
-          <div>
-            <input type="text" name="attr_character_name"/>
-          </div>
-        </div>
-        <div class="sheet-input-line">
-          <!-- MIXIN : noreturn.pug : input-text-->
-          <div> <span class="sheet-input-label" data-i18n="spezies"></span></div>
-          <div>
-            <input type="text" name="attr_spezies"/>
-          </div>
-        </div>
-        <div class="sheet-input-line">
-          <!-- MIXIN : noreturn.pug : input-text-->
-          <div> <span class="sheet-input-label" data-i18n="geschlecht"></span></div>
-          <div>
-            <input type="text" name="attr_geschlecht"/>
-          </div>
-          <!-- MIXIN : noreturn.pug : input-text-->
-          <div> <span class="sheet-input-label" data-i18n="alter"></span></div>
-          <div>
-            <input type="text" name="attr_alter"/>
-          </div>
-        </div>
-        <div class="sheet-input-line">
-          <!-- MIXIN : noreturn.pug : input-text-->
-          <div> <span class="sheet-input-label" data-i18n="größe"></span></div>
-          <div>
-            <input type="text" name="attr_größe"/>
-          </div>
-          <!-- MIXIN : noreturn.pug : input-text-->
-          <div> <span class="sheet-input-label" data-i18n="gewicht"></span></div>
-          <div>
-            <input type="text" name="attr_gewicht"/>
-          </div>
-        </div>
-        <div class="sheet-input-line">
-          <textarea name="attr_aussehen"> </textarea>
-        </div>
-      </div>
-      <div class="sheet-box">
-        <div classs="sheet-logo"><img src="http://gorthian.de/roll20/noreturn/logo_200px.png"/></div>
-        <div class="sheet-input-line">
-          <!-- MIXIN : noreturn.pug : input-text-->
-          <div> <span class="sheet-input-label" data-i18n="spieler"></span></div>
-          <div>
-            <input type="text" name="attr_player_name"/>
-          </div>
-        </div>
-        <div class="sheet-input-line">
-          <!-- MIXIN : noreturn.pug : input-text-->
-          <div> <span class="sheet-input-label" data-i18n="erstellungsdatum"></span></div>
-          <div>
-            <input type="text" name="attr_erstellungsdatum"/>
-          </div>
-        </div>
-        <div class="sheet-input-line">
-          <!-- MIXIN : noreturn.pug : input-text-->
-          <div> <span class="sheet-input-label" data-i18n="charakterkonzept"></span></div>
-          <div>
-            <input type="text" name="attr_charakterkonzept"/>
-          </div>
-        </div>
-      </div>
-      <div class="sheet-box">
-        <h1 data-i18n="charakterkonditionen"></h1>
-        <div class="sheet-input-line">
-          <!-- MIXIN : noreturn.pug : input-text-->
-          <div> <span class="sheet-input-label" data-i18n="organismus"></span></div>
-          <div>
-            <input type="text" name="attr_organismus"/>
-          </div>
-        </div>
-        <div class="sheet-input-line">
-          <!-- MIXIN : noreturn.pug : input-text-->
-          <div> <span class="sheet-input-label" data-i18n="psyche"></span></div>
-          <div>
-            <input type="text" name="attr_psyche"/>
-          </div>
-        </div>
-        <div class="sheet-input-line">
-          <!-- MIXIN : noreturn.pug : input-text-->
-          <div> <span class="sheet-input-label" data-i18n="infektionsresistenz"></span></div>
-          <div>
-            <input type="text" name="attr_infektionsresistenz"/>
-          </div>
-        </div>
-        <div class="sheet-input-line">
-          <!-- MIXIN : noreturn.pug : input-text-->
-          <div> <span class="sheet-input-label" data-i18n="butterflyeffekt"></span></div>
-          <div>
-            <input type="text" name="attr_butterflyeffekt"/>
-          </div>
-        </div>
-        <div class="sheet-3cols">
-              <!-- MIXIN : src/html/page-one/block-one.pug : max-current-->
-              <div class="sheet-max-current">
-                <h2 data-i18n="erfahrung"></h2>
-                <p class="sheet-font-small-highlight"><span data-i18n="gesamt"></span>&nbsp;/&nbsp;<span data-i18n="aktuell"></span></p>
-                <div class="sheet-max-current-box">
-                  <input type="number" name="attr_erfahrung_max"/>&nbsp;/&nbsp;
-                  <input type="number" name="attr_erfahrung_current"/>
-                </div>
-              </div>
-              <!-- MIXIN : src/html/page-one/block-one.pug : max-current-->
-              <div class="sheet-max-current">
-                <h2 data-i18n="justicepoints"></h2>
-                <p class="sheet-font-small-highlight"><span data-i18n="gesamt"></span>&nbsp;/&nbsp;<span data-i18n="aktuell"></span></p>
-                <div class="sheet-max-current-box">
-                  <input type="number" name="attr_justicepoints_max"/>&nbsp;/&nbsp;
-                  <input type="number" name="attr_justicepoints_current"/>
-                </div>
-              </div>
-              <!-- MIXIN : src/html/page-one/block-one.pug : max-current-->
-              <div class="sheet-max-current">
-                <h2 data-i18n="chaospoints"></h2>
-                <p class="sheet-font-small-highlight"><span data-i18n="gesamt"></span>&nbsp;/&nbsp;<span data-i18n="aktuell"></span></p>
-                <div class="sheet-max-current-box">
-                  <input type="number" name="attr_chaospoints_max"/>&nbsp;/&nbsp;
-                  <input type="number" name="attr_chaospoints_current"/>
-                </div>
-              </div>
-        </div>
-      </div>
+  <div class="sheet-dicebot">Hier kommt der DICEBOT</div>
+  <!--
+  ********************************
+  * ENDE src/html/dicebot.pug
+  ********************************
+  -->
+  <div class="sheet-noreturn-body">
+    <input class="sheet-tabstoggle" type="hidden" name="attr_sheetTab" value="page-one"/>
+    <div class="sheet-tabs">
+      <button class="sheet-toggle-button" type="action" name="act_page-one" data-i18n="seite-1"></button>
+      <button class="sheet-toggle-button" type="action" name="act_page-two" data-i18n="seite-2"></button>
     </div>
     <!--
     ********************************
-    * ENDE src/html/page-one/block-one.pug
-    ********************************
-    -->
-    <!--
-    ********************************
-    * START src/html/page-one/block-two.pug
+    * START src/html/page-one.pug
     ********************************
     
     -->
-    <div class="sheet-2cols">
-      <div class="sheet-box">
-        <h1 data-i18n="attribute"></h1>
-        <div class="sheet-attribute">
-          <div>
-                <!-- MIXIN : src/html/page-one/block-two.pug : kopfzeile-->
-                <div class="sheet-attribut-zeile">
-                  <div> </div>
-                  <div class="sheet-kopfzeile"><span data-i18n="stufe"></span></div>
-                  <div class="sheet-kopfzeile"><span data-i18n="modifikatoren"></span></div>
-                  <div></div>
-                </div>
-                <!-- MIXIN : src/html/page-one/block-two.pug : attributszeile-->
-                <div class="sheet-attribut-zeile">
-                  <div class="sheet-titel"><span data-i18n="geschick"></span></div>
-                  <div>
-                    <input type="number" name="attr_geschick"/>
-                  </div>
-                  <div>
-                    <input type="number" name="attr_geschickmod1"/>
-                    <input type="number" name="attr_geschickmod2"/>
-                  </div>
-                  <div class="sheet-font-darkgray-highlight">
-                     [<span data-i18n="geschick_kurz"></span>]</div>
-                </div>
-                <!-- MIXIN : src/html/page-one/block-two.pug : attributszeile-->
-                <div class="sheet-attribut-zeile">
-                  <div class="sheet-titel"><span data-i18n="staerke"></span></div>
-                  <div>
-                    <input type="number" name="attr_staerke"/>
-                  </div>
-                  <div>
-                    <input type="number" name="attr_staerkemod1"/>
-                    <input type="number" name="attr_staerkemod2"/>
-                  </div>
-                  <div class="sheet-font-darkgray-highlight">
-                     [<span data-i18n="staerke_kurz"></span>]</div>
-                </div>
-                <!-- MIXIN : src/html/page-one/block-two.pug : attributszeile-->
-                <div class="sheet-attribut-zeile">
-                  <div class="sheet-titel"><span data-i18n="konstitution"></span></div>
-                  <div>
-                    <input type="number" name="attr_konstitution"/>
-                  </div>
-                  <div>
-                    <input type="number" name="attr_konstitutionmod1"/>
-                    <input type="number" name="attr_konstitutionmod2"/>
-                  </div>
-                  <div class="sheet-font-darkgray-highlight">
-                     [<span data-i18n="konstitution_kurz"></span>]</div>
-                </div>
-                <!-- MIXIN : src/html/page-one/block-two.pug : attributszeile-->
-                <div class="sheet-attribut-zeile">
-                  <div class="sheet-titel"><span data-i18n="beweglichkeit"></span></div>
-                  <div>
-                    <input type="number" name="attr_beweglichkeit"/>
-                  </div>
-                  <div>
-                    <input type="number" name="attr_beweglichkeitmod1"/>
-                    <input type="number" name="attr_beweglichkeitmod2"/>
-                  </div>
-                  <div class="sheet-font-darkgray-highlight">
-                     [<span data-i18n="beweglichkeit_kurz"></span>]</div>
-                </div>
-          </div>
-          <div>
-                <!-- MIXIN : src/html/page-one/block-two.pug : kopfzeile-->
-                <div class="sheet-attribut-zeile">
-                  <div> </div>
-                  <div class="sheet-kopfzeile"><span data-i18n="stufe"></span></div>
-                  <div class="sheet-kopfzeile"><span data-i18n="modifikatoren"></span></div>
-                  <div></div>
-                </div>
-                <!-- MIXIN : src/html/page-one/block-two.pug : attributszeile-->
-                <div class="sheet-attribut-zeile">
-                  <div class="sheet-titel"><span data-i18n="wahrnehmung"></span></div>
-                  <div>
-                    <input type="number" name="attr_wahrnehmung"/>
-                  </div>
-                  <div>
-                    <input type="number" name="attr_wahrnehmungmod1"/>
-                    <input type="number" name="attr_wahrnehmungmod2"/>
-                  </div>
-                  <div class="sheet-font-darkgray-highlight">
-                     [<span data-i18n="wahrnehmung_kurz"></span>]</div>
-                </div>
-                <!-- MIXIN : src/html/page-one/block-two.pug : attributszeile-->
-                <div class="sheet-attribut-zeile">
-                  <div class="sheet-titel"><span data-i18n="wissen"></span></div>
-                  <div>
-                    <input type="number" name="attr_wissen"/>
-                  </div>
-                  <div>
-                    <input type="number" name="attr_wissenmod1"/>
-                    <input type="number" name="attr_wissenmod2"/>
-                  </div>
-                  <div class="sheet-font-darkgray-highlight">
-                     [<span data-i18n="wissen_kurz"></span>]</div>
-                </div>
-                <!-- MIXIN : src/html/page-one/block-two.pug : attributszeile-->
-                <div class="sheet-attribut-zeile">
-                  <div class="sheet-titel"><span data-i18n="charisma"></span></div>
-                  <div>
-                    <input type="number" name="attr_charisma"/>
-                  </div>
-                  <div>
-                    <input type="number" name="attr_charismamod1"/>
-                    <input type="number" name="attr_charismamod2"/>
-                  </div>
-                  <div class="sheet-font-darkgray-highlight">
-                     [<span data-i18n="charisma_kurz"></span>]</div>
-                </div>
-                <!-- MIXIN : src/html/page-one/block-two.pug : attributszeile-->
-                <div class="sheet-attribut-zeile">
-                  <div class="sheet-titel"><span data-i18n="handwerk"></span></div>
-                  <div>
-                    <input type="number" name="attr_handwerk"/>
-                  </div>
-                  <div>
-                    <input type="number" name="attr_handwerkmod1"/>
-                    <input type="number" name="attr_handwerkmod2"/>
-                  </div>
-                  <div class="sheet-font-darkgray-highlight">
-                     [<span data-i18n="handwerk_kurz"></span>]</div>
-                </div>
-          </div>
-        </div>
-        <p> </p>
-        <div class="sheet-sonderattribute">
-          <div>
-            <div class="sheet-sonderattribut-zeile">
-              <div> </div>
-              <div> </div>
-            </div>
-                <!-- MIXIN : src/html/page-one/block-two.pug : sonderattributszeile-->
-                <div class="sheet-sonderattribut-zeile">
-                  <div class="sheet-sonderattribut-titel"><span data-i18n="trefferpunkte"></span></div>
-                  <div>
-                    <input type="number" name="attr_trefferpunkte"/>
-                  </div>
-                </div>
-                <!-- MIXIN : src/html/page-one/block-two.pug : sonderattributszeile-->
-                <div class="sheet-sonderattribut-zeile">
-                  <div class="sheet-sonderattribut-titel"><span data-i18n="dmg_schwellwert"></span></div>
-                  <div>
-                    <input type="number" name="attr_dmg_schwellwert"/>
-                  </div>
-                </div>
-          </div>
-          <div> 
-                <!-- MIXIN : src/html/page-one/block-two.pug : sonderattributskopfzeile-->
-                <div class="sheet-sonderattribut-zeile">
-                  <div> </div>
-                  <div class="sheet-kopfzeile"><span data-i18n="stufe"></span></div>
-                </div>
-                <!-- MIXIN : src/html/page-one/block-two.pug : sonderattributszeile-->
-                <div class="sheet-sonderattribut-zeile">
-                  <div class="sheet-sonderattribut-titel"><span data-i18n="schmerztoleranz"></span></div>
-                  <div>
-                    <input type="number" name="attr_schmerztoleranz"/>
-                  </div>
-                </div>
-          </div>
-          <div> 
-                <!-- MIXIN : src/html/page-one/block-two.pug : sonderattributskopfzeile-->
-                <div class="sheet-sonderattribut-zeile">
-                  <div> </div>
-                  <div class="sheet-kopfzeile"><span data-i18n="stufe"></span></div>
-                </div>
-                <!-- MIXIN : src/html/page-one/block-two.pug : sonderattributszeile-->
-                <div class="sheet-sonderattribut-zeile">
-                  <div class="sheet-sonderattribut-titel"><span data-i18n="adrenalin"></span></div>
-                  <div>
-                    <input type="number" name="attr_adrenalin"/>
-                  </div>
-                </div>
-                <!-- MIXIN : src/html/page-one/block-two.pug : sonderattributszeile-->
-                <div class="sheet-sonderattribut-zeile">
-                  <div class="sheet-sonderattribut-titel"><span data-i18n="meditation"></span></div>
-                  <div>
-                    <input type="number" name="attr_meditation"/>
-                  </div>
-                </div>
-          </div>
-        </div>
-      </div>
-      <div class="sheet-trefferzonen">
-        <h1 data-i18n="körperzonen"></h1>
-        <div class="sheet-trefferzonen-bild"><img src="https://gorthian.de/roll20/noreturn/trefferzonen_300px.png"/>
-          <div class="sheet-trefferzonen-regeneration">
-            <div class="sheet-titel"><span data-i18n="regeneration"></span>
-              <div class="sheet-font-small-highlight"><span data-i18n="geschwindigkeit"></span>&nbsp;/&nbsp;<span data-i18n="pool"></span></div>
-              <div>
-                <input type="number" name="attr_regeneration-geschwindigkeit"/>&nbsp;/&nbsp;
-                <input type="number" name="attr_regeneration-pool"/>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--
-    ********************************
-    * ENDE src/html/page-one/block-two.pug
-    ********************************
-    -->
-    <!--
-    ********************************
-    * START src/html/page-one/block-three.pug
-    ********************************
-    
-    -->
-    <div class="sheet-3cols">
+    <div class="sheet-page-one">
       <!--
       ********************************
-      * START src/html/page-one/block-three-first-row.pug
+      * START src/html/page-one/block-one.pug
       ********************************
       
       -->
-      <div class="sheet-box">
-        <h1 data-i18n="fertigkeiten"></h1>
-        <div class="sheet-fertigkeiten-zeile">
-          <div class="sheet-kopfzeile"><span data-i18n="fertigkeit"></span></div>
-          <div class="sheet-kopfzeile"><span data-i18n="attr"></span></div>
-          <div class="sheet-kopfzeile"><span data-i18n="stufe"></span></div>
-          <div class="sheet-kopfzeile"><span data-i18n="mod"></span></div>
+      <div class="sheet-3cols">
+        <div class="sheet-box">
+          <h1 data-i18n="charakterdaten"></h1>
+          <div class="sheet-input-line">
+            <!-- MIXIN : noreturn.pug : input-text-->
+            <div> <span class="sheet-input-label" data-i18n="charaktername"></span></div>
+            <div>
+              <input type="text" name="attr_character_name"/>
+            </div>
+          </div>
+          <div class="sheet-input-line">
+            <!-- MIXIN : noreturn.pug : input-text-->
+            <div> <span class="sheet-input-label" data-i18n="spezies"></span></div>
+            <div>
+              <input type="text" name="attr_spezies"/>
+            </div>
+          </div>
+          <div class="sheet-input-line">
+            <!-- MIXIN : noreturn.pug : input-text-->
+            <div> <span class="sheet-input-label" data-i18n="geschlecht"></span></div>
+            <div>
+              <input type="text" name="attr_geschlecht"/>
+            </div>
+            <!-- MIXIN : noreturn.pug : input-text-->
+            <div> <span class="sheet-input-label" data-i18n="alter"></span></div>
+            <div>
+              <input type="text" name="attr_alter"/>
+            </div>
+          </div>
+          <div class="sheet-input-line">
+            <!-- MIXIN : noreturn.pug : input-text-->
+            <div> <span class="sheet-input-label" data-i18n="größe"></span></div>
+            <div>
+              <input type="text" name="attr_größe"/>
+            </div>
+            <!-- MIXIN : noreturn.pug : input-text-->
+            <div> <span class="sheet-input-label" data-i18n="gewicht"></span></div>
+            <div>
+              <input type="text" name="attr_gewicht"/>
+            </div>
+          </div>
+          <div class="sheet-input-line">
+            <textarea name="attr_aussehen"> </textarea>
+          </div>
         </div>
-            <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
-            <div class="sheet-fertigkeiten-zeile">
-              <div>
-                <button type="action" name="act_probe-akrobatik"><span data-i18n="akrobatik"></span></button>
-              </div>
-              <div><span data-i18n="beweglichkeit_kurz"></span></div>
-              <div>
-                <input type="number" name="attr_akrobatik"/>
-              </div>
-              <div>
-                <input type="number" name="attr_akrobatik_mod"/>
-              </div>
+        <div class="sheet-box">
+          <div classs="sheet-logo"><img src="http://gorthian.de/roll20/noreturn/logo_200px.png"/></div>
+          <div class="sheet-input-line">
+            <!-- MIXIN : noreturn.pug : input-text-->
+            <div> <span class="sheet-input-label" data-i18n="spieler"></span></div>
+            <div>
+              <input type="text" name="attr_player_name"/>
             </div>
-            <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
-            <div class="sheet-fertigkeiten-zeile">
-              <div>
-                <button type="action" name="act_probe-astronomie"><span data-i18n="astronomie"></span></button>
-              </div>
-              <div><span data-i18n="wissen_kurz"></span></div>
-              <div>
-                <input type="number" name="attr_astronomie"/>
-              </div>
-              <div>
-                <input type="number" name="attr_astronomie_mod"/>
-              </div>
+          </div>
+          <div class="sheet-input-line">
+            <!-- MIXIN : noreturn.pug : input-text-->
+            <div> <span class="sheet-input-label" data-i18n="erstellungsdatum"></span></div>
+            <div>
+              <input type="text" name="attr_erstellungsdatum"/>
             </div>
-            <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
-            <div class="sheet-fertigkeiten-zeile">
-              <div>
-                <button type="action" name="act_probe-ausdauer"><span data-i18n="ausdauer"></span></button>
-              </div>
-              <div><span data-i18n="konstitution_kurz"></span></div>
-              <div>
-                <input type="number" name="attr_ausdauer"/>
-              </div>
-              <div>
-                <input type="number" name="attr_ausdauer_mod"/>
-              </div>
+          </div>
+          <div class="sheet-input-line">
+            <!-- MIXIN : noreturn.pug : input-text-->
+            <div> <span class="sheet-input-label" data-i18n="charakterkonzept"></span></div>
+            <div>
+              <input type="text" name="attr_charakterkonzept"/>
             </div>
-            <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
-            <div class="sheet-fertigkeiten-zeile">
-              <div>
-                <button type="action" name="act_probe-ausweichen"><span data-i18n="ausweichen"></span></button>
-              </div>
-              <div><span data-i18n="beweglichkeit_kurz"></span></div>
-              <div>
-                <input type="number" name="attr_ausweichen"/>
-              </div>
-              <div>
-                <input type="number" name="attr_ausweichen_mod"/>
-              </div>
+          </div>
+        </div>
+        <div class="sheet-box">
+          <h1 data-i18n="charakterkonditionen"></h1>
+          <div class="sheet-input-line">
+            <!-- MIXIN : noreturn.pug : input-text-->
+            <div> <span class="sheet-input-label" data-i18n="organismus"></span></div>
+            <div>
+              <input type="text" name="attr_organismus"/>
             </div>
-            <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
-            <div class="sheet-fertigkeiten-zeile">
-              <div>
-                <button type="action" name="act_probe-basteln"><span data-i18n="basteln"></span></button>
-              </div>
-              <div><span data-i18n="handwerk_kurz"></span></div>
-              <div>
-                <input type="number" name="attr_basteln"/>
-              </div>
-              <div>
-                <input type="number" name="attr_basteln_mod"/>
-              </div>
+          </div>
+          <div class="sheet-input-line">
+            <!-- MIXIN : noreturn.pug : input-text-->
+            <div> <span class="sheet-input-label" data-i18n="psyche"></span></div>
+            <div>
+              <input type="text" name="attr_psyche"/>
             </div>
-            <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
-            <div class="sheet-fertigkeiten-zeile">
-              <div>
-                <button type="action" name="act_probe-blocken"><span data-i18n="blocken"></span></button>
-              </div>
-              <div><span data-i18n="beweglichkeit_kurz"></span></div>
-              <div>
-                <input type="number" name="attr_blocken"/>
-              </div>
-              <div>
-                <input type="number" name="attr_blocken_mod"/>
-              </div>
+          </div>
+          <div class="sheet-input-line">
+            <!-- MIXIN : noreturn.pug : input-text-->
+            <div> <span class="sheet-input-label" data-i18n="infektionsresistenz"></span></div>
+            <div>
+              <input type="text" name="attr_infektionsresistenz"/>
             </div>
-            <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
-            <div class="sheet-fertigkeiten-zeile">
-              <div>
-                <button type="action" name="act_probe-bodenfahrzeuge"><span data-i18n="bodenfahrzeuge"></span></button>
-              </div>
-              <div><span data-i18n="geschick_kurz"></span></div>
-              <div>
-                <input type="number" name="attr_bodenfahrzeuge"/>
-              </div>
-              <div>
-                <input type="number" name="attr_bodenfahrzeuge_mod"/>
-              </div>
+          </div>
+          <div class="sheet-input-line">
+            <!-- MIXIN : noreturn.pug : input-text-->
+            <div> <span class="sheet-input-label" data-i18n="butterflyeffekt"></span></div>
+            <div>
+              <input type="text" name="attr_butterflyeffekt"/>
             </div>
-            <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
-            <div class="sheet-fertigkeiten-zeile">
-              <div>
-                <button type="action" name="act_probe-chemie"><span data-i18n="chemie"></span></button>
-              </div>
-              <div><span data-i18n="wissen_kurz"></span></div>
-              <div>
-                <input type="number" name="attr_chemie"/>
-              </div>
-              <div>
-                <input type="number" name="attr_chemie_mod"/>
-              </div>
-            </div>
-            <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
-            <div class="sheet-fertigkeiten-zeile">
-              <div>
-                <button type="action" name="act_probe-computer"><span data-i18n="computer"></span></button>
-              </div>
-              <div><span data-i18n="wissen_kurz"></span></div>
-              <div>
-                <input type="number" name="attr_computer"/>
-              </div>
-              <div>
-                <input type="number" name="attr_computer_mod"/>
-              </div>
-            </div>
-            <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
-            <div class="sheet-fertigkeiten-zeile">
-              <div>
-                <button type="action" name="act_probe-dressieren"><span data-i18n="dressieren"></span></button>
-              </div>
-              <div><span data-i18n="charisma_kurz"></span></div>
-              <div>
-                <input type="number" name="attr_dressieren"/>
-              </div>
-              <div>
-                <input type="number" name="attr_dressieren_mod"/>
-              </div>
-            </div>
-            <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
-            <div class="sheet-fertigkeiten-zeile">
-              <div>
-                <button type="action" name="act_probe-einschuechtern"><span data-i18n="einschuechtern"></span></button>
-              </div>
-              <div><span data-i18n="charisma_kurz"></span></div>
-              <div>
-                <input type="number" name="attr_einschuechtern"/>
-              </div>
-              <div>
-                <input type="number" name="attr_einschuechtern_mod"/>
-              </div>
-            </div>
-            <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
-            <div class="sheet-fertigkeiten-zeile">
-              <div>
-                <button type="action" name="act_probe-einschuechtern"><span data-i18n="einschuechtern"></span></button>
-              </div>
-              <div><span data-i18n="staerke_kurz"></span></div>
-              <div>
-                <input type="number" name="attr_einschuechtern"/>
-              </div>
-              <div>
-                <input type="number" name="attr_einschuechtern_mod"/>
-              </div>
-            </div>
-            <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
-            <div class="sheet-fertigkeiten-zeile">
-              <div>
-                <button type="action" name="act_probe-elektronik"><span data-i18n="elektronik"></span></button>
-              </div>
-              <div><span data-i18n="handwerk_kurz"></span></div>
-              <div>
-                <input type="number" name="attr_elektronik"/>
-              </div>
-              <div>
-                <input type="number" name="attr_elektronik_mod"/>
-              </div>
-            </div>
-            <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
-            <div class="sheet-fertigkeiten-zeile">
-              <div>
-                <button type="action" name="act_probe-feuerwaffenbau"><span data-i18n="feuerwaffenbau"></span></button>
-              </div>
-              <div><span data-i18n="handwerk_kurz"></span></div>
-              <div>
-                <input type="number" name="attr_feuerwaffenbau"/>
-              </div>
-              <div>
-                <input type="number" name="attr_feuerwaffenbau_mod"/>
-              </div>
-            </div>
-            <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
-            <div class="sheet-fertigkeiten-zeile">
-              <div>
-                <button type="action" name="act_probe-fluggeraete"><span data-i18n="fluggeraete"></span></button>
-              </div>
-              <div><span data-i18n="geschick_kurz"></span></div>
-              <div>
-                <input type="number" name="attr_fluggeraete"/>
-              </div>
-              <div>
-                <input type="number" name="attr_fluggeraete_mod"/>
-              </div>
-            </div>
-            <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
-            <div class="sheet-fertigkeiten-zeile">
-              <div>
-                <button type="action" name="act_probe-gassenwissen"><span data-i18n="gassenwissen"></span></button>
-              </div>
-              <div><span data-i18n="wissen_kurz"></span></div>
-              <div>
-                <input type="number" name="attr_gassenwissen"/>
-              </div>
-              <div>
-                <input type="number" name="attr_gassenwissen_mod"/>
-              </div>
-            </div>
-            <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
-            <div class="sheet-fertigkeiten-zeile">
-              <div>
-                <button type="action" name="act_probe-geschuetze"><span data-i18n="geschuetze"></span></button>
-              </div>
-              <div><span data-i18n="geschick_kurz"></span></div>
-              <div>
-                <input type="number" name="attr_geschuetze"/>
-              </div>
-              <div>
-                <input type="number" name="attr_geschuetze_mod"/>
-              </div>
-            </div>
-            <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
-            <div class="sheet-fertigkeiten-zeile">
-              <div>
-                <button type="action" name="act_probe-grossraumschiff"><span data-i18n="grossraumschiff"></span></button>
-              </div>
-              <div><span data-i18n="wissen_kurz"></span></div>
-              <div>
-                <input type="number" name="attr_grossraumschiff"/>
-              </div>
-              <div>
-                <input type="number" name="attr_grossraumschiff_mod"/>
-              </div>
-            </div>
-            <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
-            <div class="sheet-fertigkeiten-zeile">
-              <div>
-                <button type="action" name="act_probe-heimlichkeit"><span data-i18n="heimlichkeit"></span></button>
-              </div>
-              <div><span data-i18n="wahrnehmung_kurz"></span></div>
-              <div>
-                <input type="number" name="attr_heimlichkeit"/>
-              </div>
-              <div>
-                <input type="number" name="attr_heimlichkeit_mod"/>
-              </div>
-            </div>
-            <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
-            <div class="sheet-fertigkeiten-zeile">
-              <div>
-                <button type="action" name="act_probe-inspiration"><span data-i18n="inspiration"></span></button>
-              </div>
-              <div><span data-i18n="charisma_kurz"></span></div>
-              <div>
-                <input type="number" name="attr_inspiration"/>
-              </div>
-              <div>
-                <input type="number" name="attr_inspiration_mod"/>
-              </div>
-            </div>
-            <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
-            <div class="sheet-fertigkeiten-zeile">
-              <div>
-                <button type="action" name="act_probe-klettern"><span data-i18n="klettern"></span></button>
-              </div>
-              <div><span data-i18n="beweglichkeit_kurz"></span></div>
-              <div>
-                <input type="number" name="attr_klettern"/>
-              </div>
-              <div>
-                <input type="number" name="attr_klettern_mod"/>
-              </div>
-            </div>
-            <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
-            <div class="sheet-fertigkeiten-zeile">
-              <div>
-                <button type="action" name="act_probe-kunst"><span data-i18n="kunst"></span></button>
-              </div>
-              <div><span data-i18n="handwerk_kurz"></span></div>
-              <div>
-                <input type="number" name="attr_kunst"/>
-              </div>
-              <div>
-                <input type="number" name="attr_kunst_mod"/>
-              </div>
-            </div>
-            <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
-            <div class="sheet-fertigkeiten-zeile">
-              <div>
-                <button type="action" name="act_probe-mechanik"><span data-i18n="mechanik"></span></button>
-              </div>
-              <div><span data-i18n="handwerk_kurz"></span></div>
-              <div>
-                <input type="number" name="attr_mechanik"/>
-              </div>
-              <div>
-                <input type="number" name="attr_mechanik_mod"/>
-              </div>
-            </div>
-            <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
-            <div class="sheet-fertigkeiten-zeile">
-              <div>
-                <button type="action" name="act_probe-medizin"><span data-i18n="medizin"></span></button>
-              </div>
-              <div><span data-i18n="wissen_kurz"></span></div>
-              <div>
-                <input type="number" name="attr_medizin"/>
-              </div>
-              <div>
-                <input type="number" name="attr_medizin_mod"/>
-              </div>
-            </div>
-            <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
-            <div class="sheet-fertigkeiten-zeile">
-              <div>
-                <button type="action" name="act_probe-menschenkenntnis"><span data-i18n="menschenkenntnis"></span></button>
-              </div>
-              <div><span data-i18n="charisma_kurz"></span></div>
-              <div>
-                <input type="number" name="attr_menschenkenntnis"/>
-              </div>
-              <div>
-                <input type="number" name="attr_menschenkenntnis_mod"/>
-              </div>
-            </div>
-            <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
-            <div class="sheet-fertigkeiten-zeile">
-              <div>
-                <button type="action" name="act_probe-nachforschen"><span data-i18n="nachforschen"></span></button>
-              </div>
-              <div><span data-i18n="wahrnehmung_kurz"></span></div>
-              <div>
-                <input type="number" name="attr_nachforschen"/>
-              </div>
-              <div>
-                <input type="number" name="attr_nachforschen_mod"/>
-              </div>
-            </div>
-            <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
-            <div class="sheet-fertigkeiten-zeile">
-              <div>
-                <button type="action" name="act_probe-nahkampf"><span data-i18n="nahkampf"></span></button>
-              </div>
-              <div><span data-i18n="beweglichkeit_kurz"></span></div>
-              <div>
-                <input type="number" name="attr_nahkampf"/>
-              </div>
-              <div>
-                <input type="number" name="attr_nahkampf_mod"/>
-              </div>
-            </div>
-            <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
-            <div class="sheet-fertigkeiten-zeile">
-              <div>
-                <button type="action" name="act_probe-naturkunde"><span data-i18n="naturkunde"></span></button>
-              </div>
-              <div><span data-i18n="wissen_kurz"></span></div>
-              <div>
-                <input type="number" name="attr_naturkunde"/>
-              </div>
-              <div>
-                <input type="number" name="attr_naturkunde_mod"/>
-              </div>
-            </div>
-            <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
-            <div class="sheet-fertigkeiten-zeile">
-              <div>
-                <button type="action" name="act_probe-orientierung"><span data-i18n="orientierung"></span></button>
-              </div>
-              <div><span data-i18n="wahrnehmung_kurz"></span></div>
-              <div>
-                <input type="number" name="attr_orientierung"/>
-              </div>
-              <div>
-                <input type="number" name="attr_orientierung_mod"/>
-              </div>
-            </div>
-            <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
-            <div class="sheet-fertigkeiten-zeile">
-              <div>
-                <button type="action" name="act_probe-projektilwaffen"><span data-i18n="projektilwaffen"></span></button>
-              </div>
-              <div><span data-i18n="geschick_kurz"></span></div>
-              <div>
-                <input type="number" name="attr_projektilwaffen"/>
-              </div>
-              <div>
-                <input type="number" name="attr_projektilwaffen_mod"/>
-              </div>
-            </div>
-            <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
-            <div class="sheet-fertigkeiten-zeile">
-              <div>
-                <button type="action" name="act_probe-raumjaeger"><span data-i18n="raumjaeger"></span></button>
-              </div>
-              <div><span data-i18n="geschick_kurz"></span></div>
-              <div>
-                <input type="number" name="attr_raumjaeger"/>
-              </div>
-              <div>
-                <input type="number" name="attr_raumjaeger_mod"/>
-              </div>
-            </div>
-            <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
-            <div class="sheet-fertigkeiten-zeile">
-              <div>
-                <button type="action" name="act_probe-raumschiff"><span data-i18n="raumschiff"></span></button>
-              </div>
-              <div><span data-i18n="geschick_kurz"></span></div>
-              <div>
-                <input type="number" name="attr_raumschiff"/>
-              </div>
-              <div>
-                <input type="number" name="attr_raumschiff_mod"/>
-              </div>
-            </div>
-            <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
-            <div class="sheet-fertigkeiten-zeile">
-              <div>
-                <button type="action" name="act_probe-reaktion"><span data-i18n="reaktion"></span></button>
-              </div>
-              <div><span data-i18n="wahrnehmung_kurz"></span></div>
-              <div>
-                <input type="number" name="attr_reaktion"/>
-              </div>
-              <div>
-                <input type="number" name="attr_reaktion_mod"/>
-              </div>
-            </div>
-            <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
-            <div class="sheet-fertigkeiten-zeile">
-              <div>
-                <button type="action" name="act_probe-reiten"><span data-i18n="reiten"></span></button>
-              </div>
-              <div><span data-i18n="beweglichkeit_kurz"></span></div>
-              <div>
-                <input type="number" name="attr_reiten"/>
-              </div>
-              <div>
-                <input type="number" name="attr_reiten_mod"/>
-              </div>
-            </div>
-            <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
-            <div class="sheet-fertigkeiten-zeile">
-              <div>
-                <button type="action" name="act_probe-rennen"><span data-i18n="rennen"></span></button>
-              </div>
-              <div><span data-i18n="beweglichkeit_kurz"></span></div>
-              <div>
-                <input type="number" name="attr_rennen"/>
-              </div>
-              <div>
-                <input type="number" name="attr_rennen_mod"/>
-              </div>
-            </div>
-            <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
-            <div class="sheet-fertigkeiten-zeile">
-              <div>
-                <button type="action" name="act_probe-robotik"><span data-i18n="robotik"></span></button>
-              </div>
-              <div><span data-i18n="handwerk_kurz"></span></div>
-              <div>
-                <input type="number" name="attr_robotik"/>
-              </div>
-              <div>
-                <input type="number" name="attr_robotik_mod"/>
-              </div>
-            </div>
-            <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
-            <div class="sheet-fertigkeiten-zeile">
-              <div>
-                <button type="action" name="act_probe-ruestungsbau"><span data-i18n="ruestungsbau"></span></button>
-              </div>
-              <div><span data-i18n="handwerk_kurz"></span></div>
-              <div>
-                <input type="number" name="attr_ruestungsbau"/>
-              </div>
-              <div>
-                <input type="number" name="attr_ruestungsbau_mod"/>
-              </div>
-            </div>
+          </div>
+          <div class="sheet-3cols">
+                  <!-- MIXIN : src/html/page-one/block-one.pug : max-current-->
+                  <div class="sheet-max-current">
+                    <h2 data-i18n="erfahrung"></h2>
+                    <p class="sheet-font-small-highlight"><span data-i18n="gesamt"></span>&nbsp;/&nbsp;<span data-i18n="aktuell"></span></p>
+                    <div class="sheet-max-current-box">
+                      <input type="number" name="attr_erfahrung_max"/>&nbsp;/&nbsp;
+                      <input type="number" name="attr_erfahrung_current"/>
+                    </div>
+                  </div>
+                  <!-- MIXIN : src/html/page-one/block-one.pug : max-current-->
+                  <div class="sheet-max-current">
+                    <h2 data-i18n="justicepoints"></h2>
+                    <p class="sheet-font-small-highlight"><span data-i18n="gesamt"></span>&nbsp;/&nbsp;<span data-i18n="aktuell"></span></p>
+                    <div class="sheet-max-current-box">
+                      <input type="number" name="attr_justicepoints_max"/>&nbsp;/&nbsp;
+                      <input type="number" name="attr_justicepoints_current"/>
+                    </div>
+                  </div>
+                  <!-- MIXIN : src/html/page-one/block-one.pug : max-current-->
+                  <div class="sheet-max-current">
+                    <h2 data-i18n="chaospoints"></h2>
+                    <p class="sheet-font-small-highlight"><span data-i18n="gesamt"></span>&nbsp;/&nbsp;<span data-i18n="aktuell"></span></p>
+                    <div class="sheet-max-current-box">
+                      <input type="number" name="attr_chaospoints_max"/>&nbsp;/&nbsp;
+                      <input type="number" name="attr_chaospoints_current"/>
+                    </div>
+                  </div>
+          </div>
+        </div>
       </div>
       <!--
       ********************************
-      * ENDE src/html/page-one/block-three-first-row.pug
+      * ENDE src/html/page-one/block-one.pug
       ********************************
       -->
       <!--
       ********************************
-      * START src/html/page-one/block-three-second-row.pug
+      * START src/html/page-one/block-two.pug
       ********************************
       
       -->
-      <div> 
+      <div class="sheet-2cols">
+        <div class="sheet-box">
+          <h1 data-i18n="attribute"></h1>
+          <div class="sheet-attribute">
+            <div>
+                    <!-- MIXIN : src/html/page-one/block-two.pug : kopfzeile-->
+                    <div class="sheet-attribut-zeile">
+                      <div> </div>
+                      <div class="sheet-kopfzeile"><span data-i18n="stufe"></span></div>
+                      <div class="sheet-kopfzeile"><span data-i18n="modifikatoren"></span></div>
+                      <div></div>
+                    </div>
+                    <!-- MIXIN : src/html/page-one/block-two.pug : attributszeile-->
+                    <div class="sheet-attribut-zeile">
+                      <div class="sheet-titel"><span data-i18n="geschick"></span></div>
+                      <div>
+                        <input type="number" name="attr_geschick"/>
+                      </div>
+                      <div>
+                        <input type="number" name="attr_geschickmod1"/>
+                        <input type="number" name="attr_geschickmod2"/>
+                      </div>
+                      <div class="sheet-font-darkgray-highlight">
+                         [<span data-i18n="geschick_kurz"></span>]</div>
+                    </div>
+                    <!-- MIXIN : src/html/page-one/block-two.pug : attributszeile-->
+                    <div class="sheet-attribut-zeile">
+                      <div class="sheet-titel"><span data-i18n="staerke"></span></div>
+                      <div>
+                        <input type="number" name="attr_staerke"/>
+                      </div>
+                      <div>
+                        <input type="number" name="attr_staerkemod1"/>
+                        <input type="number" name="attr_staerkemod2"/>
+                      </div>
+                      <div class="sheet-font-darkgray-highlight">
+                         [<span data-i18n="staerke_kurz"></span>]</div>
+                    </div>
+                    <!-- MIXIN : src/html/page-one/block-two.pug : attributszeile-->
+                    <div class="sheet-attribut-zeile">
+                      <div class="sheet-titel"><span data-i18n="konstitution"></span></div>
+                      <div>
+                        <input type="number" name="attr_konstitution"/>
+                      </div>
+                      <div>
+                        <input type="number" name="attr_konstitutionmod1"/>
+                        <input type="number" name="attr_konstitutionmod2"/>
+                      </div>
+                      <div class="sheet-font-darkgray-highlight">
+                         [<span data-i18n="konstitution_kurz"></span>]</div>
+                    </div>
+                    <!-- MIXIN : src/html/page-one/block-two.pug : attributszeile-->
+                    <div class="sheet-attribut-zeile">
+                      <div class="sheet-titel"><span data-i18n="beweglichkeit"></span></div>
+                      <div>
+                        <input type="number" name="attr_beweglichkeit"/>
+                      </div>
+                      <div>
+                        <input type="number" name="attr_beweglichkeitmod1"/>
+                        <input type="number" name="attr_beweglichkeitmod2"/>
+                      </div>
+                      <div class="sheet-font-darkgray-highlight">
+                         [<span data-i18n="beweglichkeit_kurz"></span>]</div>
+                    </div>
+            </div>
+            <div>
+                    <!-- MIXIN : src/html/page-one/block-two.pug : kopfzeile-->
+                    <div class="sheet-attribut-zeile">
+                      <div> </div>
+                      <div class="sheet-kopfzeile"><span data-i18n="stufe"></span></div>
+                      <div class="sheet-kopfzeile"><span data-i18n="modifikatoren"></span></div>
+                      <div></div>
+                    </div>
+                    <!-- MIXIN : src/html/page-one/block-two.pug : attributszeile-->
+                    <div class="sheet-attribut-zeile">
+                      <div class="sheet-titel"><span data-i18n="wahrnehmung"></span></div>
+                      <div>
+                        <input type="number" name="attr_wahrnehmung"/>
+                      </div>
+                      <div>
+                        <input type="number" name="attr_wahrnehmungmod1"/>
+                        <input type="number" name="attr_wahrnehmungmod2"/>
+                      </div>
+                      <div class="sheet-font-darkgray-highlight">
+                         [<span data-i18n="wahrnehmung_kurz"></span>]</div>
+                    </div>
+                    <!-- MIXIN : src/html/page-one/block-two.pug : attributszeile-->
+                    <div class="sheet-attribut-zeile">
+                      <div class="sheet-titel"><span data-i18n="wissen"></span></div>
+                      <div>
+                        <input type="number" name="attr_wissen"/>
+                      </div>
+                      <div>
+                        <input type="number" name="attr_wissenmod1"/>
+                        <input type="number" name="attr_wissenmod2"/>
+                      </div>
+                      <div class="sheet-font-darkgray-highlight">
+                         [<span data-i18n="wissen_kurz"></span>]</div>
+                    </div>
+                    <!-- MIXIN : src/html/page-one/block-two.pug : attributszeile-->
+                    <div class="sheet-attribut-zeile">
+                      <div class="sheet-titel"><span data-i18n="charisma"></span></div>
+                      <div>
+                        <input type="number" name="attr_charisma"/>
+                      </div>
+                      <div>
+                        <input type="number" name="attr_charismamod1"/>
+                        <input type="number" name="attr_charismamod2"/>
+                      </div>
+                      <div class="sheet-font-darkgray-highlight">
+                         [<span data-i18n="charisma_kurz"></span>]</div>
+                    </div>
+                    <!-- MIXIN : src/html/page-one/block-two.pug : attributszeile-->
+                    <div class="sheet-attribut-zeile">
+                      <div class="sheet-titel"><span data-i18n="handwerk"></span></div>
+                      <div>
+                        <input type="number" name="attr_handwerk"/>
+                      </div>
+                      <div>
+                        <input type="number" name="attr_handwerkmod1"/>
+                        <input type="number" name="attr_handwerkmod2"/>
+                      </div>
+                      <div class="sheet-font-darkgray-highlight">
+                         [<span data-i18n="handwerk_kurz"></span>]</div>
+                    </div>
+            </div>
+          </div>
+          <p> </p>
+          <div class="sheet-sonderattribute">
+            <div>
+              <div class="sheet-sonderattribut-zeile">
+                <div> </div>
+                <div> </div>
+              </div>
+                    <!-- MIXIN : src/html/page-one/block-two.pug : sonderattributszeile-->
+                    <div class="sheet-sonderattribut-zeile">
+                      <div class="sheet-sonderattribut-titel"><span data-i18n="trefferpunkte"></span></div>
+                      <div>
+                        <input type="number" name="attr_trefferpunkte"/>
+                      </div>
+                    </div>
+                    <!-- MIXIN : src/html/page-one/block-two.pug : sonderattributszeile-->
+                    <div class="sheet-sonderattribut-zeile">
+                      <div class="sheet-sonderattribut-titel"><span data-i18n="dmg_schwellwert"></span></div>
+                      <div>
+                        <input type="number" name="attr_dmg_schwellwert"/>
+                      </div>
+                    </div>
+            </div>
+            <div> 
+                    <!-- MIXIN : src/html/page-one/block-two.pug : sonderattributskopfzeile-->
+                    <div class="sheet-sonderattribut-zeile">
+                      <div> </div>
+                      <div class="sheet-kopfzeile"><span data-i18n="stufe"></span></div>
+                    </div>
+                    <!-- MIXIN : src/html/page-one/block-two.pug : sonderattributszeile-->
+                    <div class="sheet-sonderattribut-zeile">
+                      <div class="sheet-sonderattribut-titel"><span data-i18n="schmerztoleranz"></span></div>
+                      <div>
+                        <input type="number" name="attr_schmerztoleranz"/>
+                      </div>
+                    </div>
+            </div>
+            <div> 
+                    <!-- MIXIN : src/html/page-one/block-two.pug : sonderattributskopfzeile-->
+                    <div class="sheet-sonderattribut-zeile">
+                      <div> </div>
+                      <div class="sheet-kopfzeile"><span data-i18n="stufe"></span></div>
+                    </div>
+                    <!-- MIXIN : src/html/page-one/block-two.pug : sonderattributszeile-->
+                    <div class="sheet-sonderattribut-zeile">
+                      <div class="sheet-sonderattribut-titel"><span data-i18n="adrenalin"></span></div>
+                      <div>
+                        <input type="number" name="attr_adrenalin"/>
+                      </div>
+                    </div>
+                    <!-- MIXIN : src/html/page-one/block-two.pug : sonderattributszeile-->
+                    <div class="sheet-sonderattribut-zeile">
+                      <div class="sheet-sonderattribut-titel"><span data-i18n="meditation"></span></div>
+                      <div>
+                        <input type="number" name="attr_meditation"/>
+                      </div>
+                    </div>
+            </div>
+          </div>
+        </div>
+        <div class="sheet-trefferzonen">
+          <h1 data-i18n="körperzonen"></h1>
+          <div class="sheet-trefferzonen-bild"><img src="https://gorthian.de/roll20/noreturn/trefferzonen_300px.png"/>
+            <div class="sheet-trefferzonen-regeneration">
+              <div class="sheet-titel"><span data-i18n="regeneration"></span>
+                <div class="sheet-font-small-highlight"><span data-i18n="geschwindigkeit"></span>&nbsp;/&nbsp;<span data-i18n="pool"></span></div>
+                <div>
+                  <input type="number" name="attr_regeneration-geschwindigkeit"/>&nbsp;/&nbsp;
+                  <input type="number" name="attr_regeneration-pool"/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--
+      ********************************
+      * ENDE src/html/page-one/block-two.pug
+      ********************************
+      -->
+      <!--
+      ********************************
+      * START src/html/page-one/block-three.pug
+      ********************************
+      
+      -->
+      <div class="sheet-3cols">
+        <!--
+        ********************************
+        * START src/html/page-one/block-three-first-row.pug
+        ********************************
+        
+        -->
         <div class="sheet-box">
           <h1 data-i18n="fertigkeiten"></h1>
           <div class="sheet-fertigkeiten-zeile">
@@ -903,722 +414,1225 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
             <div class="sheet-kopfzeile"><span data-i18n="stufe"></span></div>
             <div class="sheet-kopfzeile"><span data-i18n="mod"></span></div>
           </div>
-              <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
-              <div class="sheet-fertigkeiten-zeile">
-                <div>
-                  <button type="action" name="act_probe-sagen-mythen"><span data-i18n="sagen-mythen"></span></button>
+                <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
+                <div class="sheet-fertigkeiten-zeile">
+                  <div>
+                    <button type="action" name="act_probe-akrobatik"><span data-i18n="akrobatik"></span></button>
+                  </div>
+                  <div><span data-i18n="beweglichkeit_kurz"></span></div>
+                  <div>
+                    <input type="number" name="attr_akrobatik"/>
+                  </div>
+                  <div>
+                    <input type="number" name="attr_akrobatik_mod"/>
+                  </div>
                 </div>
-                <div><span data-i18n="wissen_kurz"></span></div>
-                <div>
-                  <input type="number" name="attr_sagen-mythen"/>
+                <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
+                <div class="sheet-fertigkeiten-zeile">
+                  <div>
+                    <button type="action" name="act_probe-astronomie"><span data-i18n="astronomie"></span></button>
+                  </div>
+                  <div><span data-i18n="wissen_kurz"></span></div>
+                  <div>
+                    <input type="number" name="attr_astronomie"/>
+                  </div>
+                  <div>
+                    <input type="number" name="attr_astronomie_mod"/>
+                  </div>
                 </div>
-                <div>
-                  <input type="number" name="attr_sagen-mythen_mod"/>
+                <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
+                <div class="sheet-fertigkeiten-zeile">
+                  <div>
+                    <button type="action" name="act_probe-ausdauer"><span data-i18n="ausdauer"></span></button>
+                  </div>
+                  <div><span data-i18n="konstitution_kurz"></span></div>
+                  <div>
+                    <input type="number" name="attr_ausdauer"/>
+                  </div>
+                  <div>
+                    <input type="number" name="attr_ausdauer_mod"/>
+                  </div>
                 </div>
-              </div>
-              <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
-              <div class="sheet-fertigkeiten-zeile">
-                <div>
-                  <button type="action" name="act_probe-saufen"><span data-i18n="saufen"></span></button>
+                <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
+                <div class="sheet-fertigkeiten-zeile">
+                  <div>
+                    <button type="action" name="act_probe-ausweichen"><span data-i18n="ausweichen"></span></button>
+                  </div>
+                  <div><span data-i18n="beweglichkeit_kurz"></span></div>
+                  <div>
+                    <input type="number" name="attr_ausweichen"/>
+                  </div>
+                  <div>
+                    <input type="number" name="attr_ausweichen_mod"/>
+                  </div>
                 </div>
-                <div><span data-i18n="konstitution_kurz"></span></div>
-                <div>
-                  <input type="number" name="attr_saufen"/>
+                <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
+                <div class="sheet-fertigkeiten-zeile">
+                  <div>
+                    <button type="action" name="act_probe-basteln"><span data-i18n="basteln"></span></button>
+                  </div>
+                  <div><span data-i18n="handwerk_kurz"></span></div>
+                  <div>
+                    <input type="number" name="attr_basteln"/>
+                  </div>
+                  <div>
+                    <input type="number" name="attr_basteln_mod"/>
+                  </div>
                 </div>
-                <div>
-                  <input type="number" name="attr_saufen_mod"/>
+                <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
+                <div class="sheet-fertigkeiten-zeile">
+                  <div>
+                    <button type="action" name="act_probe-blocken"><span data-i18n="blocken"></span></button>
+                  </div>
+                  <div><span data-i18n="beweglichkeit_kurz"></span></div>
+                  <div>
+                    <input type="number" name="attr_blocken"/>
+                  </div>
+                  <div>
+                    <input type="number" name="attr_blocken_mod"/>
+                  </div>
                 </div>
-              </div>
-              <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
-              <div class="sheet-fertigkeiten-zeile">
-                <div>
-                  <button type="action" name="act_probe-schaetzen"><span data-i18n="schaetzen"></span></button>
+                <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
+                <div class="sheet-fertigkeiten-zeile">
+                  <div>
+                    <button type="action" name="act_probe-bodenfahrzeuge"><span data-i18n="bodenfahrzeuge"></span></button>
+                  </div>
+                  <div><span data-i18n="geschick_kurz"></span></div>
+                  <div>
+                    <input type="number" name="attr_bodenfahrzeuge"/>
+                  </div>
+                  <div>
+                    <input type="number" name="attr_bodenfahrzeuge_mod"/>
+                  </div>
                 </div>
-                <div><span data-i18n="wahrnehmung_kurz"></span></div>
-                <div>
-                  <input type="number" name="attr_schaetzen"/>
+                <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
+                <div class="sheet-fertigkeiten-zeile">
+                  <div>
+                    <button type="action" name="act_probe-chemie"><span data-i18n="chemie"></span></button>
+                  </div>
+                  <div><span data-i18n="wissen_kurz"></span></div>
+                  <div>
+                    <input type="number" name="attr_chemie"/>
+                  </div>
+                  <div>
+                    <input type="number" name="attr_chemie_mod"/>
+                  </div>
                 </div>
-                <div>
-                  <input type="number" name="attr_schaetzen_mod"/>
+                <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
+                <div class="sheet-fertigkeiten-zeile">
+                  <div>
+                    <button type="action" name="act_probe-computer"><span data-i18n="computer"></span></button>
+                  </div>
+                  <div><span data-i18n="wissen_kurz"></span></div>
+                  <div>
+                    <input type="number" name="attr_computer"/>
+                  </div>
+                  <div>
+                    <input type="number" name="attr_computer_mod"/>
+                  </div>
                 </div>
-              </div>
-              <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
-              <div class="sheet-fertigkeiten-zeile">
-                <div>
-                  <button type="action" name="act_probe-schauspiel"><span data-i18n="schauspiel"></span></button>
+                <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
+                <div class="sheet-fertigkeiten-zeile">
+                  <div>
+                    <button type="action" name="act_probe-dressieren"><span data-i18n="dressieren"></span></button>
+                  </div>
+                  <div><span data-i18n="charisma_kurz"></span></div>
+                  <div>
+                    <input type="number" name="attr_dressieren"/>
+                  </div>
+                  <div>
+                    <input type="number" name="attr_dressieren_mod"/>
+                  </div>
                 </div>
-                <div><span data-i18n="charisma_kurz"></span></div>
-                <div>
-                  <input type="number" name="attr_schauspiel"/>
+                <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
+                <div class="sheet-fertigkeiten-zeile">
+                  <div>
+                    <button type="action" name="act_probe-einschuechtern"><span data-i18n="einschuechtern"></span></button>
+                  </div>
+                  <div><span data-i18n="charisma_kurz"></span></div>
+                  <div>
+                    <input type="number" name="attr_einschuechtern"/>
+                  </div>
+                  <div>
+                    <input type="number" name="attr_einschuechtern_mod"/>
+                  </div>
                 </div>
-                <div>
-                  <input type="number" name="attr_schauspiel_mod"/>
+                <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
+                <div class="sheet-fertigkeiten-zeile">
+                  <div>
+                    <button type="action" name="act_probe-einschuechtern"><span data-i18n="einschuechtern"></span></button>
+                  </div>
+                  <div><span data-i18n="staerke_kurz"></span></div>
+                  <div>
+                    <input type="number" name="attr_einschuechtern"/>
+                  </div>
+                  <div>
+                    <input type="number" name="attr_einschuechtern_mod"/>
+                  </div>
                 </div>
-              </div>
-              <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
-              <div class="sheet-fertigkeiten-zeile">
-                <div>
-                  <button type="action" name="act_probe-schiessen"><span data-i18n="schiessen"></span></button>
+                <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
+                <div class="sheet-fertigkeiten-zeile">
+                  <div>
+                    <button type="action" name="act_probe-elektronik"><span data-i18n="elektronik"></span></button>
+                  </div>
+                  <div><span data-i18n="handwerk_kurz"></span></div>
+                  <div>
+                    <input type="number" name="attr_elektronik"/>
+                  </div>
+                  <div>
+                    <input type="number" name="attr_elektronik_mod"/>
+                  </div>
                 </div>
-                <div><span data-i18n="geschick_kurz"></span></div>
-                <div>
-                  <input type="number" name="attr_schiessen"/>
+                <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
+                <div class="sheet-fertigkeiten-zeile">
+                  <div>
+                    <button type="action" name="act_probe-feuerwaffenbau"><span data-i18n="feuerwaffenbau"></span></button>
+                  </div>
+                  <div><span data-i18n="handwerk_kurz"></span></div>
+                  <div>
+                    <input type="number" name="attr_feuerwaffenbau"/>
+                  </div>
+                  <div>
+                    <input type="number" name="attr_feuerwaffenbau_mod"/>
+                  </div>
                 </div>
-                <div>
-                  <input type="number" name="attr_schiessen_mod"/>
+                <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
+                <div class="sheet-fertigkeiten-zeile">
+                  <div>
+                    <button type="action" name="act_probe-fluggeraete"><span data-i18n="fluggeraete"></span></button>
+                  </div>
+                  <div><span data-i18n="geschick_kurz"></span></div>
+                  <div>
+                    <input type="number" name="attr_fluggeraete"/>
+                  </div>
+                  <div>
+                    <input type="number" name="attr_fluggeraete_mod"/>
+                  </div>
                 </div>
-              </div>
-              <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
-              <div class="sheet-fertigkeiten-zeile">
-                <div>
-                  <button type="action" name="act_probe-schwere-waffen"><span data-i18n="schwere-waffen"></span></button>
+                <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
+                <div class="sheet-fertigkeiten-zeile">
+                  <div>
+                    <button type="action" name="act_probe-gassenwissen"><span data-i18n="gassenwissen"></span></button>
+                  </div>
+                  <div><span data-i18n="wissen_kurz"></span></div>
+                  <div>
+                    <input type="number" name="attr_gassenwissen"/>
+                  </div>
+                  <div>
+                    <input type="number" name="attr_gassenwissen_mod"/>
+                  </div>
                 </div>
-                <div><span data-i18n="geschick_kurz"></span></div>
-                <div>
-                  <input type="number" name="attr_schwere-waffen"/>
+                <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
+                <div class="sheet-fertigkeiten-zeile">
+                  <div>
+                    <button type="action" name="act_probe-geschuetze"><span data-i18n="geschuetze"></span></button>
+                  </div>
+                  <div><span data-i18n="geschick_kurz"></span></div>
+                  <div>
+                    <input type="number" name="attr_geschuetze"/>
+                  </div>
+                  <div>
+                    <input type="number" name="attr_geschuetze_mod"/>
+                  </div>
                 </div>
-                <div>
-                  <input type="number" name="attr_schwere-waffen_mod"/>
+                <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
+                <div class="sheet-fertigkeiten-zeile">
+                  <div>
+                    <button type="action" name="act_probe-grossraumschiff"><span data-i18n="grossraumschiff"></span></button>
+                  </div>
+                  <div><span data-i18n="wissen_kurz"></span></div>
+                  <div>
+                    <input type="number" name="attr_grossraumschiff"/>
+                  </div>
+                  <div>
+                    <input type="number" name="attr_grossraumschiff_mod"/>
+                  </div>
                 </div>
-              </div>
-              <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
-              <div class="sheet-fertigkeiten-zeile">
-                <div>
-                  <button type="action" name="act_probe-schwimmen"><span data-i18n="schwimmen"></span></button>
+                <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
+                <div class="sheet-fertigkeiten-zeile">
+                  <div>
+                    <button type="action" name="act_probe-heimlichkeit"><span data-i18n="heimlichkeit"></span></button>
+                  </div>
+                  <div><span data-i18n="wahrnehmung_kurz"></span></div>
+                  <div>
+                    <input type="number" name="attr_heimlichkeit"/>
+                  </div>
+                  <div>
+                    <input type="number" name="attr_heimlichkeit_mod"/>
+                  </div>
                 </div>
-                <div><span data-i18n="beweglichkeit_kurz"></span></div>
-                <div>
-                  <input type="number" name="attr_schwimmen"/>
+                <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
+                <div class="sheet-fertigkeiten-zeile">
+                  <div>
+                    <button type="action" name="act_probe-inspiration"><span data-i18n="inspiration"></span></button>
+                  </div>
+                  <div><span data-i18n="charisma_kurz"></span></div>
+                  <div>
+                    <input type="number" name="attr_inspiration"/>
+                  </div>
+                  <div>
+                    <input type="number" name="attr_inspiration_mod"/>
+                  </div>
                 </div>
-                <div>
-                  <input type="number" name="attr_schwimmen_mod"/>
+                <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
+                <div class="sheet-fertigkeiten-zeile">
+                  <div>
+                    <button type="action" name="act_probe-klettern"><span data-i18n="klettern"></span></button>
+                  </div>
+                  <div><span data-i18n="beweglichkeit_kurz"></span></div>
+                  <div>
+                    <input type="number" name="attr_klettern"/>
+                  </div>
+                  <div>
+                    <input type="number" name="attr_klettern_mod"/>
+                  </div>
                 </div>
-              </div>
-              <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
-              <div class="sheet-fertigkeiten-zeile">
-                <div>
-                  <button type="action" name="act_probe-sicherheitstechnik"><span data-i18n="sicherheitstechnik"></span></button>
+                <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
+                <div class="sheet-fertigkeiten-zeile">
+                  <div>
+                    <button type="action" name="act_probe-kunst"><span data-i18n="kunst"></span></button>
+                  </div>
+                  <div><span data-i18n="handwerk_kurz"></span></div>
+                  <div>
+                    <input type="number" name="attr_kunst"/>
+                  </div>
+                  <div>
+                    <input type="number" name="attr_kunst_mod"/>
+                  </div>
                 </div>
-                <div><span data-i18n="handwerk_kurz"></span></div>
-                <div>
-                  <input type="number" name="attr_sicherheitstechnik"/>
+                <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
+                <div class="sheet-fertigkeiten-zeile">
+                  <div>
+                    <button type="action" name="act_probe-mechanik"><span data-i18n="mechanik"></span></button>
+                  </div>
+                  <div><span data-i18n="handwerk_kurz"></span></div>
+                  <div>
+                    <input type="number" name="attr_mechanik"/>
+                  </div>
+                  <div>
+                    <input type="number" name="attr_mechanik_mod"/>
+                  </div>
                 </div>
-                <div>
-                  <input type="number" name="attr_sicherheitstechnik_mod"/>
+                <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
+                <div class="sheet-fertigkeiten-zeile">
+                  <div>
+                    <button type="action" name="act_probe-medizin"><span data-i18n="medizin"></span></button>
+                  </div>
+                  <div><span data-i18n="wissen_kurz"></span></div>
+                  <div>
+                    <input type="number" name="attr_medizin"/>
+                  </div>
+                  <div>
+                    <input type="number" name="attr_medizin_mod"/>
+                  </div>
                 </div>
-              </div>
-              <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
-              <div class="sheet-fertigkeiten-zeile">
-                <div>
-                  <button type="action" name="act_probe-spezies"><span data-i18n="spezies"></span></button>
+                <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
+                <div class="sheet-fertigkeiten-zeile">
+                  <div>
+                    <button type="action" name="act_probe-menschenkenntnis"><span data-i18n="menschenkenntnis"></span></button>
+                  </div>
+                  <div><span data-i18n="charisma_kurz"></span></div>
+                  <div>
+                    <input type="number" name="attr_menschenkenntnis"/>
+                  </div>
+                  <div>
+                    <input type="number" name="attr_menschenkenntnis_mod"/>
+                  </div>
                 </div>
-                <div><span data-i18n="wissen_kurz"></span></div>
-                <div>
-                  <input type="number" name="attr_spezies"/>
+                <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
+                <div class="sheet-fertigkeiten-zeile">
+                  <div>
+                    <button type="action" name="act_probe-nachforschen"><span data-i18n="nachforschen"></span></button>
+                  </div>
+                  <div><span data-i18n="wahrnehmung_kurz"></span></div>
+                  <div>
+                    <input type="number" name="attr_nachforschen"/>
+                  </div>
+                  <div>
+                    <input type="number" name="attr_nachforschen_mod"/>
+                  </div>
                 </div>
-                <div>
-                  <input type="number" name="attr_spezies_mod"/>
+                <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
+                <div class="sheet-fertigkeiten-zeile">
+                  <div>
+                    <button type="action" name="act_probe-nahkampf"><span data-i18n="nahkampf"></span></button>
+                  </div>
+                  <div><span data-i18n="beweglichkeit_kurz"></span></div>
+                  <div>
+                    <input type="number" name="attr_nahkampf"/>
+                  </div>
+                  <div>
+                    <input type="number" name="attr_nahkampf_mod"/>
+                  </div>
                 </div>
-              </div>
-              <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
-              <div class="sheet-fertigkeiten-zeile">
-                <div>
-                  <button type="action" name="act_probe-springen"><span data-i18n="springen"></span></button>
+                <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
+                <div class="sheet-fertigkeiten-zeile">
+                  <div>
+                    <button type="action" name="act_probe-naturkunde"><span data-i18n="naturkunde"></span></button>
+                  </div>
+                  <div><span data-i18n="wissen_kurz"></span></div>
+                  <div>
+                    <input type="number" name="attr_naturkunde"/>
+                  </div>
+                  <div>
+                    <input type="number" name="attr_naturkunde_mod"/>
+                  </div>
                 </div>
-                <div><span data-i18n="beweglichkeit_kurz"></span></div>
-                <div>
-                  <input type="number" name="attr_springen"/>
+                <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
+                <div class="sheet-fertigkeiten-zeile">
+                  <div>
+                    <button type="action" name="act_probe-orientierung"><span data-i18n="orientierung"></span></button>
+                  </div>
+                  <div><span data-i18n="wahrnehmung_kurz"></span></div>
+                  <div>
+                    <input type="number" name="attr_orientierung"/>
+                  </div>
+                  <div>
+                    <input type="number" name="attr_orientierung_mod"/>
+                  </div>
                 </div>
-                <div>
-                  <input type="number" name="attr_springen_mod"/>
+                <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
+                <div class="sheet-fertigkeiten-zeile">
+                  <div>
+                    <button type="action" name="act_probe-projektilwaffen"><span data-i18n="projektilwaffen"></span></button>
+                  </div>
+                  <div><span data-i18n="geschick_kurz"></span></div>
+                  <div>
+                    <input type="number" name="attr_projektilwaffen"/>
+                  </div>
+                  <div>
+                    <input type="number" name="attr_projektilwaffen_mod"/>
+                  </div>
                 </div>
-              </div>
-              <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
-              <div class="sheet-fertigkeiten-zeile">
-                <div>
-                  <button type="action" name="act_probe-spruehwaffen"><span data-i18n="spruehwaffen"></span></button>
+                <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
+                <div class="sheet-fertigkeiten-zeile">
+                  <div>
+                    <button type="action" name="act_probe-raumjaeger"><span data-i18n="raumjaeger"></span></button>
+                  </div>
+                  <div><span data-i18n="geschick_kurz"></span></div>
+                  <div>
+                    <input type="number" name="attr_raumjaeger"/>
+                  </div>
+                  <div>
+                    <input type="number" name="attr_raumjaeger_mod"/>
+                  </div>
                 </div>
-                <div><span data-i18n="geschick_kurz"></span></div>
-                <div>
-                  <input type="number" name="attr_spruehwaffen"/>
+                <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
+                <div class="sheet-fertigkeiten-zeile">
+                  <div>
+                    <button type="action" name="act_probe-raumschiff"><span data-i18n="raumschiff"></span></button>
+                  </div>
+                  <div><span data-i18n="geschick_kurz"></span></div>
+                  <div>
+                    <input type="number" name="attr_raumschiff"/>
+                  </div>
+                  <div>
+                    <input type="number" name="attr_raumschiff_mod"/>
+                  </div>
                 </div>
-                <div>
-                  <input type="number" name="attr_spruehwaffen_mod"/>
+                <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
+                <div class="sheet-fertigkeiten-zeile">
+                  <div>
+                    <button type="action" name="act_probe-reaktion"><span data-i18n="reaktion"></span></button>
+                  </div>
+                  <div><span data-i18n="wahrnehmung_kurz"></span></div>
+                  <div>
+                    <input type="number" name="attr_reaktion"/>
+                  </div>
+                  <div>
+                    <input type="number" name="attr_reaktion_mod"/>
+                  </div>
                 </div>
-              </div>
-              <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
-              <div class="sheet-fertigkeiten-zeile">
-                <div>
-                  <button type="action" name="act_probe-stemmen"><span data-i18n="stemmen"></span></button>
+                <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
+                <div class="sheet-fertigkeiten-zeile">
+                  <div>
+                    <button type="action" name="act_probe-reiten"><span data-i18n="reiten"></span></button>
+                  </div>
+                  <div><span data-i18n="beweglichkeit_kurz"></span></div>
+                  <div>
+                    <input type="number" name="attr_reiten"/>
+                  </div>
+                  <div>
+                    <input type="number" name="attr_reiten_mod"/>
+                  </div>
                 </div>
-                <div><span data-i18n="staerke_kurz"></span></div>
-                <div>
-                  <input type="number" name="attr_stemmen"/>
+                <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
+                <div class="sheet-fertigkeiten-zeile">
+                  <div>
+                    <button type="action" name="act_probe-rennen"><span data-i18n="rennen"></span></button>
+                  </div>
+                  <div><span data-i18n="beweglichkeit_kurz"></span></div>
+                  <div>
+                    <input type="number" name="attr_rennen"/>
+                  </div>
+                  <div>
+                    <input type="number" name="attr_rennen_mod"/>
+                  </div>
                 </div>
-                <div>
-                  <input type="number" name="attr_stemmen_mod"/>
+                <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
+                <div class="sheet-fertigkeiten-zeile">
+                  <div>
+                    <button type="action" name="act_probe-robotik"><span data-i18n="robotik"></span></button>
+                  </div>
+                  <div><span data-i18n="handwerk_kurz"></span></div>
+                  <div>
+                    <input type="number" name="attr_robotik"/>
+                  </div>
+                  <div>
+                    <input type="number" name="attr_robotik_mod"/>
+                  </div>
                 </div>
-              </div>
-              <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
-              <div class="sheet-fertigkeiten-zeile">
-                <div>
-                  <button type="action" name="act_probe-taschendiebstahl"><span data-i18n="taschendiebstahl"></span></button>
+                <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
+                <div class="sheet-fertigkeiten-zeile">
+                  <div>
+                    <button type="action" name="act_probe-ruestungsbau"><span data-i18n="ruestungsbau"></span></button>
+                  </div>
+                  <div><span data-i18n="handwerk_kurz"></span></div>
+                  <div>
+                    <input type="number" name="attr_ruestungsbau"/>
+                  </div>
+                  <div>
+                    <input type="number" name="attr_ruestungsbau_mod"/>
+                  </div>
                 </div>
-                <div><span data-i18n="geschick_kurz"></span></div>
-                <div>
-                  <input type="number" name="attr_taschendiebstahl"/>
-                </div>
-                <div>
-                  <input type="number" name="attr_taschendiebstahl_mod"/>
-                </div>
-              </div>
-              <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
-              <div class="sheet-fertigkeiten-zeile">
-                <div>
-                  <button type="action" name="act_probe-ueberreden"><span data-i18n="ueberreden"></span></button>
-                </div>
-                <div><span data-i18n="charisma_kurz"></span></div>
-                <div>
-                  <input type="number" name="attr_ueberreden"/>
-                </div>
-                <div>
-                  <input type="number" name="attr_ueberreden_mod"/>
-                </div>
-              </div>
-              <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
-              <div class="sheet-fertigkeiten-zeile">
-                <div>
-                  <button type="action" name="act_probe-verhandeln"><span data-i18n="verhandeln"></span></button>
-                </div>
-                <div><span data-i18n="charisma_kurz"></span></div>
-                <div>
-                  <input type="number" name="attr_verhandeln"/>
-                </div>
-                <div>
-                  <input type="number" name="attr_verhandeln_mod"/>
-                </div>
-              </div>
-              <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
-              <div class="sheet-fertigkeiten-zeile">
-                <div>
-                  <button type="action" name="act_probe-waffenbau"><span data-i18n="waffenbau"></span></button>
-                </div>
-                <div><span data-i18n="handwerk_kurz"></span></div>
-                <div>
-                  <input type="number" name="attr_waffenbau"/>
-                </div>
-                <div>
-                  <input type="number" name="attr_waffenbau_mod"/>
-                </div>
-              </div>
-              <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
-              <div class="sheet-fertigkeiten-zeile">
-                <div>
-                  <button type="action" name="act_probe-waffenkampf"><span data-i18n="waffenkampf"></span></button>
-                </div>
-                <div><span data-i18n="beweglichkeit_kurz"></span></div>
-                <div>
-                  <input type="number" name="attr_waffenkampf"/>
-                </div>
-                <div>
-                  <input type="number" name="attr_waffenkampf_mod"/>
-                </div>
-              </div>
-              <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
-              <div class="sheet-fertigkeiten-zeile">
-                <div>
-                  <button type="action" name="act_probe-wasserfahrzeuge"><span data-i18n="wasserfahrzeuge"></span></button>
-                </div>
-                <div><span data-i18n="geschick_kurz"></span></div>
-                <div>
-                  <input type="number" name="attr_wasserfahrzeuge"/>
-                </div>
-                <div>
-                  <input type="number" name="attr_wasserfahrzeuge_mod"/>
-                </div>
-              </div>
-              <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
-              <div class="sheet-fertigkeiten-zeile">
-                <div>
-                  <button type="action" name="act_probe-willenskraft"><span data-i18n="willenskraft"></span></button>
-                </div>
-                <div><span data-i18n="wissen_kurz"></span></div>
-                <div>
-                  <input type="number" name="attr_willenskraft"/>
-                </div>
-                <div>
-                  <input type="number" name="attr_willenskraft_mod"/>
-                </div>
-              </div>
-              <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
-              <div class="sheet-fertigkeiten-zeile">
-                <div>
-                  <button type="action" name="act_probe-wurfwaffen"><span data-i18n="wurfwaffen"></span></button>
-                </div>
-                <div><span data-i18n="geschick_kurz"></span></div>
-                <div>
-                  <input type="number" name="attr_wurfwaffen"/>
-                </div>
-                <div>
-                  <input type="number" name="attr_wurfwaffen_mod"/>
-                </div>
-              </div>
-              <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
-              <div class="sheet-fertigkeiten-zeile">
-                <div>
-                  <button type="action" name="act_probe-zero-g"><span data-i18n="zero-g"></span></button>
-                </div>
-                <div><span data-i18n="beweglichkeit_kurz"></span></div>
-                <div>
-                  <input type="number" name="attr_zero-g"/>
-                </div>
-                <div>
-                  <input type="number" name="attr_zero-g_mod"/>
-                </div>
-              </div>
         </div>
-        <div class="sheet-box">
-          <h1 data-i18n="besondere-fertigkeiten"></h1>
-          <div class="sheet-besondere-fertigkeiten-zeile">
-            <div class="sheet-kopfzeile"><span data-i18n="fertigkeit"></span></div>
-            <div class="sheet-kopfzeile"><span data-i18n="stufe"></span></div>
-          </div>
-          <fieldset class="repeating_besondere-fertigkeiten">
-            <div class="sheet-besondere-fertigkeiten-zeile">
-              <div>
-                <input type="text" name="attr_besondere-fertigkeit-name"/>
-              </div>
-              <div>
-                <input type="number" name="attr_besondere-fertigkeit-stufe"/>
-              </div>
+        <!--
+        ********************************
+        * ENDE src/html/page-one/block-three-first-row.pug
+        ********************************
+        -->
+        <!--
+        ********************************
+        * START src/html/page-one/block-three-second-row.pug
+        ********************************
+        
+        -->
+        <div> 
+          <div class="sheet-box">
+            <h1 data-i18n="fertigkeiten"></h1>
+            <div class="sheet-fertigkeiten-zeile">
+              <div class="sheet-kopfzeile"><span data-i18n="fertigkeit"></span></div>
+              <div class="sheet-kopfzeile"><span data-i18n="attr"></span></div>
+              <div class="sheet-kopfzeile"><span data-i18n="stufe"></span></div>
+              <div class="sheet-kopfzeile"><span data-i18n="mod"></span></div>
             </div>
-          </fieldset>
+                  <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
+                  <div class="sheet-fertigkeiten-zeile">
+                    <div>
+                      <button type="action" name="act_probe-sagen-mythen"><span data-i18n="sagen-mythen"></span></button>
+                    </div>
+                    <div><span data-i18n="wissen_kurz"></span></div>
+                    <div>
+                      <input type="number" name="attr_sagen-mythen"/>
+                    </div>
+                    <div>
+                      <input type="number" name="attr_sagen-mythen_mod"/>
+                    </div>
+                  </div>
+                  <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
+                  <div class="sheet-fertigkeiten-zeile">
+                    <div>
+                      <button type="action" name="act_probe-saufen"><span data-i18n="saufen"></span></button>
+                    </div>
+                    <div><span data-i18n="konstitution_kurz"></span></div>
+                    <div>
+                      <input type="number" name="attr_saufen"/>
+                    </div>
+                    <div>
+                      <input type="number" name="attr_saufen_mod"/>
+                    </div>
+                  </div>
+                  <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
+                  <div class="sheet-fertigkeiten-zeile">
+                    <div>
+                      <button type="action" name="act_probe-schaetzen"><span data-i18n="schaetzen"></span></button>
+                    </div>
+                    <div><span data-i18n="wahrnehmung_kurz"></span></div>
+                    <div>
+                      <input type="number" name="attr_schaetzen"/>
+                    </div>
+                    <div>
+                      <input type="number" name="attr_schaetzen_mod"/>
+                    </div>
+                  </div>
+                  <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
+                  <div class="sheet-fertigkeiten-zeile">
+                    <div>
+                      <button type="action" name="act_probe-schauspiel"><span data-i18n="schauspiel"></span></button>
+                    </div>
+                    <div><span data-i18n="charisma_kurz"></span></div>
+                    <div>
+                      <input type="number" name="attr_schauspiel"/>
+                    </div>
+                    <div>
+                      <input type="number" name="attr_schauspiel_mod"/>
+                    </div>
+                  </div>
+                  <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
+                  <div class="sheet-fertigkeiten-zeile">
+                    <div>
+                      <button type="action" name="act_probe-schiessen"><span data-i18n="schiessen"></span></button>
+                    </div>
+                    <div><span data-i18n="geschick_kurz"></span></div>
+                    <div>
+                      <input type="number" name="attr_schiessen"/>
+                    </div>
+                    <div>
+                      <input type="number" name="attr_schiessen_mod"/>
+                    </div>
+                  </div>
+                  <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
+                  <div class="sheet-fertigkeiten-zeile">
+                    <div>
+                      <button type="action" name="act_probe-schwere-waffen"><span data-i18n="schwere-waffen"></span></button>
+                    </div>
+                    <div><span data-i18n="geschick_kurz"></span></div>
+                    <div>
+                      <input type="number" name="attr_schwere-waffen"/>
+                    </div>
+                    <div>
+                      <input type="number" name="attr_schwere-waffen_mod"/>
+                    </div>
+                  </div>
+                  <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
+                  <div class="sheet-fertigkeiten-zeile">
+                    <div>
+                      <button type="action" name="act_probe-schwimmen"><span data-i18n="schwimmen"></span></button>
+                    </div>
+                    <div><span data-i18n="beweglichkeit_kurz"></span></div>
+                    <div>
+                      <input type="number" name="attr_schwimmen"/>
+                    </div>
+                    <div>
+                      <input type="number" name="attr_schwimmen_mod"/>
+                    </div>
+                  </div>
+                  <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
+                  <div class="sheet-fertigkeiten-zeile">
+                    <div>
+                      <button type="action" name="act_probe-sicherheitstechnik"><span data-i18n="sicherheitstechnik"></span></button>
+                    </div>
+                    <div><span data-i18n="handwerk_kurz"></span></div>
+                    <div>
+                      <input type="number" name="attr_sicherheitstechnik"/>
+                    </div>
+                    <div>
+                      <input type="number" name="attr_sicherheitstechnik_mod"/>
+                    </div>
+                  </div>
+                  <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
+                  <div class="sheet-fertigkeiten-zeile">
+                    <div>
+                      <button type="action" name="act_probe-spezies"><span data-i18n="spezies"></span></button>
+                    </div>
+                    <div><span data-i18n="wissen_kurz"></span></div>
+                    <div>
+                      <input type="number" name="attr_spezies"/>
+                    </div>
+                    <div>
+                      <input type="number" name="attr_spezies_mod"/>
+                    </div>
+                  </div>
+                  <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
+                  <div class="sheet-fertigkeiten-zeile">
+                    <div>
+                      <button type="action" name="act_probe-springen"><span data-i18n="springen"></span></button>
+                    </div>
+                    <div><span data-i18n="beweglichkeit_kurz"></span></div>
+                    <div>
+                      <input type="number" name="attr_springen"/>
+                    </div>
+                    <div>
+                      <input type="number" name="attr_springen_mod"/>
+                    </div>
+                  </div>
+                  <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
+                  <div class="sheet-fertigkeiten-zeile">
+                    <div>
+                      <button type="action" name="act_probe-spruehwaffen"><span data-i18n="spruehwaffen"></span></button>
+                    </div>
+                    <div><span data-i18n="geschick_kurz"></span></div>
+                    <div>
+                      <input type="number" name="attr_spruehwaffen"/>
+                    </div>
+                    <div>
+                      <input type="number" name="attr_spruehwaffen_mod"/>
+                    </div>
+                  </div>
+                  <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
+                  <div class="sheet-fertigkeiten-zeile">
+                    <div>
+                      <button type="action" name="act_probe-stemmen"><span data-i18n="stemmen"></span></button>
+                    </div>
+                    <div><span data-i18n="staerke_kurz"></span></div>
+                    <div>
+                      <input type="number" name="attr_stemmen"/>
+                    </div>
+                    <div>
+                      <input type="number" name="attr_stemmen_mod"/>
+                    </div>
+                  </div>
+                  <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
+                  <div class="sheet-fertigkeiten-zeile">
+                    <div>
+                      <button type="action" name="act_probe-taschendiebstahl"><span data-i18n="taschendiebstahl"></span></button>
+                    </div>
+                    <div><span data-i18n="geschick_kurz"></span></div>
+                    <div>
+                      <input type="number" name="attr_taschendiebstahl"/>
+                    </div>
+                    <div>
+                      <input type="number" name="attr_taschendiebstahl_mod"/>
+                    </div>
+                  </div>
+                  <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
+                  <div class="sheet-fertigkeiten-zeile">
+                    <div>
+                      <button type="action" name="act_probe-ueberreden"><span data-i18n="ueberreden"></span></button>
+                    </div>
+                    <div><span data-i18n="charisma_kurz"></span></div>
+                    <div>
+                      <input type="number" name="attr_ueberreden"/>
+                    </div>
+                    <div>
+                      <input type="number" name="attr_ueberreden_mod"/>
+                    </div>
+                  </div>
+                  <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
+                  <div class="sheet-fertigkeiten-zeile">
+                    <div>
+                      <button type="action" name="act_probe-verhandeln"><span data-i18n="verhandeln"></span></button>
+                    </div>
+                    <div><span data-i18n="charisma_kurz"></span></div>
+                    <div>
+                      <input type="number" name="attr_verhandeln"/>
+                    </div>
+                    <div>
+                      <input type="number" name="attr_verhandeln_mod"/>
+                    </div>
+                  </div>
+                  <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
+                  <div class="sheet-fertigkeiten-zeile">
+                    <div>
+                      <button type="action" name="act_probe-waffenbau"><span data-i18n="waffenbau"></span></button>
+                    </div>
+                    <div><span data-i18n="handwerk_kurz"></span></div>
+                    <div>
+                      <input type="number" name="attr_waffenbau"/>
+                    </div>
+                    <div>
+                      <input type="number" name="attr_waffenbau_mod"/>
+                    </div>
+                  </div>
+                  <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
+                  <div class="sheet-fertigkeiten-zeile">
+                    <div>
+                      <button type="action" name="act_probe-waffenkampf"><span data-i18n="waffenkampf"></span></button>
+                    </div>
+                    <div><span data-i18n="beweglichkeit_kurz"></span></div>
+                    <div>
+                      <input type="number" name="attr_waffenkampf"/>
+                    </div>
+                    <div>
+                      <input type="number" name="attr_waffenkampf_mod"/>
+                    </div>
+                  </div>
+                  <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
+                  <div class="sheet-fertigkeiten-zeile">
+                    <div>
+                      <button type="action" name="act_probe-wasserfahrzeuge"><span data-i18n="wasserfahrzeuge"></span></button>
+                    </div>
+                    <div><span data-i18n="geschick_kurz"></span></div>
+                    <div>
+                      <input type="number" name="attr_wasserfahrzeuge"/>
+                    </div>
+                    <div>
+                      <input type="number" name="attr_wasserfahrzeuge_mod"/>
+                    </div>
+                  </div>
+                  <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
+                  <div class="sheet-fertigkeiten-zeile">
+                    <div>
+                      <button type="action" name="act_probe-willenskraft"><span data-i18n="willenskraft"></span></button>
+                    </div>
+                    <div><span data-i18n="wissen_kurz"></span></div>
+                    <div>
+                      <input type="number" name="attr_willenskraft"/>
+                    </div>
+                    <div>
+                      <input type="number" name="attr_willenskraft_mod"/>
+                    </div>
+                  </div>
+                  <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
+                  <div class="sheet-fertigkeiten-zeile">
+                    <div>
+                      <button type="action" name="act_probe-wurfwaffen"><span data-i18n="wurfwaffen"></span></button>
+                    </div>
+                    <div><span data-i18n="geschick_kurz"></span></div>
+                    <div>
+                      <input type="number" name="attr_wurfwaffen"/>
+                    </div>
+                    <div>
+                      <input type="number" name="attr_wurfwaffen_mod"/>
+                    </div>
+                  </div>
+                  <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
+                  <div class="sheet-fertigkeiten-zeile">
+                    <div>
+                      <button type="action" name="act_probe-zero-g"><span data-i18n="zero-g"></span></button>
+                    </div>
+                    <div><span data-i18n="beweglichkeit_kurz"></span></div>
+                    <div>
+                      <input type="number" name="attr_zero-g"/>
+                    </div>
+                    <div>
+                      <input type="number" name="attr_zero-g_mod"/>
+                    </div>
+                  </div>
+          </div>
+          <div class="sheet-box">
+            <h1 data-i18n="besondere-fertigkeiten"></h1>
+            <div class="sheet-besondere-fertigkeiten-zeile">
+              <div class="sheet-kopfzeile"><span data-i18n="fertigkeit"></span></div>
+              <div class="sheet-kopfzeile"><span data-i18n="stufe"></span></div>
+            </div>
+            <fieldset class="repeating_besondere-fertigkeiten">
+              <div class="sheet-besondere-fertigkeiten-zeile">
+                <div>
+                  <input type="text" name="attr_besondere-fertigkeit-name"/>
+                </div>
+                <div>
+                  <input type="number" name="attr_besondere-fertigkeit-stufe"/>
+                </div>
+              </div>
+            </fieldset>
+          </div>
         </div>
+        <!--
+        ********************************
+        * ENDE src/html/page-one/block-three-second-row.pug
+        ********************************
+        -->
+        <!--
+        ********************************
+        * START src/html/page-one/block-three-third-row.pug
+        ********************************
+        
+        -->
+        <div>
+          <div class="sheet-box">
+            <div class="sheet-trefferzonen-liste">
+                      <!-- MIXIN : src/html/page-one/block-three-third-row.pug : trefferzone-->
+                      <div class="sheet-trefferzonen-eintrag">
+                        <div class="sheet-trefferzone-kopfzeile">
+                          <div class="sheet-kopfzeile"><span data-i18n="zone"></span></div>
+                          <div class="sheet-kopfzeile"><span data-i18n="trefferpunkte_kurz"></span></div>
+                          <div class="sheet-kopfzeile"><span data-i18n="ruestungswert_kurz"></span></div>
+                          <div class="sheet-kopfzeile"><span data-i18n="materialkomponente_kurz"></span></div>
+                        </div>
+                        <div class="sheet-trefferzone-zeile">
+                          <div> <span>12</span></div>
+                          <div>
+                            <input type="number" name="attr_trefferpunkte-zone-12"/>
+                          </div>
+                          <div>
+                            <input type="number" name="attr_ruestungswert-zone-12"/>
+                          </div>
+                          <div>
+                            <input type="text" maxlength="1" name="attr_mk-zone-12"/>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- MIXIN : src/html/page-one/block-three-third-row.pug : trefferzone-->
+                      <div class="sheet-trefferzonen-eintrag">
+                        <div class="sheet-trefferzone-kopfzeile">
+                          <div class="sheet-kopfzeile"><span data-i18n="zone"></span></div>
+                          <div class="sheet-kopfzeile"><span data-i18n="trefferpunkte_kurz"></span></div>
+                          <div class="sheet-kopfzeile"><span data-i18n="ruestungswert_kurz"></span></div>
+                          <div class="sheet-kopfzeile"><span data-i18n="materialkomponente_kurz"></span></div>
+                        </div>
+                        <div class="sheet-trefferzone-zeile">
+                          <div> <span>11</span></div>
+                          <div>
+                            <input type="number" name="attr_trefferpunkte-zone-11"/>
+                          </div>
+                          <div>
+                            <input type="number" name="attr_ruestungswert-zone-11"/>
+                          </div>
+                          <div>
+                            <input type="text" maxlength="1" name="attr_mk-zone-11"/>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- MIXIN : src/html/page-one/block-three-third-row.pug : trefferzone-->
+                      <div class="sheet-trefferzonen-eintrag">
+                        <div class="sheet-trefferzone-kopfzeile">
+                          <div class="sheet-kopfzeile"><span data-i18n="zone"></span></div>
+                          <div class="sheet-kopfzeile"><span data-i18n="trefferpunkte_kurz"></span></div>
+                          <div class="sheet-kopfzeile"><span data-i18n="ruestungswert_kurz"></span></div>
+                          <div class="sheet-kopfzeile"><span data-i18n="materialkomponente_kurz"></span></div>
+                        </div>
+                        <div class="sheet-trefferzone-zeile">
+                          <div> <span>6</span></div>
+                          <div>
+                            <input type="number" name="attr_trefferpunkte-zone-6"/>
+                          </div>
+                          <div>
+                            <input type="number" name="attr_ruestungswert-zone-6"/>
+                          </div>
+                          <div>
+                            <input type="text" maxlength="1" name="attr_mk-zone-6"/>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- MIXIN : src/html/page-one/block-three-third-row.pug : trefferzone-->
+                      <div class="sheet-trefferzonen-eintrag">
+                        <div class="sheet-trefferzone-kopfzeile">
+                          <div class="sheet-kopfzeile"><span data-i18n="zone"></span></div>
+                          <div class="sheet-kopfzeile"><span data-i18n="trefferpunkte_kurz"></span></div>
+                          <div class="sheet-kopfzeile"><span data-i18n="ruestungswert_kurz"></span></div>
+                          <div class="sheet-kopfzeile"><span data-i18n="materialkomponente_kurz"></span></div>
+                        </div>
+                        <div class="sheet-trefferzone-zeile">
+                          <div> <span>10</span></div>
+                          <div>
+                            <input type="number" name="attr_trefferpunkte-zone-10"/>
+                          </div>
+                          <div>
+                            <input type="number" name="attr_ruestungswert-zone-10"/>
+                          </div>
+                          <div>
+                            <input type="text" maxlength="1" name="attr_mk-zone-10"/>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- MIXIN : src/html/page-one/block-three-third-row.pug : trefferzone-->
+                      <div class="sheet-trefferzonen-eintrag">
+                        <div class="sheet-trefferzone-kopfzeile">
+                          <div class="sheet-kopfzeile"><span data-i18n="zone"></span></div>
+                          <div class="sheet-kopfzeile"><span data-i18n="trefferpunkte_kurz"></span></div>
+                          <div class="sheet-kopfzeile"><span data-i18n="ruestungswert_kurz"></span></div>
+                          <div class="sheet-kopfzeile"><span data-i18n="materialkomponente_kurz"></span></div>
+                        </div>
+                        <div class="sheet-trefferzone-zeile">
+                          <div> <span>5</span></div>
+                          <div>
+                            <input type="number" name="attr_trefferpunkte-zone-5"/>
+                          </div>
+                          <div>
+                            <input type="number" name="attr_ruestungswert-zone-5"/>
+                          </div>
+                          <div>
+                            <input type="text" maxlength="1" name="attr_mk-zone-5"/>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- MIXIN : src/html/page-one/block-three-third-row.pug : trefferzone-->
+                      <div class="sheet-trefferzonen-eintrag">
+                        <div class="sheet-trefferzone-kopfzeile">
+                          <div class="sheet-kopfzeile"><span data-i18n="zone"></span></div>
+                          <div class="sheet-kopfzeile"><span data-i18n="trefferpunkte_kurz"></span></div>
+                          <div class="sheet-kopfzeile"><span data-i18n="ruestungswert_kurz"></span></div>
+                          <div class="sheet-kopfzeile"><span data-i18n="materialkomponente_kurz"></span></div>
+                        </div>
+                        <div class="sheet-trefferzone-zeile">
+                          <div> <span>9</span></div>
+                          <div>
+                            <input type="number" name="attr_trefferpunkte-zone-9"/>
+                          </div>
+                          <div>
+                            <input type="number" name="attr_ruestungswert-zone-9"/>
+                          </div>
+                          <div>
+                            <input type="text" maxlength="1" name="attr_mk-zone-9"/>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- MIXIN : src/html/page-one/block-three-third-row.pug : trefferzone-->
+                      <div class="sheet-trefferzonen-eintrag">
+                        <div class="sheet-trefferzone-kopfzeile">
+                          <div class="sheet-kopfzeile"><span data-i18n="zone"></span></div>
+                          <div class="sheet-kopfzeile"><span data-i18n="trefferpunkte_kurz"></span></div>
+                          <div class="sheet-kopfzeile"><span data-i18n="ruestungswert_kurz"></span></div>
+                          <div class="sheet-kopfzeile"><span data-i18n="materialkomponente_kurz"></span></div>
+                        </div>
+                        <div class="sheet-trefferzone-zeile">
+                          <div> <span>4</span></div>
+                          <div>
+                            <input type="number" name="attr_trefferpunkte-zone-4"/>
+                          </div>
+                          <div>
+                            <input type="number" name="attr_ruestungswert-zone-4"/>
+                          </div>
+                          <div>
+                            <input type="text" maxlength="1" name="attr_mk-zone-4"/>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- MIXIN : src/html/page-one/block-three-third-row.pug : trefferzone-->
+                      <div class="sheet-trefferzonen-eintrag">
+                        <div class="sheet-trefferzone-kopfzeile">
+                          <div class="sheet-kopfzeile"><span data-i18n="zone"></span></div>
+                          <div class="sheet-kopfzeile"><span data-i18n="trefferpunkte_kurz"></span></div>
+                          <div class="sheet-kopfzeile"><span data-i18n="ruestungswert_kurz"></span></div>
+                          <div class="sheet-kopfzeile"><span data-i18n="materialkomponente_kurz"></span></div>
+                        </div>
+                        <div class="sheet-trefferzone-zeile">
+                          <div> <span>8</span></div>
+                          <div>
+                            <input type="number" name="attr_trefferpunkte-zone-8"/>
+                          </div>
+                          <div>
+                            <input type="number" name="attr_ruestungswert-zone-8"/>
+                          </div>
+                          <div>
+                            <input type="text" maxlength="1" name="attr_mk-zone-8"/>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- MIXIN : src/html/page-one/block-three-third-row.pug : trefferzone-->
+                      <div class="sheet-trefferzonen-eintrag">
+                        <div class="sheet-trefferzone-kopfzeile">
+                          <div class="sheet-kopfzeile"><span data-i18n="zone"></span></div>
+                          <div class="sheet-kopfzeile"><span data-i18n="trefferpunkte_kurz"></span></div>
+                          <div class="sheet-kopfzeile"><span data-i18n="ruestungswert_kurz"></span></div>
+                          <div class="sheet-kopfzeile"><span data-i18n="materialkomponente_kurz"></span></div>
+                        </div>
+                        <div class="sheet-trefferzone-zeile">
+                          <div> <span>3</span></div>
+                          <div>
+                            <input type="number" name="attr_trefferpunkte-zone-3"/>
+                          </div>
+                          <div>
+                            <input type="number" name="attr_ruestungswert-zone-3"/>
+                          </div>
+                          <div>
+                            <input type="text" maxlength="1" name="attr_mk-zone-3"/>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- MIXIN : src/html/page-one/block-three-third-row.pug : trefferzone-->
+                      <div class="sheet-trefferzonen-eintrag">
+                        <div class="sheet-trefferzone-kopfzeile">
+                          <div class="sheet-kopfzeile"><span data-i18n="zone"></span></div>
+                          <div class="sheet-kopfzeile"><span data-i18n="trefferpunkte_kurz"></span></div>
+                          <div class="sheet-kopfzeile"><span data-i18n="ruestungswert_kurz"></span></div>
+                          <div class="sheet-kopfzeile"><span data-i18n="materialkomponente_kurz"></span></div>
+                        </div>
+                        <div class="sheet-trefferzone-zeile">
+                          <div> <span>7</span></div>
+                          <div>
+                            <input type="number" name="attr_trefferpunkte-zone-7"/>
+                          </div>
+                          <div>
+                            <input type="number" name="attr_ruestungswert-zone-7"/>
+                          </div>
+                          <div>
+                            <input type="text" maxlength="1" name="attr_mk-zone-7"/>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- MIXIN : src/html/page-one/block-three-third-row.pug : trefferzone-->
+                      <div class="sheet-trefferzonen-eintrag">
+                        <div class="sheet-trefferzone-kopfzeile">
+                          <div class="sheet-kopfzeile"><span data-i18n="zone"></span></div>
+                          <div class="sheet-kopfzeile"><span data-i18n="trefferpunkte_kurz"></span></div>
+                          <div class="sheet-kopfzeile"><span data-i18n="ruestungswert_kurz"></span></div>
+                          <div class="sheet-kopfzeile"><span data-i18n="materialkomponente_kurz"></span></div>
+                        </div>
+                        <div class="sheet-trefferzone-zeile">
+                          <div> <span>2</span></div>
+                          <div>
+                            <input type="number" name="attr_trefferpunkte-zone-2"/>
+                          </div>
+                          <div>
+                            <input type="number" name="attr_ruestungswert-zone-2"/>
+                          </div>
+                          <div>
+                            <input type="text" maxlength="1" name="attr_mk-zone-2"/>
+                          </div>
+                        </div>
+                      </div>
+            </div>
+          </div>
+          <div class="sheet-box">
+            <h1 data-i18n="style-skills"></h1>
+            <div class="sheet-style-skills-zeile">
+              <div class="sheet-kopfzeile"><span data-i18n="style-skill"></span></div>
+              <div class="sheet-kopfzeile"><span data-i18n="stufe"></span></div>
+            </div>
+            <fieldset class="repeating_style-skills">
+              <div class="sheet-style-skills-zeile">
+                <div>
+                  <input type="text" name="attr_style-skill-name"/>
+                </div>
+                <div>
+                  <input type="number" name="attr_style-skill-stufe"/>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+          <div class="sheet-box">
+            <h1 data-i18n="charaktermerkmale"></h1>
+            <div class="sheet-charaktermerkmale-zeile">
+              <div class="sheet-kopfzeile"><span data-i18n="charaktermerkmal"></span></div>
+              <div class="sheet-kopfzeile"><span data-i18n="jp-cp"></span></div>
+            </div>
+            <fieldset class="repeating_charaktermerkmale">
+              <div class="sheet-charaktermerkmale-zeile">
+                <div>
+                  <input type="text" name="attr_charaktermerkmal-name"/>
+                </div>
+                <div>
+                  <input type="number" name="attr_charaktermerkmal-stufe"/>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+        <!--
+        ********************************
+        * ENDE src/html/page-one/block-three-third-row.pug
+        ********************************
+        -->
       </div>
       <!--
       ********************************
-      * ENDE src/html/page-one/block-three-second-row.pug
+      * ENDE src/html/page-one/block-three.pug
+      ********************************
+      -->
+    </div>
+    <!--
+    ********************************
+    * ENDE src/html/page-one.pug
+    ********************************
+    -->
+    <!--
+    ********************************
+    * START src/html/page-two.pug
+    ********************************
+    
+    -->
+    <div class="sheet-page-two">
+      <!--
+      ********************************
+      * START src/html/page-two/block-one.pug
+      ********************************
+      -->
+      <div class="sheet-3cols">
+        <div class="sheet-box">
+          <div class="sheet-input-line">
+            <!-- MIXIN : noreturn.pug : input-text-->
+            <div> <span class="sheet-input-label" data-i18n="charaktername"></span></div>
+            <div>
+              <input type="text" name="attr_character_name"/>
+            </div>
+          </div>
+        </div>
+        <div class="sheet-box">
+          <div class="sheet-input-line">
+            <!-- MIXIN : noreturn.pug : input-text-->
+            <div> <span class="sheet-input-label" data-i18n="bargeld"></span></div>
+            <div>
+              <input type="text" name="attr_bargeld"/>
+            </div>
+            <div>N$ </div>
+          </div>
+        </div>
+        <div classs="sheet-logo"><img src="http://gorthian.de/roll20/noreturn/logo_200px.png"/></div>
+      </div>
+      <!--
+      ********************************
+      * ENDE src/html/page-two/block-one.pug
       ********************************
       -->
       <!--
       ********************************
-      * START src/html/page-one/block-three-third-row.pug
+      * START src/html/page-two/block-two.pug
       ********************************
-      
       -->
       <div>
         <div class="sheet-box">
-          <div class="sheet-trefferzonen-liste">
-                  <!-- MIXIN : src/html/page-one/block-three-third-row.pug : trefferzone-->
-                  <div class="sheet-trefferzonen-eintrag">
-                    <div class="sheet-trefferzone-kopfzeile">
-                      <div class="sheet-kopfzeile"><span data-i18n="zone"></span></div>
-                      <div class="sheet-kopfzeile"><span data-i18n="trefferpunkte_kurz"></span></div>
-                      <div class="sheet-kopfzeile"><span data-i18n="ruestungswert_kurz"></span></div>
-                      <div class="sheet-kopfzeile"><span data-i18n="materialkomponente_kurz"></span></div>
-                    </div>
-                    <div class="sheet-trefferzone-zeile">
-                      <div> <span>12</span></div>
-                      <div>
-                        <input type="number" name="attr_trefferpunkte-zone-12"/>
-                      </div>
-                      <div>
-                        <input type="number" name="attr_ruestungswert-zone-12"/>
-                      </div>
-                      <div>
-                        <input type="text" maxlength="1" name="attr_mk-zone-12"/>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- MIXIN : src/html/page-one/block-three-third-row.pug : trefferzone-->
-                  <div class="sheet-trefferzonen-eintrag">
-                    <div class="sheet-trefferzone-kopfzeile">
-                      <div class="sheet-kopfzeile"><span data-i18n="zone"></span></div>
-                      <div class="sheet-kopfzeile"><span data-i18n="trefferpunkte_kurz"></span></div>
-                      <div class="sheet-kopfzeile"><span data-i18n="ruestungswert_kurz"></span></div>
-                      <div class="sheet-kopfzeile"><span data-i18n="materialkomponente_kurz"></span></div>
-                    </div>
-                    <div class="sheet-trefferzone-zeile">
-                      <div> <span>11</span></div>
-                      <div>
-                        <input type="number" name="attr_trefferpunkte-zone-11"/>
-                      </div>
-                      <div>
-                        <input type="number" name="attr_ruestungswert-zone-11"/>
-                      </div>
-                      <div>
-                        <input type="text" maxlength="1" name="attr_mk-zone-11"/>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- MIXIN : src/html/page-one/block-three-third-row.pug : trefferzone-->
-                  <div class="sheet-trefferzonen-eintrag">
-                    <div class="sheet-trefferzone-kopfzeile">
-                      <div class="sheet-kopfzeile"><span data-i18n="zone"></span></div>
-                      <div class="sheet-kopfzeile"><span data-i18n="trefferpunkte_kurz"></span></div>
-                      <div class="sheet-kopfzeile"><span data-i18n="ruestungswert_kurz"></span></div>
-                      <div class="sheet-kopfzeile"><span data-i18n="materialkomponente_kurz"></span></div>
-                    </div>
-                    <div class="sheet-trefferzone-zeile">
-                      <div> <span>6</span></div>
-                      <div>
-                        <input type="number" name="attr_trefferpunkte-zone-6"/>
-                      </div>
-                      <div>
-                        <input type="number" name="attr_ruestungswert-zone-6"/>
-                      </div>
-                      <div>
-                        <input type="text" maxlength="1" name="attr_mk-zone-6"/>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- MIXIN : src/html/page-one/block-three-third-row.pug : trefferzone-->
-                  <div class="sheet-trefferzonen-eintrag">
-                    <div class="sheet-trefferzone-kopfzeile">
-                      <div class="sheet-kopfzeile"><span data-i18n="zone"></span></div>
-                      <div class="sheet-kopfzeile"><span data-i18n="trefferpunkte_kurz"></span></div>
-                      <div class="sheet-kopfzeile"><span data-i18n="ruestungswert_kurz"></span></div>
-                      <div class="sheet-kopfzeile"><span data-i18n="materialkomponente_kurz"></span></div>
-                    </div>
-                    <div class="sheet-trefferzone-zeile">
-                      <div> <span>10</span></div>
-                      <div>
-                        <input type="number" name="attr_trefferpunkte-zone-10"/>
-                      </div>
-                      <div>
-                        <input type="number" name="attr_ruestungswert-zone-10"/>
-                      </div>
-                      <div>
-                        <input type="text" maxlength="1" name="attr_mk-zone-10"/>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- MIXIN : src/html/page-one/block-three-third-row.pug : trefferzone-->
-                  <div class="sheet-trefferzonen-eintrag">
-                    <div class="sheet-trefferzone-kopfzeile">
-                      <div class="sheet-kopfzeile"><span data-i18n="zone"></span></div>
-                      <div class="sheet-kopfzeile"><span data-i18n="trefferpunkte_kurz"></span></div>
-                      <div class="sheet-kopfzeile"><span data-i18n="ruestungswert_kurz"></span></div>
-                      <div class="sheet-kopfzeile"><span data-i18n="materialkomponente_kurz"></span></div>
-                    </div>
-                    <div class="sheet-trefferzone-zeile">
-                      <div> <span>5</span></div>
-                      <div>
-                        <input type="number" name="attr_trefferpunkte-zone-5"/>
-                      </div>
-                      <div>
-                        <input type="number" name="attr_ruestungswert-zone-5"/>
-                      </div>
-                      <div>
-                        <input type="text" maxlength="1" name="attr_mk-zone-5"/>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- MIXIN : src/html/page-one/block-three-third-row.pug : trefferzone-->
-                  <div class="sheet-trefferzonen-eintrag">
-                    <div class="sheet-trefferzone-kopfzeile">
-                      <div class="sheet-kopfzeile"><span data-i18n="zone"></span></div>
-                      <div class="sheet-kopfzeile"><span data-i18n="trefferpunkte_kurz"></span></div>
-                      <div class="sheet-kopfzeile"><span data-i18n="ruestungswert_kurz"></span></div>
-                      <div class="sheet-kopfzeile"><span data-i18n="materialkomponente_kurz"></span></div>
-                    </div>
-                    <div class="sheet-trefferzone-zeile">
-                      <div> <span>9</span></div>
-                      <div>
-                        <input type="number" name="attr_trefferpunkte-zone-9"/>
-                      </div>
-                      <div>
-                        <input type="number" name="attr_ruestungswert-zone-9"/>
-                      </div>
-                      <div>
-                        <input type="text" maxlength="1" name="attr_mk-zone-9"/>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- MIXIN : src/html/page-one/block-three-third-row.pug : trefferzone-->
-                  <div class="sheet-trefferzonen-eintrag">
-                    <div class="sheet-trefferzone-kopfzeile">
-                      <div class="sheet-kopfzeile"><span data-i18n="zone"></span></div>
-                      <div class="sheet-kopfzeile"><span data-i18n="trefferpunkte_kurz"></span></div>
-                      <div class="sheet-kopfzeile"><span data-i18n="ruestungswert_kurz"></span></div>
-                      <div class="sheet-kopfzeile"><span data-i18n="materialkomponente_kurz"></span></div>
-                    </div>
-                    <div class="sheet-trefferzone-zeile">
-                      <div> <span>4</span></div>
-                      <div>
-                        <input type="number" name="attr_trefferpunkte-zone-4"/>
-                      </div>
-                      <div>
-                        <input type="number" name="attr_ruestungswert-zone-4"/>
-                      </div>
-                      <div>
-                        <input type="text" maxlength="1" name="attr_mk-zone-4"/>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- MIXIN : src/html/page-one/block-three-third-row.pug : trefferzone-->
-                  <div class="sheet-trefferzonen-eintrag">
-                    <div class="sheet-trefferzone-kopfzeile">
-                      <div class="sheet-kopfzeile"><span data-i18n="zone"></span></div>
-                      <div class="sheet-kopfzeile"><span data-i18n="trefferpunkte_kurz"></span></div>
-                      <div class="sheet-kopfzeile"><span data-i18n="ruestungswert_kurz"></span></div>
-                      <div class="sheet-kopfzeile"><span data-i18n="materialkomponente_kurz"></span></div>
-                    </div>
-                    <div class="sheet-trefferzone-zeile">
-                      <div> <span>8</span></div>
-                      <div>
-                        <input type="number" name="attr_trefferpunkte-zone-8"/>
-                      </div>
-                      <div>
-                        <input type="number" name="attr_ruestungswert-zone-8"/>
-                      </div>
-                      <div>
-                        <input type="text" maxlength="1" name="attr_mk-zone-8"/>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- MIXIN : src/html/page-one/block-three-third-row.pug : trefferzone-->
-                  <div class="sheet-trefferzonen-eintrag">
-                    <div class="sheet-trefferzone-kopfzeile">
-                      <div class="sheet-kopfzeile"><span data-i18n="zone"></span></div>
-                      <div class="sheet-kopfzeile"><span data-i18n="trefferpunkte_kurz"></span></div>
-                      <div class="sheet-kopfzeile"><span data-i18n="ruestungswert_kurz"></span></div>
-                      <div class="sheet-kopfzeile"><span data-i18n="materialkomponente_kurz"></span></div>
-                    </div>
-                    <div class="sheet-trefferzone-zeile">
-                      <div> <span>3</span></div>
-                      <div>
-                        <input type="number" name="attr_trefferpunkte-zone-3"/>
-                      </div>
-                      <div>
-                        <input type="number" name="attr_ruestungswert-zone-3"/>
-                      </div>
-                      <div>
-                        <input type="text" maxlength="1" name="attr_mk-zone-3"/>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- MIXIN : src/html/page-one/block-three-third-row.pug : trefferzone-->
-                  <div class="sheet-trefferzonen-eintrag">
-                    <div class="sheet-trefferzone-kopfzeile">
-                      <div class="sheet-kopfzeile"><span data-i18n="zone"></span></div>
-                      <div class="sheet-kopfzeile"><span data-i18n="trefferpunkte_kurz"></span></div>
-                      <div class="sheet-kopfzeile"><span data-i18n="ruestungswert_kurz"></span></div>
-                      <div class="sheet-kopfzeile"><span data-i18n="materialkomponente_kurz"></span></div>
-                    </div>
-                    <div class="sheet-trefferzone-zeile">
-                      <div> <span>7</span></div>
-                      <div>
-                        <input type="number" name="attr_trefferpunkte-zone-7"/>
-                      </div>
-                      <div>
-                        <input type="number" name="attr_ruestungswert-zone-7"/>
-                      </div>
-                      <div>
-                        <input type="text" maxlength="1" name="attr_mk-zone-7"/>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- MIXIN : src/html/page-one/block-three-third-row.pug : trefferzone-->
-                  <div class="sheet-trefferzonen-eintrag">
-                    <div class="sheet-trefferzone-kopfzeile">
-                      <div class="sheet-kopfzeile"><span data-i18n="zone"></span></div>
-                      <div class="sheet-kopfzeile"><span data-i18n="trefferpunkte_kurz"></span></div>
-                      <div class="sheet-kopfzeile"><span data-i18n="ruestungswert_kurz"></span></div>
-                      <div class="sheet-kopfzeile"><span data-i18n="materialkomponente_kurz"></span></div>
-                    </div>
-                    <div class="sheet-trefferzone-zeile">
-                      <div> <span>2</span></div>
-                      <div>
-                        <input type="number" name="attr_trefferpunkte-zone-2"/>
-                      </div>
-                      <div>
-                        <input type="number" name="attr_ruestungswert-zone-2"/>
-                      </div>
-                      <div>
-                        <input type="text" maxlength="1" name="attr_mk-zone-2"/>
-                      </div>
-                    </div>
-                  </div>
-          </div>
-        </div>
-        <div class="sheet-box">
-          <h1 data-i18n="style-skills"></h1>
-          <div class="sheet-style-skills-zeile">
-            <div class="sheet-kopfzeile"><span data-i18n="style-skill"></span></div>
-            <div class="sheet-kopfzeile"><span data-i18n="stufe"></span></div>
-          </div>
-          <fieldset class="repeating_style-skills">
-            <div class="sheet-style-skills-zeile">
-              <div>
-                <input type="text" name="attr_style-skill-name"/>
-              </div>
-              <div>
-                <input type="number" name="attr_style-skill-stufe"/>
-              </div>
-            </div>
-          </fieldset>
-        </div>
-        <div class="sheet-box">
-          <h1 data-i18n="charaktermerkmale"></h1>
-          <div class="sheet-charaktermerkmale-zeile">
-            <div class="sheet-kopfzeile"><span data-i18n="charaktermerkmal"></span></div>
-            <div class="sheet-kopfzeile"><span data-i18n="jp-cp"></span></div>
-          </div>
-          <fieldset class="repeating_charaktermerkmale">
-            <div class="sheet-charaktermerkmale-zeile">
-              <div>
-                <input type="text" name="attr_charaktermerkmal-name"/>
-              </div>
-              <div>
-                <input type="number" name="attr_charaktermerkmal-stufe"/>
-              </div>
-            </div>
-          </fieldset>
+          <h1 data-i18n="fernkampfwaffen"></h1>
         </div>
       </div>
       <!--
       ********************************
-      * ENDE src/html/page-one/block-three-third-row.pug
+      * ENDE src/html/page-two/block-two.pug
+      ********************************
+      -->
+      <!--
+      ********************************
+      * START src/html/page-two/block-three.pug
+      ********************************
+      -->
+      <div class="sheet-2cols">
+        <div> 
+          <!-- include block-three-kampf.pug -->
+          <div class="sheet-2cols-50-50">
+                  <!-- MIXIN : src/html/page-two/block-three.pug : max-current-->
+                  <div class="sheet-box">
+                    <h1 data-i18n="bio-abnormitaeten"></h1>
+                    <fieldset class="repeating_bio-abnormitaeten">
+                      <textarea name="attr_bio-abnormitaeten"></textarea>
+                    </fieldset>
+                  </div>
+                  <!-- MIXIN : src/html/page-two/block-three.pug : max-current-->
+                  <div class="sheet-box">
+                    <h1 data-i18n="bio-eigenschaften"></h1>
+                    <fieldset class="repeating_bio-eigenschaften">
+                      <textarea name="attr_bio-eigenschaften"></textarea>
+                    </fieldset>
+                  </div>
+          </div>
+        </div>
+        <div> 
+                <!-- MIXIN : src/html/page-two/block-three.pug : max-current-->
+                <div class="sheet-box">
+                  <h1 data-i18n="wichtige-notiz"></h1>
+                  <fieldset class="repeating_wichtige-notiz">
+                    <textarea name="attr_wichtige-notiz"></textarea>
+                  </fieldset>
+                </div>
+                <!-- MIXIN : src/html/page-two/block-three.pug : max-current-->
+                <div class="sheet-box">
+                  <h1 data-i18n="physiologische-stoerungen"></h1>
+                  <fieldset class="repeating_physiologische-stoerungen">
+                    <textarea name="attr_physiologische-stoerungen"></textarea>
+                  </fieldset>
+                </div>
+        </div>
+      </div>
+      <!--
+      ********************************
+      * ENDE src/html/page-two/block-three.pug
+      ********************************
+      -->
+      <!--
+      ********************************
+      * START src/html/page-two/block-four.pug
+      ********************************
+      -->
+      <div class="sheet-2cols">
+        <div class="sheet-box">
+          <h1 data-i18n="sprachkenntnisse"></h1>
+        </div>
+        <div class="sheet-box">
+          <h1 data-i18n="vor-nachteile"></h1>
+        </div>
+      </div>
+      <!--
+      ********************************
+      * ENDE src/html/page-two/block-four.pug
       ********************************
       -->
     </div>
     <!--
     ********************************
-    * ENDE src/html/page-one/block-three.pug
+    * ENDE src/html/page-two.pug
     ********************************
     -->
   </div>
-  <!--
-  ********************************
-  * ENDE src/html/page-one.pug
-  ********************************
-  -->
-  <!--
-  ********************************
-  * START src/html/page-two.pug
-  ********************************
-  
-  -->
-  <div class="sheet-page-two">
-    <!--
-    ********************************
-    * START src/html/page-two/block-one.pug
-    ********************************
-    -->
-    <div class="sheet-3cols">
-      <div class="sheet-box">
-        <div class="sheet-input-line">
-          <!-- MIXIN : noreturn.pug : input-text-->
-          <div> <span class="sheet-input-label" data-i18n="charaktername"></span></div>
-          <div>
-            <input type="text" name="attr_character_name"/>
-          </div>
-        </div>
-      </div>
-      <div class="sheet-box">
-        <div class="sheet-input-line">
-          <!-- MIXIN : noreturn.pug : input-text-->
-          <div> <span class="sheet-input-label" data-i18n="bargeld"></span></div>
-          <div>
-            <input type="text" name="attr_bargeld"/>
-          </div>
-          <div>N$ </div>
-        </div>
-      </div>
-      <div classs="sheet-logo"><img src="http://gorthian.de/roll20/noreturn/logo_200px.png"/></div>
-    </div>
-    <!--
-    ********************************
-    * ENDE src/html/page-two/block-one.pug
-    ********************************
-    -->
-    <!--
-    ********************************
-    * START src/html/page-two/block-two.pug
-    ********************************
-    -->
-    <div>
-      <div class="sheet-box">
-        <h1 data-i18n="fernkampfwaffen"></h1>
-      </div>
-    </div>
-    <!--
-    ********************************
-    * ENDE src/html/page-two/block-two.pug
-    ********************************
-    -->
-    <!--
-    ********************************
-    * START src/html/page-two/block-three.pug
-    ********************************
-    -->
-    <div class="sheet-2cols">
-      <div> 
-        <!-- include block-three-kampf.pug -->
-        <div class="sheet-2cols-50-50">
-              <!-- MIXIN : src/html/page-two/block-three.pug : max-current-->
-              <div class="sheet-box">
-                <h1 data-i18n="bio-abnormitaeten"></h1>
-                <fieldset class="repeating_bio-abnormitaeten">
-                  <textarea name="attr_bio-abnormitaeten"></textarea>
-                </fieldset>
-              </div>
-              <!-- MIXIN : src/html/page-two/block-three.pug : max-current-->
-              <div class="sheet-box">
-                <h1 data-i18n="bio-eigenschaften"></h1>
-                <fieldset class="repeating_bio-eigenschaften">
-                  <textarea name="attr_bio-eigenschaften"></textarea>
-                </fieldset>
-              </div>
-        </div>
-      </div>
-      <div> 
-            <!-- MIXIN : src/html/page-two/block-three.pug : max-current-->
-            <div class="sheet-box">
-              <h1 data-i18n="wichtige-notiz"></h1>
-              <fieldset class="repeating_wichtige-notiz">
-                <textarea name="attr_wichtige-notiz"></textarea>
-              </fieldset>
-            </div>
-            <!-- MIXIN : src/html/page-two/block-three.pug : max-current-->
-            <div class="sheet-box">
-              <h1 data-i18n="physiologische-stoerungen"></h1>
-              <fieldset class="repeating_physiologische-stoerungen">
-                <textarea name="attr_physiologische-stoerungen"></textarea>
-              </fieldset>
-            </div>
-      </div>
-    </div>
-    <!--
-    ********************************
-    * ENDE src/html/page-two/block-three.pug
-    ********************************
-    -->
-    <!--
-    ********************************
-    * START src/html/page-two/block-four.pug
-    ********************************
-    -->
-    <div class="sheet-2cols">
-      <div class="sheet-box">
-        <h1 data-i18n="sprachkenntnisse"></h1>
-      </div>
-      <div class="sheet-box">
-        <h1 data-i18n="vor-nachteile"></h1>
-      </div>
-    </div>
-    <!--
-    ********************************
-    * ENDE src/html/page-two/block-four.pug
-    ********************************
-    -->
-  </div>
-  <!--
-  ********************************
-  * ENDE src/html/page-two.pug
-  ********************************
-  -->
 </div>
 <!--
 ********************************

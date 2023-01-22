@@ -91,12 +91,15 @@ mixin input-text(attribute, i18n)
 
 //- SEITENINHALT
 div(class="sheet-noreturn")
-    input(type="hidden" class="sheet-tabstoggle" name="attr_sheetTab" value="page-one")
-    div(class="sheet-tabs")
-        each page in pages
-            button(class="sheet-toggle-button" type="action" name="act_page-"+page.name data-i18n=page.i18n)
-    include src/html/page-one.pug
-    include src/html/page-two.pug
+    include src/html/dicebot.pug
+    div(class="sheet-noreturn-body")
+        input(type="hidden" class="sheet-tabstoggle" name="attr_sheetTab" value="page-one")    
+        div(class="sheet-tabs")
+            each page in pages
+                button(class="sheet-toggle-button" type="action" name="act_page-"+page.name data-i18n=page.i18n)
+        include src/html/page-one.pug
+        include src/html/page-two.pug
+    
 
 //- ROLL TEMPLATES
 include src/html/rolltemplates.pug
