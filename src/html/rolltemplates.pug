@@ -1,6 +1,6 @@
 //-
     CREATED by          Gorthian
-    Letzte Änderung		2023-01-20
+    Letzte Änderung		2023-01-22
 
 //
     ********************************
@@ -8,37 +8,34 @@
     ********************************
 
 //- MIXINs
-mixin rolltemplate-header(text)
-    // MIXIN : rolltemplate.pug : rolltemplate-row
-    div(class="sheet-template-header")= text
-    hr
-
-mixin rolltemplate-row(text, wert)
-    // MIXIN : rolltemplate.pug : rolltemplate-row
-    div(class="sheet-template-row") 
-        span= text 
-        span= wert
-
-mixin rolltemplate-row-hazard(text, wert)
-    // MIXIN : rolltemplate.pug : rolltemplate-row-hazard
-    div(class="sheet-template-row-hazard") 
-        img(src='https://gorthian.de/roll20/noreturn/dice_1.png' width='25px')
-        span= text 
-        span= wert
 
 //- SEITENINHALT
 
 //- Offene Probe auf Fertigkeiten
 rolltemplate(class="sheet-rolltemplate-probe_offen")
     div(class="sheet-template-container")
-        +rolltemplate-header("{{fertigkeit}} - {{attribut}}")
-        +rolltemplate-row("Hazard","")
-        +rolltemplate-row-hazard("{{computed::hazard}}","= {{hazard}}")
-        +rolltemplate-row("Wurf","")
-        +rolltemplate-row("{{computed::wurf}}","= {{wurf}}")
-        +rolltemplate-row("Bonus","+ {{bonus}}")
-        +rolltemplate-row("Summe","= {{computed::summe}}")        
-
+        div(class="sheet-template-header") {{fertigkeit}} - {{attribut}}
+        hr
+        div(class="sheet-template-row") 
+            span Hazard 
+            span
+                img(src='https://gorthian.de/roll20/noreturn/dice_red.png' width='25px')
+        div(class="sheet-template-row")
+            span(class="sheet-template-zahlen") {{computed::hazard}}
+            span(class="sheet-template-zahlen") = {{hazard}}
+        div(class="sheet-template-row") 
+            span Wurf
+            span
+                img(src='https://gorthian.de/roll20/noreturn/dice_white.png' width='25px')
+        div(class="sheet-template-row")
+            span(class="sheet-template-zahlen") {{computed::wurf}}
+            span(class="sheet-template-zahlen") = {{wurf}}
+        div(class="sheet-template-row")
+            span Bonus
+            span(class="sheet-template-zahlen") + {{bonus}}
+        div(class="sheet-template-row")
+            span Summe
+            span(class="sheet-template-zahlen") = {{computed::summe}}        
 //
     ********************************
     * ENDE src/html/rolltemplate.pug

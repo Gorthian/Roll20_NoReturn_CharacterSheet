@@ -1628,21 +1628,14 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
 -->
 <rolltemplate class="sheet-rolltemplate-probe_offen">
   <div class="sheet-template-container">
-    <!-- MIXIN : rolltemplate.pug : rolltemplate-row-->
     <div class="sheet-template-header">{{fertigkeit}} - {{attribut}}</div>
     <hr/>
-    <!-- MIXIN : rolltemplate.pug : rolltemplate-row-->
-    <div class="sheet-template-row"> <span>Hazard</span><span></span></div>
-    <!-- MIXIN : rolltemplate.pug : rolltemplate-row-hazard-->
-    <div class="sheet-template-row-hazard"> <img src="https://gorthian.de/roll20/noreturn/dice_1.png" width="25px"/><span>{{computed::hazard}}</span><span>= {{hazard}}</span></div>
-    <!-- MIXIN : rolltemplate.pug : rolltemplate-row-->
-    <div class="sheet-template-row"> <span>Wurf</span><span></span></div>
-    <!-- MIXIN : rolltemplate.pug : rolltemplate-row-->
-    <div class="sheet-template-row"> <span>{{computed::wurf}}</span><span>= {{wurf}}</span></div>
-    <!-- MIXIN : rolltemplate.pug : rolltemplate-row-->
-    <div class="sheet-template-row"> <span>Bonus</span><span>+ {{bonus}}</span></div>
-    <!-- MIXIN : rolltemplate.pug : rolltemplate-row-->
-    <div class="sheet-template-row"> <span>Summe</span><span>= {{computed::summe}}</span></div>
+    <div class="sheet-template-row"> <span>Hazard </span><span><img src="https://gorthian.de/roll20/noreturn/dice_red.png" width="25px"/></span></div>
+    <div class="sheet-template-row"><span class="sheet-template-zahlen">{{computed::hazard}}</span><span class="sheet-template-zahlen">= {{hazard}}</span></div>
+    <div class="sheet-template-row"> <span>Wurf</span><span><img src="https://gorthian.de/roll20/noreturn/dice_white.png" width="25px"/></span></div>
+    <div class="sheet-template-row"><span class="sheet-template-zahlen">{{computed::wurf}}</span><span class="sheet-template-zahlen">= {{wurf}}</span></div>
+    <div class="sheet-template-row"><span>Bonus</span><span class="sheet-template-zahlen">+ {{bonus}}</span></div>
+    <div class="sheet-template-row"><span>Summe</span><span class="sheet-template-zahlen">= {{computed::summe}}        </span></div>
   </div>
 </rolltemplate>
 <!--
