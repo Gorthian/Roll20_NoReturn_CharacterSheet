@@ -1,7 +1,7 @@
 /*
 	CREATED by 			Gorthian
 	Version				1.0
-	Letzte Änderung		2023-01-22
+	Letzte Änderung		2023-01-25
 	
 	GitHub				https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet
 	Wiki				https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/wiki
@@ -299,12 +299,29 @@ div.sheet-noreturn textarea {
 div.sheet-dicebot {
 	z-index					: 100;
 	position				: sticky;
-	border					: 1px solid red;
-	background-color		: grey;
+	border					: 2px solid black;
+	border-radius			: 25px;
+	padding					: 25px;
+	background-color		: whitesmoke;
 	top						: 0;
-	margin-left				: 50%;
+	margin-left				: auto;
 	width					: 50%;
+	line-height				: 20px;
+
+	display					: grid;
+	grid-auto-flow			: column;
 }
+
+div.sheet-dicebot input[type=number] {
+	border					: 2px solid black;	
+	top						: unset;
+}
+
+div.sheet-dicebot span {
+	font-size				: var(--font-big-size);
+	margin					: auto;
+}
+
 
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,

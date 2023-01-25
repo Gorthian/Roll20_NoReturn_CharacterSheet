@@ -1,6 +1,6 @@
 //-
     CREATED by          Gorthian
-    Letzte Änderung		2023-01-22
+    Letzte Änderung		2023-01-25
 
 //
     ********************************
@@ -11,7 +11,13 @@
 
 //- SEITENINHALT
 div(class="sheet-dicebot")
-    | Hier kommt der DICEBOT
+    span(data-i18n="wuerfel")
+    input(type="number" name="attr_probe_standard_wuerfel")
+    span(data-i18n="hazard-di")
+    input(type="number" name="attr_probe_hazard_wuerfel")
+    span(data-i18n="bonus")
+    input(type="number" name="attr_probe_bonus")
+    button(type="action" name="act_wirf-probe" data-i18n="wuerfeln")
 
 //
     ********************************

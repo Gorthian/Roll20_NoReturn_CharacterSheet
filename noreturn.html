@@ -21,7 +21,12 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
   ********************************
   
   -->
-  <div class="sheet-dicebot">Hier kommt der DICEBOT</div>
+  <div class="sheet-dicebot"><span data-i18n="wuerfel"></span>
+    <input type="number" name="attr_probe_standard_wuerfel"/><span data-i18n="hazard-di"></span>
+    <input type="number" name="attr_probe_hazard_wuerfel"/><span data-i18n="bonus"></span>
+    <input type="number" name="attr_probe_bonus"/>
+    <button type="action" name="act_wirf-probe" data-i18n="wuerfeln"></button>
+  </div>
   <!--
   ********************************
   * ENDE src/html/dicebot.pug
