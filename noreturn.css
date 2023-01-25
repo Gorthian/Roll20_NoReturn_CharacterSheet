@@ -38,18 +38,19 @@
 div.sheet-noreturn {
 	--max-line-width		: 98%;
 	--box-background-image	: url("https://gorthian.de/roll20/noreturn/white60tranz_10x10.png");
+	--background-color		: #333333;	
 }
 
 div.sheet-noreturn {
     width               	: auto;
 	min-width              	: 800px;
-    background-color        : white;    
+    background-color		: var(--background-color);
 }
 
 div.sheet-noreturn-body {
     width               	: auto;
 	min-width              	: 800px;
-    background-color        : white;
+    background-color		: var(--background-color);
     display                 : grid;
 	grid-template-columns	: 20px auto;
 	background-image		: url("https://gorthian.de/roll20/noreturn/background_800px.png");
@@ -308,6 +309,11 @@ div.sheet-dicebot {
 	width					: 50%;
 	line-height				: 20px;
 
+	display					: grid;
+	grid-auto-flow			: row;
+}
+
+div.sheet-dicebot div.sheet-dicebot-row {
 	display					: grid;
 	grid-auto-flow			: column;
 }

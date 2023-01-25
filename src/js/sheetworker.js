@@ -1,3 +1,9 @@
+/*
+    CREATED by          Gorthian
+    Letzte Änderung		2023-01-25
+*/
+
+
 /* TAB MENU */
 const buttonlist = ["page-one","page-two"]; //Bei Änderungen auch die globale Variable in noreturn.pug anpassen
 buttonlist.forEach(button => {
@@ -81,44 +87,80 @@ skilllist.forEach(skills => {
             let summe = 0;
             let roll = ""
 
-            summeSkill = parseInt(values[skill]|0) + parseInt(values[skill+"_mod"]|0);
-            summeAttribut = parseInt(values[attribute]|0) + parseInt(values[attribute+"mod1"]|0) + parseInt(values[attribute+"mod2"]|0);
+            summeSkill = parseInt(values[skill])|0 + parseInt(values[skill+"_mod"])|0;
+            summeAttribut = parseInt(values[attribute])|0 + parseInt(values[attribute+"mod1"])|0 + parseInt(values[attribute+"mod2"])|0;
             summe = summeSkill + summeAttribut;
 
-            roll = "&{template:probe_offen}"; //Das Rolltemplate festlegen
-            roll = roll + "{{fertigkeit="+getTranslationByKey(skill)+"}}"; //Die Fertigkeit auf die gewürfelt wird
-            roll = roll + "{{attribut="+getTranslationByKey(attribute)+"}}"; //Das Attribut auf das gewürfelt wird
-            roll = roll + "{{hazard=[[?{"+getTranslationByKey("hazard-di")+"|1}d6!6]]}}"; //Der Hazard-Wurf            
-            roll = roll + "{{wurf=[[("+summe+"-?{"+getTranslationByKey("hazard-di")+"})d6]]}}"; //Der normale Wurf
-            roll = roll + "{{bonus=[[?{"+getTranslationByKey("bonus")+"|0}]]}}"; //Bonus abfragen
-            roll = roll + "{{summe=[[0]]}}"; //Platzhalter für die Summe
-
-            startRoll(roll, (results) => {
-                const hazard = results.results.hazard.result;                
-                const wurf = results.results.wurf.result;                
-                const bonus = results.results.bonus.result;
-    
-                let summe = hazard+wurf+bonus;
-
-                let hazard_wuerfel = "";
-                for (const n of results.results.hazard.dice) {
-                    hazard_wuerfel = hazard_wuerfel + " "+n+" ";
-                }
-
-                let wurf_wuerfel = "";
-                for (const n of results.results.wurf.dice) {
-                    wurf_wuerfel = wurf_wuerfel + " "+n+" ";
-                }
-    
-                finishRoll(
-                    results.rollId,
-                    {
-                        summe: summe,
-                        hazard: hazard_wuerfel,
-                        wurf: wurf_wuerfel
-                    }
-                );                
+            setAttrs({
+                "probe_summe_wuerfel"       : summe,
+                "probe_standard_wuerfel"    : summe-1,
+                "probe_hazard_wuerfel"      : 1,
+                "probe_bonus"               : 0
             });
         });        
+    });
+});
+
+on("clicked:wirf-probe",function(){
+
+    getAttrs(["probe_summe_wuerfel","probe_standard_wuerfel","probe_hazard_wuerfel","probe_bonus"], function(values) {
+        let summe = parseInt(values["probe_summe_wuerfel"])|0;
+        let standard = parseInt(values["probe_standard_wuerfel"])|0;
+        let hazard = parseInt(values["probe_hazard_wuerfel"])|1;
+        let bonus = parseInt(values["probe_bonus"])|1;
+        let roll = ""
+
+        roll = "&{template:probe_offen}"; //Das Rolltemplate festlegen
+        roll = roll + "{{fertigkeit=SKILL}}"; //Die Fertigkeit auf die gewürfelt wird
+        roll = roll + "{{attribut=ATTRIBUT}}"; //Das Attribut auf das gewürfelt wird
+        roll = roll + "{{hazard=[["+hazard+"d6!6]]}}"; //Der Hazard-Wurf            
+        roll = roll + "{{wurf=[["+standard+"d6]]}}"; //Der normale Wurf
+        roll = roll + "{{bonus=[["+bonus+"]]}}"; //Bonus abfragen
+        roll = roll + "{{summe=[[0]]}}"; //Platzhalter für die Summe
+
+        startRoll(roll, (results) => {
+            const hazard = results.results.hazard.result;                
+            const wurf = results.results.wurf.result;                
+            const bonus = results.results.bonus.result;
+
+            let summe = hazard+wurf+bonus;
+
+            let hazard_wuerfel = "";
+            for (const n of results.results.hazard.dice) {
+                hazard_wuerfel = hazard_wuerfel + " "+n+" ";
+            }
+
+            let wurf_wuerfel = "";
+            for (const n of results.results.wurf.dice) {
+                wurf_wuerfel = wurf_wuerfel + " "+n+" ";
+            }
+
+            finishRoll(
+                results.rollId,
+                {
+                    summe: summe,
+                    hazard: hazard_wuerfel,
+                    wurf: wurf_wuerfel
+                }
+            );                
+        });
+    });        
+});
+
+on("change:probe_hazard_wuerfel", function(){
+    getAttrs(["probe_summe_wuerfel","probe_standard_wuerfel","probe_hazard_wuerfel"], function(values) {
+        let summe = parseInt(values["probe_summe_wuerfel"])|0;
+        let standard = parseInt(values["probe_standard_wuerfel"])|0;
+        let hazard = parseInt(values["probe_hazard_wuerfel"])|1;
+
+        if(hazard > summe) {hazard = summe}
+        if(hazard < 1) {hazard = 1}
+        standard = summe - hazard;
+        
+        setAttrs({
+            "probe_summe_wuerfel"       : summe,
+            "probe_standard_wuerfel"    : standard,
+            "probe_hazard_wuerfel"      : hazard
+        });
     });
 });
