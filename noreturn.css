@@ -1,14 +1,16 @@
 /*
 	CREATED by 			Gorthian
 	Version				1.0
-	Letzte Änderung		2023-01-25
+	Letzte Änderung		2023-01-26
 	
 	GitHub				https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet
 	Wiki				https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/wiki
 	Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
 */
 
+/**********************************/
 /* Externe Schriftarten einbinden */
+/**********************************/
 @font-face {
     font-family "downcome";
     src: url("https://gorthian.de/roll20/noreturn/fonts/DOWNCOME.TTF") format ("truetype");
@@ -34,11 +36,15 @@
     src: url("https://gorthian.de/roll20/noreturn/fonts/ERASMD.TTF") format ("truetype");
 }
 
-/* CSS-Variablen für den Sheet */
+/**********************************/
+/* CSS-Variablen für den Sheet    */
+/**********************************/
 div.sheet-noreturn {
 	--max-line-width		: 98%;
 	--box-background-image	: url("https://gorthian.de/roll20/noreturn/white60tranz_10x10.png");
-	--background-color		: #333333;	
+	--background-color		: #CEC1AE;
+	--noreturn-color-bg		: #CEC1AE;
+	--noreturn-color-red	: #6B0000;
 }
 
 div.sheet-noreturn {
@@ -300,14 +306,14 @@ div.sheet-noreturn textarea {
 div.sheet-dicebot {
 	z-index					: 100;
 	position				: sticky;
-	border					: 2px solid black;
+	border					: 2px solid var(--noreturn-color-red);
 	border-radius			: 25px;
 	padding					: 25px;
-	background-color		: whitesmoke;
+	background-color		: var(--noreturn-color-bg);
 	top						: 0;
 	margin-left				: auto;
-	width					: 50%;
-	line-height				: 20px;
+	margin-right			: auto;
+	width					: 90%;
 
 	display					: grid;
 	grid-auto-flow			: row;
