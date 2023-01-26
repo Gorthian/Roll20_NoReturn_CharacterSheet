@@ -25,14 +25,14 @@ rolltemplate(class="sheet-rolltemplate-probe_offen")
             span
                 img(src='https://gorthian.de/roll20/noreturn/dice_red.png' width='25px')
         div(class="sheet-template-row")
-            span(class="sheet-template-zahlen") {{computed::hazard}}
+            span(class="sheet-template-zahlen sheet-template-hazard-di") {{computed::hazard}}
             span(class="sheet-template-zahlen") = {{hazard}}
         div(class="sheet-template-row") 
             span(data-i18n="regulaere-di")
             span
                 img(src='https://gorthian.de/roll20/noreturn/dice_white.png' width='25px')
         div(class="sheet-template-row")
-            span(class="sheet-template-zahlen") {{computed::wurf}}
+            span(class="sheet-template-zahlen sheet-template-regular-di") {{computed::wurf}}
             span(class="sheet-template-zahlen") = {{wurf}}
         | {{#rollGreater() bonuswurf 0}}
         div(class="sheet-template-row") 
@@ -40,7 +40,7 @@ rolltemplate(class="sheet-rolltemplate-probe_offen")
             span
                 img(src='https://gorthian.de/roll20/noreturn/dice_white.png' width='25px')        
         div(class="sheet-template-row")
-            span(class="sheet-template-zahlen") {{computed::bonuswurf}}
+            span(class="sheet-template-zahlen sheet-template-regular-di") {{computed::bonuswurf}}
             span(class="sheet-template-zahlen") = {{bonuswurf}}
         | {{/rollGreater() bonuswurf 0}}
         | {{#rollGreater() bonus 0}}

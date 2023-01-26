@@ -143,17 +143,17 @@ on("clicked:wirf-probe",function(){
 
             let hazard_wuerfel = "";
             for (const n of results.results.hazard.dice) {
-                hazard_wuerfel = hazard_wuerfel + " "+n+" ";
+                hazard_wuerfel = hazard_wuerfel + ""+n+"";
             }
 
             let wurf_wuerfel = "";
             for (const n of results.results.wurf.dice) {
-                wurf_wuerfel = wurf_wuerfel + " "+n+" ";
+                wurf_wuerfel = wurf_wuerfel + ""+n+"";
             }
 
             let wurf_bonus = "";
             for (const n of results.results.bonuswurf.dice) {
-                wurf_bonus = wurf_bonus + " "+n+" ";
+                wurf_bonus = wurf_bonus + ""+n+"";
             }
 
             finishRoll(

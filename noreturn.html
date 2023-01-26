@@ -1665,11 +1665,11 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
     <div class="sheet-template-header"><span data-i18n="modifiziert"></span></div>{{/modifiziert}}
     <hr/>
     <div class="sheet-template-row"> <span data-i18n="hazard-di"></span><span><img src="https://gorthian.de/roll20/noreturn/dice_red.png" width="25px"/></span></div>
-    <div class="sheet-template-row"><span class="sheet-template-zahlen">{{computed::hazard}}</span><span class="sheet-template-zahlen">= {{hazard}}</span></div>
+    <div class="sheet-template-row"><span class="sheet-template-zahlen sheet-template-hazard-di">{{computed::hazard}}</span><span class="sheet-template-zahlen">= {{hazard}}</span></div>
     <div class="sheet-template-row"> <span data-i18n="regulaere-di"></span><span><img src="https://gorthian.de/roll20/noreturn/dice_white.png" width="25px"/></span></div>
-    <div class="sheet-template-row"><span class="sheet-template-zahlen">{{computed::wurf}}</span><span class="sheet-template-zahlen">= {{wurf}}</span></div>{{#rollGreater() bonuswurf 0}}
+    <div class="sheet-template-row"><span class="sheet-template-zahlen sheet-template-regular-di">{{computed::wurf}}</span><span class="sheet-template-zahlen">= {{wurf}}</span></div>{{#rollGreater() bonuswurf 0}}
     <div class="sheet-template-row"> <span data-i18n="bonus-di"></span><span><img src="https://gorthian.de/roll20/noreturn/dice_white.png" width="25px"/></span></div>
-    <div class="sheet-template-row"><span class="sheet-template-zahlen">{{computed::bonuswurf}}</span><span class="sheet-template-zahlen">= {{bonuswurf}}</span></div>{{/rollGreater() bonuswurf 0}}
+    <div class="sheet-template-row"><span class="sheet-template-zahlen sheet-template-regular-di">{{computed::bonuswurf}}</span><span class="sheet-template-zahlen">= {{bonuswurf}}</span></div>{{/rollGreater() bonuswurf 0}}
     {{#rollGreater() bonus 0}}
     <div class="sheet-template-row"><span>Bonus</span><span class="sheet-template-zahlen">+ {{bonus}}</span></div>{{/rollGreater() bonus 0}}
     <div class="sheet-template-row"><span>Summe</span><span class="sheet-template-zahlen">= {{computed::summe}}        </span></div>
@@ -1826,17 +1826,17 @@ on("clicked:wirf-probe",function(){
 
             let hazard_wuerfel = "";
             for (const n of results.results.hazard.dice) {
-                hazard_wuerfel = hazard_wuerfel + " "+n+" ";
+                hazard_wuerfel = hazard_wuerfel + ""+n+"";
             }
 
             let wurf_wuerfel = "";
             for (const n of results.results.wurf.dice) {
-                wurf_wuerfel = wurf_wuerfel + " "+n+" ";
+                wurf_wuerfel = wurf_wuerfel + ""+n+"";
             }
 
             let wurf_bonus = "";
             for (const n of results.results.bonuswurf.dice) {
-                wurf_bonus = wurf_bonus + " "+n+" ";
+                wurf_bonus = wurf_bonus + ""+n+"";
             }
 
             finishRoll(

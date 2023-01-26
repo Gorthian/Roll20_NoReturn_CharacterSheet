@@ -524,3 +524,28 @@ div.sheet-noreturn .sheet-input-line span.sheet-input-label {
 .sheet-rolltemplate-probe_offen .inlinerollresult.fullfail {
 	border				: unset;
 }
+
+.sheet-rolltemplate-probe_offen .sheet-template-regular-di span,
+.sheet-rolltemplate-probe_offen .sheet-template-hazard-di span{    
+    --height 			: 20px;
+	--size 				: 13px;
+	background-size		: var(--height);
+	background-repeat	: repeat-x;
+    font-family			: monospace;
+    font-size			: var(--size);    
+    letter-spacing		: var(--size);
+    font-weight			: bold;	
+	line-height			: var(--height);
+	padding-top			: 2px;
+    padding-bottom		: 3px;
+    padding-left		: 5px;
+}
+
+.sheet-rolltemplate-probe_offen .sheet-template-regular-di span {
+	background-image	: url("https://gorthian.de/roll20/noreturn/dice_white_space.png");
+}
+
+.sheet-rolltemplate-probe_offen .sheet-template-hazard-di span {
+	background-image	: url("https://gorthian.de/roll20/noreturn/dice_red_space.png");
+	color				: white;
+}
