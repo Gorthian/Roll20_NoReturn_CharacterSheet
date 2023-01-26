@@ -14,7 +14,11 @@
 //- Offene Probe auf Fertigkeiten
 rolltemplate(class="sheet-rolltemplate-probe_offen")
     div(class="sheet-template-container")
-        div(class="sheet-template-header") {{fertigkeit}} - {{attribut}}
+        div(class="sheet-template-header") {{fertigkeit}} - {{attribut}} 
+        | {{#modifiziert}}
+        div(class="sheet-template-header")
+            span(data-i18n="modifiziert")
+        | {{/modifiziert}}
         hr
         div(class="sheet-template-row") 
             span(data-i18n="hazard-di")

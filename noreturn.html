@@ -30,6 +30,8 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
       <input type="number" name="attr_probe_bonus"/>
       <button type="action" name="act_wirf-probe" data-i18n="wuerfeln"></button>
       <input type="number" name="attr_probe_summe_wuerfel" hidden="hidden"/>
+      <input type="number" name="attr_probe_original_hazard_wuerfel" hidden="hidden"/>
+      <input type="number" name="attr_probe_original_standard_wuerfel" hidden="hidden"/>
     </div>
   </div>
   <!--
@@ -1659,7 +1661,8 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
 -->
 <rolltemplate class="sheet-rolltemplate-probe_offen">
   <div class="sheet-template-container">
-    <div class="sheet-template-header">{{fertigkeit}} - {{attribut}}</div>
+    <div class="sheet-template-header">{{fertigkeit}} - {{attribut}} </div>{{#modifiziert}}
+    <div class="sheet-template-header"><span data-i18n="modifiziert"></span></div>{{/modifiziert}}
     <hr/>
     <div class="sheet-template-row"> <span data-i18n="hazard-di"></span><span><img src="https://gorthian.de/roll20/noreturn/dice_red.png" width="25px"/></span></div>
     <div class="sheet-template-row"><span class="sheet-template-zahlen">{{computed::hazard}}</span><span class="sheet-template-zahlen">= {{hazard}}</span></div>
@@ -1772,13 +1775,15 @@ skilllist.forEach(skills => {
             summe = summeSkill + summeAttribut;
 
             setAttrs({
-                "probe_summe_wuerfel"       : summe,
-                "probe_standard_wuerfel"    : summe-1,
-                "probe_hazard_wuerfel"      : 1,
-                "probe_bonus_wuerfel"       : 0,
-                "probe_bonus"               : 0,
-                "probe_skill"               : getTranslationByKey(skill),
-                "probe_attribut"            : getTranslationByKey(attribut)
+                "probe_summe_wuerfel"               : summe,
+                "probe_standard_wuerfel"            : summe-1,
+                "probe_hazard_wuerfel"              : 1,
+                "probe_original_standard_wuerfel"   : summe-1,
+                "probe_original_hazard_wuerfel"     : 1,
+                "probe_bonus_wuerfel"               : 0,
+                "probe_bonus"                       : 0,
+                "probe_skill"                       : getTranslationByKey(skill),
+                "probe_attribut"                    : getTranslationByKey(attribut)
             });
         });        
     });
@@ -1786,13 +1791,18 @@ skilllist.forEach(skills => {
 
 on("clicked:wirf-probe",function(){
 
-    getAttrs(["probe_summe_wuerfel","probe_standard_wuerfel","probe_hazard_wuerfel","probe_bonus_wuerfel","probe_bonus"], function(values) {
+    getAttrs(["probe_summe_wuerfel","probe_standard_wuerfel","probe_original_standard_wuerfel","probe_hazard_wuerfel","probe_original_hazard_wuerfel","probe_bonus_wuerfel","probe_bonus"], function(values) {
         let summe = parseInt(values["probe_summe_wuerfel"])|0;
         let standard = parseInt(values["probe_standard_wuerfel"])|0;
+        let standard_orig = parseInt(values["probe_original_standard_wuerfel"])|0;
         let hazard = parseInt(values["probe_hazard_wuerfel"])|1;
+        let hazard_orig = parseInt(values["probe_original_hazard_wuerfel"])|1;
         let bonuswuerfel = parseInt(values["probe_bonus_wuerfel"])|0;
         let bonus = parseInt(values["probe_bonus"])|0;
-        let roll = ""
+        let roll = "";
+        let modifiziert = "";
+
+        if(standard_orig != standard || hazard_orig != hazard) {modifiziert=1;}
 
         roll = "&{template:probe_offen}"; //Das Rolltemplate festlegen
         roll = roll + "{{fertigkeit=SKILL}}"; //Die Fertigkeit auf die gewürfelt wird
@@ -1802,6 +1812,7 @@ on("clicked:wirf-probe",function(){
         roll = roll + "{{bonuswurf=[["+bonuswuerfel+"d6]]}}"; //Die Bonuswürfel
         roll = roll + "{{bonus=[["+bonus+"]]}}"; //Bonus abfragen
         roll = roll + "{{summe=[["+summe+"]]}}"; //Platzhalter für die Summe
+        roll = roll + "{{modifiziert="+modifiziert+"}}"; //Schalter um modifizierte Würfe anzuzeigen
 
         startRoll(roll, (results) => {
             const hazard = results.results.hazard.result;                
