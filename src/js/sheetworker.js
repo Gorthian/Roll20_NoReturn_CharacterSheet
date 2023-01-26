@@ -108,7 +108,7 @@ skilllist.forEach(skills => {
 
 on("clicked:wirf-probe",function(){
 
-    getAttrs(["probe_summe_wuerfel","probe_standard_wuerfel","probe_original_standard_wuerfel","probe_hazard_wuerfel","probe_original_hazard_wuerfel","probe_bonus_wuerfel","probe_bonus"], function(values) {
+    getAttrs(["probe_summe_wuerfel","probe_standard_wuerfel","probe_original_standard_wuerfel","probe_hazard_wuerfel","probe_original_hazard_wuerfel","probe_bonus_wuerfel","probe_bonus","probe_skill","probe_attribut"], function(values) {
         let summe = parseInt(values["probe_summe_wuerfel"])|0;
         let standard = parseInt(values["probe_standard_wuerfel"])|0;
         let standard_orig = parseInt(values["probe_original_standard_wuerfel"])|0;
@@ -116,14 +116,16 @@ on("clicked:wirf-probe",function(){
         let hazard_orig = parseInt(values["probe_original_hazard_wuerfel"])|1;
         let bonuswuerfel = parseInt(values["probe_bonus_wuerfel"])|0;
         let bonus = parseInt(values["probe_bonus"])|0;
+        let skill = values["probe_skill"];
+        let attribut = values["probe_attribut"];
         let roll = "";
         let modifiziert = "";
 
         if(standard_orig != standard || hazard_orig != hazard) {modifiziert=1;}
 
         roll = "&{template:probe_offen}"; //Das Rolltemplate festlegen
-        roll = roll + "{{fertigkeit=SKILL}}"; //Die Fertigkeit auf die gewürfelt wird
-        roll = roll + "{{attribut=ATTRIBUT}}"; //Das Attribut auf das gewürfelt wird
+        roll = roll + "{{fertigkeit="+skill+"}}"; //Die Fertigkeit auf die gewürfelt wird
+        roll = roll + "{{attribut="+attribut+"}}"; //Das Attribut auf das gewürfelt wird
         roll = roll + "{{hazard=[["+hazard+"d6!6]]}}"; //Der Hazard-Wurf            
         roll = roll + "{{wurf=[["+standard+"d6]]}}"; //Der normale Wurf
         roll = roll + "{{bonuswurf=[["+bonuswuerfel+"d6]]}}"; //Die Bonuswürfel
