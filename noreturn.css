@@ -308,12 +308,13 @@ div.sheet-dicebot {
 	position				: sticky;
 	border					: 2px solid var(--noreturn-color-red);
 	border-radius			: 25px;
-	padding					: 25px;
+	padding					: 0px 25px 20px 25px;
 	background-color		: var(--noreturn-color-bg);
 	top						: 0;
 	margin-left				: auto;
 	margin-right			: auto;
 	width					: 90%;
+	height					: 40px;
 	font-family				: var(--font-highlight);
 	font-size				: var(--font-h2-size);
 
