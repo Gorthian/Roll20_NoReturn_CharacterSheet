@@ -325,6 +325,8 @@ div.sheet-dicebot {
 div.sheet-dicebot div.sheet-dicebot-row {
 	display					: grid;
 	grid-auto-flow			: column;
+	justify-content			: start;
+	grid-gap				: 5px;
 }
 
 div.sheet-dicebot input[type=number] {

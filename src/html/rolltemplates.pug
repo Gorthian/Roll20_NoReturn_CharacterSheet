@@ -1,6 +1,6 @@
 //-
     CREATED by          Gorthian
-    Letzte Änderung		2023-01-22
+    Letzte Änderung		2023-01-26
 
 //
     ********************************
@@ -17,22 +17,33 @@ rolltemplate(class="sheet-rolltemplate-probe_offen")
         div(class="sheet-template-header") {{fertigkeit}} - {{attribut}}
         hr
         div(class="sheet-template-row") 
-            span Hazard 
+            span(data-i18n="hazard-di")
             span
                 img(src='https://gorthian.de/roll20/noreturn/dice_red.png' width='25px')
         div(class="sheet-template-row")
             span(class="sheet-template-zahlen") {{computed::hazard}}
             span(class="sheet-template-zahlen") = {{hazard}}
         div(class="sheet-template-row") 
-            span Wurf
+            span(data-i18n="regulaere-di")
             span
                 img(src='https://gorthian.de/roll20/noreturn/dice_white.png' width='25px')
         div(class="sheet-template-row")
             span(class="sheet-template-zahlen") {{computed::wurf}}
             span(class="sheet-template-zahlen") = {{wurf}}
+        | {{#rollGreater() bonuswurf 0}}
+        div(class="sheet-template-row") 
+            span(data-i18n="bonus-di")
+            span
+                img(src='https://gorthian.de/roll20/noreturn/dice_white.png' width='25px')        
+        div(class="sheet-template-row")
+            span(class="sheet-template-zahlen") {{computed::bonuswurf}}
+            span(class="sheet-template-zahlen") = {{bonuswurf}}
+        | {{/rollGreater() bonuswurf 0}}
+        | {{#rollGreater() bonus 0}}
         div(class="sheet-template-row")
             span Bonus
             span(class="sheet-template-zahlen") + {{bonus}}
+        | {{/rollGreater() bonus 0}}
         div(class="sheet-template-row")
             span Summe
             span(class="sheet-template-zahlen") = {{computed::summe}}        
