@@ -50,7 +50,7 @@ div.sheet-noreturn {
 div.sheet-noreturn {
     width               	: auto;
 	min-width              	: 800px;
-    background-color		: var(--background-color);
+    background-color		: var(--background-color);	
 }
 
 div.sheet-noreturn-body {
@@ -476,6 +476,7 @@ div.sheet-noreturn .sheet-input-line span.sheet-input-label {
 /* Rolltemplates */
 .sheet-rolltemplate-probe_offen div.sheet-template-container {
 	background-color	: whitesmoke;
+	color				: black;
 	margin				: 5px;
 	border-radius		: 15px;
 	border				: 1px solid gray;
@@ -509,8 +510,8 @@ div.sheet-noreturn .sheet-input-line span.sheet-input-label {
 }
 
 .sheet-rolltemplate-probe_offen .inlinerollresult {
-	background-color	: unset;
-	border				: unset;
+	background-color	: unset !important; /*Important wird für den Darkmode benötigt*/
+	border				: unset !important; /*Important wird für den Darkmode benötigt*/
 	padding				: unset;
 	font-weight			: unset;
 	cursor				: help;
