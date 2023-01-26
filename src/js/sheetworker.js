@@ -1,6 +1,6 @@
 /*
     CREATED by          Gorthian
-    Letzte Änderung		2023-01-25
+    Letzte Änderung		2023-01-26
 */
 
 
@@ -79,23 +79,25 @@ const skilllist = [
 
 skilllist.forEach(skills => {
     let skill = skills[0];
-    let attribute = skills[1];
+    let attribut = skills[1];
     on(`clicked:probe-${skill}`, function() {        
-        getAttrs([skill, skill+"_mod", attribute, attribute+"mod1", attribute+"mod2"], function(values) {
+        getAttrs([skill, skill+"_mod", attribut, attribut+"mod1", attribut+"mod2"], function(values) {
             let summeSkill = 0;
             let summeAttribut = 0;
             let summe = 0;
             let roll = ""
 
             summeSkill = parseInt(values[skill])|0 + parseInt(values[skill+"_mod"])|0;
-            summeAttribut = parseInt(values[attribute])|0 + parseInt(values[attribute+"mod1"])|0 + parseInt(values[attribute+"mod2"])|0;
+            summeAttribut = parseInt(values[attribut])|0 + parseInt(values[attribut+"mod1"])|0 + parseInt(values[attribut+"mod2"])|0;
             summe = summeSkill + summeAttribut;
 
             setAttrs({
                 "probe_summe_wuerfel"       : summe,
                 "probe_standard_wuerfel"    : summe-1,
                 "probe_hazard_wuerfel"      : 1,
-                "probe_bonus"               : 0
+                "probe_bonus"               : 0,
+                "probe_skill"               : getTranslationByKey(skill),
+                "probe_attribut"            : getTranslationByKey(attribut)
             });
         });        
     });

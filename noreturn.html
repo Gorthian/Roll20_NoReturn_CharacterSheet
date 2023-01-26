@@ -22,7 +22,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
   
   -->
   <div class="sheet-dicebot">
-    <div class="sheet-dicebot-row"><span>Hier Attribut</span><span>Hier Skill</span></div>
+    <div class="sheet-dicebot-row"><span name="attr_probe_skill"></span><span name="attr_probe_attribut"></span></div>
     <div class="sheet-dicebot-row"><span data-i18n="wuerfel"></span>
       <input type="number" name="attr_probe_standard_wuerfel" readonly="readonly"/><span data-i18n="hazard-di"></span>
       <input type="number" name="attr_probe_hazard_wuerfel"/><span data-i18n="bonus"></span>
@@ -1674,7 +1674,13 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
 ********************************
 -->
 <!-- SHEET WORKERS-->
-<script type="text/worker">/* TAB MENU */
+<script type="text/worker">/*
+    CREATED by          Gorthian
+    Letzte Änderung		2023-01-26
+*/
+
+
+/* TAB MENU */
 const buttonlist = ["page-one","page-two"]; //Bei Änderungen auch die globale Variable in noreturn.pug anpassen
 buttonlist.forEach(button => {
     on(`clicked:${button}`, function() {
@@ -1749,23 +1755,25 @@ const skilllist = [
 
 skilllist.forEach(skills => {
     let skill = skills[0];
-    let attribute = skills[1];
+    let attribut = skills[1];
     on(`clicked:probe-${skill}`, function() {        
-        getAttrs([skill, skill+"_mod", attribute, attribute+"mod1", attribute+"mod2"], function(values) {
+        getAttrs([skill, skill+"_mod", attribut, attribut+"mod1", attribut+"mod2"], function(values) {
             let summeSkill = 0;
             let summeAttribut = 0;
             let summe = 0;
             let roll = ""
 
             summeSkill = parseInt(values[skill])|0 + parseInt(values[skill+"_mod"])|0;
-            summeAttribut = parseInt(values[attribute])|0 + parseInt(values[attribute+"mod1"])|0 + parseInt(values[attribute+"mod2"])|0;
+            summeAttribut = parseInt(values[attribut])|0 + parseInt(values[attribut+"mod1"])|0 + parseInt(values[attribut+"mod2"])|0;
             summe = summeSkill + summeAttribut;
 
             setAttrs({
                 "probe_summe_wuerfel"       : summe,
                 "probe_standard_wuerfel"    : summe-1,
                 "probe_hazard_wuerfel"      : 1,
-                "probe_bonus"               : 0
+                "probe_bonus"               : 0,
+                "probe_skill"               : getTranslationByKey(skill),
+                "probe_attribut"            : getTranslationByKey(attribut)
             });
         });        
     });

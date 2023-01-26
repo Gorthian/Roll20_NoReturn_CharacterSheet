@@ -314,9 +314,12 @@ div.sheet-dicebot {
 	margin-left				: auto;
 	margin-right			: auto;
 	width					: 90%;
+	font-family				: var(--font-highlight);
+	font-size				: var(--font-h2-size);
 
 	display					: grid;
 	grid-auto-flow			: row;
+	justify-content			: start;
 }
 
 div.sheet-dicebot div.sheet-dicebot-row {
