@@ -509,6 +509,7 @@ div.sheet-noreturn .sheet-input-line span.sheet-input-label {
 	margin					: unset;
 }
 
+
 .sheet-rolltemplate-probe_offen .inlinerollresult {
 	background-color	: unset !important; /*Important wird für den Darkmode benötigt*/
 	border				: unset !important; /*Important wird für den Darkmode benötigt*/
