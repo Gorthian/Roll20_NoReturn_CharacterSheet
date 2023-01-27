@@ -522,13 +522,14 @@ div.sheet-noreturn .sheet-input-line span.sheet-input-label {
 .sheet-rolltemplate-probe_offen .inlinerollresult.fullfail {
 	border				: unset;
 }
-/*
+
 .sheet-rolltemplate-probe_offen .sheet-template-regular-di,
 .sheet-rolltemplate-probe_offen .sheet-template-hazard-di {    
 	display				: block;
 	background-size		: 20px;
-	background-repeat	: repeat-x;
+	background-repeat	: repeat;
     width				: fit-content;
+	max-width			: 182px;
 }
 
 .sheet-rolltemplate-probe_offen .sheet-template-regular-di {
@@ -550,7 +551,5 @@ div.sheet-noreturn .sheet-input-line span.sheet-input-label {
 	line-height			: 20px;
 	padding-top			: 2px;
     padding-bottom		: 3px;
-    left				: 5px;
+    left				: 5px;	
 }
-*/
-
