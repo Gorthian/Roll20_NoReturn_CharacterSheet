@@ -1,7 +1,7 @@
 /*
 	CREATED by 			Gorthian
 	Version				1.0
-	Letzte Änderung		2023-01-26
+	Letzte Änderung		2023-01-27
 	
 	GitHub				https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet
 	Wiki				https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/wiki
@@ -12,27 +12,27 @@
 /* Externe Schriftarten einbinden */
 /**********************************/
 @font-face {
-    font-family "downcome";
+    font-family: "downcome";
     src: url("https://gorthian.de/roll20/noreturn/fonts/DOWNCOME.TTF") format ("truetype");
 }
 
 @font-face {	
-    font-family "eras bold";
+    font-family: "eras bold";
     src: url("https://gorthian.de/roll20/noreturn/fonts/ERASBD.TTF") format ("truetype");
 }
 
 @font-face {
-    font-family "eras demi";
+    font-family: "eras demi";
     src: url("https://gorthian.de/roll20/noreturn/fonts/ERASDEMI.TTF") format ("truetype");
 }
 
 @font-face {
-    font-family "eras light";
+    font-family: "eras light";
     src: url("https://gorthian.de/roll20/noreturn/fonts/ERASLGHT.TTF") format ("truetype");
 }
 
 @font-face {
-    font-family "eras medium";
+    font-family: "eras medium";
     src: url("https://gorthian.de/roll20/noreturn/fonts/ERASMD.TTF") format ("truetype");
 }
 
@@ -504,11 +504,9 @@ div.sheet-noreturn .sheet-input-line span.sheet-input-label {
 	font-family				: "eras medium";
 }
 
-
 .sheet-rolltemplate-probe_offen hr {
 	margin					: unset;
 }
-
 
 .sheet-rolltemplate-probe_offen .inlinerollresult {
 	background-color	: unset !important; /*Important wird für den Darkmode benötigt*/
@@ -524,28 +522,35 @@ div.sheet-noreturn .sheet-input-line span.sheet-input-label {
 .sheet-rolltemplate-probe_offen .inlinerollresult.fullfail {
 	border				: unset;
 }
-
-.sheet-rolltemplate-probe_offen .sheet-template-regular-di span,
-.sheet-rolltemplate-probe_offen .sheet-template-hazard-di span{    
-    --height 			: 20px;
-	--size 				: 13px;
-	background-size		: var(--height);
+/*
+.sheet-rolltemplate-probe_offen .sheet-template-regular-di,
+.sheet-rolltemplate-probe_offen .sheet-template-hazard-di {    
+	display				: block;
+	background-size		: 20px;
 	background-repeat	: repeat-x;
-    font-family			: monospace;
-    font-size			: var(--size);    
-    letter-spacing		: var(--size);
-    font-weight			: bold;	
-	line-height			: var(--height);
-	padding-top			: 2px;
-    padding-bottom		: 3px;
-    padding-left		: 5px;
+    width				: fit-content;
 }
 
-.sheet-rolltemplate-probe_offen .sheet-template-regular-di span {
+.sheet-rolltemplate-probe_offen .sheet-template-regular-di {
 	background-image	: url("https://gorthian.de/roll20/noreturn/dice_white_space.png");
 }
 
-.sheet-rolltemplate-probe_offen .sheet-template-hazard-di span {
+.sheet-rolltemplate-probe_offen .sheet-template-hazard-di {
 	background-image	: url("https://gorthian.de/roll20/noreturn/dice_red_space.png");
 	color				: white;
 }
+
+.sheet-rolltemplate-probe_offen .sheet-template-regular-di span,
+.sheet-rolltemplate-probe_offen .sheet-template-hazard-di span{    
+	position			: relative;
+	font-family			: monospace;
+    font-size			: 13px;    
+    letter-spacing		: 13px;
+    font-weight			: bold;	
+	line-height			: 20px;
+	padding-top			: 2px;
+    padding-bottom		: 3px;
+    left				: 5px;
+}
+*/
+

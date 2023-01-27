@@ -4,7 +4,38 @@
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Beispiel Würfel-Hintergrund</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>    
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        body {background-color: powderblue;}
+        h1   {color: blue;}
+        p    {color: red;}
+
+        div.container {
+            --height 			: 20px;
+            --size 				: 13px;
+        }
+
+        div.container span.outer-span {
+            display             : block;
+            border              : 2px solid green;
+            background-image	: url("https://gorthian.de/roll20/misc/dice_white_space.png");
+            background-size		: var(--height);
+            background-repeat	: repeat-x;
+            width               : fit-content;
+        }
+
+        div.container span.outer-span span {            
+            font-family			: monospace;
+            font-size			: var(--size);    
+            letter-spacing		: var(--size);
+            font-weight         : bold;	
+            line-height         : var(--height);
+            padding-top			: 2px;
+            padding-bottom		: 3px;
+            position            : relative;
+            left	        	: 5px;
+        }
+    </style>  
 </head>
 <body>
     <h1>Würfelhintergrund</h1>
