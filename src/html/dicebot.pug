@@ -1,6 +1,6 @@
 //-
     CREATED by          Gorthian
-    Letzte Änderung		2023-01-25
+    Letzte Änderung		2023-01-29
 
 //
     ********************************
@@ -15,6 +15,9 @@ div(class="sheet-dicebot")
         span(name="attr_probe_skill")
         span -
         span(name="attr_probe_attribut")
+        span :
+        span(name="attr_probe_summe_wuerfel")
+        span(data-i18n="wuerfel")
     div(class="sheet-dicebot-row")
         span(data-i18n="hazard-di")
         input(type="number" name="attr_probe_hazard_wuerfel")
@@ -26,7 +29,6 @@ div(class="sheet-dicebot")
         input(type="number" name="attr_probe_bonus")
         button(type="action" name="act_wirf-probe" data-i18n="wuerfeln")
 
-        input(type="number" name="attr_probe_summe_wuerfel" hidden)
         input(type="number" name="attr_probe_original_hazard_wuerfel" hidden)
         input(type="number" name="attr_probe_original_standard_wuerfel" hidden)
 

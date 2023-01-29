@@ -230,9 +230,9 @@ on("clicked:wirf-probe",function(){
 
 on("change:probe_hazard_wuerfel", function(){
     getAttrs(["probe_summe_wuerfel","probe_standard_wuerfel","probe_hazard_wuerfel"], function(values) {
-        let summe = parseInt(values["probe_summe_wuerfel"])|0;
-        let standard = parseInt(values["probe_standard_wuerfel"])|0;
-        let hazard = parseInt(values["probe_hazard_wuerfel"])|1;
+        let summe = parseInt(values["probe_summe_wuerfel"]);
+        let standard = parseInt(values["probe_standard_wuerfel"]);
+        let hazard = parseInt(values["probe_hazard_wuerfel"]);
 
         if(hazard > summe) {hazard = summe}
         if(hazard < 1) {hazard = 1}
