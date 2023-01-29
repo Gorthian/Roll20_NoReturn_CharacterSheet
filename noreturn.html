@@ -1689,20 +1689,20 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
     <div class="sheet-template-row"> <span data-i18n="bonus-di"></span><span><img src="https://gorthian.de/roll20/noreturn/dice_white.png" width="25px"/></span></div>
     <div class="sheet-template-row"><span class="sheet-template-zahlen sheet-template-regular-di">{{computed::bonuswurf}}</span><span class="sheet-template-zahlen">= {{bonuswurf}}</span></div>{{/rollGreater() bonuswurf 0}}
     {{#rollGreater() bonus 0}}
-    <div class="sheet-template-row"><span>Bonus</span><span class="sheet-template-zahlen">+ {{bonus}}</span></div>{{/rollGreater() bonus 0}}
+    <div class="sheet-template-row"><span data-i18n="bonus"></span><span class="sheet-template-zahlen">+ {{bonus}}</span></div>{{/rollGreater() bonus 0}}
     <hr/>
-    <div class="sheet-template-row"><span>Summe</span><span class="sheet-template-zahlen">= {{computed::summe}}</span></div>
+    <div class="sheet-template-row"><span data-i18n="summe"></span><span class="sheet-template-zahlen">= {{computed::summe}}</span></div>
   </div>
 </rolltemplate>
 <rolltemplate class="sheet-rolltemplate-infektionsresistenz">
   <div class="sheet-template-container">
-    <div class="sheet-template-header">{{infektionsresistenz-key}}        </div>
+    <div class="sheet-template-header"><span data-i18n="infektionsresistenz"></span></div>
     <hr/>
     <div class="sheet-template-row"> <span data-i18n="regulaere-di"></span><span><img src="https://gorthian.de/roll20/noreturn/dice_white.png" width="25px"/></span></div>
     <div class="sheet-template-row"><span class="sheet-template-zahlen sheet-template-regular-di">{{computed::wurf}}</span><span class="sheet-template-zahlen">= {{wurf}}</span></div>{{#rollGreater() bonus 0}}
-    <div class="sheet-template-row"><span>Bonus</span><span class="sheet-template-zahlen">+ {{bonus}}</span></div>{{/rollGreater() bonus 0}}
+    <div class="sheet-template-row"><span data-i18n="bonus"></span><span class="sheet-template-zahlen">+ {{bonus}}</span></div>{{/rollGreater() bonus 0}}
     <hr/>
-    <div class="sheet-template-row"><span>Summe</span><span class="sheet-template-zahlen">= {{computed::summe}}        </span></div>
+    <div class="sheet-template-row"><span data-i18n="summe"></span><span class="sheet-template-zahlen">= {{computed::summe}}        </span></div>
   </div>
 </rolltemplate>
 <!--
@@ -1855,13 +1855,14 @@ on("clicked:infektionsresistenz",function(){
         roll = "&{template:infektionsresistenz}"; //Das Rolltemplate festlegen
         roll = roll + "{{wurf=[["+wuerfel+"d6]]}}"; 
         roll = roll + "{{bonus=[["+bonus+"]]}}";
+        roll = roll + "{{summe=[[0]]}}";
         
         startRoll(roll, (results) => {
             const wurf = results.results.wurf.result;  
             const bonus = results.results.bonus.result;
 
-            let summe = wurf+bonus;
-
+            let summe = wurf + bonus;
+            console.log(wurf + " " + bonus + " " + summe);
             let wurf_wuerfel = "";
             for (const n of results.results.wurf.dice) {
                 wurf_wuerfel = wurf_wuerfel + ""+n+"";
@@ -1870,8 +1871,8 @@ on("clicked:infektionsresistenz",function(){
             finishRoll(
                 results.rollId,
                 {
-                    summe       : summe,
-                    wurf        : wurf_wuerfel,
+                    summe: summe,
+                    wurf: wurf_wuerfel
                 }
             );
         });

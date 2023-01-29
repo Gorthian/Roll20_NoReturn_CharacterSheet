@@ -494,12 +494,9 @@ div.sheet-noreturn .sheet-input-line span.sheet-input-label {
 	color					: darkgray;
 }
 
-/************************/
-/* Rolltemplates        */
-/************************/
-
-.sheet-rolltemplate-infektionsresistenz div.sheet-template-container,
-.sheet-rolltemplate-probe_offen div.sheet-template-container {
+/* Rolltemplates */
+.sheet-rolltemplate-probe_offen div.sheet-template-container,
+.sheet-rolltemplate-infektionsresistenz div.sheet-template-container {
 	background-color	: whitesmoke;
 	color				: black;
 	margin				: 5px;

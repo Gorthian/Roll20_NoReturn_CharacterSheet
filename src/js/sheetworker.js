@@ -142,13 +142,14 @@ on("clicked:infektionsresistenz",function(){
         roll = "&{template:infektionsresistenz}"; //Das Rolltemplate festlegen
         roll = roll + "{{wurf=[["+wuerfel+"d6]]}}"; 
         roll = roll + "{{bonus=[["+bonus+"]]}}";
+        roll = roll + "{{summe=[[0]]}}";
         
         startRoll(roll, (results) => {
             const wurf = results.results.wurf.result;  
             const bonus = results.results.bonus.result;
 
-            let summe = wurf+bonus;
-
+            let summe = wurf + bonus;
+            console.log(wurf + " " + bonus + " " + summe);
             let wurf_wuerfel = "";
             for (const n of results.results.wurf.dice) {
                 wurf_wuerfel = wurf_wuerfel + ""+n+"";
@@ -157,8 +158,8 @@ on("clicked:infektionsresistenz",function(){
             finishRoll(
                 results.rollId,
                 {
-                    summe       : summe,
-                    wurf        : wurf_wuerfel,
+                    summe: summe,
+                    wurf: wurf_wuerfel
                 }
             );
         });

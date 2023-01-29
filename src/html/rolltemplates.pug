@@ -45,18 +45,19 @@ rolltemplate(class="sheet-rolltemplate-probe_offen")
         | {{/rollGreater() bonuswurf 0}}
         | {{#rollGreater() bonus 0}}
         div(class="sheet-template-row")
-            span Bonus
+            span(data-i18n="bonus")
             span(class="sheet-template-zahlen") + {{bonus}}
         | {{/rollGreater() bonus 0}}
         hr
         div(class="sheet-template-row")
-            span Summe
+            span(data-i18n="summe")
             span(class="sheet-template-zahlen") = {{computed::summe}}
 
 //- Infektionsresistenz
 rolltemplate(class="sheet-rolltemplate-infektionsresistenz")
     div(class="sheet-template-container")
-        div(class="sheet-template-header") {{infektionsresistenz-key}}        
+        div(class="sheet-template-header")
+            span(data-i18n="infektionsresistenz")
         hr
         div(class="sheet-template-row") 
             span(data-i18n="regulaere-di")
@@ -67,12 +68,12 @@ rolltemplate(class="sheet-rolltemplate-infektionsresistenz")
             span(class="sheet-template-zahlen") = {{wurf}}
         | {{#rollGreater() bonus 0}}
         div(class="sheet-template-row")
-            span Bonus
+            span(data-i18n="bonus")
             span(class="sheet-template-zahlen") + {{bonus}}
         | {{/rollGreater() bonus 0}}
         hr
         div(class="sheet-template-row")
-            span Summe
+            span(data-i18n="summe")
             span(class="sheet-template-zahlen") = {{computed::summe}}        
 
 //
