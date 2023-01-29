@@ -1,6 +1,6 @@
 /*
     CREATED by          Gorthian
-    Letzte Änderung		2023-01-26
+    Letzte Änderung		2023-01-29
 */
 
 
@@ -77,6 +77,31 @@ const skilllist = [
     ['zero-g','beweglichkeit'],
 ];
 
+function fuelleDicebot(skill, attribut) {
+    getAttrs([skill, skill+"_mod", attribut, attribut+"mod1", attribut+"mod2"], function(values) {
+        let summeSkill = 0;
+        let summeAttribut = 0;
+        let summe = 0;
+
+
+        summeSkill = parseInt(values[skill])|0 + parseInt(values[skill+"_mod"])|0;
+        summeAttribut = parseInt(values[attribut])|0 + parseInt(values[attribut+"mod1"])|0 + parseInt(values[attribut+"mod2"])|0;
+        summe = summeSkill + summeAttribut;
+
+        setAttrs({
+            "probe_summe_wuerfel"               : summe,
+            "probe_standard_wuerfel"            : summe-1,
+            "probe_hazard_wuerfel"              : 1,
+            "probe_original_standard_wuerfel"   : summe-1,
+            "probe_original_hazard_wuerfel"     : 1,
+            "probe_bonus_wuerfel"               : 0,
+            "probe_bonus"                       : 0,
+            "probe_skill"                       : getTranslationByKey(skill),
+            "probe_attribut"                    : getTranslationByKey(attribut)
+        });
+    });
+}
+
 skilllist.forEach(skills => {
     let skill = skills[0];
     let attribut = skills[1];
@@ -85,8 +110,7 @@ skilllist.forEach(skills => {
             let summeSkill = 0;
             let summeAttribut = 0;
             let summe = 0;
-            let roll = ""
-
+    
             summeSkill = parseInt(values[skill])|0 + parseInt(values[skill+"_mod"])|0;
             summeAttribut = parseInt(values[attribut])|0 + parseInt(values[attribut+"mod1"])|0 + parseInt(values[attribut+"mod2"])|0;
             summe = summeSkill + summeAttribut;
@@ -102,12 +126,39 @@ skilllist.forEach(skills => {
                 "probe_skill"                       : getTranslationByKey(skill),
                 "probe_attribut"                    : getTranslationByKey(attribut)
             });
+        });
+    });
+});
+
+on("clicked:repeating_besondere-fertigkeiten:probe-besondere-fertigkeit", function(eventInfo) {
+    getAttrs(["repeating_besondere-fertigkeiten_besondere-fertigkeit-name", "repeating_besondere-fertigkeiten_besondere-fertigkeit-stufe", "repeating_besondere-fertigkeiten_besondere-fertigkeit-attribut"], function(values) {
+        let skillName = values["repeating_besondere-fertigkeiten_besondere-fertigkeit-name"];
+        let skillStufe = parseInt(values["repeating_besondere-fertigkeiten_besondere-fertigkeit-stufe"])|0;
+        let attributName = values["repeating_besondere-fertigkeiten_besondere-fertigkeit-attribut"];
+
+        getAttrs([attributName, attributName+"mod1", attributName+"mod2"], function(values) {
+            let summeAttribut = 0;
+            let summe = 0;
+
+            summeAttribut = parseInt(values[attributName])|0 + parseInt(values[attributName+"mod1"])|0 + parseInt(values[attributName+"mod2"])|0;
+            summe = skillStufe + summeAttribut;
+
+            setAttrs({
+                "probe_summe_wuerfel"               : summe,
+                "probe_standard_wuerfel"            : summe-1,
+                "probe_hazard_wuerfel"              : 1,
+                "probe_original_standard_wuerfel"   : summe-1,
+                "probe_original_hazard_wuerfel"     : 1,
+                "probe_bonus_wuerfel"               : 0,
+                "probe_bonus"                       : 0,
+                "probe_skill"                       : skillName,
+                "probe_attribut"                    : getTranslationByKey(attributName)
+            });
         });        
     });
 });
 
 on("clicked:wirf-probe",function(){
-
     getAttrs(["probe_summe_wuerfel","probe_standard_wuerfel","probe_original_standard_wuerfel","probe_hazard_wuerfel","probe_original_hazard_wuerfel","probe_bonus_wuerfel","probe_bonus","probe_skill","probe_attribut"], function(values) {
         let summe = parseInt(values["probe_summe_wuerfel"])|0;
         let standard = parseInt(values["probe_standard_wuerfel"])|0;
