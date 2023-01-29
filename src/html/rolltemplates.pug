@@ -1,6 +1,6 @@
 //-
     CREATED by          Gorthian
-    Letzte Änderung		2023-01-26
+    Letzte Änderung		2023-01-29
 
 //
     ********************************
@@ -48,9 +48,33 @@ rolltemplate(class="sheet-rolltemplate-probe_offen")
             span Bonus
             span(class="sheet-template-zahlen") + {{bonus}}
         | {{/rollGreater() bonus 0}}
+        hr
+        div(class="sheet-template-row")
+            span Summe
+            span(class="sheet-template-zahlen") = {{computed::summe}}
+
+//- Infektionsresistenz
+rolltemplate(class="sheet-rolltemplate-infektionsresistenz")
+    div(class="sheet-template-container")
+        div(class="sheet-template-header") {{infektionsresistenz-key}}        
+        hr
+        div(class="sheet-template-row") 
+            span(data-i18n="regulaere-di")
+            span
+                img(src='https://gorthian.de/roll20/noreturn/dice_white.png' width='25px')
+        div(class="sheet-template-row")
+            span(class="sheet-template-zahlen sheet-template-regular-di") {{computed::wurf}}
+            span(class="sheet-template-zahlen") = {{wurf}}
+        | {{#rollGreater() bonus 0}}
+        div(class="sheet-template-row")
+            span Bonus
+            span(class="sheet-template-zahlen") + {{bonus}}
+        | {{/rollGreater() bonus 0}}
+        hr
         div(class="sheet-template-row")
             span Summe
             span(class="sheet-template-zahlen") = {{computed::summe}}        
+
 //
     ********************************
     * ENDE src/html/rolltemplate.pug

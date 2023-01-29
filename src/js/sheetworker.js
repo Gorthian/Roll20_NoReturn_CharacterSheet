@@ -77,31 +77,6 @@ const skilllist = [
     ['zero-g','beweglichkeit'],
 ];
 
-function fuelleDicebot(skill, attribut) {
-    getAttrs([skill, skill+"_mod", attribut, attribut+"mod1", attribut+"mod2"], function(values) {
-        let summeSkill = 0;
-        let summeAttribut = 0;
-        let summe = 0;
-
-
-        summeSkill = parseInt(values[skill])|0 + parseInt(values[skill+"_mod"])|0;
-        summeAttribut = parseInt(values[attribut])|0 + parseInt(values[attribut+"mod1"])|0 + parseInt(values[attribut+"mod2"])|0;
-        summe = summeSkill + summeAttribut;
-
-        setAttrs({
-            "probe_summe_wuerfel"               : summe,
-            "probe_standard_wuerfel"            : summe-1,
-            "probe_hazard_wuerfel"              : 1,
-            "probe_original_standard_wuerfel"   : summe-1,
-            "probe_original_hazard_wuerfel"     : 1,
-            "probe_bonus_wuerfel"               : 0,
-            "probe_bonus"                       : 0,
-            "probe_skill"                       : getTranslationByKey(skill),
-            "probe_attribut"                    : getTranslationByKey(attribut)
-        });
-    });
-}
-
 skilllist.forEach(skills => {
     let skill = skills[0];
     let attribut = skills[1];
@@ -155,6 +130,38 @@ on("clicked:repeating_besondere-fertigkeiten:probe-besondere-fertigkeit", functi
                 "probe_attribut"                    : getTranslationByKey(attributName)
             });
         });        
+    });
+});
+
+on("clicked:infektionsresistenz",function(){
+    getAttrs(["infektionsresistenz_wuerfel","infektionsresistenz_bonus"], function(values) {
+        let wuerfel = parseInt(values["infektionsresistenz_wuerfel"])|1;
+        let bonus = parseInt(values["infektionsresistenz_bonus"])|0;
+        let roll = ""
+
+        roll = "&{template:infektionsresistenz}"; //Das Rolltemplate festlegen
+        roll = roll + "{{wurf=[["+wuerfel+"d6]]}}"; 
+        roll = roll + "{{bonus=[["+bonus+"]]}}";
+        
+        startRoll(roll, (results) => {
+            const wurf = results.results.wurf.result;  
+            const bonus = results.results.bonus.result;
+
+            let summe = wurf+bonus;
+
+            let wurf_wuerfel = "";
+            for (const n of results.results.wurf.dice) {
+                wurf_wuerfel = wurf_wuerfel + ""+n+"";
+            }
+            
+            finishRoll(
+                results.rollId,
+                {
+                    summe       : summe,
+                    wurf        : wurf_wuerfel,
+                }
+            );
+        });
     });
 });
 

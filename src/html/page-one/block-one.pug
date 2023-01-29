@@ -1,6 +1,6 @@
 //-
     CREATED by          Gorthian
-    Letzte Änderung		2023-01-15
+    Letzte Änderung		2023-01-29
 
 //
     ********************************
@@ -54,7 +54,14 @@ div(class="sheet-3cols")
         div(class="sheet-input-line")
             +input-text("psyche","psyche")
         div(class="sheet-input-line")
-            +input-text("infektionsresistenz","infektionsresistenz")
+            div 
+                span(class="sheet-input-label" data-i18n="infektionsresistenz")
+            div(class="sheet-infektionsresistenz")
+                input(type="number" name="attr_infektionsresistenz_wuerfel")
+                span(data-i18n="w6")
+                span +
+                input(type="number" name="attr_infektionsresistenz_bonus")
+                button(type="action" name="act_infektionsresistenz")
         div(class="sheet-input-line")
             +input-text("butterflyeffekt","butterflyeffekt")
         div(class="sheet-3cols")
