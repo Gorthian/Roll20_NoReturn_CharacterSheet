@@ -1,7 +1,7 @@
 /*
 	CREATED by 			Gorthian
 	Version				1.0
-	Letzte Änderung		2023-01-27
+	Letzte Änderung		2023-01-29
 	
 	GitHub				https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet
 	Wiki				https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/wiki
@@ -128,7 +128,7 @@ div.sheet-noreturn .sheet-besondere-fertigkeiten-zeile,
 div.sheet-noreturn .sheet-style-skills-zeile,
 div.sheet-noreturn .sheet-charaktermerkmale-zeile {
 	display                 : grid;
-    grid-template-columns   : 200px 40px;
+    grid-template-columns   : 20px 140px 40px 40px;
 }
 
 div.sheet-noreturn .sheet-attribut-zeile div,
@@ -168,6 +168,21 @@ div.sheet-noreturn div.sheet-charaktermerkmale-zeile input[type="number"] {
 	height					: 1.5em;
 	width					: 40px;
 	top						: 4px;
+}
+
+div.sheet-noreturn div.sheet-besondere-fertigkeiten-zeile select {
+	background-color		: transparent;
+	width					: 40px;
+}
+
+div.sheet-noreturn div.sheet-besondere-fertigkeiten-zeile button[type="action"] {
+	width					: 10px;
+	height					: auto;
+}
+
+div.sheet-noreturn div.sheet-besondere-fertigkeiten-zeile button[type="action"]::before {
+    font-family: 'dicefontd6';
+    content: 'F ';
 }
 
 div.sheet-noreturn div.sheet-titel,

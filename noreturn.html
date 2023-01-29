@@ -1212,13 +1212,30 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
           <div class="sheet-box">
             <h1 data-i18n="besondere-fertigkeiten"></h1>
             <div class="sheet-besondere-fertigkeiten-zeile">
+              <div class="sheet-kopfzeile"><span>&nbsp;</span></div>
               <div class="sheet-kopfzeile"><span data-i18n="fertigkeit"></span></div>
+              <div class="sheet-kopfzeile"><span data-i18n="attribut"></span></div>
               <div class="sheet-kopfzeile"><span data-i18n="stufe"></span></div>
             </div>
             <fieldset class="repeating_besondere-fertigkeiten">
               <div class="sheet-besondere-fertigkeiten-zeile">
                 <div>
+                  <button type="action">&nbsp;</button>
+                </div>
+                <div>
                   <input type="text" name="attr_besondere-fertigkeit-name"/>
+                </div>
+                <div>
+                  <select name="attr_besondere-fertigkeit-attribut">
+                    <option value="geschick" data-i18n="geschick_kurz"></option>
+                    <option value="staerke" data-i18n="staerke_kurz"></option>
+                    <option value="konstitution" data-i18n="konstitution_kurz"></option>
+                    <option value="beweglichkeit" data-i18n="beweglichkeit_kurz"></option>
+                    <option value="wahrnehmung" data-i18n="wahrnehmung_kurz"></option>
+                    <option value="wissen" data-i18n="wissen_kurz"></option>
+                    <option value="charisma" data-i18n="charisma_kurz"></option>
+                    <option value="handwerk" data-i18n="handwerk_kurz"></option>
+                  </select>
                 </div>
                 <div>
                   <input type="number" name="attr_besondere-fertigkeit-stufe"/>
