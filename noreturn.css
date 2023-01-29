@@ -354,6 +354,8 @@ div.sheet-dicebot div.sheet-dicebot-row {
 div.sheet-dicebot input[type=number] {
 	border					: 2px solid black;	
 	top						: unset;
+	text-align				: center;
+	font-weight				: bold;
 }
 
 div.sheet-dicebot span {
