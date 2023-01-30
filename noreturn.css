@@ -1,7 +1,7 @@
 /*
 	CREATED by 			Gorthian
 	Version				1.0
-	Letzte Änderung		2023-01-29
+	Letzte Änderung		2023-01-30
 	
 	GitHub				https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet
 	Wiki				https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/wiki
@@ -11,29 +11,106 @@
 /**********************************/
 /* Externe Schriftarten einbinden */
 /**********************************/
-@font-face {
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap'); /* Roboto als Fallback für Eras Medium */
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Vinyl&display=swap'); /* Rubik Vinyl als Fallback für Eras Medium */
+@import url("https://fonts.cdnfonts.com/css/downcome"); /* Kann auf Grund von Roll20-Einschänkungen vermutlich nicht importiert werden */
+
+/* FONT-FACE wird auf Grund von Cross-Domain-Einschränkungen in den wenigsten Browsern funktionieren */
+@font-face { 
     font-family: "downcome";
-    src: url("https://gorthian.de/roll20/noreturn/fonts/DOWNCOME.TTF") format ("truetype");
-}
-
-@font-face {	
-    font-family: "eras bold";
-    src: url("https://gorthian.de/roll20/noreturn/fonts/ERASBD.TTF") format ("truetype");
+    src: local('downcome'), url(https://gorthian.de/roll20/noreturn/fonts/DOWNCOME.TTF) format ("truetype");
 }
 
 @font-face {
-    font-family: "eras demi";
-    src: url("https://gorthian.de/roll20/noreturn/fonts/ERASDEMI.TTF") format ("truetype");
+    font-family: "eras medium itc";
+    src: local('eras medium itc'), url(https://gorthian.de/roll20/noreturn/fonts/ERASMD.TTF) format ("truetype");
 }
 
-@font-face {
-    font-family: "eras light";
-    src: url("https://gorthian.de/roll20/noreturn/fonts/ERASLGHT.TTF") format ("truetype");
+/**********************************/
+/* Schriftarten definieren        */
+/* Font-Variablen für den Sheet   */
+/**********************************/
+div.sheet-noreturn {
+	--font-standard			: "eras medium itc", "Roboto", sans-serif, monospace;
+	--font-highlight		: "downcome", "Rubik Vinyl", sans-serif, monospace;
+	--font-h1-size			: 14pt;
+	--font-h2-size			: 10pt;
+	--font-big-size			: 12pt;
+	--font-standard-size	: 10pt;
+	--font-middle-size		: 8pt;
+	--font-small-size		: 7pt;
 }
 
-@font-face {
-    font-family: "eras medium";
-    src: url("https://gorthian.de/roll20/noreturn/fonts/ERASMD.TTF") format ("truetype");
+div.sheet-noreturn {
+    font-family				: var(--font-standard);
+    font-size               : var(--font-standard-size);	
+}
+
+div.sheet-noreturn h1, div.sheet-noreturn h2 {
+    font-family				: var(--font-highlight);
+	text-transform          : uppercase;
+    color                   : whitesmoke;
+    text-shadow             : -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    text-align              : center;
+}
+div.sheet-noreturn h1 {font-size : var(--font-h1-size);}
+div.sheet-noreturn h2 {font-size : var(--font-h2-size);}
+
+.sheet-attribut-zeile, .sheet-sonderattribut-zeile {
+	text-transform          : uppercase;
+}
+
+.sheet-fertigkeiten-zeile, .sheet-besondere-fertigkeiten-zeile, .sheet-style-skills-zeile, .sheet-charaktermerkmale-zeile {
+	text-transform          : none;
+}
+
+div.sheet-noreturn div.sheet-kopfzeile,
+div.sheet-noreturn div.sheet-titel,
+div.sheet-noreturn div.sheet-sonderattribut-zeile div.sheet-sonderattribut-titel {
+    font-family				: var(--font-highlight);
+	text-transform          : uppercase;		
+}
+
+div.sheet-noreturn div.sheet-kopfzeile {
+	font-size				: var(--font-middle-size);
+}
+
+div.sheet-noreturn div.sheet-titel,
+div.sheet-noreturn div.sheet-sonderattribut-zeile div.sheet-sonderattribut-titel {
+	font-size				: var(--font-big-size);
+}
+
+div.sheet-noreturn input {
+	font-family				: var(--font-standard);
+    font-size               : var(--font-standard-size);
+}
+
+div.sheet-noreturn div.sheet-trefferzonen-liste div.sheet-trefferzone-zeile div:first-child {
+	font-weight				: bold;	
+}
+
+div.sheet-noreturn div.sheet-trefferzone-zeile input[type="text"] {
+	text-transform          : uppercase;
+	font-weight				: bold;
+}
+
+div.sheet-noreturn .sheet-input-line span.sheet-input-label {
+    font-family				: var(--font-highlight);
+	font-size				: var(--font-h2-size);
+	text-transform          : uppercase;
+}
+
+.sheet-font-small-highlight {
+	font-family				: var(--font-highlight);
+	font-size				: var(--font-small-size);
+	text-transform          : uppercase;
+}
+
+.sheet-font-darkgray-highlight {
+	font-family				: var(--font-highlight);
+	font-size				: var(--font-big-size);
+	text-transform          : uppercase;
+	color					: darkgray;
 }
 
 /**********************************/
@@ -410,93 +487,7 @@ button.sheet-toggle-button {
     outline				: none;
 }
 
-/* Schriftarten definieren */
-
-/* Font-Variablen für den Sheet */
-div.sheet-noreturn {
-	--font-standard			: "eras medium";
-	--font-highlight		: "downcome";
-	--font-h1-size			: 14pt;
-	--font-h2-size			: 10pt;
-	--font-big-size			: 12pt;
-	--font-standard-size	: 10pt;
-	--font-middle-size		: 8pt;
-	--font-small-size		: 7pt;
-}
-
-div.sheet-noreturn {
-    font-family				: var(--font-standard);
-    font-size               : var(--font-standard-size);	
-}
-
-div.sheet-noreturn h1, div.sheet-noreturn h2 {
-    font-family				: var(--font-highlight);
-	text-transform          : uppercase;
-    color                   : whitesmoke;
-    text-shadow             : -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-    text-align              : center;
-}
-div.sheet-noreturn h1 {font-size : var(--font-h1-size);}
-div.sheet-noreturn h2 {font-size : var(--font-h2-size);}
-
-.sheet-attribut-zeile, .sheet-sonderattribut-zeile {
-	text-transform          : uppercase;
-}
-
-.sheet-fertigkeiten-zeile, .sheet-besondere-fertigkeiten-zeile, .sheet-style-skills-zeile, .sheet-charaktermerkmale-zeile {
-	text-transform          : none;
-}
-
-div.sheet-noreturn div.sheet-kopfzeile,
-div.sheet-noreturn div.sheet-titel,
-div.sheet-noreturn div.sheet-sonderattribut-zeile div.sheet-sonderattribut-titel {
-    font-family				: var(--font-highlight);
-	text-transform          : uppercase;		
-}
-
-div.sheet-noreturn div.sheet-kopfzeile {
-	font-size				: var(--font-middle-size);
-}
-
-div.sheet-noreturn div.sheet-titel,
-div.sheet-noreturn div.sheet-sonderattribut-zeile div.sheet-sonderattribut-titel {
-	font-size				: var(--font-big-size);
-}
-
-div.sheet-noreturn input {
-	font-family				: var(--font-standard);
-    font-size               : var(--font-standard-size);
-}
-
-div.sheet-noreturn div.sheet-trefferzonen-liste div.sheet-trefferzone-zeile div:first-child {
-	font-weight				: bold;	
-}
-
-div.sheet-noreturn div.sheet-trefferzone-zeile input[type="text"] {
-	text-transform          : uppercase;
-	font-weight				: bold;
-}
-
-div.sheet-noreturn .sheet-input-line span.sheet-input-label {
-    font-family				: var(--font-highlight);
-	font-size				: var(--font-h2-size);
-	text-transform          : uppercase;
-}
-
-.sheet-font-small-highlight {
-	font-family				: var(--font-highlight);
-	font-size				: var(--font-small-size);
-	text-transform          : uppercase;
-}
-
-.sheet-font-darkgray-highlight {
-	font-family				: var(--font-highlight);
-	font-size				: var(--font-big-size);
-	text-transform          : uppercase;
-	color					: darkgray;
-}
-
-/* Rolltemplates */
+/* Die Rolltemplates              */
 .sheet-rolltemplate-probe_offen div.sheet-template-container,
 .sheet-rolltemplate-infektionsresistenz div.sheet-template-container {
 	background-color	: whitesmoke;
@@ -508,14 +499,14 @@ div.sheet-noreturn .sheet-input-line span.sheet-input-label {
 
 .sheet-rolltemplate-infektionsresistenz div.sheet-template-header,
 .sheet-rolltemplate-probe_offen div.sheet-template-header {
-	font-family			: "downcome";
+	font-family			: "downcome", "Rubik Vinyl", sans-serif, monospace;
 	font-size			: 14pt;
 	text-align			: center;
 }
 
 .sheet-rolltemplate-infektionsresistenz div.sheet-template-row,
 .sheet-rolltemplate-probe_offen div.sheet-template-row {
-	font-family				: "downcome";
+	font-family				: "downcome", "Rubik Vinyl", sans-serif, monospace;
 	font-size				: 12pt;
 	line-height				: 14pt;
 	margin					: 5px;	
@@ -529,7 +520,7 @@ div.sheet-noreturn .sheet-input-line span.sheet-input-label {
 
 .sheet-rolltemplate-infektionsresistenz div.sheet-template-row span.sheet-template-zahlen,
 .sheet-rolltemplate-probe_offen div.sheet-template-row span.sheet-template-zahlen {
-	font-family				: "eras medium";
+	font-family				: "eras medium itc", "Roboto", sans-serif, monospace;
 }
 
 .sheet-rolltemplate-infektionsresistenz hr,
