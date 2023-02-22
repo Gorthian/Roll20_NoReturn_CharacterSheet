@@ -1,7 +1,7 @@
 /*
 	CREATED by 			Gorthian
 	Version				1.0
-	Letzte Änderung		2023-01-30
+	Letzte Änderung		2023-02-22
 	
 	GitHub				https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet
 	Wiki				https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/wiki
@@ -521,6 +521,7 @@ button.sheet-toggle-button {
 .sheet-rolltemplate-infektionsresistenz div.sheet-template-row span.sheet-template-zahlen,
 .sheet-rolltemplate-probe_offen div.sheet-template-row span.sheet-template-zahlen {
 	font-family				: "eras medium itc", "Roboto", sans-serif, monospace;
+	font-weight				: bold;
 }
 
 .sheet-rolltemplate-infektionsresistenz hr,
