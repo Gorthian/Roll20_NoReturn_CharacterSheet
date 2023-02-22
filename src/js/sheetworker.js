@@ -1,6 +1,6 @@
 /*
     CREATED by          Gorthian
-    Letzte Änderung		2023-01-29
+    Letzte Änderung		2023-02-22
 */
 
 
@@ -134,12 +134,14 @@ on("clicked:repeating_besondere-fertigkeiten:probe-besondere-fertigkeit", functi
 });
 
 on("clicked:infektionsresistenz",function(){
-    getAttrs(["infektionsresistenz_wuerfel","infektionsresistenz_bonus"], function(values) {
+    getAttrs(["character_name","infektionsresistenz_wuerfel","infektionsresistenz_bonus"], function(values) {
         let wuerfel = parseInt(values["infektionsresistenz_wuerfel"])|1;
         let bonus = parseInt(values["infektionsresistenz_bonus"])|0;
+        let charaktername = values["character_name"];
         let roll = ""
 
         roll = "&{template:infektionsresistenz}"; //Das Rolltemplate festlegen
+        roll = roll + "{{charaktername="+charaktername+"}}"; //Den Charakternamen mitgeben
         roll = roll + "{{wurf=[["+wuerfel+"d6]]}}"; 
         roll = roll + "{{bonus=[["+bonus+"]]}}";
         roll = roll + "{{summe=[[0]]}}";
@@ -167,7 +169,7 @@ on("clicked:infektionsresistenz",function(){
 });
 
 on("clicked:wirf-probe",function(){
-    getAttrs(["probe_summe_wuerfel","probe_standard_wuerfel","probe_original_standard_wuerfel","probe_hazard_wuerfel","probe_original_hazard_wuerfel","probe_bonus_wuerfel","probe_bonus","probe_skill","probe_attribut"], function(values) {
+    getAttrs(["character_name","probe_summe_wuerfel","probe_standard_wuerfel","probe_original_standard_wuerfel","probe_hazard_wuerfel","probe_original_hazard_wuerfel","probe_bonus_wuerfel","probe_bonus","probe_skill","probe_attribut"], function(values) {
         let summe = parseInt(values["probe_summe_wuerfel"])|0;
         let standard = parseInt(values["probe_standard_wuerfel"])|0;
         let standard_orig = parseInt(values["probe_original_standard_wuerfel"])|0;
@@ -177,12 +179,14 @@ on("clicked:wirf-probe",function(){
         let bonus = parseInt(values["probe_bonus"])|0;
         let skill = values["probe_skill"];
         let attribut = values["probe_attribut"];
+        let charaktername = values["character_name"];
         let roll = "";
         let modifiziert = "";
 
         if(standard_orig != standard || hazard_orig != hazard) {modifiziert=1;}
 
         roll = "&{template:probe_offen}"; //Das Rolltemplate festlegen
+        roll = roll + "{{charaktername="+charaktername+"}}"; //Den Charakternamen mitgeben
         roll = roll + "{{fertigkeit="+skill+"}}"; //Die Fertigkeit auf die gewürfelt wird
         roll = roll + "{{attribut="+attribut+"}}"; //Das Attribut auf das gewürfelt wird
         roll = roll + "{{hazard=[["+hazard+"d6!6]]}}"; //Der Hazard-Wurf            
