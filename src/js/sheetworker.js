@@ -85,8 +85,9 @@ skilllist.forEach(skills => {
             let summeSkill = 0;
             let summeAttribut = 0;
             let summe = 0;
+            let skillNotiz = values[skill+"_mod"];
     
-            summeSkill = parseInt(values[skill])|0 + parseInt(values[skill+"_mod"])|0;
+            summeSkill = parseInt(values[skill])|0;
             summeAttribut = parseInt(values[attribut])|0 + parseInt(values[attribut+"mod1"])|0 + parseInt(values[attribut+"mod2"])|0;
             summe = summeSkill + summeAttribut;
 
@@ -96,6 +97,7 @@ skilllist.forEach(skills => {
                 "probe_hazard_wuerfel"              : 1,
                 "probe_original_standard_wuerfel"   : summe-1,
                 "probe_original_hazard_wuerfel"     : 1,
+                "probe_skill_notiz"                 : skillNotiz,
                 "probe_bonus_wuerfel"               : 0,
                 "probe_bonus"                       : 0,
                 "probe_skill"                       : getTranslationByKey(skill),

@@ -23,6 +23,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
   -->
   <div class="sheet-dicebot">
     <div class="sheet-dicebot-row"><span name="attr_probe_skill"></span><span>-</span><span name="attr_probe_attribut"></span><span>:</span><span name="attr_probe_summe_wuerfel"></span><span data-i18n="wuerfel"></span></div>
+    <div class="sheet-dicebot-row"><span data-i18n="info-skill-notiz"></span><span name="attr_probe_skill_notiz"></span></div>
     <div class="sheet-dicebot-row"><span data-i18n="hazard-di"></span>
       <input type="number" name="attr_probe_hazard_wuerfel"/><span data-i18n="regulaere-di"></span>
       <input type="number" name="attr_probe_standard_wuerfel"/><span data-i18n="bonus-di"></span>
@@ -426,13 +427,14 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
         
         -->
         <div class="sheet-box">
-          <h1 data-i18n="fertigkeiten"></h1>
-          <div class="sheet-fertigkeiten-zeile">
-            <div class="sheet-kopfzeile"><span data-i18n="fertigkeit"></span></div>
-            <div class="sheet-kopfzeile"><span data-i18n="attr"></span></div>
-            <div class="sheet-kopfzeile"><span data-i18n="stufe"></span></div>
-            <div class="sheet-kopfzeile"><span data-i18n="mod"></span></div>
-          </div>
+                <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitskopfzeile-->
+                <h1 data-i18n="fertigkeiten"></h1>
+                <div class="sheet-fertigkeiten-zeile">
+                  <div class="sheet-kopfzeile"><span data-i18n="fertigkeit"></span></div>
+                  <div class="sheet-kopfzeile"><span data-i18n="attr"></span></div>
+                  <div class="sheet-kopfzeile"><span data-i18n="stufe"></span></div>
+                  <div class="sheet-kopfzeile"><span data-i18n="note"></span></div>
+                </div>
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
                 <div class="sheet-fertigkeiten-zeile">
                   <div>
@@ -443,7 +445,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                     <input type="number" name="attr_akrobatik"/>
                   </div>
                   <div>
-                    <input type="number" name="attr_akrobatik_mod"/>
+                    <input type="text" name="attr_akrobatik_mod"/>
                   </div>
                 </div>
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
@@ -456,7 +458,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                     <input type="number" name="attr_astronomie"/>
                   </div>
                   <div>
-                    <input type="number" name="attr_astronomie_mod"/>
+                    <input type="text" name="attr_astronomie_mod"/>
                   </div>
                 </div>
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
@@ -469,7 +471,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                     <input type="number" name="attr_ausdauer"/>
                   </div>
                   <div>
-                    <input type="number" name="attr_ausdauer_mod"/>
+                    <input type="text" name="attr_ausdauer_mod"/>
                   </div>
                 </div>
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
@@ -482,7 +484,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                     <input type="number" name="attr_ausweichen"/>
                   </div>
                   <div>
-                    <input type="number" name="attr_ausweichen_mod"/>
+                    <input type="text" name="attr_ausweichen_mod"/>
                   </div>
                 </div>
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
@@ -495,7 +497,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                     <input type="number" name="attr_basteln"/>
                   </div>
                   <div>
-                    <input type="number" name="attr_basteln_mod"/>
+                    <input type="text" name="attr_basteln_mod"/>
                   </div>
                 </div>
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
@@ -508,7 +510,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                     <input type="number" name="attr_blocken"/>
                   </div>
                   <div>
-                    <input type="number" name="attr_blocken_mod"/>
+                    <input type="text" name="attr_blocken_mod"/>
                   </div>
                 </div>
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
@@ -521,7 +523,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                     <input type="number" name="attr_bodenfahrzeuge"/>
                   </div>
                   <div>
-                    <input type="number" name="attr_bodenfahrzeuge_mod"/>
+                    <input type="text" name="attr_bodenfahrzeuge_mod"/>
                   </div>
                 </div>
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
@@ -534,7 +536,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                     <input type="number" name="attr_chemie"/>
                   </div>
                   <div>
-                    <input type="number" name="attr_chemie_mod"/>
+                    <input type="text" name="attr_chemie_mod"/>
                   </div>
                 </div>
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
@@ -547,7 +549,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                     <input type="number" name="attr_computer"/>
                   </div>
                   <div>
-                    <input type="number" name="attr_computer_mod"/>
+                    <input type="text" name="attr_computer_mod"/>
                   </div>
                 </div>
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
@@ -560,7 +562,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                     <input type="number" name="attr_dressieren"/>
                   </div>
                   <div>
-                    <input type="number" name="attr_dressieren_mod"/>
+                    <input type="text" name="attr_dressieren_mod"/>
                   </div>
                 </div>
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
@@ -573,7 +575,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                     <input type="number" name="attr_einschuechtern"/>
                   </div>
                   <div>
-                    <input type="number" name="attr_einschuechtern_mod"/>
+                    <input type="text" name="attr_einschuechtern_mod"/>
                   </div>
                 </div>
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
@@ -586,7 +588,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                     <input type="number" name="attr_einschuechtern"/>
                   </div>
                   <div>
-                    <input type="number" name="attr_einschuechtern_mod"/>
+                    <input type="text" name="attr_einschuechtern_mod"/>
                   </div>
                 </div>
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
@@ -599,7 +601,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                     <input type="number" name="attr_elektronik"/>
                   </div>
                   <div>
-                    <input type="number" name="attr_elektronik_mod"/>
+                    <input type="text" name="attr_elektronik_mod"/>
                   </div>
                 </div>
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
@@ -612,7 +614,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                     <input type="number" name="attr_feuerwaffenbau"/>
                   </div>
                   <div>
-                    <input type="number" name="attr_feuerwaffenbau_mod"/>
+                    <input type="text" name="attr_feuerwaffenbau_mod"/>
                   </div>
                 </div>
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
@@ -625,7 +627,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                     <input type="number" name="attr_fluggeraete"/>
                   </div>
                   <div>
-                    <input type="number" name="attr_fluggeraete_mod"/>
+                    <input type="text" name="attr_fluggeraete_mod"/>
                   </div>
                 </div>
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
@@ -638,7 +640,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                     <input type="number" name="attr_gassenwissen"/>
                   </div>
                   <div>
-                    <input type="number" name="attr_gassenwissen_mod"/>
+                    <input type="text" name="attr_gassenwissen_mod"/>
                   </div>
                 </div>
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
@@ -651,7 +653,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                     <input type="number" name="attr_geschuetze"/>
                   </div>
                   <div>
-                    <input type="number" name="attr_geschuetze_mod"/>
+                    <input type="text" name="attr_geschuetze_mod"/>
                   </div>
                 </div>
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
@@ -664,7 +666,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                     <input type="number" name="attr_grossraumschiff"/>
                   </div>
                   <div>
-                    <input type="number" name="attr_grossraumschiff_mod"/>
+                    <input type="text" name="attr_grossraumschiff_mod"/>
                   </div>
                 </div>
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
@@ -677,7 +679,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                     <input type="number" name="attr_heimlichkeit"/>
                   </div>
                   <div>
-                    <input type="number" name="attr_heimlichkeit_mod"/>
+                    <input type="text" name="attr_heimlichkeit_mod"/>
                   </div>
                 </div>
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
@@ -690,7 +692,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                     <input type="number" name="attr_inspiration"/>
                   </div>
                   <div>
-                    <input type="number" name="attr_inspiration_mod"/>
+                    <input type="text" name="attr_inspiration_mod"/>
                   </div>
                 </div>
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
@@ -703,7 +705,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                     <input type="number" name="attr_klettern"/>
                   </div>
                   <div>
-                    <input type="number" name="attr_klettern_mod"/>
+                    <input type="text" name="attr_klettern_mod"/>
                   </div>
                 </div>
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
@@ -716,7 +718,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                     <input type="number" name="attr_kunst"/>
                   </div>
                   <div>
-                    <input type="number" name="attr_kunst_mod"/>
+                    <input type="text" name="attr_kunst_mod"/>
                   </div>
                 </div>
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
@@ -729,7 +731,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                     <input type="number" name="attr_mechanik"/>
                   </div>
                   <div>
-                    <input type="number" name="attr_mechanik_mod"/>
+                    <input type="text" name="attr_mechanik_mod"/>
                   </div>
                 </div>
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
@@ -742,7 +744,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                     <input type="number" name="attr_medizin"/>
                   </div>
                   <div>
-                    <input type="number" name="attr_medizin_mod"/>
+                    <input type="text" name="attr_medizin_mod"/>
                   </div>
                 </div>
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
@@ -755,7 +757,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                     <input type="number" name="attr_menschenkenntnis"/>
                   </div>
                   <div>
-                    <input type="number" name="attr_menschenkenntnis_mod"/>
+                    <input type="text" name="attr_menschenkenntnis_mod"/>
                   </div>
                 </div>
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
@@ -768,7 +770,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                     <input type="number" name="attr_nachforschen"/>
                   </div>
                   <div>
-                    <input type="number" name="attr_nachforschen_mod"/>
+                    <input type="text" name="attr_nachforschen_mod"/>
                   </div>
                 </div>
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
@@ -781,7 +783,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                     <input type="number" name="attr_nahkampf"/>
                   </div>
                   <div>
-                    <input type="number" name="attr_nahkampf_mod"/>
+                    <input type="text" name="attr_nahkampf_mod"/>
                   </div>
                 </div>
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
@@ -794,7 +796,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                     <input type="number" name="attr_naturkunde"/>
                   </div>
                   <div>
-                    <input type="number" name="attr_naturkunde_mod"/>
+                    <input type="text" name="attr_naturkunde_mod"/>
                   </div>
                 </div>
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
@@ -807,7 +809,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                     <input type="number" name="attr_orientierung"/>
                   </div>
                   <div>
-                    <input type="number" name="attr_orientierung_mod"/>
+                    <input type="text" name="attr_orientierung_mod"/>
                   </div>
                 </div>
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
@@ -820,7 +822,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                     <input type="number" name="attr_projektilwaffen"/>
                   </div>
                   <div>
-                    <input type="number" name="attr_projektilwaffen_mod"/>
+                    <input type="text" name="attr_projektilwaffen_mod"/>
                   </div>
                 </div>
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
@@ -833,7 +835,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                     <input type="number" name="attr_raumjaeger"/>
                   </div>
                   <div>
-                    <input type="number" name="attr_raumjaeger_mod"/>
+                    <input type="text" name="attr_raumjaeger_mod"/>
                   </div>
                 </div>
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
@@ -846,7 +848,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                     <input type="number" name="attr_raumschiff"/>
                   </div>
                   <div>
-                    <input type="number" name="attr_raumschiff_mod"/>
+                    <input type="text" name="attr_raumschiff_mod"/>
                   </div>
                 </div>
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
@@ -859,7 +861,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                     <input type="number" name="attr_reaktion"/>
                   </div>
                   <div>
-                    <input type="number" name="attr_reaktion_mod"/>
+                    <input type="text" name="attr_reaktion_mod"/>
                   </div>
                 </div>
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
@@ -872,7 +874,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                     <input type="number" name="attr_reiten"/>
                   </div>
                   <div>
-                    <input type="number" name="attr_reiten_mod"/>
+                    <input type="text" name="attr_reiten_mod"/>
                   </div>
                 </div>
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
@@ -885,7 +887,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                     <input type="number" name="attr_rennen"/>
                   </div>
                   <div>
-                    <input type="number" name="attr_rennen_mod"/>
+                    <input type="text" name="attr_rennen_mod"/>
                   </div>
                 </div>
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
@@ -898,7 +900,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                     <input type="number" name="attr_robotik"/>
                   </div>
                   <div>
-                    <input type="number" name="attr_robotik_mod"/>
+                    <input type="text" name="attr_robotik_mod"/>
                   </div>
                 </div>
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
@@ -911,7 +913,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                     <input type="number" name="attr_ruestungsbau"/>
                   </div>
                   <div>
-                    <input type="number" name="attr_ruestungsbau_mod"/>
+                    <input type="text" name="attr_ruestungsbau_mod"/>
                   </div>
                 </div>
         </div>
@@ -928,13 +930,14 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
         -->
         <div> 
           <div class="sheet-box">
-            <h1 data-i18n="fertigkeiten"></h1>
-            <div class="sheet-fertigkeiten-zeile">
-              <div class="sheet-kopfzeile"><span data-i18n="fertigkeit"></span></div>
-              <div class="sheet-kopfzeile"><span data-i18n="attr"></span></div>
-              <div class="sheet-kopfzeile"><span data-i18n="stufe"></span></div>
-              <div class="sheet-kopfzeile"><span data-i18n="mod"></span></div>
-            </div>
+                  <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitskopfzeile-->
+                  <h1 data-i18n="fertigkeiten"></h1>
+                  <div class="sheet-fertigkeiten-zeile">
+                    <div class="sheet-kopfzeile"><span data-i18n="fertigkeit"></span></div>
+                    <div class="sheet-kopfzeile"><span data-i18n="attr"></span></div>
+                    <div class="sheet-kopfzeile"><span data-i18n="stufe"></span></div>
+                    <div class="sheet-kopfzeile"><span data-i18n="note"></span></div>
+                  </div>
                   <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
                   <div class="sheet-fertigkeiten-zeile">
                     <div>
@@ -945,7 +948,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                       <input type="number" name="attr_sagen-mythen"/>
                     </div>
                     <div>
-                      <input type="number" name="attr_sagen-mythen_mod"/>
+                      <input type="text" name="attr_sagen-mythen_mod"/>
                     </div>
                   </div>
                   <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
@@ -958,7 +961,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                       <input type="number" name="attr_saufen"/>
                     </div>
                     <div>
-                      <input type="number" name="attr_saufen_mod"/>
+                      <input type="text" name="attr_saufen_mod"/>
                     </div>
                   </div>
                   <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
@@ -971,7 +974,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                       <input type="number" name="attr_schaetzen"/>
                     </div>
                     <div>
-                      <input type="number" name="attr_schaetzen_mod"/>
+                      <input type="text" name="attr_schaetzen_mod"/>
                     </div>
                   </div>
                   <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
@@ -984,7 +987,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                       <input type="number" name="attr_schauspiel"/>
                     </div>
                     <div>
-                      <input type="number" name="attr_schauspiel_mod"/>
+                      <input type="text" name="attr_schauspiel_mod"/>
                     </div>
                   </div>
                   <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
@@ -997,7 +1000,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                       <input type="number" name="attr_schiessen"/>
                     </div>
                     <div>
-                      <input type="number" name="attr_schiessen_mod"/>
+                      <input type="text" name="attr_schiessen_mod"/>
                     </div>
                   </div>
                   <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
@@ -1010,7 +1013,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                       <input type="number" name="attr_schwere-waffen"/>
                     </div>
                     <div>
-                      <input type="number" name="attr_schwere-waffen_mod"/>
+                      <input type="text" name="attr_schwere-waffen_mod"/>
                     </div>
                   </div>
                   <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
@@ -1023,7 +1026,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                       <input type="number" name="attr_schwimmen"/>
                     </div>
                     <div>
-                      <input type="number" name="attr_schwimmen_mod"/>
+                      <input type="text" name="attr_schwimmen_mod"/>
                     </div>
                   </div>
                   <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
@@ -1036,7 +1039,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                       <input type="number" name="attr_sicherheitstechnik"/>
                     </div>
                     <div>
-                      <input type="number" name="attr_sicherheitstechnik_mod"/>
+                      <input type="text" name="attr_sicherheitstechnik_mod"/>
                     </div>
                   </div>
                   <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
@@ -1049,7 +1052,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                       <input type="number" name="attr_spezies"/>
                     </div>
                     <div>
-                      <input type="number" name="attr_spezies_mod"/>
+                      <input type="text" name="attr_spezies_mod"/>
                     </div>
                   </div>
                   <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
@@ -1062,7 +1065,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                       <input type="number" name="attr_springen"/>
                     </div>
                     <div>
-                      <input type="number" name="attr_springen_mod"/>
+                      <input type="text" name="attr_springen_mod"/>
                     </div>
                   </div>
                   <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
@@ -1075,7 +1078,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                       <input type="number" name="attr_spruehwaffen"/>
                     </div>
                     <div>
-                      <input type="number" name="attr_spruehwaffen_mod"/>
+                      <input type="text" name="attr_spruehwaffen_mod"/>
                     </div>
                   </div>
                   <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
@@ -1088,7 +1091,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                       <input type="number" name="attr_stemmen"/>
                     </div>
                     <div>
-                      <input type="number" name="attr_stemmen_mod"/>
+                      <input type="text" name="attr_stemmen_mod"/>
                     </div>
                   </div>
                   <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
@@ -1101,7 +1104,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                       <input type="number" name="attr_taschendiebstahl"/>
                     </div>
                     <div>
-                      <input type="number" name="attr_taschendiebstahl_mod"/>
+                      <input type="text" name="attr_taschendiebstahl_mod"/>
                     </div>
                   </div>
                   <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
@@ -1114,7 +1117,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                       <input type="number" name="attr_ueberreden"/>
                     </div>
                     <div>
-                      <input type="number" name="attr_ueberreden_mod"/>
+                      <input type="text" name="attr_ueberreden_mod"/>
                     </div>
                   </div>
                   <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
@@ -1127,7 +1130,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                       <input type="number" name="attr_verhandeln"/>
                     </div>
                     <div>
-                      <input type="number" name="attr_verhandeln_mod"/>
+                      <input type="text" name="attr_verhandeln_mod"/>
                     </div>
                   </div>
                   <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
@@ -1140,7 +1143,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                       <input type="number" name="attr_waffenbau"/>
                     </div>
                     <div>
-                      <input type="number" name="attr_waffenbau_mod"/>
+                      <input type="text" name="attr_waffenbau_mod"/>
                     </div>
                   </div>
                   <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
@@ -1153,7 +1156,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                       <input type="number" name="attr_waffenkampf"/>
                     </div>
                     <div>
-                      <input type="number" name="attr_waffenkampf_mod"/>
+                      <input type="text" name="attr_waffenkampf_mod"/>
                     </div>
                   </div>
                   <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
@@ -1166,7 +1169,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                       <input type="number" name="attr_wasserfahrzeuge"/>
                     </div>
                     <div>
-                      <input type="number" name="attr_wasserfahrzeuge_mod"/>
+                      <input type="text" name="attr_wasserfahrzeuge_mod"/>
                     </div>
                   </div>
                   <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
@@ -1179,7 +1182,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                       <input type="number" name="attr_willenskraft"/>
                     </div>
                     <div>
-                      <input type="number" name="attr_willenskraft_mod"/>
+                      <input type="text" name="attr_willenskraft_mod"/>
                     </div>
                   </div>
                   <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
@@ -1192,7 +1195,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                       <input type="number" name="attr_wurfwaffen"/>
                     </div>
                     <div>
-                      <input type="number" name="attr_wurfwaffen_mod"/>
+                      <input type="text" name="attr_wurfwaffen_mod"/>
                     </div>
                   </div>
                   <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
@@ -1205,7 +1208,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                       <input type="number" name="attr_zero-g"/>
                     </div>
                     <div>
-                      <input type="number" name="attr_zero-g_mod"/>
+                      <input type="text" name="attr_zero-g_mod"/>
                     </div>
                   </div>
           </div>
@@ -1799,8 +1802,9 @@ skilllist.forEach(skills => {
             let summeSkill = 0;
             let summeAttribut = 0;
             let summe = 0;
+            let skillNotiz = values[skill+"_mod"];
     
-            summeSkill = parseInt(values[skill])|0 + parseInt(values[skill+"_mod"])|0;
+            summeSkill = parseInt(values[skill])|0;
             summeAttribut = parseInt(values[attribut])|0 + parseInt(values[attribut+"mod1"])|0 + parseInt(values[attribut+"mod2"])|0;
             summe = summeSkill + summeAttribut;
 
@@ -1810,6 +1814,7 @@ skilllist.forEach(skills => {
                 "probe_hazard_wuerfel"              : 1,
                 "probe_original_standard_wuerfel"   : summe-1,
                 "probe_original_hazard_wuerfel"     : 1,
+                "probe_skill_notiz"                 : skillNotiz,
                 "probe_bonus_wuerfel"               : 0,
                 "probe_bonus"                       : 0,
                 "probe_skill"                       : getTranslationByKey(skill),

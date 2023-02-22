@@ -219,7 +219,8 @@ div.sheet-noreturn .sheet-charaktermerkmale-zeile div {
 
 div.sheet-noreturn div.sheet-attribut-zeile input[type="number"],
 div.sheet-noreturn div.sheet-sonderattribut-zeile input[type="number"],
-div.sheet-noreturn div.sheet-fertigkeiten-zeile input[type="number"] {
+div.sheet-noreturn div.sheet-fertigkeiten-zeile input[type="number"],
+div.sheet-noreturn div.sheet-fertigkeiten-zeile input[type="text"] {
     border                  : 2px solid black;
 	height					: 1.5em;
 	width					: 40px;
@@ -412,7 +413,7 @@ div.sheet-dicebot {
 	margin-left				: auto;
 	margin-right			: auto;
 	width					: 90%;
-	height					: 40px;
+	height					: 60px;
 	font-family				: var(--font-highlight);
 	font-size				: var(--font-h2-size);
 
