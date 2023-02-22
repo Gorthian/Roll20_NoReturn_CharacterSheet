@@ -131,7 +131,7 @@ on("clicked:repeating_besondere-fertigkeiten:probe-besondere-fertigkeit", functi
                 "probe_skill"                       : skillName,
                 "probe_attribut"                    : getTranslationByKey(attributName)
             });
-        });        
+        });
     });
 });
 
@@ -186,8 +186,8 @@ on("clicked:wirf-probe",function(){
         let modifiziert = "";
 
         if(standard_orig != standard || hazard_orig != hazard) {modifiziert=1;}
-        if(skill = "Undefined") {skill="";}
-        if(attribut = "Undefined") {attribut="";}
+        if(skill == "Undefined") {skill="";}
+        if(attribut == "Undefined") {attribut="";}
 
         roll = "&{template:probe_offen}"; //Das Rolltemplate festlegen
         roll = roll + "{{charaktername="+charaktername+"}}"; //Den Charakternamen mitgeben
