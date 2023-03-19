@@ -120,6 +120,8 @@ skilllist.forEach(skills => {
             summeSkill = parseInt(values[skill])|0;
             summeAttribut = parseInt(values[attribut])|0 + parseInt(values[attribut+"mod1"])|0 + parseInt(values[attribut+"mod2"])|0;
             summe = summeSkill + summeAttribut;
+
+            if (summeSkill==0) {summe = summe -2} //Ist die Fertigkeitsstufe 0, bekommt die Probe einen Malus wie eine reine Attributsprobe
             setDicebot(getTranslationByKey(skill),getTranslationByKey(attribut),summe,skillNotiz);
         });
     });

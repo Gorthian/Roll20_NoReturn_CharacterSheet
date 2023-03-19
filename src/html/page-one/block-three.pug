@@ -24,11 +24,14 @@ mixin fertigkeitskopfzeile()
 mixin fertigkeitszeile(skill,attribute)
     // MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile
     div(class="sheet-fertigkeiten-zeile")
-        div
+        div(class="sheet-tooltip")
             button(type="action" name="act_probe-"+skill+"-"+attribute)
                 span(data-i18n=skill)
-        div
+            span(class="sheet-tooltiptext" data-i18n="tooltip-probe")
+        div(class="sheet-tooltip")
             span(data-i18n=attribute+"_kurz")
+            span(class="sheet-tooltiptext")
+                span(name="attr_"+attribute)
         div
             input(type="number" name="attr_"+skill)
         div

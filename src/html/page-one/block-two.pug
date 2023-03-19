@@ -21,9 +21,10 @@ mixin kopfzeile
 mixin attributszeile(attribute)
     // MIXIN : src/html/page-one/block-two.pug : attributszeile
     div(class="sheet-attribut-zeile")
-        div(class="sheet-titel")
+        div(class="sheet-titel sheet-tooltip")
             button(type="action" name="act_probe-"+attribute)
                 span(data-i18n=attribute)
+            span(class="sheet-tooltiptext" data-i18n="tooltip-probe")
         div
             input(type="number" name="attr_"+attribute)
         div

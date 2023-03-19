@@ -400,6 +400,36 @@ div.sheet-noreturn textarea {
 }
 
 /******************************/
+/* Tooltip                    */
+/******************************/
+.sheet-tooltip {
+	position				: relative;
+	display					: inline-block;
+}
+
+.sheet-tooltip .sheet-tooltiptext {
+	font-family				: var(--font-standard);
+    font-size               : var(--font-small-size);
+	visibility				: hidden;
+	background-color		: black;
+	color					: #fff;
+	text-align				: center;
+	padding					: 5px 2px;
+	border-radius			: 6px;
+	min-width				: 40px;
+
+	/* Position the tooltip text */
+	position				: absolute;
+	z-index					: 1;
+	bottom					: 100%;
+	left					: 20%;
+}
+
+.sheet-tooltip:hover .sheet-tooltiptext {
+	visibility				: visible;
+}
+
+/******************************/
 /* Der Dicebot                */
 /******************************/
 div.sheet-dicebot {
