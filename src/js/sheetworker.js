@@ -16,6 +16,10 @@ buttonlist.forEach(button => {
 });
 
 /* Rolltemplates */
+const attributeslist = [
+    "geschick","staerke","konstitution","beweglichkeit","wahrnehmung","wissen","charisma","handwerk"
+];
+
 const skilllist = [
     ['akrobatik','beweglichkeit'],
     ['astronomie','wissen'],
@@ -77,6 +81,7 @@ const skilllist = [
     ['zero-g','beweglichkeit'],
 ];
 
+/* Skillproben */
 skilllist.forEach(skills => {
     let skill = skills[0];
     let attribut = skills[1];
@@ -101,6 +106,32 @@ skilllist.forEach(skills => {
                 "probe_bonus_wuerfel"               : 0,
                 "probe_bonus"                       : 0,
                 "probe_skill"                       : getTranslationByKey(skill),
+                "probe_attribut"                    : getTranslationByKey(attribut)
+            });
+        });
+    });
+});
+
+/* Attributsproben */
+attributeslist.forEach(attribut => {    
+    on(`clicked:probe-${attribut}`, function() {        
+        getAttrs([attribut, attribut+"mod1", attribut+"mod2"], function(values) {
+            let summe = 0;
+    
+            summe = parseInt(values[attribut])|0 + parseInt(values[attribut+"mod1"])|0 + parseInt(values[attribut+"mod2"])|0;
+            summe = summe-2; //Modifikator für reine Attributsproben
+            if (summe < 1) {summe = 1}; //Immer mindestens ein Würfel
+
+            setAttrs({
+                "probe_summe_wuerfel"               : summe,
+                "probe_standard_wuerfel"            : summe-1,
+                "probe_hazard_wuerfel"              : 1,
+                "probe_original_standard_wuerfel"   : summe-1,
+                "probe_original_hazard_wuerfel"     : 1,
+                "probe_skill_notiz"                 : " ",
+                "probe_bonus_wuerfel"               : 0,
+                "probe_bonus"                       : 0,
+                "probe_skill"                       : getTranslationByKey("attributsprobe"),
                 "probe_attribut"                    : getTranslationByKey(attribut)
             });
         });

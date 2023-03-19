@@ -214,7 +214,9 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                     </div>
                     <!-- MIXIN : src/html/page-one/block-two.pug : attributszeile-->
                     <div class="sheet-attribut-zeile">
-                      <div class="sheet-titel"><span data-i18n="geschick"></span></div>
+                      <div class="sheet-titel">
+                        <button type="action" name="act_probe-geschick"><span data-i18n="geschick"></span></button>
+                      </div>
                       <div>
                         <input type="number" name="attr_geschick"/>
                       </div>
@@ -227,7 +229,9 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                     </div>
                     <!-- MIXIN : src/html/page-one/block-two.pug : attributszeile-->
                     <div class="sheet-attribut-zeile">
-                      <div class="sheet-titel"><span data-i18n="staerke"></span></div>
+                      <div class="sheet-titel">
+                        <button type="action" name="act_probe-staerke"><span data-i18n="staerke"></span></button>
+                      </div>
                       <div>
                         <input type="number" name="attr_staerke"/>
                       </div>
@@ -240,7 +244,9 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                     </div>
                     <!-- MIXIN : src/html/page-one/block-two.pug : attributszeile-->
                     <div class="sheet-attribut-zeile">
-                      <div class="sheet-titel"><span data-i18n="konstitution"></span></div>
+                      <div class="sheet-titel">
+                        <button type="action" name="act_probe-konstitution"><span data-i18n="konstitution"></span></button>
+                      </div>
                       <div>
                         <input type="number" name="attr_konstitution"/>
                       </div>
@@ -253,7 +259,9 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                     </div>
                     <!-- MIXIN : src/html/page-one/block-two.pug : attributszeile-->
                     <div class="sheet-attribut-zeile">
-                      <div class="sheet-titel"><span data-i18n="beweglichkeit"></span></div>
+                      <div class="sheet-titel">
+                        <button type="action" name="act_probe-beweglichkeit"><span data-i18n="beweglichkeit"></span></button>
+                      </div>
                       <div>
                         <input type="number" name="attr_beweglichkeit"/>
                       </div>
@@ -275,7 +283,9 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                     </div>
                     <!-- MIXIN : src/html/page-one/block-two.pug : attributszeile-->
                     <div class="sheet-attribut-zeile">
-                      <div class="sheet-titel"><span data-i18n="wahrnehmung"></span></div>
+                      <div class="sheet-titel">
+                        <button type="action" name="act_probe-wahrnehmung"><span data-i18n="wahrnehmung"></span></button>
+                      </div>
                       <div>
                         <input type="number" name="attr_wahrnehmung"/>
                       </div>
@@ -288,7 +298,9 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                     </div>
                     <!-- MIXIN : src/html/page-one/block-two.pug : attributszeile-->
                     <div class="sheet-attribut-zeile">
-                      <div class="sheet-titel"><span data-i18n="wissen"></span></div>
+                      <div class="sheet-titel">
+                        <button type="action" name="act_probe-wissen"><span data-i18n="wissen"></span></button>
+                      </div>
                       <div>
                         <input type="number" name="attr_wissen"/>
                       </div>
@@ -301,7 +313,9 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                     </div>
                     <!-- MIXIN : src/html/page-one/block-two.pug : attributszeile-->
                     <div class="sheet-attribut-zeile">
-                      <div class="sheet-titel"><span data-i18n="charisma"></span></div>
+                      <div class="sheet-titel">
+                        <button type="action" name="act_probe-charisma"><span data-i18n="charisma"></span></button>
+                      </div>
                       <div>
                         <input type="number" name="attr_charisma"/>
                       </div>
@@ -314,7 +328,9 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                     </div>
                     <!-- MIXIN : src/html/page-one/block-two.pug : attributszeile-->
                     <div class="sheet-attribut-zeile">
-                      <div class="sheet-titel"><span data-i18n="handwerk"></span></div>
+                      <div class="sheet-titel">
+                        <button type="action" name="act_probe-handwerk"><span data-i18n="handwerk"></span></button>
+                      </div>
                       <div>
                         <input type="number" name="attr_handwerk"/>
                       </div>
@@ -1734,6 +1750,10 @@ buttonlist.forEach(button => {
 });
 
 /* Rolltemplates */
+const attributeslist = [
+    "geschick","staerke","konstitution","beweglichkeit","wahrnehmung","wissen","charisma","handwerk"
+];
+
 const skilllist = [
     ['akrobatik','beweglichkeit'],
     ['astronomie','wissen'],
@@ -1795,6 +1815,7 @@ const skilllist = [
     ['zero-g','beweglichkeit'],
 ];
 
+/* Skillproben */
 skilllist.forEach(skills => {
     let skill = skills[0];
     let attribut = skills[1];
@@ -1819,6 +1840,32 @@ skilllist.forEach(skills => {
                 "probe_bonus_wuerfel"               : 0,
                 "probe_bonus"                       : 0,
                 "probe_skill"                       : getTranslationByKey(skill),
+                "probe_attribut"                    : getTranslationByKey(attribut)
+            });
+        });
+    });
+});
+
+/* Attributsproben */
+attributeslist.forEach(attribut => {    
+    on(`clicked:probe-${attribut}`, function() {        
+        getAttrs([attribut, attribut+"mod1", attribut+"mod2"], function(values) {
+            let summe = 0;
+    
+            summe = parseInt(values[attribut])|0 + parseInt(values[attribut+"mod1"])|0 + parseInt(values[attribut+"mod2"])|0;
+            summe = summe-2; //Modifikator für reine Attributsproben
+            if (summe < 1) {summe = 1}; //Immer mindestens ein Würfel
+
+            setAttrs({
+                "probe_summe_wuerfel"               : summe,
+                "probe_standard_wuerfel"            : summe-1,
+                "probe_hazard_wuerfel"              : 1,
+                "probe_original_standard_wuerfel"   : summe-1,
+                "probe_original_hazard_wuerfel"     : 1,
+                "probe_skill_notiz"                 : " ",
+                "probe_bonus_wuerfel"               : 0,
+                "probe_bonus"                       : 0,
+                "probe_skill"                       : getTranslationByKey("attributsprobe"),
                 "probe_attribut"                    : getTranslationByKey(attribut)
             });
         });
