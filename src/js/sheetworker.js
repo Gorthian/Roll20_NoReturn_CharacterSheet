@@ -276,6 +276,23 @@ on("clicked:wirf-probe",function(){
     });        
 });
 
+on("clicked:trefferzone",function(){
+    roll = "&{template:trefferzone}"; //Das Rolltemplate festlegen
+    roll = roll + "{{zone=[[2d6]]}}"; //Die Zone auswürfeln    
+
+    startRoll(roll, (results) => {
+        const zone=results.results.zone.result;
+        let zoneText=getTranslationByKey("trefferzone-"+zone);
+        
+        finishRoll(
+            results.rollId,
+            {
+                zone: zoneText,                
+            }
+        );                
+    });
+});
+
 on("change:probe_hazard_wuerfel", function(){
     getAttrs(["probe_summe_wuerfel","probe_standard_wuerfel","probe_hazard_wuerfel"], function(values) {
         let summe = parseInt(values["probe_summe_wuerfel"]);

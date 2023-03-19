@@ -1,6 +1,6 @@
 //-
     CREATED by          Gorthian
-    Letzte Änderung		2023-02-22
+    Letzte Änderung		2023-03-19
 
 //
     ********************************
@@ -10,6 +10,17 @@
 //- MIXINs
 
 //- SEITENINHALT
+
+//- Trefferzone bestimmen
+rolltemplate(class="sheet-rolltemplate-trefferzone")
+    div(class="sheet-template-container")
+        div(class="sheet-template-header") 
+            span(data-i18n="trefferzone")
+        hr
+        div(class="sheet-template-row")
+            span {{computed::zone}}
+            span {{zone}}            
+        img(src="https://gorthian.de/roll20/noreturn/trefferzonen_300px.png")
 
 //- Offene Probe auf Fertigkeiten
 rolltemplate(class="sheet-rolltemplate-probe_offen")

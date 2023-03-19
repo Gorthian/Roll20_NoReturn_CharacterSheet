@@ -490,6 +490,9 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                     <input type="number" name="attr_schadenszaehler-12"/><span class="sheet-tooltiptext" data-i18n="tooltip-schadenszaehler"></span>
                   </div>
           </div>
+          <div class="sheet-box" style="text-alingn:center;width:100%;">
+            <button class="sheet-button-d6" type="action" name="act_trefferzone"></button><span data-i18n="trefferzone-bestimmen"></span>
+          </div>
         </div>
       </div>
       <!--
@@ -1764,6 +1767,13 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
 ********************************
 
 -->
+<rolltemplate class="sheet-rolltemplate-trefferzone">
+  <div class="sheet-template-container">
+    <div class="sheet-template-header"> <span data-i18n="trefferzone"></span></div>
+    <hr/>
+    <div class="sheet-template-row"><span>{{computed::zone}}</span><span>{{zone}}            </span></div><img src="https://gorthian.de/roll20/noreturn/trefferzonen_300px.png"/>
+  </div>
+</rolltemplate>
 <rolltemplate class="sheet-rolltemplate-probe_offen">
   <div class="sheet-template-container">
     <div class="sheet-template-header">{{charaktername}}</div>
@@ -2076,6 +2086,23 @@ on("clicked:wirf-probe",function(){
             );                
         });
     });        
+});
+
+on("clicked:trefferzone",function(){
+    roll = "&{template:trefferzone}"; //Das Rolltemplate festlegen
+    roll = roll + "{{zone=[[2d6]]}}"; //Die Zone auswürfeln    
+
+    startRoll(roll, (results) => {
+        const zone=results.results.zone.result;
+        let zoneText=getTranslationByKey("trefferzone-"+zone);
+        
+        finishRoll(
+            results.rollId,
+            {
+                zone: zoneText,                
+            }
+        );                
+    });
 });
 
 on("change:probe_hazard_wuerfel", function(){

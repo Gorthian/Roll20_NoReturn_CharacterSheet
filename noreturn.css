@@ -546,6 +546,7 @@ div.sheet-noreturn button.sheet-button-d6::before {
 
 
 /* Die Rolltemplates              */
+.sheet-rolltemplate-trefferzone div.sheet-template-container,
 .sheet-rolltemplate-probe_offen div.sheet-template-container,
 .sheet-rolltemplate-infektionsresistenz div.sheet-template-container {
 	background-color	: whitesmoke;
@@ -555,6 +556,7 @@ div.sheet-noreturn button.sheet-button-d6::before {
 	border				: 1px solid gray;
 }
 
+.sheet-rolltemplate-trefferzone div.sheet-template-header,
 .sheet-rolltemplate-infektionsresistenz div.sheet-template-header,
 .sheet-rolltemplate-probe_offen div.sheet-template-header {
 	font-family			: "downcome", "Rubik Vinyl", sans-serif, monospace;
@@ -562,6 +564,7 @@ div.sheet-noreturn button.sheet-button-d6::before {
 	text-align			: center;
 }
 
+.sheet-rolltemplate-trefferzone div.sheet-template-row,
 .sheet-rolltemplate-infektionsresistenz div.sheet-template-row,
 .sheet-rolltemplate-probe_offen div.sheet-template-row {
 	font-family				: "downcome", "Rubik Vinyl", sans-serif, monospace;
@@ -570,6 +573,7 @@ div.sheet-noreturn button.sheet-button-d6::before {
 	margin					: 5px;	
 }
 
+.sheet-rolltemplate-trefferzone div.sheet-template-row,
 .sheet-rolltemplate-infektionsresistenz div.sheet-template-row,
 .sheet-rolltemplate-probe_offen div.sheet-template-row {
 	display					: grid;
@@ -582,11 +586,13 @@ div.sheet-noreturn button.sheet-button-d6::before {
 	font-weight				: bold;
 }
 
+.sheet-rolltemplate-trefferzone hr,
 .sheet-rolltemplate-infektionsresistenz hr,
 .sheet-rolltemplate-probe_offen hr {
 	margin					: unset;
 }
 
+.sheet-rolltemplate-trefferzone .inlinerollresult,
 .sheet-rolltemplate-infektionsresistenz .inlinerollresult,
 .sheet-rolltemplate-probe_offen .inlinerollresult {
 	background-color	: unset !important; /*Important wird für den Darkmode benötigt*/
@@ -597,6 +603,9 @@ div.sheet-noreturn button.sheet-button-d6::before {
 	font-size			: 12pt;
 }
 
+.sheet-rolltemplate-trefferzone .inlinerollresult.importantroll,
+.sheet-rolltemplate-trefferzone .inlinerollresult.fullcrit,
+.sheet-rolltemplate-trefferzone .inlinerollresult.fullfail,
 .sheet-rolltemplate-infektionsresistenz .inlinerollresult.importantroll,
 .sheet-rolltemplate-infektionsresistenz .inlinerollresult.fullcrit,
 .sheet-rolltemplate-infektionsresistenz .inlinerollresult.fullfail,
