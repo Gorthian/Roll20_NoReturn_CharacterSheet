@@ -517,7 +517,7 @@ button.sheet-toggle-button {
 
 /* Buttons */
 
-button.sheet-button-transparent {
+div.sheet-noreturn button.sheet-button-transparent {
 	font-size			: unset;
 	background-color	: transparent;
     background-repeat	: no-repeat;
@@ -527,9 +527,21 @@ button.sheet-button-transparent {
     outline				: none;
 }
 
-button.sheet-button-d6::before {
-    font-family: 'dicefontd6';
-    content: 'F ';
+div.sheet-noreturn button.sheet-button-d6 {
+	position			: relative;
+	left				: -9px;
+	top					: 1px;
+	width				: 2em;
+	height				: 2em;
+	border				: none;
+	background-color	: transparent;
+	outline				: none;
+}
+
+div.sheet-noreturn button.sheet-button-d6::before {
+    font-family			: 'dicefontd6';
+    content				: 'F ';
+	font-size			: 2em;
 }
 
 
