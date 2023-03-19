@@ -91,8 +91,8 @@ function setDicebot(skill,attribut,summe,skillNotiz) {
     if (summe < 1) {summe = 1} // Man hat immer mindestens einen Würfel
 
     setAttrs({
-        "probe_skill"                       : getTranslationByKey(skill),
-        "probe_attribut"                    : getTranslationByKey(attribut),
+        "probe_skill"                       : skill,
+        "probe_attribut"                    : attribut,
         "probe_summe_wuerfel"               : summe,
         "probe_skill_notiz"                 : skillNotiz,
         "probe_original_hazard_wuerfel"     : 1,
