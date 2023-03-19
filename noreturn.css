@@ -217,6 +217,7 @@ div.sheet-noreturn .sheet-charaktermerkmale-zeile div {
     white-space				: nowrap;
 }
 
+div.sheet-noreturn div.sheet-trefferzonen-regeneration input[type="number"],
 div.sheet-noreturn div.sheet-attribut-zeile input[type="number"],
 div.sheet-noreturn div.sheet-sonderattribut-zeile input[type="number"],
 div.sheet-noreturn div.sheet-fertigkeiten-zeile input[type="number"],
@@ -277,31 +278,11 @@ div.sheet-noreturn div.sheet-trefferzonen-bild {
 div.sheet-noreturn div.sheet-trefferzonen-bild img {
     display					: block;
 	margin					: auto;
-}
-
-div.sheet-noreturn div.sheet-trefferzonen-regeneration {
-    position				: relative;
-	bottom					: 150px;
-	left					: 150px;
-	width					: 50%;
-	height					: 0;
+	min-width				: 300px;
 }
 
 div.sheet-noreturn div.sheet-trefferzonen-regeneration div:nth-child(3) {
     border					: 2px solid black;
-	text-align				: center;
-}
-
-div.sheet-noreturn div.sheet-trefferzonen-regeneration div {
-    background-image		: var(--box-background-image);
-	background-repeat		: repeat;
-}
-
-div.sheet-noreturn div.sheet-trefferzonen-regeneration input[type="number"],
-div.sheet-noreturn div.sheet-trefferzonen-regeneration input[type="text"] {
-	top						: -2px;
-	width					: 35px;
-	height					: 17px;
 	text-align				: center;
 }
 

@@ -87,21 +87,19 @@ div(class="sheet-2cols")
                 +sonderattributskopfzeile()
                 +sonderattributszeile("adrenalin")
                 +sonderattributszeile("meditation")
+        div(class="sheet-trefferzonen-regeneration")
+            div(class="sheet-titel")
+                span(data-i18n="regeneration")
+                span &nbsp;:
+                span(data-i18n="geschwindigkeit") 
+                input(type="number" name="attr_regeneration-geschwindigkeit")
+                span &nbsp; &nbsp;
+                span(data-i18n="pool")
+                input(type="number" name="attr_regeneration-pool")                    
     div(class="sheet-trefferzonen")
         h1(data-i18n="körperzonen")
         div(class="sheet-trefferzonen-bild")
-            img(src="https://gorthian.de/roll20/noreturn/trefferzonen_300px.png")
-            div(class="sheet-trefferzonen-regeneration")
-                div(class="sheet-titel")
-                    span(data-i18n="regeneration")
-                    div(class="sheet-font-small-highlight")
-                        span(data-i18n="geschwindigkeit")
-                        | &nbsp;/&nbsp;
-                        span(data-i18n="pool")
-                    div
-                        input(type="number" name="attr_regeneration-geschwindigkeit")
-                        | &nbsp;/&nbsp;
-                        input(type="number" name="attr_regeneration-pool")
+            img(src="https://gorthian.de/roll20/noreturn/trefferzonen_300px.png")            
 
 //
     ********************************
