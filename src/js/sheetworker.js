@@ -15,11 +15,14 @@ buttonlist.forEach(button => {
     });
 });
 
-/* Rolltemplates */
+/* Konstanten */
+
+// Die Attribute
 const attributeslist = [
     "geschick","staerke","konstitution","beweglichkeit","wahrnehmung","wissen","charisma","handwerk"
 ];
 
+// Die Fertigkeiten. Anpassungen müssen auch in noreturn.pug übernommen werden
 const skilllist = [
     ['akrobatik','beweglichkeit'],
     ['astronomie','wissen'],
@@ -81,7 +84,29 @@ const skilllist = [
     ['zero-g','beweglichkeit'],
 ];
 
-/* Skillproben */
+/* Hilfsfunktionen */
+
+//Befüllen des Dicebots
+function setDicebot(skill,attribut,summe,skillNotiz) {
+    if (summe < 1) {summe = 1} // Man hat immer mindestens einen Würfel
+
+    setAttrs({
+        "probe_skill"                       : getTranslationByKey(skill),
+        "probe_attribut"                    : getTranslationByKey(attribut),
+        "probe_summe_wuerfel"               : summe,
+        "probe_skill_notiz"                 : skillNotiz,
+        "probe_original_hazard_wuerfel"     : 1,
+        "probe_hazard_wuerfel"              : 1,
+        "probe_original_standard_wuerfel"   : summe-1,
+        "probe_standard_wuerfel"            : summe-1,               
+        "probe_bonus_wuerfel"               : 0,
+        "probe_bonus"                       : 0        
+    });
+}
+
+/* Rolltemplates */
+
+// Skillproben
 skilllist.forEach(skills => {
     let skill = skills[0];
     let attribut = skills[1];
@@ -95,24 +120,12 @@ skilllist.forEach(skills => {
             summeSkill = parseInt(values[skill])|0;
             summeAttribut = parseInt(values[attribut])|0 + parseInt(values[attribut+"mod1"])|0 + parseInt(values[attribut+"mod2"])|0;
             summe = summeSkill + summeAttribut;
-
-            setAttrs({
-                "probe_summe_wuerfel"               : summe,
-                "probe_standard_wuerfel"            : summe-1,
-                "probe_hazard_wuerfel"              : 1,
-                "probe_original_standard_wuerfel"   : summe-1,
-                "probe_original_hazard_wuerfel"     : 1,
-                "probe_skill_notiz"                 : skillNotiz,
-                "probe_bonus_wuerfel"               : 0,
-                "probe_bonus"                       : 0,
-                "probe_skill"                       : getTranslationByKey(skill),
-                "probe_attribut"                    : getTranslationByKey(attribut)
-            });
+            setDicebot(getTranslationByKey(skill),getTranslationByKey(attribut),summe,skillNotiz);
         });
     });
 });
 
-/* Attributsproben */
+// Attributsproben
 attributeslist.forEach(attribut => {    
     on(`clicked:probe-${attribut}`, function() {        
         getAttrs([attribut, attribut+"mod1", attribut+"mod2"], function(values) {
@@ -120,20 +133,7 @@ attributeslist.forEach(attribut => {
     
             summe = parseInt(values[attribut])|0 + parseInt(values[attribut+"mod1"])|0 + parseInt(values[attribut+"mod2"])|0;
             summe = summe-2; //Modifikator für reine Attributsproben
-            if (summe < 1) {summe = 1}; //Immer mindestens ein Würfel
-
-            setAttrs({
-                "probe_summe_wuerfel"               : summe,
-                "probe_standard_wuerfel"            : summe-1,
-                "probe_hazard_wuerfel"              : 1,
-                "probe_original_standard_wuerfel"   : summe-1,
-                "probe_original_hazard_wuerfel"     : 1,
-                "probe_skill_notiz"                 : " ",
-                "probe_bonus_wuerfel"               : 0,
-                "probe_bonus"                       : 0,
-                "probe_skill"                       : getTranslationByKey("attributsprobe"),
-                "probe_attribut"                    : getTranslationByKey(attribut)
-            });
+            setDicebot(getTranslationByKey("attributsprobe"),getTranslationByKey(attribut),summe," ");
         });
     });
 });
@@ -150,18 +150,7 @@ on("clicked:repeating_besondere-fertigkeiten:probe-besondere-fertigkeit", functi
 
             summeAttribut = parseInt(values[attributName])|0 + parseInt(values[attributName+"mod1"])|0 + parseInt(values[attributName+"mod2"])|0;
             summe = skillStufe + summeAttribut;
-
-            setAttrs({
-                "probe_summe_wuerfel"               : summe,
-                "probe_standard_wuerfel"            : summe-1,
-                "probe_hazard_wuerfel"              : 1,
-                "probe_original_standard_wuerfel"   : summe-1,
-                "probe_original_hazard_wuerfel"     : 1,
-                "probe_bonus_wuerfel"               : 0,
-                "probe_bonus"                       : 0,
-                "probe_skill"                       : skillName,
-                "probe_attribut"                    : getTranslationByKey(attributName)
-            });
+            setDicebot(skillName,getTranslationByKey(attributName),summe," ");
         });
     });
 });
