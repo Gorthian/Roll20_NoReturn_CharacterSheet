@@ -128,6 +128,7 @@
    "taschendiebstahl": "Taschendiebstahl",
    "tooltip-probe": "Klicken um den Dicebot zu füllen",  
    "tooltip-probe-ohne-mod": "Klicken um den Dicebot ohne Modifikatoren zu füllen",
+   "tooltip-schadenszaehler": "Erhaltener Schaden in dieser Zone",
    "trefferpunkte": "Trefferpunkte",
    "trefferpunkte_kurz": "TP",
    "ueberreden": "Überreden",
