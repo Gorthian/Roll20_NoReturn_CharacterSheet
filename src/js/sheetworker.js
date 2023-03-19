@@ -1,6 +1,6 @@
 /*
     CREATED by          Gorthian
-    Letzte Änderung		2023-02-22
+    Letzte Änderung		2023-03-19
 */
 
 
@@ -80,7 +80,7 @@ const skilllist = [
 skilllist.forEach(skills => {
     let skill = skills[0];
     let attribut = skills[1];
-    on(`clicked:probe-${skill}`, function() {        
+    on(`clicked:probe-${skill}-${attribut}`, function() {        
         getAttrs([skill, skill+"_mod", attribut, attribut+"mod1", attribut+"mod2"], function(values) {
             let summeSkill = 0;
             let summeAttribut = 0;
