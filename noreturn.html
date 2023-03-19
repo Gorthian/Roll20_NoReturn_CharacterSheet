@@ -148,7 +148,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
             <div class="sheet-infektionsresistenz">
               <input type="number" name="attr_infektionsresistenz_wuerfel"/><span data-i18n="w6"></span><span>+</span>
               <input type="number" name="attr_infektionsresistenz_bonus"/>
-              <button type="action" name="act_infektionsresistenz"></button>
+              <button class="sheet-button-d6" type="action" name="act_infektionsresistenz"></button>
             </div>
           </div>
           <div class="sheet-input-line">
@@ -207,22 +207,26 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
             <div>
                     <!-- MIXIN : src/html/page-one/block-two.pug : kopfzeile-->
                     <div class="sheet-attribut-zeile">
-                      <div> </div>
+                      <div>       </div>
                       <div class="sheet-kopfzeile"><span data-i18n="stufe"></span></div>
-                      <div class="sheet-kopfzeile"><span data-i18n="modifikatoren"></span></div>
                       <div></div>
+                      <div class="sheet-kopfzeile"><span data-i18n="modifikatoren"></span></div>
+                      <div>       </div>
                     </div>
                     <!-- MIXIN : src/html/page-one/block-two.pug : attributszeile-->
                     <div class="sheet-attribut-zeile">
                       <div class="sheet-titel sheet-tooltip">
-                        <button type="action" name="act_probe-geschick"><span data-i18n="geschick"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-attributsprobe"></span>
+                        <button class="sheet-button-transparent" type="action" name="act_probe-geschick"><span data-i18n="geschick"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe">       </span>
                       </div>
                       <div>
                         <input type="number" name="attr_geschick"/>
                       </div>
+                      <div class="sheet-titel sheet-tooltip">
+                        <button class="sheet-button-d6" type="action" name="act_probe-ohne-mod-geschick"></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe-ohne-mod"></span>
+                      </div>
                       <div>
-                        <input type="number" name="attr_geschickmod1"/>
-                        <input type="number" name="attr_geschickmod2"/>
+                        <input type="number" name="attr_geschick-mod1"/>
+                        <input type="number" name="attr_geschick-mod2"/>
                       </div>
                       <div class="sheet-font-darkgray-highlight">
                          [<span data-i18n="geschick_kurz"></span>]</div>
@@ -230,14 +234,17 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                     <!-- MIXIN : src/html/page-one/block-two.pug : attributszeile-->
                     <div class="sheet-attribut-zeile">
                       <div class="sheet-titel sheet-tooltip">
-                        <button type="action" name="act_probe-staerke"><span data-i18n="staerke"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-attributsprobe"></span>
+                        <button class="sheet-button-transparent" type="action" name="act_probe-staerke"><span data-i18n="staerke"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe">       </span>
                       </div>
                       <div>
                         <input type="number" name="attr_staerke"/>
                       </div>
+                      <div class="sheet-titel sheet-tooltip">
+                        <button class="sheet-button-d6" type="action" name="act_probe-ohne-mod-staerke"></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe-ohne-mod"></span>
+                      </div>
                       <div>
-                        <input type="number" name="attr_staerkemod1"/>
-                        <input type="number" name="attr_staerkemod2"/>
+                        <input type="number" name="attr_staerke-mod1"/>
+                        <input type="number" name="attr_staerke-mod2"/>
                       </div>
                       <div class="sheet-font-darkgray-highlight">
                          [<span data-i18n="staerke_kurz"></span>]</div>
@@ -245,14 +252,17 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                     <!-- MIXIN : src/html/page-one/block-two.pug : attributszeile-->
                     <div class="sheet-attribut-zeile">
                       <div class="sheet-titel sheet-tooltip">
-                        <button type="action" name="act_probe-konstitution"><span data-i18n="konstitution"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-attributsprobe"></span>
+                        <button class="sheet-button-transparent" type="action" name="act_probe-konstitution"><span data-i18n="konstitution"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe">       </span>
                       </div>
                       <div>
                         <input type="number" name="attr_konstitution"/>
                       </div>
+                      <div class="sheet-titel sheet-tooltip">
+                        <button class="sheet-button-d6" type="action" name="act_probe-ohne-mod-konstitution"></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe-ohne-mod"></span>
+                      </div>
                       <div>
-                        <input type="number" name="attr_konstitutionmod1"/>
-                        <input type="number" name="attr_konstitutionmod2"/>
+                        <input type="number" name="attr_konstitution-mod1"/>
+                        <input type="number" name="attr_konstitution-mod2"/>
                       </div>
                       <div class="sheet-font-darkgray-highlight">
                          [<span data-i18n="konstitution_kurz"></span>]</div>
@@ -260,14 +270,17 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                     <!-- MIXIN : src/html/page-one/block-two.pug : attributszeile-->
                     <div class="sheet-attribut-zeile">
                       <div class="sheet-titel sheet-tooltip">
-                        <button type="action" name="act_probe-beweglichkeit"><span data-i18n="beweglichkeit"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-attributsprobe"></span>
+                        <button class="sheet-button-transparent" type="action" name="act_probe-beweglichkeit"><span data-i18n="beweglichkeit"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe">       </span>
                       </div>
                       <div>
                         <input type="number" name="attr_beweglichkeit"/>
                       </div>
+                      <div class="sheet-titel sheet-tooltip">
+                        <button class="sheet-button-d6" type="action" name="act_probe-ohne-mod-beweglichkeit"></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe-ohne-mod"></span>
+                      </div>
                       <div>
-                        <input type="number" name="attr_beweglichkeitmod1"/>
-                        <input type="number" name="attr_beweglichkeitmod2"/>
+                        <input type="number" name="attr_beweglichkeit-mod1"/>
+                        <input type="number" name="attr_beweglichkeit-mod2"/>
                       </div>
                       <div class="sheet-font-darkgray-highlight">
                          [<span data-i18n="beweglichkeit_kurz"></span>]</div>
@@ -276,22 +289,26 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
             <div>
                     <!-- MIXIN : src/html/page-one/block-two.pug : kopfzeile-->
                     <div class="sheet-attribut-zeile">
-                      <div> </div>
+                      <div>       </div>
                       <div class="sheet-kopfzeile"><span data-i18n="stufe"></span></div>
-                      <div class="sheet-kopfzeile"><span data-i18n="modifikatoren"></span></div>
                       <div></div>
+                      <div class="sheet-kopfzeile"><span data-i18n="modifikatoren"></span></div>
+                      <div>       </div>
                     </div>
                     <!-- MIXIN : src/html/page-one/block-two.pug : attributszeile-->
                     <div class="sheet-attribut-zeile">
                       <div class="sheet-titel sheet-tooltip">
-                        <button type="action" name="act_probe-wahrnehmung"><span data-i18n="wahrnehmung"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-attributsprobe"></span>
+                        <button class="sheet-button-transparent" type="action" name="act_probe-wahrnehmung"><span data-i18n="wahrnehmung"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe">       </span>
                       </div>
                       <div>
                         <input type="number" name="attr_wahrnehmung"/>
                       </div>
+                      <div class="sheet-titel sheet-tooltip">
+                        <button class="sheet-button-d6" type="action" name="act_probe-ohne-mod-wahrnehmung"></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe-ohne-mod"></span>
+                      </div>
                       <div>
-                        <input type="number" name="attr_wahrnehmungmod1"/>
-                        <input type="number" name="attr_wahrnehmungmod2"/>
+                        <input type="number" name="attr_wahrnehmung-mod1"/>
+                        <input type="number" name="attr_wahrnehmung-mod2"/>
                       </div>
                       <div class="sheet-font-darkgray-highlight">
                          [<span data-i18n="wahrnehmung_kurz"></span>]</div>
@@ -299,14 +316,17 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                     <!-- MIXIN : src/html/page-one/block-two.pug : attributszeile-->
                     <div class="sheet-attribut-zeile">
                       <div class="sheet-titel sheet-tooltip">
-                        <button type="action" name="act_probe-wissen"><span data-i18n="wissen"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-attributsprobe"></span>
+                        <button class="sheet-button-transparent" type="action" name="act_probe-wissen"><span data-i18n="wissen"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe">       </span>
                       </div>
                       <div>
                         <input type="number" name="attr_wissen"/>
                       </div>
+                      <div class="sheet-titel sheet-tooltip">
+                        <button class="sheet-button-d6" type="action" name="act_probe-ohne-mod-wissen"></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe-ohne-mod"></span>
+                      </div>
                       <div>
-                        <input type="number" name="attr_wissenmod1"/>
-                        <input type="number" name="attr_wissenmod2"/>
+                        <input type="number" name="attr_wissen-mod1"/>
+                        <input type="number" name="attr_wissen-mod2"/>
                       </div>
                       <div class="sheet-font-darkgray-highlight">
                          [<span data-i18n="wissen_kurz"></span>]</div>
@@ -314,14 +334,17 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                     <!-- MIXIN : src/html/page-one/block-two.pug : attributszeile-->
                     <div class="sheet-attribut-zeile">
                       <div class="sheet-titel sheet-tooltip">
-                        <button type="action" name="act_probe-charisma"><span data-i18n="charisma"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-attributsprobe"></span>
+                        <button class="sheet-button-transparent" type="action" name="act_probe-charisma"><span data-i18n="charisma"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe">       </span>
                       </div>
                       <div>
                         <input type="number" name="attr_charisma"/>
                       </div>
+                      <div class="sheet-titel sheet-tooltip">
+                        <button class="sheet-button-d6" type="action" name="act_probe-ohne-mod-charisma"></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe-ohne-mod"></span>
+                      </div>
                       <div>
-                        <input type="number" name="attr_charismamod1"/>
-                        <input type="number" name="attr_charismamod2"/>
+                        <input type="number" name="attr_charisma-mod1"/>
+                        <input type="number" name="attr_charisma-mod2"/>
                       </div>
                       <div class="sheet-font-darkgray-highlight">
                          [<span data-i18n="charisma_kurz"></span>]</div>
@@ -329,14 +352,17 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                     <!-- MIXIN : src/html/page-one/block-two.pug : attributszeile-->
                     <div class="sheet-attribut-zeile">
                       <div class="sheet-titel sheet-tooltip">
-                        <button type="action" name="act_probe-handwerk"><span data-i18n="handwerk"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-attributsprobe"></span>
+                        <button class="sheet-button-transparent" type="action" name="act_probe-handwerk"><span data-i18n="handwerk"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe">       </span>
                       </div>
                       <div>
                         <input type="number" name="attr_handwerk"/>
                       </div>
+                      <div class="sheet-titel sheet-tooltip">
+                        <button class="sheet-button-d6" type="action" name="act_probe-ohne-mod-handwerk"></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe-ohne-mod"></span>
+                      </div>
                       <div>
-                        <input type="number" name="attr_handwerkmod1"/>
-                        <input type="number" name="attr_handwerkmod2"/>
+                        <input type="number" name="attr_handwerk-mod1"/>
+                        <input type="number" name="attr_handwerk-mod2"/>
                       </div>
                       <div class="sheet-font-darkgray-highlight">
                          [<span data-i18n="handwerk_kurz"></span>]</div>
@@ -454,7 +480,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
                 <div class="sheet-fertigkeiten-zeile">
                   <div class="sheet-tooltip">
-                    <button type="action" name="act_probe-akrobatik-beweglichkeit"><span data-i18n="akrobatik"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-fertigkeitssprobe"></span>
+                    <button class="sheet-button-transparent" type="action" name="act_probe-akrobatik-beweglichkeit"><span data-i18n="akrobatik"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe"></span>
                   </div>
                   <div class="sheet-tooltip"><span data-i18n="beweglichkeit_kurz"></span><span class="sheet-tooltiptext"><span name="attr_beweglichkeit"></span></span></div>
                   <div>
@@ -467,7 +493,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
                 <div class="sheet-fertigkeiten-zeile">
                   <div class="sheet-tooltip">
-                    <button type="action" name="act_probe-astronomie-wissen"><span data-i18n="astronomie"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-fertigkeitssprobe"></span>
+                    <button class="sheet-button-transparent" type="action" name="act_probe-astronomie-wissen"><span data-i18n="astronomie"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe"></span>
                   </div>
                   <div class="sheet-tooltip"><span data-i18n="wissen_kurz"></span><span class="sheet-tooltiptext"><span name="attr_wissen"></span></span></div>
                   <div>
@@ -480,7 +506,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
                 <div class="sheet-fertigkeiten-zeile">
                   <div class="sheet-tooltip">
-                    <button type="action" name="act_probe-ausdauer-konstitution"><span data-i18n="ausdauer"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-fertigkeitssprobe"></span>
+                    <button class="sheet-button-transparent" type="action" name="act_probe-ausdauer-konstitution"><span data-i18n="ausdauer"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe"></span>
                   </div>
                   <div class="sheet-tooltip"><span data-i18n="konstitution_kurz"></span><span class="sheet-tooltiptext"><span name="attr_konstitution"></span></span></div>
                   <div>
@@ -493,7 +519,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
                 <div class="sheet-fertigkeiten-zeile">
                   <div class="sheet-tooltip">
-                    <button type="action" name="act_probe-ausweichen-beweglichkeit"><span data-i18n="ausweichen"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-fertigkeitssprobe"></span>
+                    <button class="sheet-button-transparent" type="action" name="act_probe-ausweichen-beweglichkeit"><span data-i18n="ausweichen"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe"></span>
                   </div>
                   <div class="sheet-tooltip"><span data-i18n="beweglichkeit_kurz"></span><span class="sheet-tooltiptext"><span name="attr_beweglichkeit"></span></span></div>
                   <div>
@@ -506,7 +532,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
                 <div class="sheet-fertigkeiten-zeile">
                   <div class="sheet-tooltip">
-                    <button type="action" name="act_probe-basteln-handwerk"><span data-i18n="basteln"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-fertigkeitssprobe"></span>
+                    <button class="sheet-button-transparent" type="action" name="act_probe-basteln-handwerk"><span data-i18n="basteln"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe"></span>
                   </div>
                   <div class="sheet-tooltip"><span data-i18n="handwerk_kurz"></span><span class="sheet-tooltiptext"><span name="attr_handwerk"></span></span></div>
                   <div>
@@ -519,7 +545,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
                 <div class="sheet-fertigkeiten-zeile">
                   <div class="sheet-tooltip">
-                    <button type="action" name="act_probe-blocken-beweglichkeit"><span data-i18n="blocken"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-fertigkeitssprobe"></span>
+                    <button class="sheet-button-transparent" type="action" name="act_probe-blocken-beweglichkeit"><span data-i18n="blocken"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe"></span>
                   </div>
                   <div class="sheet-tooltip"><span data-i18n="beweglichkeit_kurz"></span><span class="sheet-tooltiptext"><span name="attr_beweglichkeit"></span></span></div>
                   <div>
@@ -532,7 +558,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
                 <div class="sheet-fertigkeiten-zeile">
                   <div class="sheet-tooltip">
-                    <button type="action" name="act_probe-bodenfahrzeuge-geschick"><span data-i18n="bodenfahrzeuge"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-fertigkeitssprobe"></span>
+                    <button class="sheet-button-transparent" type="action" name="act_probe-bodenfahrzeuge-geschick"><span data-i18n="bodenfahrzeuge"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe"></span>
                   </div>
                   <div class="sheet-tooltip"><span data-i18n="geschick_kurz"></span><span class="sheet-tooltiptext"><span name="attr_geschick"></span></span></div>
                   <div>
@@ -545,7 +571,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
                 <div class="sheet-fertigkeiten-zeile">
                   <div class="sheet-tooltip">
-                    <button type="action" name="act_probe-chemie-wissen"><span data-i18n="chemie"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-fertigkeitssprobe"></span>
+                    <button class="sheet-button-transparent" type="action" name="act_probe-chemie-wissen"><span data-i18n="chemie"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe"></span>
                   </div>
                   <div class="sheet-tooltip"><span data-i18n="wissen_kurz"></span><span class="sheet-tooltiptext"><span name="attr_wissen"></span></span></div>
                   <div>
@@ -558,7 +584,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
                 <div class="sheet-fertigkeiten-zeile">
                   <div class="sheet-tooltip">
-                    <button type="action" name="act_probe-computer-wissen"><span data-i18n="computer"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-fertigkeitssprobe"></span>
+                    <button class="sheet-button-transparent" type="action" name="act_probe-computer-wissen"><span data-i18n="computer"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe"></span>
                   </div>
                   <div class="sheet-tooltip"><span data-i18n="wissen_kurz"></span><span class="sheet-tooltiptext"><span name="attr_wissen"></span></span></div>
                   <div>
@@ -571,7 +597,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
                 <div class="sheet-fertigkeiten-zeile">
                   <div class="sheet-tooltip">
-                    <button type="action" name="act_probe-dressieren-charisma"><span data-i18n="dressieren"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-fertigkeitssprobe"></span>
+                    <button class="sheet-button-transparent" type="action" name="act_probe-dressieren-charisma"><span data-i18n="dressieren"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe"></span>
                   </div>
                   <div class="sheet-tooltip"><span data-i18n="charisma_kurz"></span><span class="sheet-tooltiptext"><span name="attr_charisma"></span></span></div>
                   <div>
@@ -584,7 +610,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
                 <div class="sheet-fertigkeiten-zeile">
                   <div class="sheet-tooltip">
-                    <button type="action" name="act_probe-einschuechtern-charisma"><span data-i18n="einschuechtern"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-fertigkeitssprobe"></span>
+                    <button class="sheet-button-transparent" type="action" name="act_probe-einschuechtern-charisma"><span data-i18n="einschuechtern"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe"></span>
                   </div>
                   <div class="sheet-tooltip"><span data-i18n="charisma_kurz"></span><span class="sheet-tooltiptext"><span name="attr_charisma"></span></span></div>
                   <div>
@@ -597,7 +623,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
                 <div class="sheet-fertigkeiten-zeile">
                   <div class="sheet-tooltip">
-                    <button type="action" name="act_probe-einschuechtern-staerke"><span data-i18n="einschuechtern"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-fertigkeitssprobe"></span>
+                    <button class="sheet-button-transparent" type="action" name="act_probe-einschuechtern-staerke"><span data-i18n="einschuechtern"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe"></span>
                   </div>
                   <div class="sheet-tooltip"><span data-i18n="staerke_kurz"></span><span class="sheet-tooltiptext"><span name="attr_staerke"></span></span></div>
                   <div>
@@ -610,7 +636,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
                 <div class="sheet-fertigkeiten-zeile">
                   <div class="sheet-tooltip">
-                    <button type="action" name="act_probe-elektronik-handwerk"><span data-i18n="elektronik"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-fertigkeitssprobe"></span>
+                    <button class="sheet-button-transparent" type="action" name="act_probe-elektronik-handwerk"><span data-i18n="elektronik"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe"></span>
                   </div>
                   <div class="sheet-tooltip"><span data-i18n="handwerk_kurz"></span><span class="sheet-tooltiptext"><span name="attr_handwerk"></span></span></div>
                   <div>
@@ -623,7 +649,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
                 <div class="sheet-fertigkeiten-zeile">
                   <div class="sheet-tooltip">
-                    <button type="action" name="act_probe-feuerwaffenbau-handwerk"><span data-i18n="feuerwaffenbau"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-fertigkeitssprobe"></span>
+                    <button class="sheet-button-transparent" type="action" name="act_probe-feuerwaffenbau-handwerk"><span data-i18n="feuerwaffenbau"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe"></span>
                   </div>
                   <div class="sheet-tooltip"><span data-i18n="handwerk_kurz"></span><span class="sheet-tooltiptext"><span name="attr_handwerk"></span></span></div>
                   <div>
@@ -636,7 +662,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
                 <div class="sheet-fertigkeiten-zeile">
                   <div class="sheet-tooltip">
-                    <button type="action" name="act_probe-fluggeraete-geschick"><span data-i18n="fluggeraete"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-fertigkeitssprobe"></span>
+                    <button class="sheet-button-transparent" type="action" name="act_probe-fluggeraete-geschick"><span data-i18n="fluggeraete"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe"></span>
                   </div>
                   <div class="sheet-tooltip"><span data-i18n="geschick_kurz"></span><span class="sheet-tooltiptext"><span name="attr_geschick"></span></span></div>
                   <div>
@@ -649,7 +675,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
                 <div class="sheet-fertigkeiten-zeile">
                   <div class="sheet-tooltip">
-                    <button type="action" name="act_probe-gassenwissen-wissen"><span data-i18n="gassenwissen"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-fertigkeitssprobe"></span>
+                    <button class="sheet-button-transparent" type="action" name="act_probe-gassenwissen-wissen"><span data-i18n="gassenwissen"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe"></span>
                   </div>
                   <div class="sheet-tooltip"><span data-i18n="wissen_kurz"></span><span class="sheet-tooltiptext"><span name="attr_wissen"></span></span></div>
                   <div>
@@ -662,7 +688,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
                 <div class="sheet-fertigkeiten-zeile">
                   <div class="sheet-tooltip">
-                    <button type="action" name="act_probe-geschuetze-geschick"><span data-i18n="geschuetze"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-fertigkeitssprobe"></span>
+                    <button class="sheet-button-transparent" type="action" name="act_probe-geschuetze-geschick"><span data-i18n="geschuetze"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe"></span>
                   </div>
                   <div class="sheet-tooltip"><span data-i18n="geschick_kurz"></span><span class="sheet-tooltiptext"><span name="attr_geschick"></span></span></div>
                   <div>
@@ -675,7 +701,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
                 <div class="sheet-fertigkeiten-zeile">
                   <div class="sheet-tooltip">
-                    <button type="action" name="act_probe-grossraumschiff-wissen"><span data-i18n="grossraumschiff"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-fertigkeitssprobe"></span>
+                    <button class="sheet-button-transparent" type="action" name="act_probe-grossraumschiff-wissen"><span data-i18n="grossraumschiff"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe"></span>
                   </div>
                   <div class="sheet-tooltip"><span data-i18n="wissen_kurz"></span><span class="sheet-tooltiptext"><span name="attr_wissen"></span></span></div>
                   <div>
@@ -688,7 +714,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
                 <div class="sheet-fertigkeiten-zeile">
                   <div class="sheet-tooltip">
-                    <button type="action" name="act_probe-heimlichkeit-wahrnehmung"><span data-i18n="heimlichkeit"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-fertigkeitssprobe"></span>
+                    <button class="sheet-button-transparent" type="action" name="act_probe-heimlichkeit-wahrnehmung"><span data-i18n="heimlichkeit"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe"></span>
                   </div>
                   <div class="sheet-tooltip"><span data-i18n="wahrnehmung_kurz"></span><span class="sheet-tooltiptext"><span name="attr_wahrnehmung"></span></span></div>
                   <div>
@@ -701,7 +727,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
                 <div class="sheet-fertigkeiten-zeile">
                   <div class="sheet-tooltip">
-                    <button type="action" name="act_probe-inspiration-charisma"><span data-i18n="inspiration"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-fertigkeitssprobe"></span>
+                    <button class="sheet-button-transparent" type="action" name="act_probe-inspiration-charisma"><span data-i18n="inspiration"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe"></span>
                   </div>
                   <div class="sheet-tooltip"><span data-i18n="charisma_kurz"></span><span class="sheet-tooltiptext"><span name="attr_charisma"></span></span></div>
                   <div>
@@ -714,7 +740,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
                 <div class="sheet-fertigkeiten-zeile">
                   <div class="sheet-tooltip">
-                    <button type="action" name="act_probe-klettern-beweglichkeit"><span data-i18n="klettern"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-fertigkeitssprobe"></span>
+                    <button class="sheet-button-transparent" type="action" name="act_probe-klettern-beweglichkeit"><span data-i18n="klettern"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe"></span>
                   </div>
                   <div class="sheet-tooltip"><span data-i18n="beweglichkeit_kurz"></span><span class="sheet-tooltiptext"><span name="attr_beweglichkeit"></span></span></div>
                   <div>
@@ -727,7 +753,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
                 <div class="sheet-fertigkeiten-zeile">
                   <div class="sheet-tooltip">
-                    <button type="action" name="act_probe-kunst-handwerk"><span data-i18n="kunst"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-fertigkeitssprobe"></span>
+                    <button class="sheet-button-transparent" type="action" name="act_probe-kunst-handwerk"><span data-i18n="kunst"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe"></span>
                   </div>
                   <div class="sheet-tooltip"><span data-i18n="handwerk_kurz"></span><span class="sheet-tooltiptext"><span name="attr_handwerk"></span></span></div>
                   <div>
@@ -740,7 +766,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
                 <div class="sheet-fertigkeiten-zeile">
                   <div class="sheet-tooltip">
-                    <button type="action" name="act_probe-mechanik-handwerk"><span data-i18n="mechanik"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-fertigkeitssprobe"></span>
+                    <button class="sheet-button-transparent" type="action" name="act_probe-mechanik-handwerk"><span data-i18n="mechanik"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe"></span>
                   </div>
                   <div class="sheet-tooltip"><span data-i18n="handwerk_kurz"></span><span class="sheet-tooltiptext"><span name="attr_handwerk"></span></span></div>
                   <div>
@@ -753,7 +779,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
                 <div class="sheet-fertigkeiten-zeile">
                   <div class="sheet-tooltip">
-                    <button type="action" name="act_probe-medizin-wissen"><span data-i18n="medizin"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-fertigkeitssprobe"></span>
+                    <button class="sheet-button-transparent" type="action" name="act_probe-medizin-wissen"><span data-i18n="medizin"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe"></span>
                   </div>
                   <div class="sheet-tooltip"><span data-i18n="wissen_kurz"></span><span class="sheet-tooltiptext"><span name="attr_wissen"></span></span></div>
                   <div>
@@ -766,7 +792,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
                 <div class="sheet-fertigkeiten-zeile">
                   <div class="sheet-tooltip">
-                    <button type="action" name="act_probe-menschenkenntnis-charisma"><span data-i18n="menschenkenntnis"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-fertigkeitssprobe"></span>
+                    <button class="sheet-button-transparent" type="action" name="act_probe-menschenkenntnis-charisma"><span data-i18n="menschenkenntnis"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe"></span>
                   </div>
                   <div class="sheet-tooltip"><span data-i18n="charisma_kurz"></span><span class="sheet-tooltiptext"><span name="attr_charisma"></span></span></div>
                   <div>
@@ -779,7 +805,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
                 <div class="sheet-fertigkeiten-zeile">
                   <div class="sheet-tooltip">
-                    <button type="action" name="act_probe-nachforschen-wahrnehmung"><span data-i18n="nachforschen"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-fertigkeitssprobe"></span>
+                    <button class="sheet-button-transparent" type="action" name="act_probe-nachforschen-wahrnehmung"><span data-i18n="nachforschen"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe"></span>
                   </div>
                   <div class="sheet-tooltip"><span data-i18n="wahrnehmung_kurz"></span><span class="sheet-tooltiptext"><span name="attr_wahrnehmung"></span></span></div>
                   <div>
@@ -792,7 +818,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
                 <div class="sheet-fertigkeiten-zeile">
                   <div class="sheet-tooltip">
-                    <button type="action" name="act_probe-nahkampf-beweglichkeit"><span data-i18n="nahkampf"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-fertigkeitssprobe"></span>
+                    <button class="sheet-button-transparent" type="action" name="act_probe-nahkampf-beweglichkeit"><span data-i18n="nahkampf"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe"></span>
                   </div>
                   <div class="sheet-tooltip"><span data-i18n="beweglichkeit_kurz"></span><span class="sheet-tooltiptext"><span name="attr_beweglichkeit"></span></span></div>
                   <div>
@@ -805,7 +831,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
                 <div class="sheet-fertigkeiten-zeile">
                   <div class="sheet-tooltip">
-                    <button type="action" name="act_probe-naturkunde-wissen"><span data-i18n="naturkunde"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-fertigkeitssprobe"></span>
+                    <button class="sheet-button-transparent" type="action" name="act_probe-naturkunde-wissen"><span data-i18n="naturkunde"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe"></span>
                   </div>
                   <div class="sheet-tooltip"><span data-i18n="wissen_kurz"></span><span class="sheet-tooltiptext"><span name="attr_wissen"></span></span></div>
                   <div>
@@ -818,7 +844,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
                 <div class="sheet-fertigkeiten-zeile">
                   <div class="sheet-tooltip">
-                    <button type="action" name="act_probe-orientierung-wahrnehmung"><span data-i18n="orientierung"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-fertigkeitssprobe"></span>
+                    <button class="sheet-button-transparent" type="action" name="act_probe-orientierung-wahrnehmung"><span data-i18n="orientierung"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe"></span>
                   </div>
                   <div class="sheet-tooltip"><span data-i18n="wahrnehmung_kurz"></span><span class="sheet-tooltiptext"><span name="attr_wahrnehmung"></span></span></div>
                   <div>
@@ -831,7 +857,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
                 <div class="sheet-fertigkeiten-zeile">
                   <div class="sheet-tooltip">
-                    <button type="action" name="act_probe-projektilwaffen-geschick"><span data-i18n="projektilwaffen"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-fertigkeitssprobe"></span>
+                    <button class="sheet-button-transparent" type="action" name="act_probe-projektilwaffen-geschick"><span data-i18n="projektilwaffen"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe"></span>
                   </div>
                   <div class="sheet-tooltip"><span data-i18n="geschick_kurz"></span><span class="sheet-tooltiptext"><span name="attr_geschick"></span></span></div>
                   <div>
@@ -844,7 +870,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
                 <div class="sheet-fertigkeiten-zeile">
                   <div class="sheet-tooltip">
-                    <button type="action" name="act_probe-raumjaeger-geschick"><span data-i18n="raumjaeger"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-fertigkeitssprobe"></span>
+                    <button class="sheet-button-transparent" type="action" name="act_probe-raumjaeger-geschick"><span data-i18n="raumjaeger"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe"></span>
                   </div>
                   <div class="sheet-tooltip"><span data-i18n="geschick_kurz"></span><span class="sheet-tooltiptext"><span name="attr_geschick"></span></span></div>
                   <div>
@@ -857,7 +883,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
                 <div class="sheet-fertigkeiten-zeile">
                   <div class="sheet-tooltip">
-                    <button type="action" name="act_probe-raumschiff-geschick"><span data-i18n="raumschiff"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-fertigkeitssprobe"></span>
+                    <button class="sheet-button-transparent" type="action" name="act_probe-raumschiff-geschick"><span data-i18n="raumschiff"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe"></span>
                   </div>
                   <div class="sheet-tooltip"><span data-i18n="geschick_kurz"></span><span class="sheet-tooltiptext"><span name="attr_geschick"></span></span></div>
                   <div>
@@ -870,7 +896,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
                 <div class="sheet-fertigkeiten-zeile">
                   <div class="sheet-tooltip">
-                    <button type="action" name="act_probe-reaktion-wahrnehmung"><span data-i18n="reaktion"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-fertigkeitssprobe"></span>
+                    <button class="sheet-button-transparent" type="action" name="act_probe-reaktion-wahrnehmung"><span data-i18n="reaktion"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe"></span>
                   </div>
                   <div class="sheet-tooltip"><span data-i18n="wahrnehmung_kurz"></span><span class="sheet-tooltiptext"><span name="attr_wahrnehmung"></span></span></div>
                   <div>
@@ -883,7 +909,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
                 <div class="sheet-fertigkeiten-zeile">
                   <div class="sheet-tooltip">
-                    <button type="action" name="act_probe-reiten-beweglichkeit"><span data-i18n="reiten"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-fertigkeitssprobe"></span>
+                    <button class="sheet-button-transparent" type="action" name="act_probe-reiten-beweglichkeit"><span data-i18n="reiten"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe"></span>
                   </div>
                   <div class="sheet-tooltip"><span data-i18n="beweglichkeit_kurz"></span><span class="sheet-tooltiptext"><span name="attr_beweglichkeit"></span></span></div>
                   <div>
@@ -896,7 +922,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
                 <div class="sheet-fertigkeiten-zeile">
                   <div class="sheet-tooltip">
-                    <button type="action" name="act_probe-rennen-beweglichkeit"><span data-i18n="rennen"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-fertigkeitssprobe"></span>
+                    <button class="sheet-button-transparent" type="action" name="act_probe-rennen-beweglichkeit"><span data-i18n="rennen"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe"></span>
                   </div>
                   <div class="sheet-tooltip"><span data-i18n="beweglichkeit_kurz"></span><span class="sheet-tooltiptext"><span name="attr_beweglichkeit"></span></span></div>
                   <div>
@@ -909,7 +935,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
                 <div class="sheet-fertigkeiten-zeile">
                   <div class="sheet-tooltip">
-                    <button type="action" name="act_probe-robotik-handwerk"><span data-i18n="robotik"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-fertigkeitssprobe"></span>
+                    <button class="sheet-button-transparent" type="action" name="act_probe-robotik-handwerk"><span data-i18n="robotik"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe"></span>
                   </div>
                   <div class="sheet-tooltip"><span data-i18n="handwerk_kurz"></span><span class="sheet-tooltiptext"><span name="attr_handwerk"></span></span></div>
                   <div>
@@ -922,7 +948,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
                 <div class="sheet-fertigkeiten-zeile">
                   <div class="sheet-tooltip">
-                    <button type="action" name="act_probe-ruestungsbau-handwerk"><span data-i18n="ruestungsbau"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-fertigkeitssprobe"></span>
+                    <button class="sheet-button-transparent" type="action" name="act_probe-ruestungsbau-handwerk"><span data-i18n="ruestungsbau"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe"></span>
                   </div>
                   <div class="sheet-tooltip"><span data-i18n="handwerk_kurz"></span><span class="sheet-tooltiptext"><span name="attr_handwerk"></span></span></div>
                   <div>
@@ -957,7 +983,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                   <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
                   <div class="sheet-fertigkeiten-zeile">
                     <div class="sheet-tooltip">
-                      <button type="action" name="act_probe-sagen-mythen-wissen"><span data-i18n="sagen-mythen"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-fertigkeitssprobe"></span>
+                      <button class="sheet-button-transparent" type="action" name="act_probe-sagen-mythen-wissen"><span data-i18n="sagen-mythen"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe"></span>
                     </div>
                     <div class="sheet-tooltip"><span data-i18n="wissen_kurz"></span><span class="sheet-tooltiptext"><span name="attr_wissen"></span></span></div>
                     <div>
@@ -970,7 +996,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                   <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
                   <div class="sheet-fertigkeiten-zeile">
                     <div class="sheet-tooltip">
-                      <button type="action" name="act_probe-saufen-konstitution"><span data-i18n="saufen"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-fertigkeitssprobe"></span>
+                      <button class="sheet-button-transparent" type="action" name="act_probe-saufen-konstitution"><span data-i18n="saufen"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe"></span>
                     </div>
                     <div class="sheet-tooltip"><span data-i18n="konstitution_kurz"></span><span class="sheet-tooltiptext"><span name="attr_konstitution"></span></span></div>
                     <div>
@@ -983,7 +1009,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                   <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
                   <div class="sheet-fertigkeiten-zeile">
                     <div class="sheet-tooltip">
-                      <button type="action" name="act_probe-schaetzen-wahrnehmung"><span data-i18n="schaetzen"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-fertigkeitssprobe"></span>
+                      <button class="sheet-button-transparent" type="action" name="act_probe-schaetzen-wahrnehmung"><span data-i18n="schaetzen"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe"></span>
                     </div>
                     <div class="sheet-tooltip"><span data-i18n="wahrnehmung_kurz"></span><span class="sheet-tooltiptext"><span name="attr_wahrnehmung"></span></span></div>
                     <div>
@@ -996,7 +1022,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                   <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
                   <div class="sheet-fertigkeiten-zeile">
                     <div class="sheet-tooltip">
-                      <button type="action" name="act_probe-schauspiel-charisma"><span data-i18n="schauspiel"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-fertigkeitssprobe"></span>
+                      <button class="sheet-button-transparent" type="action" name="act_probe-schauspiel-charisma"><span data-i18n="schauspiel"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe"></span>
                     </div>
                     <div class="sheet-tooltip"><span data-i18n="charisma_kurz"></span><span class="sheet-tooltiptext"><span name="attr_charisma"></span></span></div>
                     <div>
@@ -1009,7 +1035,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                   <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
                   <div class="sheet-fertigkeiten-zeile">
                     <div class="sheet-tooltip">
-                      <button type="action" name="act_probe-schiessen-geschick"><span data-i18n="schiessen"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-fertigkeitssprobe"></span>
+                      <button class="sheet-button-transparent" type="action" name="act_probe-schiessen-geschick"><span data-i18n="schiessen"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe"></span>
                     </div>
                     <div class="sheet-tooltip"><span data-i18n="geschick_kurz"></span><span class="sheet-tooltiptext"><span name="attr_geschick"></span></span></div>
                     <div>
@@ -1022,7 +1048,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                   <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
                   <div class="sheet-fertigkeiten-zeile">
                     <div class="sheet-tooltip">
-                      <button type="action" name="act_probe-schwere-waffen-geschick"><span data-i18n="schwere-waffen"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-fertigkeitssprobe"></span>
+                      <button class="sheet-button-transparent" type="action" name="act_probe-schwere-waffen-geschick"><span data-i18n="schwere-waffen"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe"></span>
                     </div>
                     <div class="sheet-tooltip"><span data-i18n="geschick_kurz"></span><span class="sheet-tooltiptext"><span name="attr_geschick"></span></span></div>
                     <div>
@@ -1035,7 +1061,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                   <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
                   <div class="sheet-fertigkeiten-zeile">
                     <div class="sheet-tooltip">
-                      <button type="action" name="act_probe-schwimmen-beweglichkeit"><span data-i18n="schwimmen"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-fertigkeitssprobe"></span>
+                      <button class="sheet-button-transparent" type="action" name="act_probe-schwimmen-beweglichkeit"><span data-i18n="schwimmen"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe"></span>
                     </div>
                     <div class="sheet-tooltip"><span data-i18n="beweglichkeit_kurz"></span><span class="sheet-tooltiptext"><span name="attr_beweglichkeit"></span></span></div>
                     <div>
@@ -1048,7 +1074,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                   <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
                   <div class="sheet-fertigkeiten-zeile">
                     <div class="sheet-tooltip">
-                      <button type="action" name="act_probe-sicherheitstechnik-handwerk"><span data-i18n="sicherheitstechnik"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-fertigkeitssprobe"></span>
+                      <button class="sheet-button-transparent" type="action" name="act_probe-sicherheitstechnik-handwerk"><span data-i18n="sicherheitstechnik"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe"></span>
                     </div>
                     <div class="sheet-tooltip"><span data-i18n="handwerk_kurz"></span><span class="sheet-tooltiptext"><span name="attr_handwerk"></span></span></div>
                     <div>
@@ -1061,7 +1087,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                   <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
                   <div class="sheet-fertigkeiten-zeile">
                     <div class="sheet-tooltip">
-                      <button type="action" name="act_probe-spezies-wissen"><span data-i18n="spezies"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-fertigkeitssprobe"></span>
+                      <button class="sheet-button-transparent" type="action" name="act_probe-spezies-wissen"><span data-i18n="spezies"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe"></span>
                     </div>
                     <div class="sheet-tooltip"><span data-i18n="wissen_kurz"></span><span class="sheet-tooltiptext"><span name="attr_wissen"></span></span></div>
                     <div>
@@ -1074,7 +1100,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                   <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
                   <div class="sheet-fertigkeiten-zeile">
                     <div class="sheet-tooltip">
-                      <button type="action" name="act_probe-springen-beweglichkeit"><span data-i18n="springen"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-fertigkeitssprobe"></span>
+                      <button class="sheet-button-transparent" type="action" name="act_probe-springen-beweglichkeit"><span data-i18n="springen"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe"></span>
                     </div>
                     <div class="sheet-tooltip"><span data-i18n="beweglichkeit_kurz"></span><span class="sheet-tooltiptext"><span name="attr_beweglichkeit"></span></span></div>
                     <div>
@@ -1087,7 +1113,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                   <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
                   <div class="sheet-fertigkeiten-zeile">
                     <div class="sheet-tooltip">
-                      <button type="action" name="act_probe-spruehwaffen-geschick"><span data-i18n="spruehwaffen"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-fertigkeitssprobe"></span>
+                      <button class="sheet-button-transparent" type="action" name="act_probe-spruehwaffen-geschick"><span data-i18n="spruehwaffen"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe"></span>
                     </div>
                     <div class="sheet-tooltip"><span data-i18n="geschick_kurz"></span><span class="sheet-tooltiptext"><span name="attr_geschick"></span></span></div>
                     <div>
@@ -1100,7 +1126,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                   <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
                   <div class="sheet-fertigkeiten-zeile">
                     <div class="sheet-tooltip">
-                      <button type="action" name="act_probe-stemmen-staerke"><span data-i18n="stemmen"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-fertigkeitssprobe"></span>
+                      <button class="sheet-button-transparent" type="action" name="act_probe-stemmen-staerke"><span data-i18n="stemmen"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe"></span>
                     </div>
                     <div class="sheet-tooltip"><span data-i18n="staerke_kurz"></span><span class="sheet-tooltiptext"><span name="attr_staerke"></span></span></div>
                     <div>
@@ -1113,7 +1139,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                   <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
                   <div class="sheet-fertigkeiten-zeile">
                     <div class="sheet-tooltip">
-                      <button type="action" name="act_probe-taschendiebstahl-geschick"><span data-i18n="taschendiebstahl"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-fertigkeitssprobe"></span>
+                      <button class="sheet-button-transparent" type="action" name="act_probe-taschendiebstahl-geschick"><span data-i18n="taschendiebstahl"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe"></span>
                     </div>
                     <div class="sheet-tooltip"><span data-i18n="geschick_kurz"></span><span class="sheet-tooltiptext"><span name="attr_geschick"></span></span></div>
                     <div>
@@ -1126,7 +1152,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                   <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
                   <div class="sheet-fertigkeiten-zeile">
                     <div class="sheet-tooltip">
-                      <button type="action" name="act_probe-ueberreden-charisma"><span data-i18n="ueberreden"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-fertigkeitssprobe"></span>
+                      <button class="sheet-button-transparent" type="action" name="act_probe-ueberreden-charisma"><span data-i18n="ueberreden"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe"></span>
                     </div>
                     <div class="sheet-tooltip"><span data-i18n="charisma_kurz"></span><span class="sheet-tooltiptext"><span name="attr_charisma"></span></span></div>
                     <div>
@@ -1139,7 +1165,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                   <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
                   <div class="sheet-fertigkeiten-zeile">
                     <div class="sheet-tooltip">
-                      <button type="action" name="act_probe-verhandeln-charisma"><span data-i18n="verhandeln"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-fertigkeitssprobe"></span>
+                      <button class="sheet-button-transparent" type="action" name="act_probe-verhandeln-charisma"><span data-i18n="verhandeln"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe"></span>
                     </div>
                     <div class="sheet-tooltip"><span data-i18n="charisma_kurz"></span><span class="sheet-tooltiptext"><span name="attr_charisma"></span></span></div>
                     <div>
@@ -1152,7 +1178,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                   <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
                   <div class="sheet-fertigkeiten-zeile">
                     <div class="sheet-tooltip">
-                      <button type="action" name="act_probe-waffenbau-handwerk"><span data-i18n="waffenbau"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-fertigkeitssprobe"></span>
+                      <button class="sheet-button-transparent" type="action" name="act_probe-waffenbau-handwerk"><span data-i18n="waffenbau"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe"></span>
                     </div>
                     <div class="sheet-tooltip"><span data-i18n="handwerk_kurz"></span><span class="sheet-tooltiptext"><span name="attr_handwerk"></span></span></div>
                     <div>
@@ -1165,7 +1191,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                   <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
                   <div class="sheet-fertigkeiten-zeile">
                     <div class="sheet-tooltip">
-                      <button type="action" name="act_probe-waffenkampf-beweglichkeit"><span data-i18n="waffenkampf"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-fertigkeitssprobe"></span>
+                      <button class="sheet-button-transparent" type="action" name="act_probe-waffenkampf-beweglichkeit"><span data-i18n="waffenkampf"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe"></span>
                     </div>
                     <div class="sheet-tooltip"><span data-i18n="beweglichkeit_kurz"></span><span class="sheet-tooltiptext"><span name="attr_beweglichkeit"></span></span></div>
                     <div>
@@ -1178,7 +1204,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                   <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
                   <div class="sheet-fertigkeiten-zeile">
                     <div class="sheet-tooltip">
-                      <button type="action" name="act_probe-wasserfahrzeuge-geschick"><span data-i18n="wasserfahrzeuge"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-fertigkeitssprobe"></span>
+                      <button class="sheet-button-transparent" type="action" name="act_probe-wasserfahrzeuge-geschick"><span data-i18n="wasserfahrzeuge"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe"></span>
                     </div>
                     <div class="sheet-tooltip"><span data-i18n="geschick_kurz"></span><span class="sheet-tooltiptext"><span name="attr_geschick"></span></span></div>
                     <div>
@@ -1191,7 +1217,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                   <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
                   <div class="sheet-fertigkeiten-zeile">
                     <div class="sheet-tooltip">
-                      <button type="action" name="act_probe-willenskraft-wissen"><span data-i18n="willenskraft"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-fertigkeitssprobe"></span>
+                      <button class="sheet-button-transparent" type="action" name="act_probe-willenskraft-wissen"><span data-i18n="willenskraft"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe"></span>
                     </div>
                     <div class="sheet-tooltip"><span data-i18n="wissen_kurz"></span><span class="sheet-tooltiptext"><span name="attr_wissen"></span></span></div>
                     <div>
@@ -1204,7 +1230,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                   <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
                   <div class="sheet-fertigkeiten-zeile">
                     <div class="sheet-tooltip">
-                      <button type="action" name="act_probe-wurfwaffen-geschick"><span data-i18n="wurfwaffen"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-fertigkeitssprobe"></span>
+                      <button class="sheet-button-transparent" type="action" name="act_probe-wurfwaffen-geschick"><span data-i18n="wurfwaffen"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe"></span>
                     </div>
                     <div class="sheet-tooltip"><span data-i18n="geschick_kurz"></span><span class="sheet-tooltiptext"><span name="attr_geschick"></span></span></div>
                     <div>
@@ -1217,7 +1243,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                   <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
                   <div class="sheet-fertigkeiten-zeile">
                     <div class="sheet-tooltip">
-                      <button type="action" name="act_probe-zero-g-beweglichkeit"><span data-i18n="zero-g"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-fertigkeitssprobe"></span>
+                      <button class="sheet-button-transparent" type="action" name="act_probe-zero-g-beweglichkeit"><span data-i18n="zero-g"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe"></span>
                     </div>
                     <div class="sheet-tooltip"><span data-i18n="beweglichkeit_kurz"></span><span class="sheet-tooltiptext"><span name="attr_beweglichkeit"></span></span></div>
                     <div>
@@ -1238,8 +1264,8 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
             </div>
             <fieldset class="repeating_besondere-fertigkeiten">
               <div class="sheet-besondere-fertigkeiten-zeile">
-                <div>
-                  <button type="action" name="act_probe-besondere-fertigkeit">&nbsp;</button>
+                <div class="sheet-tooltip">
+                  <button class="sheet-button-d6" type="action" name="act_probe-besondere-fertigkeit">&nbsp;</button><span class="sheet-tooltiptext" data-i18n="tooltip-probe"></span>
                 </div>
                 <div>
                   <input type="text" name="attr_besondere-fertigkeit-name"/>
@@ -1862,17 +1888,35 @@ skilllist.forEach(skills => {
 });
 
 // Attributsproben
+// ...mit Modifikatoren
 attributeslist.forEach(attribut => {    
     on(`clicked:probe-${attribut}`, function() {        
-        getAttrs([attribut, attribut+"mod1", attribut+"mod2"], function(values) {
+        getAttrs([attribut, attribut+"-mod1", attribut+"-mod2"], function(values) {
             let summe = 0;
-    
-            summe = parseInt(values[attribut])|0 + parseInt(values[attribut+"mod1"])|0 + parseInt(values[attribut+"mod2"])|0;
+            let wert = parseInt(values[attribut])|0;
+            let mod1 = parseInt(values[attribut+"-mod1"])|0;
+            let mod2 = parseInt(values[attribut+"-mod2"])|0;
+            
+            summe = wert + mod1 + mod2;
             summe = summe-2; //Modifikator für reine Attributsproben
             setDicebot(getTranslationByKey("attributsprobe"),getTranslationByKey(attribut),summe," ");
         });
     });
 });
+
+// ...ohne Modifikatoren
+attributeslist.forEach(attribut => {    
+    on(`clicked:probe-ohne-mod-${attribut}`, function() {        
+        getAttrs([attribut], function(values) {
+            let summe = 0;
+    
+            summe = parseInt(values[attribut])|0;
+            summe = summe-2; //Modifikator für reine Attributsproben
+            setDicebot(getTranslationByKey("attributsprobe"),getTranslationByKey(attribut),summe," ");
+        });
+    });
+});
+
 
 on("clicked:repeating_besondere-fertigkeiten:probe-besondere-fertigkeit", function(eventInfo) {
     getAttrs(["repeating_besondere-fertigkeiten_besondere-fertigkeit-name", "repeating_besondere-fertigkeiten_besondere-fertigkeit-stufe", "repeating_besondere-fertigkeiten_besondere-fertigkeit-attribut"], function(values) {

@@ -25,7 +25,7 @@ mixin fertigkeitszeile(skill,attribute)
     // MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile
     div(class="sheet-fertigkeiten-zeile")
         div(class="sheet-tooltip")
-            button(type="action" name="act_probe-"+skill+"-"+attribute)
+            button(type="action" class="sheet-button-transparent" name="act_probe-"+skill+"-"+attribute)
                 span(data-i18n=skill)
             span(class="sheet-tooltiptext" data-i18n="tooltip-probe")
         div(class="sheet-tooltip")

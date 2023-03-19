@@ -128,17 +128,35 @@ skilllist.forEach(skills => {
 });
 
 // Attributsproben
+// ...mit Modifikatoren
 attributeslist.forEach(attribut => {    
     on(`clicked:probe-${attribut}`, function() {        
-        getAttrs([attribut, attribut+"mod1", attribut+"mod2"], function(values) {
+        getAttrs([attribut, attribut+"-mod1", attribut+"-mod2"], function(values) {
             let summe = 0;
-    
-            summe = parseInt(values[attribut])|0 + parseInt(values[attribut+"mod1"])|0 + parseInt(values[attribut+"mod2"])|0;
+            let wert = parseInt(values[attribut])|0;
+            let mod1 = parseInt(values[attribut+"-mod1"])|0;
+            let mod2 = parseInt(values[attribut+"-mod2"])|0;
+            
+            summe = wert + mod1 + mod2;
             summe = summe-2; //Modifikator für reine Attributsproben
             setDicebot(getTranslationByKey("attributsprobe"),getTranslationByKey(attribut),summe," ");
         });
     });
 });
+
+// ...ohne Modifikatoren
+attributeslist.forEach(attribut => {    
+    on(`clicked:probe-ohne-mod-${attribut}`, function() {        
+        getAttrs([attribut], function(values) {
+            let summe = 0;
+    
+            summe = parseInt(values[attribut])|0;
+            summe = summe-2; //Modifikator für reine Attributsproben
+            setDicebot(getTranslationByKey("attributsprobe"),getTranslationByKey(attribut),summe," ");
+        });
+    });
+});
+
 
 on("clicked:repeating_besondere-fertigkeiten:probe-besondere-fertigkeit", function(eventInfo) {
     getAttrs(["repeating_besondere-fertigkeiten_besondere-fertigkeit-name", "repeating_besondere-fertigkeiten_besondere-fertigkeit-stufe", "repeating_besondere-fertigkeiten_besondere-fertigkeit-attribut"], function(values) {

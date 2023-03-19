@@ -188,7 +188,7 @@ div.sheet-noreturn .sheet-sonderattribute {
 
 div.sheet-noreturn .sheet-attribut-zeile {
 	display                 : grid;
-    grid-template-columns   : 100px 40px 85px 10px;
+    grid-template-columns   : 95px 30px 20px 65px 25px;
 }
 
 div.sheet-noreturn .sheet-sonderattribut-zeile {
@@ -223,8 +223,8 @@ div.sheet-noreturn div.sheet-fertigkeiten-zeile input[type="number"],
 div.sheet-noreturn div.sheet-fertigkeiten-zeile input[type="text"] {
     border                  : 2px solid black;
 	height					: 1.5em;
-	width					: 40px;
-	top						: -3px;
+	width					: 30px;
+	top						: 3px;
 }
 
 div.sheet-noreturn div.sheet-besondere-fertigkeiten-zeile input[type="number"],
@@ -261,12 +261,6 @@ div.sheet-noreturn div.sheet-besondere-fertigkeiten-zeile button[type="action"] 
 div.sheet-box div.sheet-infektionsresistenz span {
 	position				: relative;
 	top						: 5px;
-}
-
-div.sheet-box div.sheet-infektionsresistenz button[type="action"]::before,
-div.sheet-noreturn div.sheet-besondere-fertigkeiten-zeile button[type="action"]::before {
-    font-family: 'dicefontd6';
-    content: 'F ';
 }
 
 div.sheet-noreturn div.sheet-titel,
@@ -509,8 +503,7 @@ button.sheet-toggle-button {
 
 /* Buttons */
 
-.sheet-attribute button,
-.sheet-fertigkeiten-zeile button {
+button.sheet-button-transparent {
 	font-size			: unset;
 	background-color	: transparent;
     background-repeat	: no-repeat;
@@ -519,6 +512,12 @@ button.sheet-toggle-button {
     overflow			: hidden;
     outline				: none;
 }
+
+button.sheet-button-d6::before {
+    font-family: 'dicefontd6';
+    content: 'F ';
+}
+
 
 /* Die Rolltemplates              */
 .sheet-rolltemplate-probe_offen div.sheet-template-container,
