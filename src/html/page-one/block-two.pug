@@ -39,12 +39,12 @@ mixin attributszeile(attribute)
             span(data-i18n=attribute+"_kurz")
             | ]
 
-mixin sonderattributskopfzeile()
+mixin sonderattributskopfzeile(text)
     // MIXIN : src/html/page-one/block-two.pug : sonderattributskopfzeile
     div(class="sheet-sonderattribut-zeile")
         div 
         div(class="sheet-kopfzeile")
-            span(data-i18n="stufe")
+            span(data-i18n=text)
 
 mixin sonderattributszeile(attribute)
     // MIXIN : src/html/page-one/block-two.pug : sonderattributszeile
@@ -74,17 +74,15 @@ div(class="sheet-2cols")
         p 
         div(class="sheet-sonderattribute")
             div
-                div(class="sheet-sonderattribut-zeile")
-                    div 
-                    div 
+                +sonderattributskopfzeile("wert")
                 +sonderattributszeile("trefferpunkte")
                 +sonderattributszeile("dmg_schwellwert")
             div 
-                +sonderattributskopfzeile()
+                +sonderattributskopfzeile("stufe")
                 +sonderattributszeile("schmerztoleranz")
                 +sonderattributszeile("blutpunkte")
             div 
-                +sonderattributskopfzeile()
+                +sonderattributskopfzeile("stufe")
                 +sonderattributszeile("adrenalin")
                 +sonderattributszeile("meditation")
         div(class="sheet-trefferzonen-regeneration")
