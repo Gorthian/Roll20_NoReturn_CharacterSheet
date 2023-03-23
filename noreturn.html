@@ -490,7 +490,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                     <input type="number" name="attr_schadenszaehler-12"/><span class="sheet-tooltiptext" data-i18n="tooltip-schadenszaehler"></span>
                   </div>
           </div>
-          <div class="sheet-box" style="text-alingn:center;width:100%;">
+          <div class="sheet-box" style="text-align:center;width:100%;">
             <button class="sheet-button-d6" type="action" name="act_trefferzone"></button><span data-i18n="trefferzone-bestimmen"></span>
           </div>
         </div>
@@ -1973,7 +1973,6 @@ attributeslist.forEach(attribut => {
 
 // Proben auf Besondere Fertigkeiten
 on("clicked:repeating_besondere-fertigkeiten:probe", function(eventInfo) {
-    console.log("Debug 1");
     getAttrs(["repeating_besondere-fertigkeiten_besondere-fertigkeit-name", "repeating_besondere-fertigkeiten_besondere-fertigkeit-stufe", "repeating_besondere-fertigkeiten_besondere-fertigkeit-attribut"], function(values) {
         let skillName = values["repeating_besondere-fertigkeiten_besondere-fertigkeit-name"];
         let skillStufe = parseInt(values["repeating_besondere-fertigkeiten_besondere-fertigkeit-stufe"])|0;
