@@ -1,6 +1,6 @@
 /*
     CREATED by          Gorthian
-    Letzte Änderung		2023-03-19
+    Letzte Änderung		2023-03-23
 */
 
 
@@ -159,7 +159,8 @@ attributeslist.forEach(attribut => {
 });
 
 
-on("clicked:repeating_besondere-fertigkeiten:probe-besondere-fertigkeit", function(eventInfo) {
+// Proben auf Besondere Fertigkeiten
+on("clicked:repeating_besondere-fertigkeiten:probe", function(eventInfo) {
     getAttrs(["repeating_besondere-fertigkeiten_besondere-fertigkeit-name", "repeating_besondere-fertigkeiten_besondere-fertigkeit-stufe", "repeating_besondere-fertigkeiten_besondere-fertigkeit-attribut"], function(values) {
         let skillName = values["repeating_besondere-fertigkeiten_besondere-fertigkeit-name"];
         let skillStufe = parseInt(values["repeating_besondere-fertigkeiten_besondere-fertigkeit-stufe"])|0;

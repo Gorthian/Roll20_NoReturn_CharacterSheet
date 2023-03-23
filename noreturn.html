@@ -1309,8 +1309,8 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
             </div>
             <fieldset class="repeating_besondere-fertigkeiten">
               <div class="sheet-besondere-fertigkeiten-zeile">
-                <div class="sheet-tooltip">
-                  <button class="sheet-button-d6" type="action" name="act_probe-besondere-fertigkeit">&nbsp;</button><span class="sheet-tooltiptext" data-i18n="tooltip-probe"></span>
+                <div>
+                  <button class="sheet-button-d6" type="action" name="act_probe"></button>
                 </div>
                 <div>
                   <input type="text" name="attr_besondere-fertigkeit-name"/>
@@ -1812,7 +1812,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
 <!-- SHEET WORKERS-->
 <script type="text/worker">/*
     CREATED by          Gorthian
-    Letzte Änderung		2023-03-19
+    Letzte Änderung		2023-03-23
 */
 
 
@@ -1971,7 +1971,9 @@ attributeslist.forEach(attribut => {
 });
 
 
-on("clicked:repeating_besondere-fertigkeiten:probe-besondere-fertigkeit", function(eventInfo) {
+// Proben auf Besondere Fertigkeiten
+on("clicked:repeating_besondere-fertigkeiten:probe", function(eventInfo) {
+    console.log("Debug 1");
     getAttrs(["repeating_besondere-fertigkeiten_besondere-fertigkeit-name", "repeating_besondere-fertigkeiten_besondere-fertigkeit-stufe", "repeating_besondere-fertigkeiten_besondere-fertigkeit-attribut"], function(values) {
         let skillName = values["repeating_besondere-fertigkeiten_besondere-fertigkeit-name"];
         let skillStufe = parseInt(values["repeating_besondere-fertigkeiten_besondere-fertigkeit-stufe"])|0;
