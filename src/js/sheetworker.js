@@ -1,6 +1,6 @@
 /*
     CREATED by          Gorthian
-    Letzte Änderung		2023-03-23
+    Letzte Änderung		2023-04-02
 */
 
 
@@ -29,7 +29,7 @@ const skilllist = [
     ['ausdauer','konstitution'],
     ['ausweichen','beweglichkeit'],
     ['basteln','handwerk'],
-    ['blocken','beweglichkeit'],
+    ['blocken','konstitution'],
     ['bodenfahrzeuge','geschick'],
     ['chemie','wissen'],
     ['computer','wissen'],

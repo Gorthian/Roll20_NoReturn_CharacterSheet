@@ -2,7 +2,7 @@
 <!--
 CREATED by          Gorthian
 Version				CF Release
-Letzte Änderung		2023-01-18
+Letzte Änderung		2023-04-02
 GitHub				https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet
 Wiki				https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/wiki
 Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
@@ -590,9 +590,9 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
                 <div class="sheet-fertigkeiten-zeile">
                   <div class="sheet-tooltip">
-                    <button class="sheet-button-transparent" type="action" name="act_probe-blocken-beweglichkeit"><span data-i18n="blocken"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe"></span>
+                    <button class="sheet-button-transparent" type="action" name="act_probe-blocken-konstitution"><span data-i18n="blocken"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe"></span>
                   </div>
-                  <div class="sheet-tooltip"><span data-i18n="beweglichkeit_kurz"></span><span class="sheet-tooltiptext"><span name="attr_beweglichkeit"></span></span></div>
+                  <div class="sheet-tooltip"><span data-i18n="konstitution_kurz"></span><span class="sheet-tooltiptext"><span name="attr_konstitution"></span></span></div>
                   <div>
                     <input type="number" name="attr_blocken"/>
                   </div>
@@ -1812,7 +1812,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
 <!-- SHEET WORKERS-->
 <script type="text/worker">/*
     CREATED by          Gorthian
-    Letzte Änderung		2023-03-23
+    Letzte Änderung		2023-04-02
 */
 
 
@@ -1841,7 +1841,7 @@ const skilllist = [
     ['ausdauer','konstitution'],
     ['ausweichen','beweglichkeit'],
     ['basteln','handwerk'],
-    ['blocken','beweglichkeit'],
+    ['blocken','konstitution'],
     ['bodenfahrzeuge','geschick'],
     ['chemie','wissen'],
     ['computer','wissen'],
