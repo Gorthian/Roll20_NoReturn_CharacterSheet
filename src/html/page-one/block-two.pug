@@ -1,6 +1,6 @@
 //-
     CREATED by          Gorthian
-    Letzte Änderung		2023-03-19
+    Letzte Änderung		2023-04-02
 
 //
     ********************************
@@ -62,7 +62,7 @@ mixin schadenszaehler(trefferzone)
 
 //- SEITENINHALT
 div(class="sheet-2cols")
-    div(class="sheet-box")
+    div(class="sheet-box" role="section")
         h1(data-i18n="attribute")
         div(class="sheet-attribute")
             div
@@ -100,7 +100,7 @@ div(class="sheet-2cols")
                 span &nbsp; &nbsp;
                 span(data-i18n="pool")
                 input(type="number" name="attr_regeneration-pool")                    
-    div(class="sheet-trefferzonen")
+    div(class="sheet-trefferzonen" role="section")
         h1(data-i18n="körperzonen")
         div(class="sheet-trefferzonen-bild")
             img(src="https://gorthian.de/roll20/noreturn/trefferzonen_300px.png")

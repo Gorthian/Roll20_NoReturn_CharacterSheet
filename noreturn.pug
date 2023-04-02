@@ -85,16 +85,16 @@
 mixin input-text(attribute, i18n)
     // MIXIN : noreturn.pug : input-text
     div 
-        span(class="sheet-input-label" data-i18n=i18n)
+        label(class="sheet-input-label" data-i18n=i18n)
     div
         input(type="text" name="attr_"+attribute)
 
 //- SEITENINHALT
-div(class="sheet-noreturn")
+div(class="sheet-noreturn" role="article")
     include src/html/dicebot.pug
     div(class="sheet-noreturn-body")
         input(type="hidden" class="sheet-tabstoggle" name="attr_sheetTab" value="page-one")    
-        div(class="sheet-tabs")
+        div(class="sheet-tabs" role="navigation" aria-label="Angezeigte Seite auswählen" lang="de")
             each page in pages
                 button(class="sheet-toggle-button" type="action" name="act_page-"+page.name data-i18n=page.i18n)
         include src/html/page-one.pug

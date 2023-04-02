@@ -1,6 +1,6 @@
 //-
     CREATED by          Gorthian
-    Letzte Änderung		2023-03-19
+    Letzte Änderung		2023-04-02
 
 //
     ********************************
@@ -13,7 +13,7 @@
 
 //- Trefferzone bestimmen
 rolltemplate(class="sheet-rolltemplate-trefferzone")
-    div(class="sheet-template-container")
+    div(class="sheet-template-container" role="section")
         div(class="sheet-template-header") 
             span(data-i18n="trefferzone")
         hr
@@ -24,7 +24,7 @@ rolltemplate(class="sheet-rolltemplate-trefferzone")
 
 //- Offene Probe auf Fertigkeiten
 rolltemplate(class="sheet-rolltemplate-probe_offen")
-    div(class="sheet-template-container")
+    div(class="sheet-template-container" role="section")
         div(class="sheet-template-header") {{charaktername}}
         div(class="sheet-template-header") {{fertigkeit}} - {{attribut}}
         | {{#modifiziert}}
@@ -67,7 +67,7 @@ rolltemplate(class="sheet-rolltemplate-probe_offen")
 
 //- Infektionsresistenz
 rolltemplate(class="sheet-rolltemplate-infektionsresistenz")
-    div(class="sheet-template-container")
+    div(class="sheet-template-container" role="section")
         div(class="sheet-template-header") {{charaktername}}
         div(class="sheet-template-header")
             span(data-i18n="infektionsresistenz")

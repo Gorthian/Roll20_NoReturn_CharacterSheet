@@ -1,6 +1,6 @@
 //-
     CREATED by          Gorthian
-    Letzte Änderung		2023-01-15
+    Letzte Änderung		2023-04-02
 
 //
     ********************************
@@ -32,7 +32,7 @@ mixin trefferzone(zone)
 
 //- SEITENINHALT
 div
-    div(class="sheet-box")
+    div(class="sheet-box" role="section")
         div(class="sheet-trefferzonen-liste")
             +trefferzone(12)
             +trefferzone(11)
@@ -46,7 +46,7 @@ div
             +trefferzone(7)
             +trefferzone(2)
     
-    div(class="sheet-box")
+    div(class="sheet-box" role="section")
         h1(data-i18n="style-skills")
         div(class="sheet-style-skills-zeile")
             div(class="sheet-kopfzeile")

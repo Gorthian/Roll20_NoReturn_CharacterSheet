@@ -94,9 +94,10 @@ div.sheet-noreturn div.sheet-trefferzone-zeile input[type="text"] {
 	font-weight				: bold;
 }
 
-div.sheet-noreturn .sheet-input-line span.sheet-input-label {
+div.sheet-noreturn .sheet-input-line .sheet-input-label {
     font-family				: var(--font-highlight);
 	font-size				: var(--font-h2-size);
+	font-weight				: normal;
 	text-transform          : uppercase;
 }
 
@@ -355,7 +356,7 @@ div.sheet-noreturn .sheet-input-line div {
     display                 : table-cell;
 }
 
-div.sheet-noreturn .sheet-input-line span.sheet-input-label {
+div.sheet-noreturn .sheet-input-line .sheet-input-label {
     position                : relative;
     top                     : 7px;
 }
@@ -473,8 +474,11 @@ div.sheet-dicebot input[type=number] {
 	font-weight				: bold;
 }
 
-div.sheet-dicebot span {
+div.sheet-dicebot span,
+div.sheet-dicebot label
+ {
 	font-size				: var(--font-big-size);
+	font-weight				: normal;
 	margin					: auto;
 }
 

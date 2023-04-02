@@ -14,20 +14,24 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
 * START noreturn.pug
 ********************************
 -->
-<div class="sheet-noreturn">
+<div class="sheet-noreturn" role="article">
   <!--
   ********************************
   * START src/html/dicebot.pug
   ********************************
   
   -->
-  <div class="sheet-dicebot">
+  <div class="sheet-dicebot" role="form" aria-label="Eingaben für den Würfelbot" lang="de">
     <div class="sheet-dicebot-row"><span name="attr_probe_skill"></span><span>-</span><span name="attr_probe_attribut"></span><span>:</span><span name="attr_probe_summe_wuerfel"></span><span data-i18n="wuerfel"></span></div>
     <div class="sheet-dicebot-row"><span data-i18n="info-skill-notiz"></span><span name="attr_probe_skill_notiz"></span></div>
-    <div class="sheet-dicebot-row"><span data-i18n="hazard-di"></span>
-      <input type="number" name="attr_probe_hazard_wuerfel"/><span data-i18n="regulaere-di"></span>
-      <input type="number" name="attr_probe_standard_wuerfel"/><span data-i18n="bonus-di"></span>
-      <input type="number" name="attr_probe_bonus_wuerfel"/><span data-i18n="bonus"></span>
+    <div class="sheet-dicebot-row">
+      <label data-i18n="hazard-di"></label>
+      <input type="number" name="attr_probe_hazard_wuerfel"/>
+      <label data-i18n="regulaere-di"></label>
+      <input type="number" name="attr_probe_standard_wuerfel"/>
+      <label data-i18n="bonus-di"></label>
+      <input type="number" name="attr_probe_bonus_wuerfel"/>
+      <label data-i18n="bonus"></label>
       <input type="number" name="attr_probe_bonus"/>
       <button type="action" name="act_wirf-probe" data-i18n="wuerfeln"></button>
       <input type="number" name="attr_probe_original_hazard_wuerfel" hidden="hidden"/>
@@ -41,7 +45,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
   -->
   <div class="sheet-noreturn-body">
     <input class="sheet-tabstoggle" type="hidden" name="attr_sheetTab" value="page-one"/>
-    <div class="sheet-tabs">
+    <div class="sheet-tabs" role="navigation" aria-label="Angezeigte Seite auswählen" lang="de">
       <button class="sheet-toggle-button" type="action" name="act_page-one" data-i18n="seite-1"></button>
       <button class="sheet-toggle-button" type="action" name="act_page-two" data-i18n="seite-2"></button>
     </div>
@@ -51,7 +55,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
     ********************************
     
     -->
-    <div class="sheet-page-one">
+    <div class="sheet-page-one" role="section">
       <!--
       ********************************
       * START src/html/page-one/block-one.pug
@@ -59,42 +63,54 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
       
       -->
       <div class="sheet-3cols">
-        <div class="sheet-box">
+        <div class="sheet-box" role="section">
           <h1 data-i18n="charakterdaten"></h1>
           <div class="sheet-input-line">
             <!-- MIXIN : noreturn.pug : input-text-->
-            <div> <span class="sheet-input-label" data-i18n="charaktername"></span></div>
+            <div> 
+              <label class="sheet-input-label" data-i18n="charaktername"></label>
+            </div>
             <div>
               <input type="text" name="attr_character_name"/>
             </div>
           </div>
           <div class="sheet-input-line">
             <!-- MIXIN : noreturn.pug : input-text-->
-            <div> <span class="sheet-input-label" data-i18n="spezies"></span></div>
+            <div> 
+              <label class="sheet-input-label" data-i18n="spezies"></label>
+            </div>
             <div>
               <input type="text" name="attr_spezies"/>
             </div>
           </div>
           <div class="sheet-input-line">
             <!-- MIXIN : noreturn.pug : input-text-->
-            <div> <span class="sheet-input-label" data-i18n="geschlecht"></span></div>
+            <div> 
+              <label class="sheet-input-label" data-i18n="geschlecht"></label>
+            </div>
             <div>
               <input type="text" name="attr_geschlecht"/>
             </div>
             <!-- MIXIN : noreturn.pug : input-text-->
-            <div> <span class="sheet-input-label" data-i18n="alter"></span></div>
+            <div> 
+              <label class="sheet-input-label" data-i18n="alter"></label>
+            </div>
             <div>
               <input type="text" name="attr_alter"/>
             </div>
           </div>
           <div class="sheet-input-line">
             <!-- MIXIN : noreturn.pug : input-text-->
-            <div> <span class="sheet-input-label" data-i18n="größe"></span></div>
+            <div> 
+              <label class="sheet-input-label" data-i18n="größe"></label>
+            </div>
             <div>
               <input type="text" name="attr_größe"/>
             </div>
             <!-- MIXIN : noreturn.pug : input-text-->
-            <div> <span class="sheet-input-label" data-i18n="gewicht"></span></div>
+            <div> 
+              <label class="sheet-input-label" data-i18n="gewicht"></label>
+            </div>
             <div>
               <input type="text" name="attr_gewicht"/>
             </div>
@@ -103,42 +119,52 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
             <textarea name="attr_aussehen"> </textarea>
           </div>
         </div>
-        <div class="sheet-box">
+        <div class="sheet-box" role="section">
           <div classs="sheet-logo"><img src="http://gorthian.de/roll20/noreturn/logo_200px.png"/></div>
           <div class="sheet-input-line">
             <!-- MIXIN : noreturn.pug : input-text-->
-            <div> <span class="sheet-input-label" data-i18n="spieler"></span></div>
+            <div> 
+              <label class="sheet-input-label" data-i18n="spieler"></label>
+            </div>
             <div>
               <input type="text" name="attr_player_name"/>
             </div>
           </div>
           <div class="sheet-input-line">
             <!-- MIXIN : noreturn.pug : input-text-->
-            <div> <span class="sheet-input-label" data-i18n="erstellungsdatum"></span></div>
+            <div> 
+              <label class="sheet-input-label" data-i18n="erstellungsdatum"></label>
+            </div>
             <div>
               <input type="text" name="attr_erstellungsdatum"/>
             </div>
           </div>
           <div class="sheet-input-line">
             <!-- MIXIN : noreturn.pug : input-text-->
-            <div> <span class="sheet-input-label" data-i18n="charakterkonzept"></span></div>
+            <div> 
+              <label class="sheet-input-label" data-i18n="charakterkonzept"></label>
+            </div>
             <div>
               <input type="text" name="attr_charakterkonzept"/>
             </div>
           </div>
         </div>
-        <div class="sheet-box">
+        <div class="sheet-box" role="section">
           <h1 data-i18n="charakterkonditionen"></h1>
           <div class="sheet-input-line">
             <!-- MIXIN : noreturn.pug : input-text-->
-            <div> <span class="sheet-input-label" data-i18n="organismus"></span></div>
+            <div> 
+              <label class="sheet-input-label" data-i18n="organismus"></label>
+            </div>
             <div>
               <input type="text" name="attr_organismus"/>
             </div>
           </div>
           <div class="sheet-input-line">
             <!-- MIXIN : noreturn.pug : input-text-->
-            <div> <span class="sheet-input-label" data-i18n="psyche"></span></div>
+            <div> 
+              <label class="sheet-input-label" data-i18n="psyche"></label>
+            </div>
             <div>
               <input type="text" name="attr_psyche"/>
             </div>
@@ -153,7 +179,9 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
           </div>
           <div class="sheet-input-line">
             <!-- MIXIN : noreturn.pug : input-text-->
-            <div> <span class="sheet-input-label" data-i18n="butterflyeffekt"></span></div>
+            <div> 
+              <label class="sheet-input-label" data-i18n="butterflyeffekt"></label>
+            </div>
             <div>
               <input type="text" name="attr_butterflyeffekt"/>
             </div>
@@ -201,7 +229,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
       
       -->
       <div class="sheet-2cols">
-        <div class="sheet-box">
+        <div class="sheet-box" role="section">
           <h1 data-i18n="attribute"></h1>
           <div class="sheet-attribute">
             <div>
@@ -442,7 +470,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
             </div>
           </div>
         </div>
-        <div class="sheet-trefferzonen">
+        <div class="sheet-trefferzonen" role="section">
           <h1 data-i18n="körperzonen"></h1>
           <div class="sheet-trefferzonen-bild"><img src="https://gorthian.de/roll20/noreturn/trefferzonen_300px.png"/>
                   <!-- MIXIN : src/html/page-one/block-two.pug : schadenszaehler-->
@@ -513,7 +541,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
         ********************************
         
         -->
-        <div class="sheet-box">
+        <div class="sheet-box" role="section">
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitskopfzeile-->
                 <h1 data-i18n="fertigkeiten"></h1>
                 <div class="sheet-fertigkeiten-zeile">
@@ -1299,7 +1327,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                     </div>
                   </div>
           </div>
-          <div class="sheet-box">
+          <div class="sheet-box" role="section">
             <h1 data-i18n="besondere-fertigkeiten"></h1>
             <div class="sheet-besondere-fertigkeiten-zeile">
               <div class="sheet-kopfzeile"><span>&nbsp;</span></div>
@@ -1347,7 +1375,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
         
         -->
         <div>
-          <div class="sheet-box">
+          <div class="sheet-box" role="section">
             <div class="sheet-trefferzonen-liste">
                       <!-- MIXIN : src/html/page-one/block-three-third-row.pug : trefferzone-->
                       <div class="sheet-trefferzonen-eintrag">
@@ -1582,7 +1610,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                       </div>
             </div>
           </div>
-          <div class="sheet-box">
+          <div class="sheet-box" role="section">
             <h1 data-i18n="style-skills"></h1>
             <div class="sheet-style-skills-zeile">
               <div class="sheet-kopfzeile"><span data-i18n="style-skill"></span></div>
@@ -1650,7 +1678,9 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
         <div class="sheet-box">
           <div class="sheet-input-line">
             <!-- MIXIN : noreturn.pug : input-text-->
-            <div> <span class="sheet-input-label" data-i18n="charaktername"></span></div>
+            <div> 
+              <label class="sheet-input-label" data-i18n="charaktername"></label>
+            </div>
             <div>
               <input type="text" name="attr_character_name"/>
             </div>
@@ -1659,7 +1689,9 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
         <div class="sheet-box">
           <div class="sheet-input-line">
             <!-- MIXIN : noreturn.pug : input-text-->
-            <div> <span class="sheet-input-label" data-i18n="bargeld"></span></div>
+            <div> 
+              <label class="sheet-input-label" data-i18n="bargeld"></label>
+            </div>
             <div>
               <input type="text" name="attr_bargeld"/>
             </div>
@@ -1768,14 +1800,14 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
 
 -->
 <rolltemplate class="sheet-rolltemplate-trefferzone">
-  <div class="sheet-template-container">
+  <div class="sheet-template-container" role="section">
     <div class="sheet-template-header"> <span data-i18n="trefferzone"></span></div>
     <hr/>
     <div class="sheet-template-row"><span>{{computed::zone}}</span><span>{{zone}}            </span></div><img src="https://gorthian.de/roll20/noreturn/trefferzonen_300px.png"/>
   </div>
 </rolltemplate>
 <rolltemplate class="sheet-rolltemplate-probe_offen">
-  <div class="sheet-template-container">
+  <div class="sheet-template-container" role="section">
     <div class="sheet-template-header">{{charaktername}}</div>
     <div class="sheet-template-header">{{fertigkeit}} - {{attribut}}</div>{{#modifiziert}}
     <div class="sheet-template-header"><span data-i18n="modifiziert"></span></div>{{/modifiziert}}
@@ -1793,7 +1825,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
   </div>
 </rolltemplate>
 <rolltemplate class="sheet-rolltemplate-infektionsresistenz">
-  <div class="sheet-template-container">
+  <div class="sheet-template-container" role="section">
     <div class="sheet-template-header">{{charaktername}}</div>
     <div class="sheet-template-header"><span data-i18n="infektionsresistenz"></span></div>
     <hr/>

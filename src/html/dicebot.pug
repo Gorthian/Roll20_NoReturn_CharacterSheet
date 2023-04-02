@@ -1,6 +1,6 @@
 //-
     CREATED by          Gorthian
-    Letzte Änderung		2023-01-29
+    Letzte Änderung		2023-04-02
 
 //
     ********************************
@@ -10,7 +10,7 @@
 //- MIXINs
 
 //- SEITENINHALT
-div(class="sheet-dicebot")
+div(class="sheet-dicebot" role="form" aria-label="Eingaben für den Würfelbot" lang="de")
     div(class="sheet-dicebot-row")
         span(name="attr_probe_skill")
         span -
@@ -22,13 +22,13 @@ div(class="sheet-dicebot")
         span(data-i18n="info-skill-notiz")
         span(name="attr_probe_skill_notiz")
     div(class="sheet-dicebot-row")
-        span(data-i18n="hazard-di")
+        label(data-i18n="hazard-di")
         input(type="number" name="attr_probe_hazard_wuerfel")
-        span(data-i18n="regulaere-di")
+        label(data-i18n="regulaere-di")
         input(type="number" name="attr_probe_standard_wuerfel")
-        span(data-i18n="bonus-di")
+        label(data-i18n="bonus-di")
         input(type="number" name="attr_probe_bonus_wuerfel")
-        span(data-i18n="bonus")
+        label(data-i18n="bonus")
         input(type="number" name="attr_probe_bonus")
         button(type="action" name="act_wirf-probe" data-i18n="wuerfeln")
 
