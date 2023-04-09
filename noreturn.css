@@ -127,7 +127,7 @@ div.sheet-noreturn {
 
 div.sheet-noreturn {
     width               	: auto;
-	min-width              	: 800px;
+	min-width              	: 850px;
     background-color		: var(--background-color);	
 }
 
@@ -373,6 +373,8 @@ div.sheet-noreturn textarea {
     border                  : none;
     background-color        : transparent;
     width                   : 95%;
+	font-size				: var(--font-middle-size);
+	height					: calc(10 * var(--font-middle-size));
 }
 
 /******************************/

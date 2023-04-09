@@ -1,6 +1,6 @@
 //-
     CREATED by          Gorthian
-    Letzte Änderung		2023-04-02
+    Letzte Änderung		2023-04-09
 
 //
     ********************************
@@ -37,6 +37,7 @@ div(class="sheet-3cols")
             +input-text("größe","größe")
             +input-text("gewicht","gewicht")
         div(class="sheet-input-line")
+            label(class="sheet-input-label" data-i18n="notizen")           
             textarea(name="attr_aussehen") 
     div(class="sheet-box" role="section")
         div(classs="sheet-logo")
@@ -47,6 +48,9 @@ div(class="sheet-3cols")
             +input-text("erstellungsdatum","erstellungsdatum")
         div(class="sheet-input-line")
             +input-text("charakterkonzept","charakterkonzept")
+        div(class="sheet-input-line")
+            label(class="sheet-input-label" data-i18n="notizen")           
+            textarea(name="attr_notizen") 
     div(class="sheet-box" role="section")
         h1(data-i18n="charakterkonditionen")
         div(class="sheet-input-line")
