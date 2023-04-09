@@ -1,7 +1,7 @@
 /*
 	CREATED by 			Gorthian
 	Version				1.0
-	Letzte Änderung		2023-04-05
+	Letzte Änderung		2023-04-09
 	
 	GitHub				https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet
 	Wiki				https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/wiki
@@ -203,10 +203,14 @@ div.sheet-noreturn .sheet-fertigkeiten-zeile {
 }
 
 div.sheet-noreturn .sheet-besondere-fertigkeiten-zeile,
-div.sheet-noreturn .sheet-style-skills-zeile,
 div.sheet-noreturn .sheet-charaktermerkmale-zeile {
 	display                 : grid;
     grid-template-columns   : 2em 10em 4em 3.5em;
+}
+
+div.sheet-noreturn .sheet-style-skills-zeile {
+	display                 : grid;
+    grid-template-columns   : 15em 5em;
 }
 
 div.sheet-noreturn .sheet-attribut-zeile div,
@@ -218,6 +222,7 @@ div.sheet-noreturn .sheet-charaktermerkmale-zeile div {
     white-space				: nowrap;
 }
 
+div.sheet-noreturn div.sheet-style-skills-zeile input[type="number"],
 div.sheet-noreturn div.sheet-trefferzonen-regeneration input[type="number"],
 div.sheet-noreturn div.sheet-attribut-zeile input[type="number"],
 div.sheet-noreturn div.sheet-sonderattribut-zeile input[type="number"],
@@ -231,7 +236,6 @@ div.sheet-noreturn div.sheet-fertigkeiten-zeile input[type="text"] {
 
 div.sheet-noreturn div.sheet-besondere-fertigkeiten-zeile input[type="number"],
 div.sheet-noreturn div.sheet-besondere-fertigkeiten-zeile input[type="text"],
-div.sheet-noreturn div.sheet-style-skills-zeile input[type="number"],
 div.sheet-noreturn div.sheet-style-skills-zeile input[type="text"],
 div.sheet-noreturn div.sheet-charaktermerkmale-zeile input[type="number"],
 div.sheet-noreturn div.sheet-charaktermerkmale-zeile input[type="text"] {
