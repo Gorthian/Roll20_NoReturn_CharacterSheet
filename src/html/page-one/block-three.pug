@@ -35,7 +35,7 @@ mixin fertigkeitszeile(skill,attribute)
             span(data-i18n=attribute+"_kurz")
             span(class="sheet-tooltiptext")
                 span(name="attr_"+attribute)
-        div
+        div()
             input(type="checkbox" value="1" name="attr_"+skill+"_biomechanik")
         div
             input(type="number" name="attr_"+skill)

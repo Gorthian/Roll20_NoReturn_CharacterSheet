@@ -36,6 +36,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
       <button type="action" name="act_wirf-probe" data-i18n="wuerfeln"></button>
       <input type="number" name="attr_probe_original_hazard_wuerfel" hidden="hidden"/>
       <input type="number" name="attr_probe_original_standard_wuerfel" hidden="hidden"/>
+      <input type="number" name="attr_probe_biomechanik" hidden="hidden"/>
     </div>
   </div>
   <!--
@@ -2150,7 +2151,7 @@ skilllist.forEach(skills => {
             let attributMod1 = parseInt(values[attribut+"-mod1"]);
             let attributMod2 = parseInt(values[attribut+"-mod2"]);
     
-            summeSkill = parseInt(values[skill])|0;
+            summeSkill = parseInt(values[skill]);
             summeAttribut = attributWert + attributMod1 + attributMod2;
             summe = summeSkill + summeAttribut;
 

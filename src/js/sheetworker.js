@@ -120,7 +120,7 @@ skilllist.forEach(skills => {
             let attributMod1 = parseInt(values[attribut+"-mod1"]);
             let attributMod2 = parseInt(values[attribut+"-mod2"]);
     
-            summeSkill = parseInt(values[skill])|0;
+            summeSkill = parseInt(values[skill]);
             summeAttribut = attributWert + attributMod1 + attributMod2;
             summe = summeSkill + summeAttribut;
 
