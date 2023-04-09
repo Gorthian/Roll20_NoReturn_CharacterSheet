@@ -400,8 +400,6 @@ div.sheet-noreturn div.sheet-schadenszaehler input[type="number"] {
 	font-weight				: bold;	
 }
 
-
-
 /******************************/
 /* Tooltip                    */
 /******************************/
@@ -430,6 +428,22 @@ div.sheet-noreturn div.sheet-schadenszaehler input[type="number"] {
 
 .sheet-tooltip:hover .sheet-tooltiptext {
 	visibility				: visible;
+}
+
+/******************************/
+/* Details & Summary          */
+/******************************/
+
+div.sheet-noreturn details summary:after {
+	content					: url("https://gorthian.de/roll20/noreturn/bio_hazard_red_20px.png");
+	color					: black;
+	position				: absolute;
+	right					: 1.5em;
+	top						: -0.2em;	
+}
+
+div.sheet-noreturn details[open] summary:after {
+	transform				: rotate(90deg);
 }
 
 /******************************/

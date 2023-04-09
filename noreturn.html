@@ -1617,14 +1617,21 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
               <div class="sheet-kopfzeile"><span data-i18n="stufe"></span></div>
             </div>
             <fieldset class="repeating_style-skills">
-              <div class="sheet-style-skills-zeile">
-                <div>
-                  <input type="text" name="attr_style-skill-name"/>
-                </div>
-                <div>
-                  <input type="number" name="attr_style-skill-stufe"/>
-                </div>
-              </div>
+              <details> 
+                <summary> 
+                  <div class="sheet-style-skills-zeile">
+                    <div>
+                      <input type="text" name="attr_style-skill-name"/>
+                    </div>
+                    <div>
+                      <input type="number" name="attr_style-skill-stufe"/>
+                    </div>
+                  </div>
+                </summary>
+                <summary> 
+                  <textarea name="attr_style-skill-info"></textarea>
+                </summary>
+              </details>
             </fieldset>
           </div>
           <div class="sheet-box">

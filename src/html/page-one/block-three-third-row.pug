@@ -1,6 +1,6 @@
 //-
     CREATED by          Gorthian
-    Letzte Änderung		2023-04-02
+    Letzte Änderung		2023-04-09
 
 //
     ********************************
@@ -54,11 +54,15 @@ div
             div(class="sheet-kopfzeile")
                 span(data-i18n="stufe")
         fieldset(class="repeating_style-skills")
-            div(class="sheet-style-skills-zeile")
-                div
-                    input(type="text" name="attr_style-skill-name")
-                div
-                    input(type="number" name="attr_style-skill-stufe")
+            details 
+                summary 
+                    div(class="sheet-style-skills-zeile")
+                        div
+                            input(type="text" name="attr_style-skill-name")
+                        div
+                            input(type="number" name="attr_style-skill-stufe")
+                summary 
+                    textarea(name="attr_style-skill-info")
     
     div(class="sheet-box")
         h1(data-i18n="charaktermerkmale")
