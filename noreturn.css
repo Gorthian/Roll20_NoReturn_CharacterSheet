@@ -199,7 +199,7 @@ div.sheet-noreturn .sheet-sonderattribut-zeile {
 
 div.sheet-noreturn .sheet-fertigkeiten-zeile {	
 	display                 : grid;
-    grid-template-columns   : 9.5em repeat(4, 2.5em);
+    grid-template-columns   : 9.5em repeat(3, 1.5em) repeat(2, 2.5em);
 }
 
 div.sheet-noreturn .sheet-besondere-fertigkeiten-zeile,

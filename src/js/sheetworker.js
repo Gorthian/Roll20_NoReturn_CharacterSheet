@@ -112,19 +112,24 @@ skilllist.forEach(skills => {
     let skill = skills[0];
     let attribut = skills[1];
     on(`clicked:probe-${skill}-${attribut}`, function() {        
-        getAttrs([skill, skill+"_mod", skill+"_biomechanik", attribut, attribut+"-mod1", attribut+"-mod2"], function(values) {
+        getAttrs([skill, skill+"_mod", skill+"_biomechanik", skill+"_modifikatoren", attribut, attribut+"-mod1", attribut+"-mod2"], function(values) {
             let summeSkill = 0;
             let summeAttribut = 0;
             let summe = 0;
             let hazard = 1;
             let skillNotiz = values[skill+"_mod"];
             let biomechanik = parseInt(values[skill+"_biomechanik"])|0;
+            let modifikatoren = parseInt(values[skill+"_modifikatoren"])|0;
             let attributWert = parseInt(values[attribut])|0;
             let attributMod1 = parseInt(values[attribut+"-mod1"])|0;
             let attributMod2 = parseInt(values[attribut+"-mod2"])|0;            
     
             summeSkill = parseInt(values[skill]);
-            summeAttribut = attributWert + attributMod1 + attributMod2;
+            if (modifikatoren==0) { //Prüfen ob die Attributsmodifikatoren automatisch mit eingerechnet werden sollen
+                summeAttribut = attributWert;
+            } else {
+                summeAttribut = attributWert + attributMod1 + attributMod2;
+            }            
             summe = summeSkill + summeAttribut;
 
             if (summeSkill==0) {summe = summe -2} //Ist die Fertigkeitsstufe 0, bekommt die Probe einen Malus von 2
