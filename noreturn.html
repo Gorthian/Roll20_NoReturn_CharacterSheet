@@ -1960,9 +1960,9 @@ skilllist.forEach(skills => {
             let summeAttribut = 0;
             let summe = 0;
             let skillNotiz = values[skill+"_mod"];
-            let attributWert = parseInt(values[attribut])|0;
-            let attributMod1 = parseInt(values[attribut+"-mod1"])|0;
-            let attributMod2 = parseInt(values[attribut+"-mod2"])|0;
+            let attributWert = parseInt(values[attribut]);
+            let attributMod1 = parseInt(values[attribut+"-mod1"]);
+            let attributMod2 = parseInt(values[attribut+"-mod2"]);
     
             summeSkill = parseInt(values[skill])|0;
             summeAttribut = attributWert + attributMod1 + attributMod2;
@@ -1981,8 +1981,8 @@ attributeslist.forEach(attribut => {
         getAttrs([attribut, attribut+"-mod1", attribut+"-mod2"], function(values) {
             let summe = 0;
             let wert = parseInt(values[attribut])|0;
-            let mod1 = parseInt(values[attribut+"-mod1"])|0;
-            let mod2 = parseInt(values[attribut+"-mod2"])|0;
+            let mod1 = parseInt(values[attribut+"-mod1"]);
+            let mod2 = parseInt(values[attribut+"-mod2"]);
             
             summe = wert + mod1 + mod2;            
             setDicebot(getTranslationByKey("attributsprobe"),getTranslationByKey(attribut),summe," ");
@@ -2059,13 +2059,13 @@ on("clicked:infektionsresistenz",function(){
 
 on("clicked:wirf-probe",function(){
     getAttrs(["character_name","probe_summe_wuerfel","probe_standard_wuerfel","probe_original_standard_wuerfel","probe_hazard_wuerfel","probe_original_hazard_wuerfel","probe_bonus_wuerfel","probe_bonus","probe_skill","probe_attribut"], function(values) {
-        let summe = parseInt(values["probe_summe_wuerfel"])|0;
-        let standard = parseInt(values["probe_standard_wuerfel"])|0;
-        let standard_orig = parseInt(values["probe_original_standard_wuerfel"])|0;
-        let hazard = parseInt(values["probe_hazard_wuerfel"])|1;
-        let hazard_orig = parseInt(values["probe_original_hazard_wuerfel"])|1;
-        let bonuswuerfel = parseInt(values["probe_bonus_wuerfel"])|0;
-        let bonus = parseInt(values["probe_bonus"])|0;
+        let summe = parseInt(values["probe_summe_wuerfel"]);
+        let standard = parseInt(values["probe_standard_wuerfel"]);
+        let standard_orig = parseInt(values["probe_original_standard_wuerfel"]);
+        let hazard = parseInt(values["probe_hazard_wuerfel"]);
+        let hazard_orig = parseInt(values["probe_original_hazard_wuerfel"]);
+        let bonuswuerfel = parseInt(values["probe_bonus_wuerfel"]);
+        let bonus = parseInt(values["probe_bonus"]);
         let skill = values["probe_skill"];
         let attribut = values["probe_attribut"];
         let charaktername = values["character_name"];
