@@ -87,7 +87,7 @@ const skilllist = [
 /* Hilfsfunktionen */
 
 //Befüllen des Dicebots
-function setDicebot(skill,attribut,summe,skillNotiz) {
+function setDicebot(skill,attribut,summe,skillNotiz,hazard=1,biomechanik=0) {
     if (summe < 1) {summe = 1} // Man hat immer mindestens einen Würfel
 
     setAttrs({
@@ -95,12 +95,13 @@ function setDicebot(skill,attribut,summe,skillNotiz) {
         "probe_attribut"                    : attribut,
         "probe_summe_wuerfel"               : summe,
         "probe_skill_notiz"                 : skillNotiz,
-        "probe_original_hazard_wuerfel"     : 1,
-        "probe_hazard_wuerfel"              : 1,
-        "probe_original_standard_wuerfel"   : summe-1,
-        "probe_standard_wuerfel"            : summe-1,               
+        "probe_original_hazard_wuerfel"     : hazard,
+        "probe_hazard_wuerfel"              : hazard,
+        "probe_original_standard_wuerfel"   : summe-hazard,
+        "probe_standard_wuerfel"            : summe-hazard,               
         "probe_bonus_wuerfel"               : 0,
-        "probe_bonus"                       : 0        
+        "probe_bonus"                       : 0,
+        "probe_biomechanik"                 : biomechanik
     });
 }
 
@@ -111,21 +112,28 @@ skilllist.forEach(skills => {
     let skill = skills[0];
     let attribut = skills[1];
     on(`clicked:probe-${skill}-${attribut}`, function() {        
-        getAttrs([skill, skill+"_mod", attribut, attribut+"-mod1", attribut+"-mod2"], function(values) {
+        getAttrs([skill, skill+"_mod", skill+"_biomechanik", attribut, attribut+"-mod1", attribut+"-mod2"], function(values) {
             let summeSkill = 0;
             let summeAttribut = 0;
             let summe = 0;
+            let hazard = 1;
             let skillNotiz = values[skill+"_mod"];
-            let attributWert = parseInt(values[attribut]);
-            let attributMod1 = parseInt(values[attribut+"-mod1"]);
-            let attributMod2 = parseInt(values[attribut+"-mod2"]);
+            let biomechanik = parseInt(values[skill+"_biomechanik"])|0;
+            let attributWert = parseInt(values[attribut])|0;
+            let attributMod1 = parseInt(values[attribut+"-mod1"])|0;
+            let attributMod2 = parseInt(values[attribut+"-mod2"])|0;            
     
             summeSkill = parseInt(values[skill]);
             summeAttribut = attributWert + attributMod1 + attributMod2;
             summe = summeSkill + summeAttribut;
 
             if (summeSkill==0) {summe = summe -2} //Ist die Fertigkeitsstufe 0, bekommt die Probe einen Malus von 2
-            setDicebot(getTranslationByKey(skill),getTranslationByKey(attribut),summe,skillNotiz);
+
+            if(biomechanik==1) { //Hat die Fertigkeit Biomechanik werden alle Würfel zu Hazard-Di
+                hazard = summe;
+            }
+
+            setDicebot(getTranslationByKey(skill),getTranslationByKey(attribut),summe,skillNotiz,hazard,biomechanik);
         });
     });
 });
@@ -137,10 +145,12 @@ attributeslist.forEach(attribut => {
         getAttrs([attribut, attribut+"-mod1", attribut+"-mod2"], function(values) {
             let summe = 0;
             let wert = parseInt(values[attribut])|0;
-            let mod1 = parseInt(values[attribut+"-mod1"]);
-            let mod2 = parseInt(values[attribut+"-mod2"]);
+            let mod1 = parseInt(values[attribut+"-mod1"])|0;
+            let mod2 = parseInt(values[attribut+"-mod2"])|0;
+            console.log(getTranslationByKey("attributsprobe") + ":" + wert + "/" + mod1 + "/" + mod2);
             
-            summe = wert + mod1 + mod2;            
+            summe = wert + mod1 + mod2;
+            console.log("Summe :" + summe);
             setDicebot(getTranslationByKey("attributsprobe"),getTranslationByKey(attribut),summe," ");
         });
     });
