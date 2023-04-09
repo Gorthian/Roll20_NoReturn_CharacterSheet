@@ -1,6 +1,6 @@
 //-
     CREATED by          Gorthian
-    Letzte Änderung		2023-04-02
+    Letzte Änderung		2023-04-09
 
 //
     ********************************
@@ -22,7 +22,7 @@ rolltemplate(class="sheet-rolltemplate-trefferzone")
             span {{zone}}            
         img(src="https://gorthian.de/roll20/noreturn/trefferzonen_300px.png")
 
-//- Offene Probe auf Fertigkeiten
+//- Offene Probe auf Fertigkeiten und Attribute
 rolltemplate(class="sheet-rolltemplate-probe_offen")
     div(class="sheet-template-container" role="section")
         div(class="sheet-template-header") {{charaktername}}
@@ -31,6 +31,10 @@ rolltemplate(class="sheet-rolltemplate-probe_offen")
         div(class="sheet-template-header")
             span(data-i18n="modifiziert")
         | {{/modifiziert}}
+        | {{#biomechanik}}
+        div(class="sheet-template-header")
+            span(data-i18n="biomechanik")
+        | {{/biomechanik}}
         hr
         div(class="sheet-template-row") 
             span(data-i18n="hazard-di")

@@ -224,7 +224,7 @@ on("clicked:infektionsresistenz",function(){
 });
 
 on("clicked:wirf-probe",function(){
-    getAttrs(["character_name","probe_summe_wuerfel","probe_standard_wuerfel","probe_original_standard_wuerfel","probe_hazard_wuerfel","probe_original_hazard_wuerfel","probe_bonus_wuerfel","probe_bonus","probe_skill","probe_attribut"], function(values) {
+    getAttrs(["character_name","probe_summe_wuerfel","probe_standard_wuerfel","probe_original_standard_wuerfel","probe_hazard_wuerfel","probe_original_hazard_wuerfel","probe_bonus_wuerfel","probe_bonus","probe_skill","probe_attribut","probe_biomechanik"], function(values) {
         let summe = parseInt(values["probe_summe_wuerfel"]);
         let standard = parseInt(values["probe_standard_wuerfel"]);
         let standard_orig = parseInt(values["probe_original_standard_wuerfel"]);
@@ -237,6 +237,8 @@ on("clicked:wirf-probe",function(){
         let charaktername = values["character_name"];
         let roll = "";
         let modifiziert = "";
+        let biomechanik = parseInt(values["probe_biomechanik"]);
+        if (biomechanik==0) {biomechanik=""};
 
         if(standard_orig != standard || hazard_orig != hazard) {modifiziert=1;}
         if(skill == "Undefined") {skill="";}
@@ -252,6 +254,7 @@ on("clicked:wirf-probe",function(){
         roll = roll + "{{bonus=[["+bonus+"]]}}"; //Bonus abfragen
         roll = roll + "{{summe=[["+summe+"]]}}"; //Platzhalter für die Summe
         roll = roll + "{{modifiziert="+modifiziert+"}}"; //Schalter um modifizierte Würfe anzuzeigen
+        roll = roll + "{{biomechanik="+biomechanik+"}}"; //Schalter um Biomechanikürfe anzuzeigen
 
         startRoll(roll, (results) => {
             const hazard = results.results.hazard.result;                
