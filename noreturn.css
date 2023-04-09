@@ -550,7 +550,6 @@ div.sheet-noreturn button.sheet-button-transparent {
 div.sheet-noreturn button.sheet-button-d6 {
 	position			: relative;
 	left				: -9px;
-	top					: 1px;
 	width				: 2em;
 	height				: 2em;
 	border				: none;
