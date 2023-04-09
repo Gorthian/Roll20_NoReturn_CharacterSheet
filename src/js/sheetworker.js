@@ -177,10 +177,11 @@ on("clicked:repeating_besondere-fertigkeiten:probe", function(eventInfo) {
     });
 });
 
+// Probe auf Infektionsresistenz
 on("clicked:infektionsresistenz",function(){
     getAttrs(["character_name","infektionsresistenz_wuerfel","infektionsresistenz_bonus"], function(values) {
-        let wuerfel = parseInt(values["infektionsresistenz_wuerfel"])|1;
-        let bonus = parseInt(values["infektionsresistenz_bonus"])|0;
+        let wuerfel = parseInt(values["infektionsresistenz_wuerfel"]);
+        let bonus = parseInt(values["infektionsresistenz_bonus"]);
         let charaktername = values["character_name"];
         let roll = ""
 
