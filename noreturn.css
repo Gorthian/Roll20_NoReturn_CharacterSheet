@@ -247,10 +247,15 @@ div.sheet-noreturn div.sheet-charaktermerkmale-zeile input[type="text"] {
 }
 
 div.sheet-noreturn div.sheet-besondere-fertigkeiten-zeile input[type="number"],
-div.sheet-noreturn div.sheet-style-skills-zeile input[type="number"],
 div.sheet-noreturn div.sheet-charaktermerkmale-zeile input[type="number"] {
 	width					: 2.5em;
 	top						: 0em;
+}
+
+div.sheet-noreturn textarea.sheet-style-skills {
+	font-size				: var(--font-middle-size);
+	width					: 90%;
+	height					: calc(6*var(--font-middle-size));
 }
 
 div.sheet-noreturn div.sheet-besondere-fertigkeiten-zeile select {
