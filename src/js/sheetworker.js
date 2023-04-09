@@ -1,6 +1,6 @@
 /*
     CREATED by          Gorthian
-    Letzte Änderung		2023-04-02
+    Letzte Änderung		2023-04-09
 */
 
 
@@ -34,8 +34,8 @@ const skilllist = [
     ['chemie','wissen'],
     ['computer','wissen'],
     ['dressieren','charisma'],
-    ['einschuechtern','charisma'],
-    ['einschuechtern','staerke'],
+    ['einschuechtern_ch','charisma'],
+    ['einschuechtern_st','staerke'],
     ['elektronik','handwerk'],
     ['feuerwaffenbau','handwerk'],
     ['fluggeraete','geschick'],

@@ -2,7 +2,7 @@
 <!--
 CREATED by          Gorthian
 Version				CF Release
-Letzte Änderung		2023-04-02
+Letzte Änderung		2023-04-09
 GitHub				https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet
 Wiki				https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/wiki
 Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
@@ -683,27 +683,27 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
                 <div class="sheet-fertigkeiten-zeile">
                   <div class="sheet-tooltip">
-                    <button class="sheet-button-transparent" type="action" name="act_probe-einschuechtern-charisma"><span data-i18n="einschuechtern"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe"></span>
+                    <button class="sheet-button-transparent" type="action" name="act_probe-einschuechtern_ch-charisma"><span data-i18n="einschuechtern_ch"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe"></span>
                   </div>
                   <div class="sheet-tooltip"><span data-i18n="charisma_kurz"></span><span class="sheet-tooltiptext"><span name="attr_charisma"></span></span></div>
                   <div>
-                    <input type="number" name="attr_einschuechtern"/>
+                    <input type="number" name="attr_einschuechtern_ch"/>
                   </div>
                   <div>
-                    <input type="text" name="attr_einschuechtern_mod"/>
+                    <input type="text" name="attr_einschuechtern_ch_mod"/>
                   </div>
                 </div>
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
                 <div class="sheet-fertigkeiten-zeile">
                   <div class="sheet-tooltip">
-                    <button class="sheet-button-transparent" type="action" name="act_probe-einschuechtern-staerke"><span data-i18n="einschuechtern"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe"></span>
+                    <button class="sheet-button-transparent" type="action" name="act_probe-einschuechtern_st-staerke"><span data-i18n="einschuechtern_st"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe"></span>
                   </div>
                   <div class="sheet-tooltip"><span data-i18n="staerke_kurz"></span><span class="sheet-tooltiptext"><span name="attr_staerke"></span></span></div>
                   <div>
-                    <input type="number" name="attr_einschuechtern"/>
+                    <input type="number" name="attr_einschuechtern_st"/>
                   </div>
                   <div>
-                    <input type="text" name="attr_einschuechtern_mod"/>
+                    <input type="text" name="attr_einschuechtern_st_mod"/>
                   </div>
                 </div>
                 <!-- MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile-->
@@ -1844,7 +1844,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
 <!-- SHEET WORKERS-->
 <script type="text/worker">/*
     CREATED by          Gorthian
-    Letzte Änderung		2023-04-02
+    Letzte Änderung		2023-04-09
 */
 
 
@@ -1878,8 +1878,8 @@ const skilllist = [
     ['chemie','wissen'],
     ['computer','wissen'],
     ['dressieren','charisma'],
-    ['einschuechtern','charisma'],
-    ['einschuechtern','staerke'],
+    ['einschuechtern_ch','charisma'],
+    ['einschuechtern_st','staerke'],
     ['elektronik','handwerk'],
     ['feuerwaffenbau','handwerk'],
     ['fluggeraete','geschick'],
