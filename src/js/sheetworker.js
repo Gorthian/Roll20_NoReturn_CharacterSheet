@@ -1,6 +1,6 @@
 /*
     CREATED by          Gorthian
-    Letzte Änderung		2023-04-09
+    Letzte Änderung		2023-04-23
 */
 
 
@@ -244,6 +244,19 @@ on("clicked:wirf-probe",function(){
         let modifiziert = "";
         let biomechanik = parseInt(values["probe_biomechanik"]);
         if (biomechanik==0) {biomechanik=""};
+
+        //Bei negativen Bonuswürfeln die Anzahl an Würfeln reduzieren
+        if (bonuswuerfel <0 )
+        {
+            if(biomechanik==1) { 
+                //Bei einem Biomechanik-Wurf die Hazard-Würfel reduzieren
+                hazard = hazard + bonuswuerfel;
+                if (hazard<1) {hazard=1} //Mindestens ein Hazard-würfel bleibt immer übrig
+            } else {
+                //Bei einem normalen Wurf die Standard-Würfel reduzieren
+                standard = standard + bonuswuerfel;
+            }
+        }
 
         if(standard_orig != standard || hazard_orig != hazard) {modifiziert=1;}
         if(skill == "Undefined") {skill="";}
