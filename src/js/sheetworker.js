@@ -1,6 +1,6 @@
 /*
     CREATED by          Gorthian
-    Letzte Änderung		2023-04-23
+    Letzte Änderung		2023-04-25
 */
 
 
@@ -134,8 +134,8 @@ skilllist.forEach(skills => {
 
             if (summeSkill==0) {summe = summe -2} //Ist die Fertigkeitsstufe 0, bekommt die Probe einen Malus von 2
 
-            if(biomechanik==1) { //Hat die Fertigkeit Biomechanik werden alle Würfel zu Hazard-Di
-                hazard = summe;
+            if(biomechanik==1) { //Hat die Fertigkeit Biomechanik werden alle Fertigkeits-Würfel zu Hazard-Di
+                hazard = 1+summeSkill;
             }
 
             setDicebot(getTranslationByKey(skill),getTranslationByKey(attribut),summe,skillNotiz,hazard,biomechanik);
