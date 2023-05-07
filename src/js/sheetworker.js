@@ -1,6 +1,6 @@
 /*
     CREATED by          Gorthian
-    Letzte Änderung		2023-04-25
+    Letzte Änderung		2023-05-07
 */
 
 
@@ -246,11 +246,16 @@ on("clicked:wirf-probe",function(){
         if (biomechanik==0) {biomechanik=""};
 
         //Bei negativen Bonuswürfeln die Anzahl an Würfeln reduzieren
-        if (bonuswuerfel <0 )
+        if (bonuswuerfel <0)
         {
             if(biomechanik==1) { 
-                //Bei einem Biomechanik-Wurf die Hazard-Würfel reduzieren
-                hazard = hazard + bonuswuerfel;
+                //Bei einem Biomechanik-Wurf zunächst die Standard-Würfel und dann die Hazard-Würfel reduzieren
+                standard = standard + bonuswuerfel;
+                if(standard <0)
+                {
+                    hazard = hazard + standard;
+                    standard = 0;
+                }                
                 if (hazard<1) {hazard=1} //Mindestens ein Hazard-würfel bleibt immer übrig
             } else {
                 //Bei einem normalen Wurf die Standard-Würfel reduzieren
