@@ -1,7 +1,7 @@
 /*
 	CREATED by 			Gorthian
 	Version				1.0
-	Letzte Änderung		2023-04-09
+	Letzte Änderung		2023-05-07
 	
 	GitHub				https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet
 	Wiki				https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/wiki
@@ -536,6 +536,11 @@ button.sheet-toggle-button {
 }
 
 /* Buttons */
+div.sheet-noreturn button,
+div.sheet-noreturn .btn {
+	position			: relative;
+	z-index				: 100;
+}
 
 div.sheet-noreturn button.sheet-button-transparent {
 	font-size			: unset;
