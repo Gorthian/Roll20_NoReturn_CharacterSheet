@@ -539,7 +539,7 @@ button.sheet-toggle-button {
 div.sheet-noreturn button,
 div.sheet-noreturn .btn {
 	position			: relative;
-	z-index				: 100;
+	z-index				: 50;
 }
 
 div.sheet-noreturn button.sheet-button-transparent {
