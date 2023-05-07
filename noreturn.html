@@ -2457,19 +2457,14 @@ on("clicked:wirf-probe",function(){
         //Bei negativen Bonuswürfeln die Anzahl an Würfeln reduzieren
         if (bonuswuerfel <0)
         {
-            if(biomechanik==1) { 
-                //Bei einem Biomechanik-Wurf zunächst die Standard-Würfel und dann die Hazard-Würfel reduzieren
-                standard = standard + bonuswuerfel;
-                if(standard <0)
-                {
-                    hazard = hazard + standard;
-                    standard = 0;
-                }                
-                if (hazard<1) {hazard=1} //Mindestens ein Hazard-würfel bleibt immer übrig
-            } else {
-                //Bei einem normalen Wurf die Standard-Würfel reduzieren
-                standard = standard + bonuswuerfel;
-            }
+            //Bei negativen Bonuswürfeln zunächst die Standard-Würfel und dann die Hazard-Würfel reduzieren
+            standard = standard + bonuswuerfel;
+            if(standard <0)
+            {
+                hazard = hazard + standard;
+                standard = 0;
+            }                
+            if (hazard<1) {hazard=1} //Mindestens ein Hazard-würfel bleibt immer übrig            
         }
 
         if(standard_orig != standard || hazard_orig != hazard) {modifiziert=1;}
@@ -2489,12 +2484,19 @@ on("clicked:wirf-probe",function(){
         roll = roll + "{{biomechanik="+biomechanik+"}}"; //Schalter um Biomechanikürfe anzuzeigen
 
         startRoll(roll, (results) => {
-            const hazard = results.results.hazard.result;                
-            const wurf = results.results.wurf.result;  
-            const bonuswurf = results.results.bonuswurf.result;              
-            const bonus = results.results.bonus.result;
+            const hazard = parseInt(results.results.hazard.result);                
+            const wurf = parseInt(results.results.wurf.result);  
+            const bonuswurf = parseInt(results.results.bonuswurf.result);              
+            const bonus = parseInt(results.results.bonus.result);
+            let summe = 0;
 
-            let summe = hazard+wurf+bonuswurf+bonus;
+            console.log(bonuswurf);
+            if(bonuswurf<1)
+            {
+                summe = hazard+wurf+bonus;
+            } else {
+                summe = hazard+wurf+bonuswurf+bonus;
+            }
 
             let hazard_wuerfel = "";
             for (const n of results.results.hazard.dice) {
