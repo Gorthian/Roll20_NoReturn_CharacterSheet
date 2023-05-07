@@ -2185,6 +2185,8 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
     <div class="sheet-template-row"><span class="sheet-template-zahlen sheet-template-regular-di">{{computed::bonuswurf}}</span><span class="sheet-template-zahlen">= {{bonuswurf}}</span></div>{{/rollGreater() bonuswurf 0}}
     {{#rollGreater() bonus 0}}
     <div class="sheet-template-row"><span data-i18n="bonus"></span><span class="sheet-template-zahlen">+ {{bonus}}</span></div>{{/rollGreater() bonus 0}}
+    {{#rollLess() bonus 0}}
+    <div class="sheet-template-row"><span data-i18n="bonus"></span><span class="sheet-template-zahlen">{{bonus}}</span></div>{{/rollLess() bonus 0}}
     <hr/>
     <div class="sheet-template-row"><span data-i18n="summe"></span><span class="sheet-template-zahlen">= {{computed::summe}}</span></div>
   </div>
@@ -2444,8 +2446,8 @@ on("clicked:wirf-probe",function(){
         let standard_orig = parseInt(values["probe_original_standard_wuerfel"]);
         let hazard = parseInt(values["probe_hazard_wuerfel"]);
         let hazard_orig = parseInt(values["probe_original_hazard_wuerfel"]);
-        let bonuswuerfel = parseInt(values["probe_bonus_wuerfel"]);
-        let bonus = parseInt(values["probe_bonus"]);
+        let bonuswuerfel = parseInt(values["probe_bonus_wuerfel"]||0);
+        let bonus = parseInt(values["probe_bonus"]||0);
         let skill = values["probe_skill"];
         let attribut = values["probe_attribut"];
         let charaktername = values["character_name"];

@@ -235,8 +235,8 @@ on("clicked:wirf-probe",function(){
         let standard_orig = parseInt(values["probe_original_standard_wuerfel"]);
         let hazard = parseInt(values["probe_hazard_wuerfel"]);
         let hazard_orig = parseInt(values["probe_original_hazard_wuerfel"]);
-        let bonuswuerfel = parseInt(values["probe_bonus_wuerfel"]);
-        let bonus = parseInt(values["probe_bonus"]);
+        let bonuswuerfel = parseInt(values["probe_bonus_wuerfel"]||0);
+        let bonus = parseInt(values["probe_bonus"]||0);
         let skill = values["probe_skill"];
         let attribut = values["probe_attribut"];
         let charaktername = values["character_name"];
