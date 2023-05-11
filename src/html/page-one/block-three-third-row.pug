@@ -54,13 +54,13 @@ div
             div(class="sheet-kopfzeile")
                 span(data-i18n="stufe")
         fieldset(class="repeating_style-skills")
-            details 
-                summary 
-                    div(class="sheet-style-skills-zeile")
-                        div
-                            input(type="text" name="attr_style-skill-name")
-                        div
-                            input(type="number" name="attr_style-skill-stufe")
+            div(class="sheet-style-skills-zeile")
+                div
+                    input(type="text" name="attr_style-skill-name")
+                div
+                    input(type="number" name="attr_style-skill-stufe")
+            details     
+                summary &nbsp;
                 textarea(name="attr_style-skill-info" class="sheet-style-skills")
     
     div(class="sheet-box")
@@ -68,12 +68,12 @@ div
         div(class="sheet-charaktermerkmale-zeile")
             div(class="sheet-kopfzeile")
                 span(data-i18n="charaktermerkmal")
-        fieldset(class="repeating_charaktermerkmale")
+        fieldset(class="repeating_charaktermerkmale")            
+            div(class="sheet-charaktermerkmale-zeile")
+                div
+                    input(type="text" name="attr_charaktermerkmal-name")
             details
-                summary 
-                    div(class="sheet-charaktermerkmale-zeile")
-                        div
-                            input(type="text" name="attr_charaktermerkmal-name")
+                summary &nbsp;
                 textarea(name="attr_charaktermerkmal-info" class="sheet-style-skills")
             
 

@@ -1975,17 +1975,16 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
               <div class="sheet-kopfzeile"><span data-i18n="stufe"></span></div>
             </div>
             <fieldset class="repeating_style-skills">
-              <details> 
-                <summary> 
-                  <div class="sheet-style-skills-zeile">
-                    <div>
-                      <input type="text" name="attr_style-skill-name"/>
-                    </div>
-                    <div>
-                      <input type="number" name="attr_style-skill-stufe"/>
-                    </div>
-                  </div>
-                </summary>
+              <div class="sheet-style-skills-zeile">
+                <div>
+                  <input type="text" name="attr_style-skill-name"/>
+                </div>
+                <div>
+                  <input type="number" name="attr_style-skill-stufe"/>
+                </div>
+              </div>
+              <details>    
+                <summary>&nbsp;</summary>
                 <textarea class="sheet-style-skills" name="attr_style-skill-info"></textarea>
               </details>
             </fieldset>
@@ -1995,15 +1994,14 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
             <div class="sheet-charaktermerkmale-zeile">
               <div class="sheet-kopfzeile"><span data-i18n="charaktermerkmal"></span></div>
             </div>
-            <fieldset class="repeating_charaktermerkmale">
+            <fieldset class="repeating_charaktermerkmale">           
+              <div class="sheet-charaktermerkmale-zeile">
+                <div>
+                  <input type="text" name="attr_charaktermerkmal-name"/>
+                </div>
+              </div>
               <details>
-                <summary> 
-                  <div class="sheet-charaktermerkmale-zeile">
-                    <div>
-                      <input type="text" name="attr_charaktermerkmal-name"/>
-                    </div>
-                  </div>
-                </summary>
+                <summary>&nbsp;</summary>
                 <textarea class="sheet-style-skills" name="attr_charaktermerkmal-info"></textarea>
               </details>
             </fieldset>
