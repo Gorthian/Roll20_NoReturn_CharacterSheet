@@ -1994,17 +1994,18 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
             <h1 data-i18n="charaktermerkmale"></h1>
             <div class="sheet-charaktermerkmale-zeile">
               <div class="sheet-kopfzeile"><span data-i18n="charaktermerkmal"></span></div>
-              <div class="sheet-kopfzeile"><span data-i18n="jp-cp"></span></div>
             </div>
             <fieldset class="repeating_charaktermerkmale">
-              <div class="sheet-charaktermerkmale-zeile">
-                <div>
-                  <input type="text" name="attr_charaktermerkmal-name"/>
-                </div>
-                <div>
-                  <input type="number" name="attr_charaktermerkmal-stufe"/>
-                </div>
-              </div>
+              <details>
+                <summary> 
+                  <div class="sheet-charaktermerkmale-zeile">
+                    <div>
+                      <input type="text" name="attr_charaktermerkmal-name"/>
+                    </div>
+                  </div>
+                </summary>
+                <textarea class="sheet-style-skills" name="attr_charaktermerkmal-info"></textarea>
+              </details>
             </fieldset>
           </div>
         </div>

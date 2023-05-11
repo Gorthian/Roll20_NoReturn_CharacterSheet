@@ -1,6 +1,6 @@
 //-
     CREATED by          Gorthian
-    Letzte Änderung		2023-04-09
+    Letzte Änderung		2023-05-11
 
 //
     ********************************
@@ -68,15 +68,14 @@ div
         div(class="sheet-charaktermerkmale-zeile")
             div(class="sheet-kopfzeile")
                 span(data-i18n="charaktermerkmal")
-            div(class="sheet-kopfzeile")
-                span(data-i18n="jp-cp")
         fieldset(class="repeating_charaktermerkmale")
-            div(class="sheet-charaktermerkmale-zeile")
-                div
-                    input(type="text" name="attr_charaktermerkmal-name")
-                div
-                    input(type="number" name="attr_charaktermerkmal-stufe")
-
+            details
+                summary 
+                    div(class="sheet-charaktermerkmale-zeile")
+                        div
+                            input(type="text" name="attr_charaktermerkmal-name")
+                textarea(name="attr_charaktermerkmal-info" class="sheet-style-skills")
+            
 
 //
     ********************************
