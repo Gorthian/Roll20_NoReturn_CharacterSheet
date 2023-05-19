@@ -418,13 +418,12 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                         <input type="number" name="attr_trefferpunkte" value="0"/>
                       </div>
                     </div>
-                    <!-- MIXIN : src/html/page-one/block-two.pug : sonderattributszeile-->
-                    <div class="sheet-sonderattribut-zeile">
-                      <div class="sheet-sonderattribut-titel"><span data-i18n="dmg_schwellwert"></span></div>
-                      <div>
-                        <input type="number" name="attr_dmg_schwellwert" value="0"/>
-                      </div>
-                    </div>
+              <div class="sheet-sonderattribut-zeile">
+                <div class="sheet-sonderattribut-titel"><span data-i18n="dmg_schwellwert"></span></div>
+                <div>
+                  <input type="number" name="attr_dmg_schwellwert" readonly="readonly"/>
+                </div>
+              </div>
             </div>
             <div> 
                     <!-- MIXIN : src/html/page-one/block-two.pug : sonderattributskopfzeile-->
@@ -2317,6 +2316,19 @@ function setTrefferpunkte() {
     });
 }
 
+// DMG Schwellwert setzen
+function setDMGSchwellwert() {
+    getAttrs(["trefferpunkte","schmerztoleranz"], function(values) {
+        let trefferpunkte = parseInt(values["trefferpunkte"]||30);
+        let schmerztoleranz = parseInt(values["schmerztoleranz"]||3);
+        let DMGSchwellwert = (trefferpunkte/10)*schmerztoleranz;
+
+        setAttrs({
+            "dmg_schwellwert"           : DMGSchwellwert
+        });
+    });
+}
+
 /* Rolltemplates */
 
 // Skillproben
@@ -2581,7 +2593,12 @@ on("sheet:opened", function() {
 });
 
 on("change:trefferpunkte", function() {
-    setTrefferpunkte();    
+    setTrefferpunkte();
+    setDMGSchwellwert();
+});
+
+on("change:schmerztoleranz", function() {
+    setDMGSchwellwert();
 });
 </script>
 <!--

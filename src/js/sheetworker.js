@@ -127,6 +127,19 @@ function setTrefferpunkte() {
     });
 }
 
+// DMG Schwellwert setzen
+function setDMGSchwellwert() {
+    getAttrs(["trefferpunkte","schmerztoleranz"], function(values) {
+        let trefferpunkte = parseInt(values["trefferpunkte"]||30);
+        let schmerztoleranz = parseInt(values["schmerztoleranz"]||3);
+        let DMGSchwellwert = (trefferpunkte/10)*schmerztoleranz;
+
+        setAttrs({
+            "dmg_schwellwert"           : DMGSchwellwert
+        });
+    });
+}
+
 /* Rolltemplates */
 
 // Skillproben
@@ -391,5 +404,10 @@ on("sheet:opened", function() {
 });
 
 on("change:trefferpunkte", function() {
-    setTrefferpunkte();    
+    setTrefferpunkte();
+    setDMGSchwellwert();
+});
+
+on("change:schmerztoleranz", function() {
+    setDMGSchwellwert();
 });

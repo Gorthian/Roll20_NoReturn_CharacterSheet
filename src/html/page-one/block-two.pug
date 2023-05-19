@@ -76,7 +76,11 @@ div
             div
                 +sonderattributskopfzeile("wert")
                 +sonderattributszeile("trefferpunkte")
-                +sonderattributszeile("dmg_schwellwert")
+                div(class="sheet-sonderattribut-zeile")
+                    div(class="sheet-sonderattribut-titel")
+                        span(data-i18n="dmg_schwellwert")
+                    div
+                        input(type="number" name="attr_dmg_schwellwert" readonly="readonly")
             div 
                 +sonderattributskopfzeile("stufe")
                 +sonderattributszeile("schmerztoleranz")
