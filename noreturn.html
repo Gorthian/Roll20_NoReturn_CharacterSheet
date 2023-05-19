@@ -2566,7 +2566,16 @@ on("change:probe_hazard_wuerfel", function(){
 
 on("sheet:opened", function() {
     //Standardwerte setzen
-    setTrefferpunkte();    
+    setTrefferpunkte();
+    getAttrs(["organismus","psyche"], function(values) {
+        let organismus = parseInt(values["organismus"]||100);
+        let psyche = parseInt(values["psyche"]||100);
+
+        setAttrs({
+            "organismus"    : organismus,
+            "psyche"        : psyche
+        });
+    });
 });
 
 on("change:trefferpunkte", function() {
