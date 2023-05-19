@@ -33,7 +33,7 @@
 div.sheet-noreturn {
 	--font-standard			: "eras medium itc", "Roboto", sans-serif, monospace;
 	--font-highlight		: "downcome", "Rubik Vinyl", sans-serif, monospace;
-	--font-h1-size			: 1.4em;
+	--font-h1-size			: 1.8em;
 	--font-h2-size			: 1em;
 	--font-big-size			: 1.2em;
 	--font-standard-size	: 1em;
@@ -168,7 +168,7 @@ div.sheet-noreturn .sheet-2cols-50-50 {
 div.sheet-noreturn h1, div.sheet-noreturn h2 {    
     width                   : 100%;
     position                : relative;
-    top                     : -0.7em;
+    top                     : -0.5em;
 }
 
 div.sheet-noreturn div.sheet-box {
