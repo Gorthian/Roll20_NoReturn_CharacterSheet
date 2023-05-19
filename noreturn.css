@@ -447,7 +447,7 @@ div.sheet-noreturn details summary:after {
 	content					: url("https://gorthian.de/roll20/noreturn/bio_hazard_red_20px.png");
 	color					: black;
 	position				: absolute;
-	right					: 1.5em;
+	left					: 17.8em;
 	top						: -0.2em;	
 }
 

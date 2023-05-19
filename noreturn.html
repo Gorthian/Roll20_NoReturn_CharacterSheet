@@ -234,7 +234,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
       ********************************
       
       -->
-      <div class="sheet-2cols">
+      <div>
         <div class="sheet-box" role="section">
           <h1 data-i18n="attribute"></h1>
           <div class="sheet-attribute">
@@ -474,58 +474,6 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
               <input type="number" name="attr_regeneration-geschwindigkeit"/><span>&nbsp; &nbsp;</span><span data-i18n="pool"></span>
               <input type="number" name="attr_regeneration-pool"/>
             </div>
-          </div>
-        </div>
-        <div class="sheet-trefferzonen" role="section">
-          <h1 data-i18n="körperzonen"></h1>
-          <div class="sheet-trefferzonen-bild"><img src="https://gorthian.de/roll20/noreturn/trefferzonen_300px.png"/>
-                  <!-- MIXIN : src/html/page-one/block-two.pug : schadenszaehler-->
-                  <div class="sheet-tooltip sheet-schadenszaehler sheet-trefferzone-2">
-                    <input type="number" name="attr_schadenszaehler-2" value="0"/><span class="sheet-tooltiptext" data-i18n="tooltip-schadenszaehler"></span>
-                  </div>
-                  <!-- MIXIN : src/html/page-one/block-two.pug : schadenszaehler-->
-                  <div class="sheet-tooltip sheet-schadenszaehler sheet-trefferzone-3">
-                    <input type="number" name="attr_schadenszaehler-3" value="0"/><span class="sheet-tooltiptext" data-i18n="tooltip-schadenszaehler"></span>
-                  </div>
-                  <!-- MIXIN : src/html/page-one/block-two.pug : schadenszaehler-->
-                  <div class="sheet-tooltip sheet-schadenszaehler sheet-trefferzone-4">
-                    <input type="number" name="attr_schadenszaehler-4" value="0"/><span class="sheet-tooltiptext" data-i18n="tooltip-schadenszaehler"></span>
-                  </div>
-                  <!-- MIXIN : src/html/page-one/block-two.pug : schadenszaehler-->
-                  <div class="sheet-tooltip sheet-schadenszaehler sheet-trefferzone-5">
-                    <input type="number" name="attr_schadenszaehler-5" value="0"/><span class="sheet-tooltiptext" data-i18n="tooltip-schadenszaehler"></span>
-                  </div>
-                  <!-- MIXIN : src/html/page-one/block-two.pug : schadenszaehler-->
-                  <div class="sheet-tooltip sheet-schadenszaehler sheet-trefferzone-6">
-                    <input type="number" name="attr_schadenszaehler-6" value="0"/><span class="sheet-tooltiptext" data-i18n="tooltip-schadenszaehler"></span>
-                  </div>
-                  <!-- MIXIN : src/html/page-one/block-two.pug : schadenszaehler-->
-                  <div class="sheet-tooltip sheet-schadenszaehler sheet-trefferzone-7">
-                    <input type="number" name="attr_schadenszaehler-7" value="0"/><span class="sheet-tooltiptext" data-i18n="tooltip-schadenszaehler"></span>
-                  </div>
-                  <!-- MIXIN : src/html/page-one/block-two.pug : schadenszaehler-->
-                  <div class="sheet-tooltip sheet-schadenszaehler sheet-trefferzone-8">
-                    <input type="number" name="attr_schadenszaehler-8" value="0"/><span class="sheet-tooltiptext" data-i18n="tooltip-schadenszaehler"></span>
-                  </div>
-                  <!-- MIXIN : src/html/page-one/block-two.pug : schadenszaehler-->
-                  <div class="sheet-tooltip sheet-schadenszaehler sheet-trefferzone-9">
-                    <input type="number" name="attr_schadenszaehler-9" value="0"/><span class="sheet-tooltiptext" data-i18n="tooltip-schadenszaehler"></span>
-                  </div>
-                  <!-- MIXIN : src/html/page-one/block-two.pug : schadenszaehler-->
-                  <div class="sheet-tooltip sheet-schadenszaehler sheet-trefferzone-10">
-                    <input type="number" name="attr_schadenszaehler-10" value="0"/><span class="sheet-tooltiptext" data-i18n="tooltip-schadenszaehler"></span>
-                  </div>
-                  <!-- MIXIN : src/html/page-one/block-two.pug : schadenszaehler-->
-                  <div class="sheet-tooltip sheet-schadenszaehler sheet-trefferzone-11">
-                    <input type="number" name="attr_schadenszaehler-11" value="0"/><span class="sheet-tooltiptext" data-i18n="tooltip-schadenszaehler"></span>
-                  </div>
-                  <!-- MIXIN : src/html/page-one/block-two.pug : schadenszaehler-->
-                  <div class="sheet-tooltip sheet-schadenszaehler sheet-trefferzone-12">
-                    <input type="number" name="attr_schadenszaehler-12" value="0"/><span class="sheet-tooltiptext" data-i18n="tooltip-schadenszaehler"></span>
-                  </div>
-          </div>
-          <div class="sheet-box" style="text-align:center;width:100%;">
-            <button class="sheet-button-d6" type="action" name="act_trefferzone"></button><span data-i18n="trefferzone-bestimmen"></span>
           </div>
         </div>
       </div>
@@ -1733,6 +1681,60 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
         
         -->
         <div>
+          <div role="section">
+            <div class="sheet-trefferzonen" role="section">
+              <h1 data-i18n="körperzonen"></h1>
+              <div class="sheet-trefferzonen-bild"><img src="https://gorthian.de/roll20/noreturn/trefferzonen_300px.png"/>
+                        <!-- MIXIN : src/html/page-one/block-three-third-row.pug : schadenszaehler-->
+                        <div class="sheet-tooltip sheet-schadenszaehler sheet-trefferzone-2">
+                          <input type="number" name="attr_schadenszaehler-2" value="0"/><span class="sheet-tooltiptext" data-i18n="tooltip-schadenszaehler"></span>
+                        </div>
+                        <!-- MIXIN : src/html/page-one/block-three-third-row.pug : schadenszaehler-->
+                        <div class="sheet-tooltip sheet-schadenszaehler sheet-trefferzone-3">
+                          <input type="number" name="attr_schadenszaehler-3" value="0"/><span class="sheet-tooltiptext" data-i18n="tooltip-schadenszaehler"></span>
+                        </div>
+                        <!-- MIXIN : src/html/page-one/block-three-third-row.pug : schadenszaehler-->
+                        <div class="sheet-tooltip sheet-schadenszaehler sheet-trefferzone-4">
+                          <input type="number" name="attr_schadenszaehler-4" value="0"/><span class="sheet-tooltiptext" data-i18n="tooltip-schadenszaehler"></span>
+                        </div>
+                        <!-- MIXIN : src/html/page-one/block-three-third-row.pug : schadenszaehler-->
+                        <div class="sheet-tooltip sheet-schadenszaehler sheet-trefferzone-5">
+                          <input type="number" name="attr_schadenszaehler-5" value="0"/><span class="sheet-tooltiptext" data-i18n="tooltip-schadenszaehler"></span>
+                        </div>
+                        <!-- MIXIN : src/html/page-one/block-three-third-row.pug : schadenszaehler-->
+                        <div class="sheet-tooltip sheet-schadenszaehler sheet-trefferzone-6">
+                          <input type="number" name="attr_schadenszaehler-6" value="0"/><span class="sheet-tooltiptext" data-i18n="tooltip-schadenszaehler"></span>
+                        </div>
+                        <!-- MIXIN : src/html/page-one/block-three-third-row.pug : schadenszaehler-->
+                        <div class="sheet-tooltip sheet-schadenszaehler sheet-trefferzone-7">
+                          <input type="number" name="attr_schadenszaehler-7" value="0"/><span class="sheet-tooltiptext" data-i18n="tooltip-schadenszaehler"></span>
+                        </div>
+                        <!-- MIXIN : src/html/page-one/block-three-third-row.pug : schadenszaehler-->
+                        <div class="sheet-tooltip sheet-schadenszaehler sheet-trefferzone-8">
+                          <input type="number" name="attr_schadenszaehler-8" value="0"/><span class="sheet-tooltiptext" data-i18n="tooltip-schadenszaehler"></span>
+                        </div>
+                        <!-- MIXIN : src/html/page-one/block-three-third-row.pug : schadenszaehler-->
+                        <div class="sheet-tooltip sheet-schadenszaehler sheet-trefferzone-9">
+                          <input type="number" name="attr_schadenszaehler-9" value="0"/><span class="sheet-tooltiptext" data-i18n="tooltip-schadenszaehler"></span>
+                        </div>
+                        <!-- MIXIN : src/html/page-one/block-three-third-row.pug : schadenszaehler-->
+                        <div class="sheet-tooltip sheet-schadenszaehler sheet-trefferzone-10">
+                          <input type="number" name="attr_schadenszaehler-10" value="0"/><span class="sheet-tooltiptext" data-i18n="tooltip-schadenszaehler"></span>
+                        </div>
+                        <!-- MIXIN : src/html/page-one/block-three-third-row.pug : schadenszaehler-->
+                        <div class="sheet-tooltip sheet-schadenszaehler sheet-trefferzone-11">
+                          <input type="number" name="attr_schadenszaehler-11" value="0"/><span class="sheet-tooltiptext" data-i18n="tooltip-schadenszaehler"></span>
+                        </div>
+                        <!-- MIXIN : src/html/page-one/block-three-third-row.pug : schadenszaehler-->
+                        <div class="sheet-tooltip sheet-schadenszaehler sheet-trefferzone-12">
+                          <input type="number" name="attr_schadenszaehler-12" value="0"/><span class="sheet-tooltiptext" data-i18n="tooltip-schadenszaehler"></span>
+                        </div>
+              </div>
+              <div class="sheet-box" style="text-align:center;width:100%;">
+                <button class="sheet-button-d6" type="action" name="act_trefferzone"></button><span data-i18n="trefferzone-bestimmen"></span>
+              </div>
+            </div>
+          </div>
           <div class="sheet-box" role="section">
             <div class="sheet-trefferzonen-liste">
                       <!-- MIXIN : src/html/page-one/block-three-third-row.pug : trefferzone-->

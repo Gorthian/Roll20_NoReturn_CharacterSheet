@@ -1,6 +1,6 @@
 //-
     CREATED by          Gorthian
-    Letzte Änderung		2023-04-23
+    Letzte Änderung		2023-05-19
 
 //
     ********************************
@@ -54,14 +54,8 @@ mixin sonderattributszeile(attribute)
         div
             input(type="number" name="attr_"+attribute value=0)
 
-mixin schadenszaehler(trefferzone)
-    // MIXIN : src/html/page-one/block-two.pug : schadenszaehler
-    div(class="sheet-tooltip sheet-schadenszaehler sheet-trefferzone-"+trefferzone)
-        input(type="number" name="attr_schadenszaehler-"+trefferzone value=0)
-        span(class="sheet-tooltiptext" data-i18n="tooltip-schadenszaehler")
-
 //- SEITENINHALT
-div(class="sheet-2cols")
+div
     div(class="sheet-box" role="section")
         h1(data-i18n="attribute")
         div(class="sheet-attribute")
@@ -99,17 +93,7 @@ div(class="sheet-2cols")
                 input(type="number" name="attr_regeneration-geschwindigkeit")
                 span &nbsp; &nbsp;
                 span(data-i18n="pool")
-                input(type="number" name="attr_regeneration-pool")                    
-    div(class="sheet-trefferzonen" role="section")
-        h1(data-i18n="körperzonen")
-        div(class="sheet-trefferzonen-bild")
-            img(src="https://gorthian.de/roll20/noreturn/trefferzonen_300px.png")
-            - for (var x = 2; x < 13; x++)
-                +schadenszaehler(x)
-        div(class="sheet-box" style="text-align:center;width:100%;")
-            button(type="action" class="sheet-button-d6" name="act_trefferzone")
-            span(data-i18n="trefferzone-bestimmen")
-
+                input(type="number" name="attr_regeneration-pool")
 
 //
     ********************************
