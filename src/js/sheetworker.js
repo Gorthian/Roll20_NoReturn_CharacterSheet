@@ -1,6 +1,6 @@
 /*
     CREATED by          Gorthian
-    Letzte Änderung		2023-05-07
+    Letzte Änderung		2023-05-19
 */
 
 
@@ -102,6 +102,28 @@ function setDicebot(skill,attribut,summe,skillNotiz,hazard=1,biomechanik=0) {
         "probe_bonus_wuerfel"               : 0,
         "probe_bonus"                       : 0,
         "probe_biomechanik"                 : biomechanik
+    });
+}
+
+//Trefferpunkte setzen
+function setTrefferpunkte() {
+    getAttrs(["trefferpunkte"], function(values) {
+        let trefferpunkte = parseInt(values["trefferpunkte"]||30); //Standardwert ist 30
+
+        setAttrs({
+            "trefferpunkte"             : trefferpunkte,
+            "trefferpunkte-zone-2"      : trefferpunkte,
+            "trefferpunkte-zone-3"      : trefferpunkte,
+            "trefferpunkte-zone-4"      : trefferpunkte,
+            "trefferpunkte-zone-5"      : trefferpunkte,
+            "trefferpunkte-zone-6"      : trefferpunkte,
+            "trefferpunkte-zone-7"      : trefferpunkte,
+            "trefferpunkte-zone-8"      : trefferpunkte,
+            "trefferpunkte-zone-9"      : trefferpunkte,
+            "trefferpunkte-zone-10"     : trefferpunkte,
+            "trefferpunkte-zone-11"     : trefferpunkte,
+            "trefferpunkte-zone-12"     : trefferpunkte
+        });
     });
 }
 
@@ -350,4 +372,13 @@ on("change:probe_hazard_wuerfel", function(){
             "probe_hazard_wuerfel"      : hazard
         });
     });
+});
+
+on("sheet:opened", function() {
+    //Standardwerte setzen
+    setTrefferpunkte();    
+});
+
+on("change:trefferpunkte", function() {
+    setTrefferpunkte();    
 });
