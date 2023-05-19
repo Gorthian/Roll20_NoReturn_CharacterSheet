@@ -131,6 +131,11 @@ div.sheet-noreturn {
     background-color		: var(--background-color);	
 }
 
+div.sheet-noreturn img {
+    display					: block;
+	margin					: auto;    
+}
+
 div.sheet-noreturn-body {
     width               	: auto;
 	min-width              	: 800px;
