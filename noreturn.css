@@ -1,7 +1,7 @@
 /*
 	CREATED by 			Gorthian
 	Version				1.0
-	Letzte Änderung		2023-05-11
+	Letzte Änderung		2023-05-19
 	
 	GitHub				https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet
 	Wiki				https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/wiki
@@ -492,6 +492,7 @@ div.sheet-dicebot label
  {
 	font-size				: var(--font-big-size);
 	font-weight				: normal;
+	color					: black;
 	margin					: auto;
 }
 
@@ -671,4 +672,11 @@ div.sheet-noreturn button.sheet-button-d6::before {
 	padding-top			: 2px;
     padding-bottom		: 3px;
     left				: 5px;	
+}
+
+/*****************************************/
+/* Anpassungen speziell für den Darkmode */
+/*****************************************/
+.sheet-darkmode div.sheet-noreturn label {
+	color				: black;
 }
