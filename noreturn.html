@@ -2567,13 +2567,15 @@ on("change:probe_hazard_wuerfel", function(){
 on("sheet:opened", function() {
     //Standardwerte setzen
     setTrefferpunkte();
-    getAttrs(["organismus","psyche"], function(values) {
+    getAttrs(["organismus","psyche","schmerztoleranz"], function(values) {
         let organismus = parseInt(values["organismus"]||100);
         let psyche = parseInt(values["psyche"]||100);
+        let schmerztoleranz = parseInt(values["schmerztoleranz"]||3);
 
         setAttrs({
-            "organismus"    : organismus,
-            "psyche"        : psyche
+            "organismus"        : organismus,
+            "psyche"            : psyche,
+            "schmerztoleranz"   : schmerztoleranz
         });
     });
 });
