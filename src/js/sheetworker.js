@@ -1,6 +1,6 @@
 /*
     CREATED by          Gorthian
-    Letzte Änderung		2023-05-19
+    Letzte Änderung		2023-05-21
 */
 
 
@@ -375,9 +375,9 @@ on("change:probe_hazard_wuerfel", function(){
         let standard = parseInt(values["probe_standard_wuerfel"]);
         let hazard = parseInt(values["probe_hazard_wuerfel"]);
 
-        if(hazard > summe) {hazard = summe}
-        if(hazard < 1) {hazard = 1}
         standard = summe - hazard;
+        if(hazard < 1) {hazard = 1}
+        if(standard < 0) {standard = 0}        
         
         setAttrs({
             "probe_summe_wuerfel"       : summe,
