@@ -153,11 +153,11 @@ skilllist.forEach(skills => {
             let summe = 0;
             let hazard = 1;
             let skillNotiz = values[skill+"_mod"];
-            let biomechanik = parseInt(values[skill+"_biomechanik"])|0;
-            let modifikatoren = parseInt(values[skill+"_modifikatoren"])|0;
-            let attributWert = parseInt(values[attribut])|0;
-            let attributMod1 = parseInt(values[attribut+"-mod1"])|0;
-            let attributMod2 = parseInt(values[attribut+"-mod2"])|0;            
+            let biomechanik = parseInt(values[skill+"_biomechanik"]||0);
+            let modifikatoren = parseInt(values[skill+"_modifikatoren"]||0);
+            let attributWert = parseInt(values[attribut]||0);
+            let attributMod1 = parseInt(values[attribut+"-mod1"]||0);
+            let attributMod2 = parseInt(values[attribut+"-mod2"]||0);            
     
             summeSkill = parseInt(values[skill]);
             if (modifikatoren==0) { //Prüfen ob die Attributsmodifikatoren automatisch mit eingerechnet werden sollen
@@ -182,16 +182,20 @@ skilllist.forEach(skills => {
 // ...mit Modifikatoren
 attributeslist.forEach(attribut => {    
     on(`clicked:probe-${attribut}`, function() {        
-        getAttrs([attribut, attribut+"-mod1", attribut+"-mod2"], function(values) {
+        getAttrs([attribut, attribut+"-mod1", attribut+"-mod2", attribut+"-biomechanik"], function(values) {
             let summe = 0;
-            let wert = parseInt(values[attribut])|0;
-            let mod1 = parseInt(values[attribut+"-mod1"])|0;
-            let mod2 = parseInt(values[attribut+"-mod2"])|0;
+            let hazard = 0;
+            let biomechanik = parseInt(values[attribut+"-biomechanik"]||0);
+            let wert = parseInt(values[attribut]||0);
+            let mod1 = parseInt(values[attribut+"-mod1"]||0);
+            let mod2 = parseInt(values[attribut+"-mod2"]||0);
             console.log(getTranslationByKey("attributsprobe") + ":" + wert + "/" + mod1 + "/" + mod2);
             
             summe = wert + mod1 + mod2;
-            console.log("Summe :" + summe);
-            setDicebot(getTranslationByKey("attributsprobe"),getTranslationByKey(attribut),summe," ");
+            if(biomechanik==1) { //Hat das Attribut Biomechanik werden alle Fertigkeits-Würfel zu Hazard-Di
+                hazard = summe;
+            }
+            setDicebot(getTranslationByKey("attributsprobe"),getTranslationByKey(attribut),summe," ",hazard);
         });
     });
 });
@@ -199,11 +203,15 @@ attributeslist.forEach(attribut => {
 // ...ohne Modifikatoren
 attributeslist.forEach(attribut => {    
     on(`clicked:probe-ohne-mod-${attribut}`, function() {        
-        getAttrs([attribut], function(values) {
-            let summe = 0;
-    
-            summe = parseInt(values[attribut])|0;
-            setDicebot(getTranslationByKey("attributsprobe"),getTranslationByKey(attribut),summe," ");
+        getAttrs([attribut, attribut+"-biomechanik"], function(values) {
+            let summe = parseInt(values[attribut]||0);
+            let hazard = 0;
+            let biomechanik = parseInt(values[attribut+"-biomechanik"]||0);
+     
+            if(biomechanik==1) { //Hat das Attribut Biomechanik werden alle Fertigkeits-Würfel zu Hazard-Di
+                hazard = summe;
+            }
+            setDicebot(getTranslationByKey("attributsprobe"),getTranslationByKey(attribut),summe," ",hazard);
         });
     });
 });

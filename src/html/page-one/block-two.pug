@@ -22,26 +22,26 @@ mixin kopfzeile
             span(data-i18n="modifikatoren")
         div        
 
-mixin attributszeile(attribute)
+mixin attributszeile(attribut)
     // MIXIN : src/html/page-one/block-two.pug : attributszeile
     div(class="sheet-attribut-zeile")
         div(class="sheet-titel sheet-tooltip")
-            button(type="action" class="sheet-button-transparent" name="act_probe-"+attribute)
-                span(data-i18n=attribute)
+            button(type="action" class="sheet-button-transparent" name="act_probe-"+attribut)
+                span(data-i18n=attribut)
             span(class="sheet-tooltiptext" data-i18n="tooltip-probe")        
         div
-            input(type="checkbox" value="1" name="attr_"+attribut+"_biomechanik")
+            input(type="checkbox" value="1" name="attr_"+attribut+"-biomechanik")
         div
-            input(type="number" name="attr_"+attribute value=1)
+            input(type="number" name="attr_"+attribut value=1)
         div(class="sheet-titel sheet-tooltip")
-            button(type="action" class="sheet-button-d6" name="act_probe-ohne-mod-"+attribute)
+            button(type="action" class="sheet-button-d6" name="act_probe-ohne-mod-"+attribut)
             span(class="sheet-tooltiptext" data-i18n="tooltip-probe-ohne-mod")
         div
-            input(type="number" name="attr_"+attribute+"-mod1")
-            input(type="number" name="attr_"+attribute+"-mod2")        
+            input(type="number" name="attr_"+attribut+"-mod1")
+            input(type="number" name="attr_"+attribut+"-mod2")        
         div(class="sheet-font-darkgray-highlight") 
             | [
-            span(data-i18n=attribute+"_kurz")
+            span(data-i18n=attribut+"_kurz")
             | ]
 
 mixin sonderattributskopfzeile(text)
