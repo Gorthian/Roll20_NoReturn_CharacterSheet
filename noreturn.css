@@ -194,7 +194,7 @@ div.sheet-noreturn .sheet-sonderattribute {
 
 div.sheet-noreturn .sheet-attribut-zeile {
 	display                 : grid;
-    grid-template-columns   : 8em 2.5em 2em 5.5em 2em;
+    grid-template-columns   : 10em 1.5em 2.5em 2em 5.5em 2em;
 }
 
 div.sheet-noreturn .sheet-sonderattribut-zeile {
@@ -227,7 +227,6 @@ div.sheet-noreturn .sheet-charaktermerkmale-zeile div {
 }
 
 div.sheet-noreturn div.sheet-style-skills-zeile input[type="number"],
-div.sheet-noreturn div.sheet-trefferzonen-regeneration input[type="number"],
 div.sheet-noreturn div.sheet-attribut-zeile input[type="number"],
 div.sheet-noreturn div.sheet-sonderattribut-zeile input[type="number"],
 div.sheet-noreturn div.sheet-fertigkeiten-zeile input[type="number"],
@@ -284,11 +283,6 @@ div.sheet-noreturn div.sheet-trefferzonen-bild img {
     display					: block;
 	margin					: auto;
 	min-width				: 300px;
-}
-
-div.sheet-noreturn div.sheet-trefferzonen-regeneration div:nth-child(3) {
-    border					: 2px solid black;
-	text-align				: center;
 }
 
 div.sheet-noreturn div.sheet-trefferzonen-liste {
