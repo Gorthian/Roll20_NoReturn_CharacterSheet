@@ -60,7 +60,7 @@ div.sheet-noreturn h2 {font-size : var(--font-h2-size);}
 	text-transform          : uppercase;
 }
 
-.sheet-fertigkeiten-zeile, .sheet-besondere-fertigkeiten-zeile, .sheet-style-skills-zeile, .sheet-charaktermerkmale-zeile {
+.sheet-fertigkeiten-zeile, .sheet-besondere-fertigkeiten-zeile, .sheet-style-skills-zeile, .sheet-charaktermerkmale-zeile, .sheet-sprachkenntnisse-zeile {
 	text-transform          : none;
 }
 
@@ -212,6 +212,12 @@ div.sheet-noreturn .sheet-besondere-fertigkeiten-zeile {
     grid-template-columns   : 2em 10em 4em 3.5em;
 }
 
+div.sheet-noreturn .sheet-sprachkenntnisse-zeile {
+	display                 : grid;
+    grid-template-columns   : 2em 10em 3.5em;
+}
+
+
 div.sheet-noreturn .sheet-style-skills-zeile {
 	display                 : grid;
     grid-template-columns   : 15em 5em;
@@ -221,6 +227,7 @@ div.sheet-noreturn .sheet-attribut-zeile div,
 div.sheet-noreturn .sheet-sonderattribut-zeile div,
 div.sheet-noreturn .sheet-fertigkeiten-zeile div,
 div.sheet-noreturn .sheet-besondere-fertigkeiten-zeile div,
+div.sheet-noreturn .sheet-sprachkenntnisse-zeile div,
 div.sheet-noreturn .sheet-style-skills-zeile div,
 div.sheet-noreturn .sheet-charaktermerkmale-zeile div {
     white-space				: nowrap;
@@ -239,6 +246,8 @@ div.sheet-noreturn div.sheet-fertigkeiten-zeile input[type="text"] {
 
 div.sheet-noreturn div.sheet-besondere-fertigkeiten-zeile input[type="number"],
 div.sheet-noreturn div.sheet-besondere-fertigkeiten-zeile input[type="text"],
+div.sheet-noreturn div.sheet-sprachkenntnisse-zeile input[type="number"],
+div.sheet-noreturn div.sheet-sprachkenntnisse-zeile input[type="text"],
 div.sheet-noreturn div.sheet-style-skills-zeile input[type="text"],
 div.sheet-noreturn div.sheet-charaktermerkmale-zeile input[type="text"] {
     border-style			: none none solid none;
@@ -248,7 +257,8 @@ div.sheet-noreturn div.sheet-charaktermerkmale-zeile input[type="text"] {
 	top						: 0em;
 }
 
-div.sheet-noreturn div.sheet-besondere-fertigkeiten-zeile input[type="number"] {
+div.sheet-noreturn div.sheet-besondere-fertigkeiten-zeile input[type="number"],
+div.sheet-noreturn div.sheet-sprachkenntnisse-zeile input[type="number"] {
 	width					: 2.5em;
 	top						: 0em;
 }
