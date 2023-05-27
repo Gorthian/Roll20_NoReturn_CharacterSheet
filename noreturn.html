@@ -2227,7 +2227,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
 <!-- SHEET WORKERS-->
 <script type="text/worker">/*
     CREATED by          Gorthian
-    Letzte Änderung		2023-05-21
+    Letzte Änderung		2023-05-27
 */
 
 
@@ -2374,13 +2374,14 @@ skilllist.forEach(skills => {
     let skill = skills[0];
     let attribut = skills[1];
     on(`clicked:probe-${skill}-${attribut}`, function() {        
-        getAttrs([skill, skill+"_mod", skill+"_biomechanik", skill+"_modifikatoren", attribut, attribut+"-mod1", attribut+"-mod2"], function(values) {
+        getAttrs([skill, skill+"_mod", skill+"_biomechanik", skill+"_modifikatoren", attribut, attribut+"-mod1", attribut+"-mod2", attribut+"-biomechanik"], function(values) {
             let summeSkill = 0;
             let summeAttribut = 0;
             let summe = 0;
-            let hazard = 1;
+            let hazard = 0;
             let skillNotiz = values[skill+"_mod"];
-            let biomechanik = parseInt(values[skill+"_biomechanik"]||0);
+            let biomechanik_skill = parseInt(values[skill+"_biomechanik"]||0);
+            let biomechanik_attribut = parseInt(values[attribut+"-biomechanik"]||0);
             let modifikatoren = parseInt(values[skill+"_modifikatoren"]||0);
             let attributWert = parseInt(values[attribut]||0);
             let attributMod1 = parseInt(values[attribut+"-mod1"]||0);
@@ -2396,11 +2397,17 @@ skilllist.forEach(skills => {
 
             if (summeSkill==0) {summe = summe -2} //Ist die Fertigkeitsstufe 0, bekommt die Probe einen Malus von 2
 
-            if(biomechanik==1) { //Hat die Fertigkeit Biomechanik werden alle Fertigkeits-Würfel zu Hazard-Di
-                hazard = 1+summeSkill;
+            if(biomechanik_skill==1) { //Hat die Fertigkeit Biomechanik werden alle Fertigkeits-Würfel zu Hazard-Di
+                hazard = hazard+summeSkill;
+            }
+            if(biomechanik_attribut==1) { //Hat das Attribut Biomechanik werden alle Attributs-Würfel zu Hazard-Di
+                hazard = hazard+summeAttribut;
+            }
+            if (hazard==0) { //Man hat immer mindestens einen Hazard-Di
+                hazard=1;
             }
 
-            setDicebot(getTranslationByKey(skill),getTranslationByKey(attribut),summe,skillNotiz,hazard,biomechanik);
+            setDicebot(getTranslationByKey(skill),getTranslationByKey(attribut),summe,skillNotiz,hazard,biomechanik_skill);
         });
     });
 });
