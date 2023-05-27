@@ -180,7 +180,7 @@ skilllist.forEach(skills => {
                 hazard=1;
             }
 
-            setDicebot(getTranslationByKey(skill),getTranslationByKey(attribut),summe,skillNotiz,hazard,biomechanik_skill);
+            setDicebot(getTranslationByKey(skill),getTranslationByKey(attribut),summe,skillNotiz,hazard,biomechanik_skill||biomechanik_attribut);
         });
     });
 });
@@ -228,16 +228,26 @@ attributeslist.forEach(attribut => {
 on("clicked:repeating_besondere-fertigkeiten:probe", function(eventInfo) {
     getAttrs(["repeating_besondere-fertigkeiten_besondere-fertigkeit-name", "repeating_besondere-fertigkeiten_besondere-fertigkeit-stufe", "repeating_besondere-fertigkeiten_besondere-fertigkeit-attribut"], function(values) {
         let skillName = values["repeating_besondere-fertigkeiten_besondere-fertigkeit-name"];
-        let skillStufe = parseInt(values["repeating_besondere-fertigkeiten_besondere-fertigkeit-stufe"])|0;
+        let skillStufe = parseInt(values["repeating_besondere-fertigkeiten_besondere-fertigkeit-stufe"]||0);
         let attributName = values["repeating_besondere-fertigkeiten_besondere-fertigkeit-attribut"];
 
-        getAttrs([attributName, attributName+"mod1", attributName+"mod2"], function(values) {
+        getAttrs([attributName, attributName+"-mod1", attributName+"-mod2",attributName+"-biomechanik"], function(values) {
             let summeAttribut = 0;
             let summe = 0;
+            let hazard = 0;
+            let biomechanik_attribut = parseInt(values[attributName+"-biomechanik"]||0);
 
-            summeAttribut = parseInt(values[attributName])|0 + parseInt(values[attributName+"mod1"])|0 + parseInt(values[attributName+"mod2"])|0;
+            summeAttribut = parseInt(values[attributName]||0) + parseInt(values[attributName+"-mod1"]||0) + parseInt(values[attributName+"-mod2"]||0);
             summe = skillStufe + summeAttribut;
-            setDicebot(skillName,getTranslationByKey(attributName),summe," ");
+            if (skillStufe==0) {summe = summe -2} //Ist die Fertigkeitsstufe 0, bekommt die Probe einen Malus von 2
+            if(biomechanik_attribut==1) { //Hat das Attribut Biomechanik werden alle Attributs-Würfel zu Hazard-Di
+                hazard = hazard+summeAttribut;
+            }
+            if (hazard==0) { //Man hat immer mindestens einen Hazard-Di
+                hazard=1;
+            }
+
+            setDicebot(skillName,getTranslationByKey(attributName),summe," ",hazard,biomechanik_attribut);
         });
     });
 });
