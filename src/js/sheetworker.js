@@ -127,6 +127,15 @@ function setTrefferpunkte() {
     });
 }
 
+//Werte für eine Sprachprobe im Dicebot setzen
+function setzeSprachprobe(name, stufe) {
+    let hazard = 1;
+    let summe = stufe;
+
+    if (stufe==0) {summe = summe -2} //Ist die Fertigkeitsstufe 0, bekommt die Probe einen Malus von 2
+    setDicebot(name,getTranslationByKey("sprachprobe"),summe,"",hazard,0);
+}
+
 // DMG Schwellwert setzen
 function setDMGSchwellwert() {
     getAttrs(["trefferpunkte","schmerztoleranz"], function(values) {
@@ -287,6 +296,27 @@ on("clicked:infektionsresistenz",function(){
         });
     });
 });
+
+// Proben auf Sprachkenntnisse
+on("clicked:repeating_sprachkenntnisse:probe", function(eventInfo) {
+    getAttrs(["repeating_sprachkenntnisse_sprachkenntnisse-sprache", "repeating_sprachkenntnisse_sprachkenntnisse-stufe"], function(values) {
+        let spracheName = values["repeating_sprachkenntnisse_sprachkenntnisse-sprache"];
+        let spracheStufe = parseInt(values["repeating_sprachkenntnisse_sprachkenntnisse-stufe"]||0);
+
+        setzeSprachprobe(spracheName,spracheStufe);        
+    });
+});
+
+// Probe speziell auf Babel
+on("clicked:sprachprobe_babel", function(eventInfo) {
+    getAttrs(["babel-stufe"], function(values) {
+        let spracheName = "Babel"
+        let spracheStufe = parseInt(values["babel-stufe"]||0);
+
+        setzeSprachprobe(spracheName,spracheStufe);
+    });
+});
+
 
 on("clicked:wirf-probe",function(){
     getAttrs(["character_name","probe_summe_wuerfel","probe_standard_wuerfel","probe_original_standard_wuerfel","probe_hazard_wuerfel","probe_original_hazard_wuerfel","probe_bonus_wuerfel","probe_bonus","probe_skill","probe_attribut","probe_biomechanik"], function(values) {
