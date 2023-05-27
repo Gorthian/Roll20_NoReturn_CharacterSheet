@@ -74,6 +74,8 @@
    "konstitution_kurz": "KO",
    "kunst": "Kunst",
    "körperzonen": "Körperzonen",
+   "manuell_wuerfeln": "Manuell Würfeln",
+   "manuelle_probe": "Manuelle Probe",
    "materialkomponente_kurz": "MK",
    "mechanik": "Mechanik",
    "meditation": "Meditation",
@@ -167,5 +169,6 @@
    "wurfwaffen": "Wurfwaffen",
    "w6": "W6",
    "zero-g": "Zero G",
-   "zone": "Zone"
+   "zone": "Zone",
+   "zuruecksetzen": "Zurücksetzen"
 }

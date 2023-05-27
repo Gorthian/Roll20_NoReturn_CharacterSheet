@@ -1,6 +1,6 @@
 //-
     CREATED by          Gorthian
-    Letzte Änderung		2023-05-07
+    Letzte Änderung		2023-05-29
 
 //
     ********************************
@@ -26,7 +26,7 @@ rolltemplate(class="sheet-rolltemplate-trefferzone")
 rolltemplate(class="sheet-rolltemplate-probe_offen")
     div(class="sheet-template-container" role="section")
         div(class="sheet-template-header") {{charaktername}}
-        div(class="sheet-template-header") {{fertigkeit}} - {{attribut}}
+        div(class="sheet-template-header") {{fertigkeit}}{{#attribut}} - {{attribut}}{{/attribut}}
         | {{#modifiziert}}
         div(class="sheet-template-header")
             span(data-i18n="modifiziert")
@@ -36,6 +36,7 @@ rolltemplate(class="sheet-rolltemplate-probe_offen")
             span(data-i18n="biomechanik")
         | {{/biomechanik}}
         hr
+        | {{#rollGreater() hazard 0}}
         div(class="sheet-template-row") 
             span(data-i18n="hazard-di")
             span
@@ -43,6 +44,8 @@ rolltemplate(class="sheet-rolltemplate-probe_offen")
         div(class="sheet-template-row")
             span(class="sheet-template-zahlen sheet-template-hazard-di") {{computed::hazard}}
             span(class="sheet-template-zahlen") = {{hazard}}
+        | {{/rollGreater() hazard 0}}
+        | {{#rollGreater() wurf 0}}
         div(class="sheet-template-row") 
             span(data-i18n="regulaere-di")
             span
@@ -50,6 +53,7 @@ rolltemplate(class="sheet-rolltemplate-probe_offen")
         div(class="sheet-template-row")
             span(class="sheet-template-zahlen sheet-template-regular-di") {{computed::wurf}}
             span(class="sheet-template-zahlen") = {{wurf}}
+        | {{/rollGreater() wurf 0}}
         | {{#rollGreater() bonuswurf 0}}
         div(class="sheet-template-row") 
             span(data-i18n="bonus-di")
