@@ -1,7 +1,7 @@
 /*
 	CREATED by 			Gorthian
 	Version				1.0
-	Letzte Änderung		2023-05-27
+	Letzte Änderung		2023-06-16
 	
 	GitHub				https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet
 	Wiki				https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/wiki
@@ -217,6 +217,51 @@ div.sheet-noreturn .sheet-sprachkenntnisse-zeile {
     grid-template-columns   : 2em 10em 3.5em;
 }
 
+div.sheet-noreturn .sheet-fernkampfwaffen {
+    display                 : grid;
+}
+
+div.sheet-noreturn .sheet-nahkampfwaffen {
+    display                 : grid;
+}
+
+div.sheet-noreturn .sheet-fernkampfwaffen .sheet-fernkampfwaffen-kopfzeile{
+    display                 : grid;
+    grid-template-columns   : repeat(5, 10em) 2.5em auto;
+	justify-items			: stretch;
+
+	font-family				: var(--font-highlight);
+	font-size				: var(--font-h2-size);
+	font-weight				: normal;
+	text-transform          : uppercase;
+}
+
+div.sheet-noreturn .sheet-nahkampfwaffen .sheet-nahkampfwaffen-kopfzeile{
+    display                 : grid;
+    grid-template-columns   : auto 5em repeat(3, 5em);
+	justify-items			: stretch;
+
+	font-family				: var(--font-highlight);
+	font-size				: var(--font-h2-size);
+	font-weight				: normal;
+	text-transform          : uppercase;
+}
+
+div.sheet-noreturn .sheet-fernkampfwaffen .sheet-fernkampfwaffen-zeile{
+    display                 : grid;
+    grid-template-columns   : 10em repeat(4, 2.5em) repeat(3, 10em) 2.5em auto;
+	justify-items			: stretch;
+
+	border-bottom			: 1px solid black;
+}
+
+div.sheet-noreturn .sheet-nahkampfwaffen .sheet-nahkampfwaffen-zeile{
+    display                 : grid;
+    grid-template-columns   : auto repeat(2, 2.5em) repeat(3, 5em);
+	justify-items			: stretch;
+
+	border-bottom			: 1px solid black;
+}
 
 div.sheet-noreturn .sheet-style-skills-zeile {
 	display                 : grid;
@@ -233,6 +278,8 @@ div.sheet-noreturn .sheet-charaktermerkmale-zeile div {
     white-space				: nowrap;
 }
 
+div.sheet-noreturn div.sheet-fernkampfwaffen-zeile input[type="number"],
+div.sheet-noreturn div.sheet-nahkampfwaffen-zeile input[type="number"],
 div.sheet-noreturn div.sheet-style-skills-zeile input[type="number"],
 div.sheet-noreturn div.sheet-attribut-zeile input[type="number"],
 div.sheet-noreturn div.sheet-sonderattribut-zeile input[type="number"],
@@ -263,6 +310,7 @@ div.sheet-noreturn div.sheet-sprachkenntnisse-zeile input[type="number"] {
 	top						: 0em;
 }
 
+div.sheet-noreturn textarea.sheet-style-skills,
 div.sheet-noreturn textarea.sheet-style-skills {
 	font-size				: var(--font-middle-size);
 	width					: 90%;
@@ -451,7 +499,21 @@ div.sheet-noreturn details summary:after {
 	content					: url("https://gorthian.de/roll20/noreturn/bio_hazard_red_20px.png");
 	color					: black;
 	position				: absolute;
-	left					: 17.8em;
+}
+
+div.sheet-noreturn details summary.sheet-summary-style-skill:after,
+div.sheet-noreturn details summary.sheet-summary-charaktermerkmale:after{
+	left					: 17.5em;
+	top						: -0.2em;	
+}
+
+div.sheet-noreturn details summary.sheet-summary-fernkampfwaffen:after{
+	left					: 98%;
+	top						: -0.2em;	
+}
+
+div.sheet-noreturn details summary.sheet-summary-nahkampfwaffen:after{
+	left					: 97%;
 	top						: -0.2em;	
 }
 

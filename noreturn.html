@@ -2016,7 +2016,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                 </div>
               </div>
               <details>    
-                <summary>&nbsp;</summary>
+                <summary class="sheet-summary-style-skill">&nbsp;</summary>
                 <textarea class="sheet-style-skills" name="attr_style-skill-info"></textarea>
               </details>
             </fieldset>
@@ -2033,7 +2033,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                 </div>
               </div>
               <details>
-                <summary>&nbsp;</summary>
+                <summary class="sheet-summary-charaktermerkmale">&nbsp;</summary>
                 <textarea class="sheet-style-skills" name="attr_charaktermerkmal-info"></textarea>
               </details>
             </fieldset>
@@ -2107,6 +2107,47 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
       <div>
         <div class="sheet-box">
           <h1 data-i18n="fernkampfwaffen"></h1>
+          <div class="sheet-fernkampfwaffen">
+            <div class="sheet-fernkampfwaffen-kopfzeile"><span data-i18n="bezeichnung_und_art"></span><span data-i18n="reichweiten"></span><span data-i18n="fertigkeit"></span><span data-i18n="munition"></span><span data-i18n="schaden"></span><span data-i18n="rd"></span><span data-i18n="modus_und_sonstiges"></span></div>
+            <fieldset class="repeating_fernkampfwaffen">
+              <div class="sheet-fernkampfwaffen-zeile">
+                <div>
+                  <input type="text" name="attr_fernkampfwaffe_bezeichnung"/>
+                </div>
+                <div>
+                  <input type="number" name="attr_fernkampfwaffe_reichweite_k"/>
+                </div>
+                <div>
+                  <input type="number" name="attr_fernkampfwaffe_reichweite_m"/>
+                </div>
+                <div>
+                  <input type="number" name="attr_fernkampfwaffe_reichweite_l"/>
+                </div>
+                <div>
+                  <input type="number" name="attr_fernkampfwaffe_reichweite_x"/>
+                </div>
+                <div>
+                  <input type="text" name="attr_fernkampfwaffe_fertigkeit"/>
+                </div>
+                <div>
+                  <input type="text" name="attr_fernkampfwaffe_munition"/>
+                </div>
+                <div>
+                  <input type="text" name="attr_fernkampfwaffe_schaden"/>
+                </div>
+                <div>
+                  <input type="number" name="attr_fernkampfwaffe_rd"/>
+                </div>
+                <div>
+                  <input type="text" name="attr_fernkampfwaffe_modus"/>
+                </div>
+              </div>
+              <details> 
+                <summary class="sheet-summary-fernkampfwaffen">&nbsp;</summary>
+                <textarea class="sheet-fernkampfwaffen" name="attr_fernkampfwaffe-info"></textarea>
+              </details>
+            </fieldset>
+          </div>
         </div>
       </div>
       <!--
@@ -2121,7 +2162,35 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
       -->
       <div class="sheet-2cols">
         <div> 
-          <!-- include block-three-kampf.pug -->
+          <div class="sheet-box">
+            <h1 data-i18n="waffenkampf_und_nahkampf"></h1>
+            <div class="sheet-nahkampfwaffen">
+              <div class="sheet-nahkampfwaffen-kopfzeile"><span data-i18n="bezeichnung"></span><span data-i18n="fertigkeit"></span><span data-i18n="angriff"></span><span data-i18n="parade"></span><span data-i18n="schaden"></span></div>
+              <fieldset class="repeating_nahkampfwaffen">
+                <div class="sheet-nahkampfwaffen-zeile">
+                  <div>
+                    <input type="text" name="attr_nahkampfwaffe_bezeichnung"/>
+                  </div>
+                  <div>
+                    <input type="text" name="attr_nahkampfwaffe_fertigkeit"/>
+                  </div>
+                  <div>
+                    <input type="text" name="attr_nahkampfwaffe_angriff"/>
+                  </div>
+                  <div>
+                    <input type="text" name="attr_nahkampfwaffe_parade"/>
+                  </div>
+                  <div>
+                    <input type="text" name="attr_nahkampfwaffe_schaden"/>
+                  </div>
+                </div>
+                <details> 
+                  <summary class="sheet-summary-nahkampfwaffen">&nbsp;</summary>
+                  <textarea class="sheet-nahkampfwaffen" name="attr_nahkampfwaffe-info"></textarea>
+                </details>
+              </fieldset>
+            </div>
+          </div>
           <div class="sheet-2cols-50-50">
                   <!-- MIXIN : src/html/page-two/block-three.pug : max-current-->
                   <div class="sheet-box">
