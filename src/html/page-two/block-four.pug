@@ -1,6 +1,6 @@
 //-
     CREATED by          Gorthian
-    Letzte Änderung		2023-05-27
+    Letzte Änderung		2023-06-30
 
 //
     ********************************
@@ -9,7 +9,7 @@
 //- MIXINs
 
 //- SEITENINHALT
-div(class="sheet-2cols")
+div(class="sheet-3cols")
     div(class="sheet-box")
         h1(data-i18n="sprachkenntnisse")
         div(class="sheet-sprachkenntnisse-zeile")
@@ -34,8 +34,10 @@ div(class="sheet-2cols")
                     input(type="text" name="attr_sprachkenntnisse-sprache")
                 div
                     input(type="number" name="attr_sprachkenntnisse-stufe")
-    div(class="sheet-box")
-        h1(data-i18n="vor-nachteile")
+    div
+        +repeating-textarea("vor-nachteile")
+    div
+        +repeating-textarea("psi-kraefte")
     
 //
     ********************************

@@ -1,7 +1,7 @@
 /*
 	CREATED by 			Gorthian
 	Version				1.0
-	Letzte Änderung		2023-06-16
+	Letzte Änderung		2023-06-30
 	
 	GitHub				https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet
 	Wiki				https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/wiki
@@ -238,7 +238,7 @@ div.sheet-noreturn .sheet-fernkampfwaffen .sheet-fernkampfwaffen-kopfzeile{
 
 div.sheet-noreturn .sheet-nahkampfwaffen .sheet-nahkampfwaffen-kopfzeile{
     display                 : grid;
-    grid-template-columns   : auto 5em repeat(3, 5em);
+    grid-template-columns   : auto repeat(4, 5em);
 	justify-items			: stretch;
 
 	font-family				: var(--font-highlight);
@@ -257,7 +257,7 @@ div.sheet-noreturn .sheet-fernkampfwaffen .sheet-fernkampfwaffen-zeile{
 
 div.sheet-noreturn .sheet-nahkampfwaffen .sheet-nahkampfwaffen-zeile{
     display                 : grid;
-    grid-template-columns   : auto repeat(2, 2.5em) repeat(3, 5em);
+    grid-template-columns   : auto repeat(4, 5em);
 	justify-items			: stretch;
 
 	border-bottom			: 1px solid black;
@@ -424,7 +424,8 @@ div.sheet-noreturn input {
 }
 
 div.sheet-noreturn textarea {
-    border                  : none;
+    border					: 2px dotted black;
+	border-radius			: 0.2em;
     background-color        : transparent;
     width                   : 95%;
 	font-size				: var(--font-middle-size);
@@ -501,6 +502,7 @@ div.sheet-noreturn details summary:after {
 	position				: absolute;
 }
 
+div.sheet-noreturn details summary.sheet-summary-standard:after,
 div.sheet-noreturn details summary.sheet-summary-style-skill:after,
 div.sheet-noreturn details summary.sheet-summary-charaktermerkmale:after{
 	left					: 17.5em;

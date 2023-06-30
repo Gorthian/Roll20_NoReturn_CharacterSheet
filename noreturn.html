@@ -2192,37 +2192,53 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
             </div>
           </div>
           <div class="sheet-2cols-50-50">
-                  <!-- MIXIN : src/html/page-two/block-three.pug : max-current-->
-                  <div class="sheet-box">
-                    <h1 data-i18n="bio-abnormitaeten"></h1>
-                    <fieldset class="repeating_bio-abnormitaeten">
-                      <textarea name="attr_bio-abnormitaeten"></textarea>
-                    </fieldset>
-                  </div>
-                  <!-- MIXIN : src/html/page-two/block-three.pug : max-current-->
-                  <div class="sheet-box">
-                    <h1 data-i18n="bio-eigenschaften"></h1>
-                    <fieldset class="repeating_bio-eigenschaften">
-                      <textarea name="attr_bio-eigenschaften"></textarea>
-                    </fieldset>
-                  </div>
+                <!-- MIXIN : src/html/page-two.pug : repeating-textarea-->
+                <div class="sheet-box">
+                  <h1 data-i18n="bio-abnormitaeten"></h1>
+                  <fieldset class="repeating_bio-abnormitaeten">
+                    <input name="atrr_bio-abnormitaeten-titel" type="text"/>
+                    <details> 
+                      <summary class="sheet-summary-standard">&nbsp;</summary>
+                      <textarea class="sheet-details-standard" name="attr_bio-abnormitaeten-beschreibung"></textarea>
+                    </details>
+                  </fieldset>
+                </div>
+                <!-- MIXIN : src/html/page-two.pug : repeating-textarea-->
+                <div class="sheet-box">
+                  <h1 data-i18n="bio-eigenschaften"></h1>
+                  <fieldset class="repeating_bio-eigenschaften">
+                    <input name="atrr_bio-eigenschaften-titel" type="text"/>
+                    <details> 
+                      <summary class="sheet-summary-standard">&nbsp;</summary>
+                      <textarea class="sheet-details-standard" name="attr_bio-eigenschaften-beschreibung"></textarea>
+                    </details>
+                  </fieldset>
+                </div>
           </div>
         </div>
         <div> 
-                <!-- MIXIN : src/html/page-two/block-three.pug : max-current-->
-                <div class="sheet-box">
-                  <h1 data-i18n="wichtige-notiz"></h1>
-                  <fieldset class="repeating_wichtige-notiz">
-                    <textarea name="attr_wichtige-notiz"></textarea>
-                  </fieldset>
-                </div>
-                <!-- MIXIN : src/html/page-two/block-three.pug : max-current-->
-                <div class="sheet-box">
-                  <h1 data-i18n="physiologische-stoerungen"></h1>
-                  <fieldset class="repeating_physiologische-stoerungen">
-                    <textarea name="attr_physiologische-stoerungen"></textarea>
-                  </fieldset>
-                </div>
+              <!-- MIXIN : src/html/page-two.pug : repeating-textarea-->
+              <div class="sheet-box">
+                <h1 data-i18n="wichtige-notiz"></h1>
+                <fieldset class="repeating_wichtige-notiz">
+                  <input name="atrr_wichtige-notiz-titel" type="text"/>
+                  <details> 
+                    <summary class="sheet-summary-standard">&nbsp;</summary>
+                    <textarea class="sheet-details-standard" name="attr_wichtige-notiz-beschreibung"></textarea>
+                  </details>
+                </fieldset>
+              </div>
+              <!-- MIXIN : src/html/page-two.pug : repeating-textarea-->
+              <div class="sheet-box">
+                <h1 data-i18n="physiologische-stoerungen"></h1>
+                <fieldset class="repeating_physiologische-stoerungen">
+                  <input name="atrr_physiologische-stoerungen-titel" type="text"/>
+                  <details> 
+                    <summary class="sheet-summary-standard">&nbsp;</summary>
+                    <textarea class="sheet-details-standard" name="attr_physiologische-stoerungen-beschreibung"></textarea>
+                  </details>
+                </fieldset>
+              </div>
         </div>
       </div>
       <!--
@@ -2235,7 +2251,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
       * START src/html/page-two/block-four.pug
       ********************************
       -->
-      <div class="sheet-2cols">
+      <div class="sheet-3cols">
         <div class="sheet-box">
           <h1 data-i18n="sprachkenntnisse"></h1>
           <div class="sheet-sprachkenntnisse-zeile">
@@ -2268,8 +2284,31 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
             </div>
           </fieldset>
         </div>
-        <div class="sheet-box">
-          <h1 data-i18n="vor-nachteile"></h1>
+        <div>
+              <!-- MIXIN : src/html/page-two.pug : repeating-textarea-->
+              <div class="sheet-box">
+                <h1 data-i18n="vor-nachteile"></h1>
+                <fieldset class="repeating_vor-nachteile">
+                  <input name="atrr_vor-nachteile-titel" type="text"/>
+                  <details> 
+                    <summary class="sheet-summary-standard">&nbsp;</summary>
+                    <textarea class="sheet-details-standard" name="attr_vor-nachteile-beschreibung"></textarea>
+                  </details>
+                </fieldset>
+              </div>
+        </div>
+        <div>
+              <!-- MIXIN : src/html/page-two.pug : repeating-textarea-->
+              <div class="sheet-box">
+                <h1 data-i18n="psi-kraefte"></h1>
+                <fieldset class="repeating_psi-kraefte">
+                  <input name="atrr_psi-kraefte-titel" type="text"/>
+                  <details> 
+                    <summary class="sheet-summary-standard">&nbsp;</summary>
+                    <textarea class="sheet-details-standard" name="attr_psi-kraefte-beschreibung"></textarea>
+                  </details>
+                </fieldset>
+              </div>
         </div>
       </div>
       <!--
