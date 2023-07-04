@@ -1,7 +1,7 @@
 /*
 	CREATED by 			Gorthian
 	Version				1.0
-	Letzte Änderung		2023-06-30
+	Letzte Änderung		2023-07-04
 	
 	GitHub				https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet
 	Wiki				https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/wiki
@@ -12,27 +12,16 @@
 /* Externe Schriftarten einbinden */
 /**********************************/
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap'); /* Roboto als Fallback für Eras Medium */
-@import url('https://fonts.googleapis.com/css2?family=Rubik+Vinyl&display=swap'); /* Rubik Vinyl als Fallback für Eras Medium */
-@import url("https://fonts.cdnfonts.com/css/downcome"); /* Kann auf Grund von Roll20-Einschänkungen vermutlich nicht importiert werden */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Rubik+Distressed&display=swap'); /* Merriweather Sans als Fallback für Downcome */
 
-/* FONT-FACE wird auf Grund von Cross-Domain-Einschränkungen in den wenigsten Browsern funktionieren */
-@font-face { 
-    font-family: "downcome";
-    src: local('downcome'), url(https://gorthian.de/roll20/noreturn/fonts/DOWNCOME.TTF) format ("truetype");
-}
-
-@font-face {
-    font-family: "eras medium itc";
-    src: local('eras medium itc'), url(https://gorthian.de/roll20/noreturn/fonts/ERASMD.TTF) format ("truetype");
-}
 
 /**********************************/
 /* Schriftarten definieren        */
 /* Font-Variablen für den Sheet   */
 /**********************************/
 div.sheet-noreturn {
-	--font-standard			: "eras medium itc", "Roboto", sans-serif, monospace;
-	--font-highlight		: "downcome", "Rubik Vinyl", sans-serif, monospace;
+	--font-standard			: "Merriweather Sans", sans-serif, monospace;
+	--font-highlight		: "Merriweather Sans", sans-serif, monospace;
 	--font-h1-size			: 1.8em;
 	--font-h2-size			: 1em;
 	--font-big-size			: 1.2em;
