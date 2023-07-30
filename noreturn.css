@@ -387,18 +387,19 @@ div.sheet-noreturn div.sheet-trefferzone-zeile input[type="text"] {
 div.sheet-noreturn div.sheet-max-current {
     background-color        : #EEE8E0;
     margin                  : 10px 0px 0px 0px;
+	border                  : 1px solid black;
 }
 
-div.sheet-noreturn div.sheet-max-current div.sheet-max-current-box {
-    border                  : 2px solid black;
+div.sheet-noreturn div.sheet-max-current div.sheet-max-current-box {    
     margin                  : 0 auto auto 0;
     padding                 : 5px;
 	white-space				: nowrap;
 }
 
 div.sheet-noreturn div.sheet-max-current input[type="number"] {
-    width                    : 2em;
-    top                      : -5px;
+    width                   : 90%;
+	text-align				: center;
+	border-bottom			: 1px solid black;
 }
 
 div.sheet-noreturn .sheet-input-line {
