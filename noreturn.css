@@ -1,7 +1,7 @@
 /*
 	CREATED by 			Gorthian
 	Version				1.0
-	Letzte Änderung		2023-07-08
+	Letzte Änderung		2023-07-30
 	
 	GitHub				https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet
 	Wiki				https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/wiki
@@ -224,17 +224,6 @@ div.sheet-noreturn .sheet-fernkampfwaffen .sheet-fernkampfwaffen-kopfzeile{
 	text-transform          : uppercase;
 }
 
-div.sheet-noreturn .sheet-nahkampfwaffen .sheet-nahkampfwaffen-kopfzeile{
-    display                 : grid;
-    grid-template-columns   : auto repeat(4, 5em);
-	justify-items			: stretch;
-
-	font-family				: var(--font-standard);
-	font-size				: var(--font-h2-size);
-	font-weight				: normal;
-	text-transform          : uppercase;
-}
-
 div.sheet-noreturn .sheet-fernkampfwaffen .sheet-fernkampfwaffen-zeile{
     display                 : grid;
     grid-template-columns   : 10em repeat(4, 2.5em) repeat(3, 10em) 2.5em auto;
@@ -243,11 +232,22 @@ div.sheet-noreturn .sheet-fernkampfwaffen .sheet-fernkampfwaffen-zeile{
 	border-bottom			: 1px solid black;
 }
 
+
+div.sheet-noreturn .sheet-nahkampfwaffen .sheet-nahkampfwaffen-kopfzeile,
 div.sheet-noreturn .sheet-nahkampfwaffen .sheet-nahkampfwaffen-zeile{
     display                 : grid;
-    grid-template-columns   : auto repeat(4, 5em);
+    grid-template-columns   : auto repeat(4, 6em);
 	justify-items			: stretch;
+}
 
+div.sheet-noreturn .sheet-nahkampfwaffen .sheet-nahkampfwaffen-kopfzeile{
+	font-family				: var(--font-standard);
+	font-size				: var(--font-h2-size);
+	font-weight				: normal;
+	text-transform          : uppercase;
+}
+
+div.sheet-noreturn .sheet-nahkampfwaffen .sheet-nahkampfwaffen-zeile{
 	border-bottom			: 1px solid black;
 }
 
