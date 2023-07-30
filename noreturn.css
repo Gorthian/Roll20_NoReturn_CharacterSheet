@@ -306,6 +306,10 @@ div.sheet-noreturn div.sheet-sprachkenntnisse-zeile input[type="number"] {
 	top						: 0em;
 }
 
+div.sheet-noreturn input.sheet-input-underline {
+	border-bottom			: 1px dotted black;
+}
+
 div.sheet-noreturn textarea.sheet-style-skills,
 div.sheet-noreturn textarea.sheet-style-skills {
 	font-size				: var(--font-middle-size);
