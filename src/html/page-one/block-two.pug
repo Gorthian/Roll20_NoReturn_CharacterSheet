@@ -86,21 +86,28 @@ div
                     div(class="sheet-sonderattribut-titel")
                         span(data-i18n="dmg_schwellwert")
                     div
-                        input(type="number" name="attr_dmg_schwellwert" readonly="readonly")
+                        input(type="number" name="attr_dmg_schwellwert" readonly="readonly")                
+            div 
+                +sonderattributskopfzeile("stufe")
+                +sonderattributszeile("schmerztoleranz")
+                +sonderattributszeile("blutpunkte")
+            div 
+                +sonderattributskopfzeile("stufe")
+                +sonderattributszeile("adrenalin")
+                +sonderattributszeile("meditation")
+        div
+            textarea(name="attr_notizen-attribute" class="sheet-textarea-klein")
+        div(class="sheet-sonderattribute")
+            div               
                 div(class="sheet-sonderattribut-zeile")
                     div(class="sheet-sonderattribut-titel")
                         span(data-i18n="regeneration")
                     div
             div 
-                +sonderattributskopfzeile("stufe")
-                +sonderattributszeile("schmerztoleranz")
-                +sonderattributszeile("blutpunkte")
                 +sonderattributszeile("regeneration-geschwindigkeit")
             div 
-                +sonderattributskopfzeile("stufe")
-                +sonderattributszeile("adrenalin")
-                +sonderattributszeile("meditation")
                 +sonderattributszeile("regeneration-pool")
+
 //
     ********************************
     * ENDE src/html/page-one/block-two.pug

@@ -317,6 +317,10 @@ div.sheet-noreturn textarea.sheet-style-skills {
 	height					: calc(6*var(--font-middle-size));
 }
 
+div.sheet-noreturn textarea.sheet-textarea-klein {
+	height					: calc(4*var(--font-middle-size));
+}
+
 div.sheet-noreturn div.sheet-besondere-fertigkeiten-zeile select {
 	background-color		: transparent;
 	width					: auto;

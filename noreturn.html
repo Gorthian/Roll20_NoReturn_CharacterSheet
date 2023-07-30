@@ -469,10 +469,6 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                   <input type="number" name="attr_dmg_schwellwert" readonly="readonly"/>
                 </div>
               </div>
-              <div class="sheet-sonderattribut-zeile">
-                <div class="sheet-sonderattribut-titel"><span data-i18n="regeneration"></span></div>
-                <div></div>
-              </div>
             </div>
             <div> 
                     <!-- MIXIN : src/html/page-one/block-two.pug : sonderattributskopfzeile-->
@@ -494,14 +490,6 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                       <div>
                         <input type="number" name="attr_blutpunkte" value="0"/>
                         <input type="hidden" name="attr_blutpunkte-old" value="0"/>
-                      </div>
-                    </div>
-                    <!-- MIXIN : src/html/page-one/block-two.pug : sonderattributszeile-->
-                    <div class="sheet-sonderattribut-zeile">
-                      <div class="sheet-sonderattribut-titel"><span data-i18n="regeneration-geschwindigkeit"></span></div>
-                      <div>
-                        <input type="number" name="attr_regeneration-geschwindigkeit" value="0"/>
-                        <input type="hidden" name="attr_regeneration-geschwindigkeit-old" value="0"/>
                       </div>
                     </div>
             </div>
@@ -527,6 +515,29 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                         <input type="hidden" name="attr_meditation-old" value="0"/>
                       </div>
                     </div>
+            </div>
+          </div>
+          <div>
+            <textarea class="sheet-textarea-klein" name="attr_notizen-attribute"></textarea>
+          </div>
+          <div class="sheet-sonderattribute">
+            <div>              
+              <div class="sheet-sonderattribut-zeile">
+                <div class="sheet-sonderattribut-titel"><span data-i18n="regeneration"></span></div>
+                <div></div>
+              </div>
+            </div>
+            <div> 
+                    <!-- MIXIN : src/html/page-one/block-two.pug : sonderattributszeile-->
+                    <div class="sheet-sonderattribut-zeile">
+                      <div class="sheet-sonderattribut-titel"><span data-i18n="regeneration-geschwindigkeit"></span></div>
+                      <div>
+                        <input type="number" name="attr_regeneration-geschwindigkeit" value="0"/>
+                        <input type="hidden" name="attr_regeneration-geschwindigkeit-old" value="0"/>
+                      </div>
+                    </div>
+            </div>
+            <div> 
                     <!-- MIXIN : src/html/page-one/block-two.pug : sonderattributszeile-->
                     <div class="sheet-sonderattribut-zeile">
                       <div class="sheet-sonderattribut-titel"><span data-i18n="regeneration-pool"></span></div>
