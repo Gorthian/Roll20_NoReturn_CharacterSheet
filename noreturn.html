@@ -34,6 +34,12 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
         <label data-i18n="bonus"></label>
         <input type="number" name="attr_probe_bonus"/>
         <button type="action" name="act_wirf-probe" data-i18n="wuerfeln"></button>
+        <div class="sheet-tooltip"><span class="sheet-tooltiptext" data-i18n="tooltip-dicebot-mod1"></span>
+          <input type="checkbox" name="attr_probe_modifikator1" value="0" readonly="readonly"/>
+        </div>
+        <div class="sheet-tooltip"><span class="sheet-tooltiptext" data-i18n="tooltip-dicebot-mod2"></span>
+          <input type="checkbox" name="attr_probe_modifikator2" value="0" readonly="readonly"/>
+        </div>
         <input type="number" name="attr_probe_original_hazard_wuerfel" hidden="hidden"/>
         <input type="number" name="attr_probe_original_standard_wuerfel" hidden="hidden"/>
         <input type="number" name="attr_probe_biomechanik" hidden="hidden"/>
@@ -271,7 +277,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                     <!-- MIXIN : src/html/page-one/block-two.pug : attributszeile-->
                     <div class="sheet-attribut-zeile">
                       <div class="sheet-titel sheet-tooltip">
-                        <button class="sheet-button-transparent" type="action" name="act_probe-ohne-mod-geschick"><span data-i18n="geschick"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe-ohne-mod">           </span>
+                        <button class="sheet-button-transparent" type="action" name="act_probe-ohne-mod-geschick"><span data-i18n="geschick"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe-ohne-mod"></span>
                       </div>
                       <div>
                         <input type="checkbox" value="1" name="attr_geschick-biomechanik"/>
@@ -297,7 +303,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                     <!-- MIXIN : src/html/page-one/block-two.pug : attributszeile-->
                     <div class="sheet-attribut-zeile">
                       <div class="sheet-titel sheet-tooltip">
-                        <button class="sheet-button-transparent" type="action" name="act_probe-ohne-mod-staerke"><span data-i18n="staerke"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe-ohne-mod">           </span>
+                        <button class="sheet-button-transparent" type="action" name="act_probe-ohne-mod-staerke"><span data-i18n="staerke"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe-ohne-mod"></span>
                       </div>
                       <div>
                         <input type="checkbox" value="1" name="attr_staerke-biomechanik"/>
@@ -323,7 +329,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                     <!-- MIXIN : src/html/page-one/block-two.pug : attributszeile-->
                     <div class="sheet-attribut-zeile">
                       <div class="sheet-titel sheet-tooltip">
-                        <button class="sheet-button-transparent" type="action" name="act_probe-ohne-mod-konstitution"><span data-i18n="konstitution"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe-ohne-mod">           </span>
+                        <button class="sheet-button-transparent" type="action" name="act_probe-ohne-mod-konstitution"><span data-i18n="konstitution"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe-ohne-mod"></span>
                       </div>
                       <div>
                         <input type="checkbox" value="1" name="attr_konstitution-biomechanik"/>
@@ -349,7 +355,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                     <!-- MIXIN : src/html/page-one/block-two.pug : attributszeile-->
                     <div class="sheet-attribut-zeile">
                       <div class="sheet-titel sheet-tooltip">
-                        <button class="sheet-button-transparent" type="action" name="act_probe-ohne-mod-beweglichkeit"><span data-i18n="beweglichkeit"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe-ohne-mod">           </span>
+                        <button class="sheet-button-transparent" type="action" name="act_probe-ohne-mod-beweglichkeit"><span data-i18n="beweglichkeit"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe-ohne-mod"></span>
                       </div>
                       <div>
                         <input type="checkbox" value="1" name="attr_beweglichkeit-biomechanik"/>
@@ -388,7 +394,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                     <!-- MIXIN : src/html/page-one/block-two.pug : attributszeile-->
                     <div class="sheet-attribut-zeile">
                       <div class="sheet-titel sheet-tooltip">
-                        <button class="sheet-button-transparent" type="action" name="act_probe-ohne-mod-wahrnehmung"><span data-i18n="wahrnehmung"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe-ohne-mod">           </span>
+                        <button class="sheet-button-transparent" type="action" name="act_probe-ohne-mod-wahrnehmung"><span data-i18n="wahrnehmung"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe-ohne-mod"></span>
                       </div>
                       <div>
                         <input type="checkbox" value="1" name="attr_wahrnehmung-biomechanik"/>
@@ -414,7 +420,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                     <!-- MIXIN : src/html/page-one/block-two.pug : attributszeile-->
                     <div class="sheet-attribut-zeile">
                       <div class="sheet-titel sheet-tooltip">
-                        <button class="sheet-button-transparent" type="action" name="act_probe-ohne-mod-wissen"><span data-i18n="wissen"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe-ohne-mod">           </span>
+                        <button class="sheet-button-transparent" type="action" name="act_probe-ohne-mod-wissen"><span data-i18n="wissen"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe-ohne-mod"></span>
                       </div>
                       <div>
                         <input type="checkbox" value="1" name="attr_wissen-biomechanik"/>
@@ -440,7 +446,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                     <!-- MIXIN : src/html/page-one/block-two.pug : attributszeile-->
                     <div class="sheet-attribut-zeile">
                       <div class="sheet-titel sheet-tooltip">
-                        <button class="sheet-button-transparent" type="action" name="act_probe-ohne-mod-charisma"><span data-i18n="charisma"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe-ohne-mod">           </span>
+                        <button class="sheet-button-transparent" type="action" name="act_probe-ohne-mod-charisma"><span data-i18n="charisma"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe-ohne-mod"></span>
                       </div>
                       <div>
                         <input type="checkbox" value="1" name="attr_charisma-biomechanik"/>
@@ -466,7 +472,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                     <!-- MIXIN : src/html/page-one/block-two.pug : attributszeile-->
                     <div class="sheet-attribut-zeile">
                       <div class="sheet-titel sheet-tooltip">
-                        <button class="sheet-button-transparent" type="action" name="act_probe-ohne-mod-handwerk"><span data-i18n="handwerk"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe-ohne-mod">           </span>
+                        <button class="sheet-button-transparent" type="action" name="act_probe-ohne-mod-handwerk"><span data-i18n="handwerk"></span></button><span class="sheet-tooltiptext" data-i18n="tooltip-probe-ohne-mod"></span>
                       </div>
                       <div>
                         <input type="checkbox" value="1" name="attr_handwerk-biomechanik"/>
@@ -2555,8 +2561,14 @@ const skilllist = [
 /* Hilfsfunktionen */
 
 //Befüllen des Dicebots
-function setDicebot(skill,attribut,summe,skillNotiz,hazard=1,biomechanik=0) {
+function setDicebot(skill,attribut,summe,skillNotiz,hazard=1,biomechanik=0,mods=0) {
     if (summe < 1) {summe = 1} // Man hat immer mindestens einen Würfel
+
+    // Keine Ahnung weshalb, aber eine 0 aktiviert die Checkboxen, jeder String deaktiviert sie
+    mod1="-";
+    mod2="-";
+    if (mods > 0) {mod1=0}
+    if (mods > 1) {mod2=0}    
 
     setAttrs({
         "probe_skill"                       : skill,
@@ -2569,7 +2581,9 @@ function setDicebot(skill,attribut,summe,skillNotiz,hazard=1,biomechanik=0) {
         "probe_standard_wuerfel"            : summe-hazard,               
         "probe_bonus_wuerfel"               : 0,
         "probe_bonus"                       : 0,
-        "probe_biomechanik"                 : biomechanik
+        "probe_biomechanik"                 : biomechanik,
+        "probe_modifikator1"                : mod1,
+        "probe_modifikator2"                : mod2
     });
 }
 
@@ -2614,7 +2628,7 @@ function setzeSprachprobe(name, stufe) {
     let summe = stufe;
 
     if (stufe==0) {summe = summe -2} //Ist die Fertigkeitsstufe 0, bekommt die Probe einen Malus von 2
-    setDicebot(name,getTranslationByKey("sprachprobe"),summe,"",hazard,0);
+    setDicebot(name,getTranslationByKey("sprachprobe"),summe,"",hazard,0,0);
 }
 
 // DMG Schwellwert setzen
@@ -2648,13 +2662,16 @@ skilllist.forEach(skills => {
             let modifikatoren = parseInt(values[skill+"_modifikatoren"]||0);
             let attributWert = parseInt(values[attribut]||0);
             let attributMod1 = parseInt(values[attribut+"-mod1"]||0);
-            let attributMod2 = parseInt(values[attribut+"-mod2"]||0);            
+            let attributMod2 = parseInt(values[attribut+"-mod2"]||0);
+            let mods=0;         
     
             summeSkill = parseInt(values[skill]);
             if (modifikatoren==0) { //Prüfen ob die Attributsmodifikatoren automatisch mit eingerechnet werden sollen
                 summeAttribut = attributWert;
+                mods;
             } else {
                 summeAttribut = attributWert + attributMod1 + attributMod2;
+                mods=2;
             }            
             summe = summeSkill + summeAttribut;
 
@@ -2670,7 +2687,7 @@ skilllist.forEach(skills => {
                 hazard=1;
             }
 
-            setDicebot(getTranslationByKey(skill),getTranslationByKey(attribut),summe,skillNotiz,hazard,biomechanik_skill||biomechanik_attribut);
+            setDicebot(getTranslationByKey(skill),getTranslationByKey(attribut),summe,skillNotiz,hazard,biomechanik_skill||biomechanik_attribut,mods);
         });
     });
 });
@@ -2692,7 +2709,7 @@ attributeslist.forEach(attribut => {
             if(biomechanik==1) { //Hat das Attribut Biomechanik werden alle Fertigkeits-Würfel zu Hazard-Di
                 hazard = summe;
             }
-            setDicebot(getTranslationByKey("attributsprobe"),getTranslationByKey(attribut),summe," ",hazard);
+            setDicebot(getTranslationByKey("attributsprobe"),getTranslationByKey(attribut),summe," ",hazard,0,2);
         });
     });
 });
@@ -2712,7 +2729,7 @@ attributeslist.forEach(attribut => {
             if(biomechanik==1) { //Hat das Attribut Biomechanik werden alle Fertigkeits-Würfel zu Hazard-Di
                 hazard = summe;
             }
-            setDicebot(getTranslationByKey("attributsprobe"),getTranslationByKey(attribut),summe," ",hazard);
+            setDicebot(getTranslationByKey("attributsprobe"),getTranslationByKey(attribut),summe," ",hazard,0,1);
         });
     });
 });
@@ -2729,7 +2746,7 @@ attributeslist.forEach(attribut => {
             if(biomechanik==1) { //Hat das Attribut Biomechanik werden alle Fertigkeits-Würfel zu Hazard-Di
                 hazard = summe;
             }
-            setDicebot(getTranslationByKey("attributsprobe"),getTranslationByKey(attribut),summe," ",hazard);
+            setDicebot(getTranslationByKey("attributsprobe"),getTranslationByKey(attribut),summe," ",hazard, 0);
         });
     });
 });
