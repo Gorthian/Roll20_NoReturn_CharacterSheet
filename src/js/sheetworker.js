@@ -1,6 +1,6 @@
 /*
     CREATED by          Gorthian
-    Letzte Änderung		2023-07-30
+    Letzte Änderung		2023-09-06
 */
 
 
@@ -208,9 +208,9 @@ skilllist.forEach(skills => {
 });
 
 // Attributsproben
-// ...mit Modifikatoren
+// ...mit allen Modifikatoren
 attributeslist.forEach(attribut => {    
-    on(`clicked:probe-${attribut}`, function() {        
+    on(`clicked:probe-komplett-${attribut}`, function() {        
         getAttrs([attribut, attribut+"-mod1", attribut+"-mod2", attribut+"-biomechanik"], function(values) {
             let summe = 0;
             let hazard = 0;
@@ -228,6 +228,27 @@ attributeslist.forEach(attribut => {
         });
     });
 });
+
+// ...mit dem ersten Modifikator
+attributeslist.forEach(attribut => {    
+    on(`clicked:probe-mit-mod1-${attribut}`, function() {        
+        getAttrs([attribut, attribut+"-mod1", attribut+"-biomechanik"], function(values) {
+            let summe = 0;
+            let hazard = 0;
+            let biomechanik = parseInt(values[attribut+"-biomechanik"]||0);
+            let wert = parseInt(values[attribut]||0);
+            let mod1 = parseInt(values[attribut+"-mod1"]||0);
+            console.log(getTranslationByKey("attributsprobe") + ":" + wert + "/" + mod1);
+            
+            summe = wert + mod1;
+            if(biomechanik==1) { //Hat das Attribut Biomechanik werden alle Fertigkeits-Würfel zu Hazard-Di
+                hazard = summe;
+            }
+            setDicebot(getTranslationByKey("attributsprobe"),getTranslationByKey(attribut),summe," ",hazard);
+        });
+    });
+});
+
 
 // ...ohne Modifikatoren
 attributeslist.forEach(attribut => {    
