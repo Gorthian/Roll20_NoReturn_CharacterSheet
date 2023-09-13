@@ -20,5 +20,6 @@ https://www.mannifest-games.com/
        * PSI-Kräfte verschoben
   * Manuelle Würfe aus Dicebot entfernt
   * Dicebot verschoben
+  * Modifikatoren werden nicht mehr automatisch im Dicebot berücksichtigt
 
 **2023-09-07 v1.0 released**
