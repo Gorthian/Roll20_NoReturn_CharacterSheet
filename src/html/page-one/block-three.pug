@@ -1,6 +1,6 @@
 //-
     CREATED by          Gorthian
-    Letzte Änderung		2023-05-21
+    Letzte Änderung		2023-09-13
 
 //
     ********************************
@@ -15,10 +15,7 @@ mixin fertigkeitskopfzeile()
         div(class="sheet-kopfzeile")
             span(data-i18n="fertigkeit")
         div(class="sheet-kopfzeile")
-            span(data-i18n="attr")
-        div(class="sheet-kopfzeile sheet-tooltip")
-            span(data-i18n="modifikatoren_kurz")
-            span(class="sheet-tooltiptext" data-i18n="tooltip-modifikatoren")
+            span(data-i18n="attr")        
         div(class="sheet-kopfzeile sheet-tooltip")
             span(data-i18n="biomechanik_kurz")
             span(class="sheet-tooltiptext" data-i18n="biomechanik")
@@ -37,9 +34,7 @@ mixin fertigkeitszeile(skill,attribute)
         div(class="sheet-tooltip")
             span(data-i18n=attribute+"_kurz")
             span(class="sheet-tooltiptext")
-                span(name="attr_"+attribute)
-        div
-            input(type="checkbox" value="1" name="attr_"+skill+"_modifikatoren")
+                span(name="attr_"+attribute)        
         div
             input(type="checkbox" value="1" name="attr_"+skill+"_biomechanik")
         div
