@@ -17,6 +17,7 @@ https://www.mannifest-games.com/
 
 * Redesign
   * Seiten-Navigation nach oben verlegt, Buttons umbenannt und PSI-Seite aktiviert
+       * PSI-Kräfte verschoben
   * Manuelle Würfe aus Dicebot entfernt
   * Dicebot verschoben
 
