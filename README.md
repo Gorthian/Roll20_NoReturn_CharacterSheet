@@ -14,8 +14,10 @@ https://www.mannifest-games.com/
 # Release Notes
 
 2023-09-13 v1.1 alpha
-    
-    Redesign    Seiten-Navigation nach oben verlegt, Buttons umbenannt und PSI-Seite aktiviert
-                Manuelle Würfe aus Dicebot entfernt
+
+* Redesign
+  * Seiten-Navigation nach oben verlegt, Buttons umbenannt und PSI-Seite aktiviert
+  * Manuelle Würfe aus Dicebot entfernt
+  * Dicebot verschoben
 
 **2023-09-07 v1.0 released**
