@@ -13,4 +13,7 @@ https://www.mannifest-games.com/
 
 # Release Notes
 
+2023-09-13 v1.1 alpha
+    Redesign    Seiten-Navigation nach oben verlegt, Buttons umbenannt und PSI-Seite aktiviert
+
 **2023-09-07 v1.0 released**

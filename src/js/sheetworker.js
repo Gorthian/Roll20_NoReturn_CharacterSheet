@@ -5,7 +5,7 @@
 
 
 /* TAB MENU */
-const buttonlist = ["page-one","page-two"]; //Bei Änderungen auch die globale Variable in noreturn.pug anpassen
+const buttonlist = ["page-one","page-two","page-three",,"page-four"]; //Bei Änderungen auch die globale Variable in noreturn.pug anpassen
 buttonlist.forEach(button => {
     on(`clicked:${button}`, function() {
         console.log(button);

@@ -2,7 +2,7 @@
 <!--
 CREATED by          Gorthian
 Version				1.1 alpha
-Letzte Änderung		2023-09-06
+Letzte Änderung		2023-09-13
 GitHub				https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet
 Wiki				https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/wiki
 Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
@@ -73,6 +73,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
     <div class="sheet-tabs" role="navigation" aria-label="Angezeigte Seite auswählen" lang="de">
       <button class="sheet-toggle-button" type="action" name="act_page-one" data-i18n="seite-1"></button>
       <button class="sheet-toggle-button" type="action" name="act_page-two" data-i18n="seite-2"></button>
+      <button class="sheet-toggle-button" type="action" name="act_page-three" data-i18n="seite-3"></button>
     </div>
     <!--
     ********************************
@@ -2415,6 +2416,34 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
     * ENDE src/html/page-two.pug
     ********************************
     -->
+    <!--
+    ********************************
+    * START src/html/page-three.pug
+    ********************************
+    
+    -->
+    <div class="sheet-page-three" role="section">
+      <h1>Seite 3</h1>
+    </div>
+    <!--
+    ********************************
+    * ENDE src/html/page-three.pug
+    ********************************
+    -->
+    <!--
+    ********************************
+    * START src/html/page-four.pug
+    ********************************
+    
+    -->
+    <div class="sheet-page-four" role="section">
+      <h1>Seite 4</h1>
+    </div>
+    <!--
+    ********************************
+    * ENDE src/html/page-four.pug
+    ********************************
+    -->
   </div>
 </div>
 <!--
@@ -2479,7 +2508,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
 
 
 /* TAB MENU */
-const buttonlist = ["page-one","page-two"]; //Bei Änderungen auch die globale Variable in noreturn.pug anpassen
+const buttonlist = ["page-one","page-two","page-three",,"page-four"]; //Bei Änderungen auch die globale Variable in noreturn.pug anpassen
 buttonlist.forEach(button => {
     on(`clicked:${button}`, function() {
         console.log(button);

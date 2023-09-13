@@ -1,7 +1,7 @@
 /*
 	CREATED by 			Gorthian
 	Version				1.1 alpha
-	Letzte Änderung		2023-09-07
+	Letzte Änderung		2023-09-13
 	
 	GitHub				https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet
 	Wiki				https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/wiki
@@ -129,7 +129,6 @@ div.sheet-noreturn-body {
 	min-width              	: 800px;
     background-color		: var(--background-color);
     display                 : grid;
-	grid-template-columns	: 1em auto;
 	background-image		: url("https://raw.githubusercontent.com/Gorthian/Roll20_NoReturn_CharacterSheet/main/images/background_800px.png");
 	background-repeat		: no-repeat;
 	background-size			: cover;
@@ -603,32 +602,24 @@ input[type=number] {
 }
 
 /*Configure the tab buttons*/
-div.sheet-noreturn div.sheet-tabs {
-	position				: sticky;
-	top						: 0px;
-	height					: 1em; /* Ohne eine Höhe funktioniert Sticky nicht */
-}
 
 div.sheet-noreturn button.sheet-toggle-button {
 	display					: inline-block;
-	transform				: rotate(-90deg);
 	font-family				: var(--font-standard);
 	text-transform          : uppercase;
 	font-size				: 1.5em;
-	white-space				: nowrap;	
-	top						: 1em;
-	left					: -2em;
-	margin-bottom			: 50px;
+	white-space				: nowrap;
 }
 
-.sheet-page-one,
-.sheet-page-two {
+.sheet-page-one, .sheet-page-two, .sheet-page-three, .sheet-page-four {
     display: none;
 }
 
 /* TAB MENU */
 .sheet-tabstoggle[value="page-one"] ~ div.sheet-page-one,
-.sheet-tabstoggle[value="page-two"] ~ div.sheet-page-two {
+.sheet-tabstoggle[value="page-two"] ~ div.sheet-page-two,
+.sheet-tabstoggle[value="page-three"] ~ div.sheet-page-three,
+.sheet-tabstoggle[value="page-four"] ~ div.sheet-page-four {
     display: block;
 }
 
