@@ -91,6 +91,16 @@ mixin input-text(attribute, i18n, standard)
     div
         input(type="text" name="attr_"+attribute default=standard)
 
+mixin repeating-textarea(name)
+    // MIXIN : noreturn.pug : repeating-textarea
+    div(class="sheet-box")
+        h1(data-i18n=name)
+        fieldset(class="repeating_"+name)
+            input(name="attr_"+name+"-titel" type="text" class="sheet-input-underline")
+            details 
+                summary(class="sheet-summary-standard") &nbsp;
+                textarea(name="attr_"+name+"-beschreibung" class="sheet-details-standard")
+
 //- SEITENINHALT
 div(class="sheet-noreturn" role="article")    
     div(class="sheet-noreturn-body")
