@@ -14,43 +14,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
 * START noreturn.pug
 ********************************
 -->
-<div class="sheet-noreturn" role="article">
-  <!--
-  ********************************
-  * START src/html/dicebot.pug
-  ********************************
-  
-  -->
-  <div class="sheet-dicebot-container">
-    <div class="sheet-dicebot" role="form" aria-label="Automatische Eingaben für den Würfelbot" lang="de">
-      <div class="sheet-dicebot-row"><span name="attr_probe_skill"></span><span>-</span><span name="attr_probe_attribut"></span><span>:</span><span name="attr_probe_summe_wuerfel"></span><span data-i18n="wuerfel"></span>-/-<span data-i18n="info-skill-notiz"></span><span name="attr_probe_skill_notiz"></span></div>
-      <div class="sheet-dicebot-row">
-        <label data-i18n="hazard-di"></label>
-        <input type="number" name="attr_probe_hazard_wuerfel"/>
-        <label data-i18n="regulaere-di"></label>
-        <input type="number" name="attr_probe_standard_wuerfel"/>
-        <label data-i18n="bonus-di"></label>
-        <input type="number" name="attr_probe_bonus_wuerfel"/>
-        <label data-i18n="bonus"></label>
-        <input type="number" name="attr_probe_bonus"/>
-        <button type="action" name="act_wirf-probe" data-i18n="wuerfeln"></button>
-        <div class="sheet-tooltip"><span class="sheet-tooltiptext" data-i18n="tooltip-dicebot-mod1"></span>
-          <input type="checkbox" name="attr_probe_modifikator1" value="0" readonly="readonly"/>
-        </div>
-        <div class="sheet-tooltip"><span class="sheet-tooltiptext" data-i18n="tooltip-dicebot-mod2"></span>
-          <input type="checkbox" name="attr_probe_modifikator2" value="0" readonly="readonly"/>
-        </div>
-        <input type="number" name="attr_probe_original_hazard_wuerfel" hidden="hidden"/>
-        <input type="number" name="attr_probe_original_standard_wuerfel" hidden="hidden"/>
-        <input type="number" name="attr_probe_biomechanik" hidden="hidden"/>
-      </div>
-    </div>
-  </div>
-  <!--
-  ********************************
-  * ENDE src/html/dicebot.pug
-  ********************************
-  -->
+<div class="sheet-noreturn" role="article">   
   <div class="sheet-noreturn-body">
     <input class="sheet-tabstoggle" type="hidden" name="attr_sheetTab" value="page-one"/>
     <div class="sheet-tabs" role="navigation" aria-label="Angezeigte Seite auswählen" lang="de">
@@ -587,6 +551,42 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
       <!--
       ********************************
       * ENDE src/html/page-one/block-two.pug
+      ********************************
+      -->
+      <!--
+      ********************************
+      * START src/html/dicebot.pug
+      ********************************
+      
+      -->
+      <div class="sheet-dicebot-container">
+        <div class="sheet-dicebot" role="form" aria-label="Automatische Eingaben für den Würfelbot" lang="de">
+          <div class="sheet-dicebot-row"><span name="attr_probe_skill"></span><span>-</span><span name="attr_probe_attribut"></span><span>:</span><span name="attr_probe_summe_wuerfel"></span><span data-i18n="wuerfel"></span>-/-<span data-i18n="info-skill-notiz"></span><span name="attr_probe_skill_notiz"></span></div>
+          <div class="sheet-dicebot-row">
+            <label data-i18n="hazard-di"></label>
+            <input type="number" name="attr_probe_hazard_wuerfel"/>
+            <label data-i18n="regulaere-di"></label>
+            <input type="number" name="attr_probe_standard_wuerfel"/>
+            <label data-i18n="bonus-di"></label>
+            <input type="number" name="attr_probe_bonus_wuerfel"/>
+            <label data-i18n="bonus"></label>
+            <input type="number" name="attr_probe_bonus"/>
+            <button type="action" name="act_wirf-probe" data-i18n="wuerfeln"></button>
+            <div class="sheet-tooltip"><span class="sheet-tooltiptext" data-i18n="tooltip-dicebot-mod1"></span>
+              <input type="checkbox" name="attr_probe_modifikator1" value="0" readonly="readonly"/>
+            </div>
+            <div class="sheet-tooltip"><span class="sheet-tooltiptext" data-i18n="tooltip-dicebot-mod2"></span>
+              <input type="checkbox" name="attr_probe_modifikator2" value="0" readonly="readonly"/>
+            </div>
+            <input type="number" name="attr_probe_original_hazard_wuerfel" hidden="hidden"/>
+            <input type="number" name="attr_probe_original_standard_wuerfel" hidden="hidden"/>
+            <input type="number" name="attr_probe_biomechanik" hidden="hidden"/>
+          </div>
+        </div>
+      </div>
+      <!--
+      ********************************
+      * ENDE src/html/dicebot.pug
       ********************************
       -->
       <!--
