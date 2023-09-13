@@ -45,23 +45,6 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
         <input type="number" name="attr_probe_biomechanik" hidden="hidden"/>
       </div>
     </div>
-    <div class="sheet-dicebot" role="form" aria-label="Manuelle Eingaben für den Würfelbot" lang="de">
-      <div class="sheet-dicebot-row">
-        <label data-i18n="manuell_wuerfeln_eingabe"></label>
-      </div>
-      <div class="sheet-dicebot-row">
-        <label data-i18n="hazard-di"></label>
-        <input type="number" name="attr_manuelle_probe_hazard_wuerfel"/>
-        <label data-i18n="regulaere-di"></label>
-        <input type="number" name="attr_manuelle_probe_standard_wuerfel"/>
-        <label data-i18n="bonus-di"></label>
-        <input type="number" name="attr_manuelle_probe_bonus_wuerfel"/>
-        <label data-i18n="bonus"></label>
-        <input type="number" name="attr_manuelle_probe_bonus"/>
-        <button type="action" name="act_wirf-manuelle-probe" data-i18n="wuerfeln"></button>
-        <button type="action" name="act_reset-manuelle-probe" data-i18n="zuruecksetzen"></button>
-      </div>
-    </div>
   </div>
   <!--
   ********************************
@@ -2503,7 +2486,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
 <!-- SHEET WORKERS-->
 <script type="text/worker">/*
     CREATED by          Gorthian
-    Letzte Änderung		2023-09-06
+    Letzte Änderung		2023-09-13
 */
 
 
@@ -2953,90 +2936,6 @@ on("clicked:wirf-probe",function(){
             );                
         });
     });        
-});
-
-on("clicked:wirf-manuelle-probe",function(){
-    getAttrs(["character_name","manuelle_probe_standard_wuerfel","manuelle_probe_hazard_wuerfel","manuelle_probe_bonus_wuerfel","manuelle_probe_bonus"], function(values) {
-        let standard = parseInt(values["manuelle_probe_standard_wuerfel"]||0);
-        let hazard = parseInt(values["manuelle_probe_hazard_wuerfel"]||0);        
-        let bonuswuerfel = parseInt(values["manuelle_probe_bonus_wuerfel"]||0);
-        let bonus = parseInt(values["manuelle_probe_bonus"]||0);
-        let charaktername = values["character_name"];
-        let roll = ""
-        let summe = hazard + standard + bonuswuerfel;
-
-        //Bei negativen Bonuswürfeln die Anzahl an Würfeln reduzieren
-        if (bonuswuerfel <0)
-        {
-            //Bei negativen Bonuswürfeln zunächst die Standard-Würfel und dann die Hazard-Würfel reduzieren
-            standard = standard + bonuswuerfel;
-            if(standard <0)
-            {
-                hazard = hazard + standard;
-                standard = 0;
-            }                
-            if (hazard<1) {hazard=0} //Bei manuellen Proben sind acuh Würde ohne Hazard-Di möglich
-        }
-
-        roll = "&{template:probe_offen}"; //Das Rolltemplate festlegen
-        roll = roll + "{{charaktername="+charaktername+"}}"; //Den Charakternamen mitgeben
-        roll = roll + "{{fertigkeit="+getTranslationByKey("manuelle_probe")+"}}"; //Die Fertigkeit auf die gewürfelt wird
-        roll = roll + "{{hazard=[["+hazard+"d6!6]]}}"; //Der Hazard-Wurf            
-        roll = roll + "{{wurf=[["+standard+"d6]]}}"; //Der normale Wurf
-        roll = roll + "{{bonuswurf=[["+bonuswuerfel+"d6]]}}"; //Die Bonuswürfel
-        roll = roll + "{{bonus=[["+bonus+"]]}}"; //Bonus abfragen
-        roll = roll + "{{summe=[["+summe+"]]}}"; //Platzhalter für die Summe
-
-        startRoll(roll, (results) => {
-            const hazard = parseInt(results.results.hazard.result);                
-            const wurf = parseInt(results.results.wurf.result);  
-            const bonuswurf = parseInt(results.results.bonuswurf.result);              
-            const bonus = parseInt(results.results.bonus.result);
-            let summe = 0;
-
-            console.log(bonuswurf);
-            if(bonuswurf<1)
-            {
-                summe = hazard+wurf+bonus;
-            } else {
-                summe = hazard+wurf+bonuswurf+bonus;
-            }
-
-            let hazard_wuerfel = "";
-            for (const n of results.results.hazard.dice) {
-                hazard_wuerfel = hazard_wuerfel + ""+n+"";
-            }
-
-            let wurf_wuerfel = "";
-            for (const n of results.results.wurf.dice) {
-                wurf_wuerfel = wurf_wuerfel + ""+n+"";
-            }
-
-            let wurf_bonus = "";
-            for (const n of results.results.bonuswurf.dice) {
-                wurf_bonus = wurf_bonus + ""+n+"";
-            }
-
-            finishRoll(
-                results.rollId,
-                {
-                    summe: summe,
-                    hazard: hazard_wuerfel,                
-                    wurf: wurf_wuerfel,
-                    bonuswurf: wurf_bonus
-                }
-            );                
-        });
-    });        
-});
-
-on("clicked:reset-manuelle-probe",function(){
-    setAttrs({
-        "manuelle_probe_hazard_wuerfel"     : 0,
-        "manuelle_probe_standard_wuerfel"   : 0,
-        "manuelle_probe_bonus_wuerfel"      : 0,
-        "manuelle_probe_bonus"              : 0
-    });
 });
 
 on("clicked:trefferzone",function(){
