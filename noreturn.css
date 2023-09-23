@@ -1,7 +1,7 @@
 /*
 	CREATED by 			Gorthian
 	Version				1.1 alpha
-	Letzte Änderung		2023-09-13
+	Letzte Änderung		2023-09-23
 	
 	GitHub				https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet
 	Wiki				https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/wiki
@@ -387,6 +387,7 @@ div.sheet-noreturn div.sheet-max-current {
     background-color        : #EEE8E0;
     margin                  : 10px 0px 0px 0px;
 	border                  : 1px solid black;
+	text-align				: center;
 }
 
 div.sheet-noreturn div.sheet-max-current div.sheet-max-current-box {    
