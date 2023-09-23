@@ -44,7 +44,7 @@ div.sheet-noreturn h1, div.sheet-noreturn h2 {
 div.sheet-noreturn h1 {font-size : var(--font-h1-size);}
 div.sheet-noreturn h2 {font-size : var(--font-h2-size);}
 
-.sheet-attribut-zeile, .sheet-sonderattribut-zeile {
+.sheet-attribut-zeile, .sheet-sonderattribut-zeile, .sheet-sonderattribut-zeile-max-aktuell {
 	text-transform          : uppercase;
 }
 
@@ -54,17 +54,20 @@ div.sheet-noreturn h2 {font-size : var(--font-h2-size);}
 
 div.sheet-noreturn div.sheet-kopfzeile,
 div.sheet-noreturn div.sheet-titel,
-div.sheet-noreturn div.sheet-sonderattribut-zeile div.sheet-sonderattribut-titel {
+div.sheet-noreturn div.sheet-sonderattribut-zeile div.sheet-sonderattribut-titel,
+div.sheet-noreturn div.sheet-sonderattribut-zeile-max-aktuell div.sheet-sonderattribut-titel {
     font-family				: var(--font-standard);
 	text-transform          : uppercase;		
 }
 
 div.sheet-noreturn div.sheet-kopfzeile {
 	font-size				: var(--font-middle-size);
+	text-align				: center;
 }
 
 div.sheet-noreturn div.sheet-titel,
-div.sheet-noreturn div.sheet-sonderattribut-zeile div.sheet-sonderattribut-titel {
+div.sheet-noreturn div.sheet-sonderattribut-zeile div.sheet-sonderattribut-titel,
+div.sheet-noreturn div.sheet-sonderattribut-zeile-max-aktuell div.sheet-sonderattribut-titel {
 	font-size				: var(--font-big-size);
 }
 
@@ -189,6 +192,11 @@ div.sheet-noreturn .sheet-sonderattribut-zeile {
     grid-template-columns   : 12em 4em;
 }
 
+div.sheet-noreturn .sheet-sonderattribut-zeile-max-aktuell {
+	display                 : grid;
+    grid-template-columns   : 12em repeat(2, 4em);
+}
+
 div.sheet-noreturn .sheet-fertigkeiten-zeile {	
 	display                 : grid;
     grid-template-columns   : 9.6em repeat(3, 2.2em) repeat(2, 2.55em);
@@ -257,6 +265,7 @@ div.sheet-noreturn .sheet-style-skills-zeile {
 
 div.sheet-noreturn .sheet-attribut-zeile div,
 div.sheet-noreturn .sheet-sonderattribut-zeile div,
+div.sheet-noreturn .sheet-sonderattribut-zeile-max-aktuell div,
 div.sheet-noreturn .sheet-fertigkeiten-zeile div,
 div.sheet-noreturn .sheet-besondere-fertigkeiten-zeile div,
 div.sheet-noreturn .sheet-sprachkenntnisse-zeile div,
@@ -278,12 +287,18 @@ div.sheet-noreturn div.sheet-fernkampfwaffen-zeile input[type="number"],
 div.sheet-noreturn div.sheet-nahkampfwaffen-zeile input[type="number"],
 div.sheet-noreturn div.sheet-style-skills-zeile input[type="number"],
 div.sheet-noreturn div.sheet-attribut-zeile input[type="number"],
-div.sheet-noreturn div.sheet-sonderattribut-zeile input[type="number"],
 div.sheet-noreturn div.sheet-fertigkeiten-zeile input[type="number"],
 div.sheet-noreturn div.sheet-fertigkeiten-zeile input[type="text"] {
     border                  : 2px solid black;
 	height					: 1.5em;
 	width					: 2.5em;
+}
+
+div.sheet-noreturn div.sheet-sonderattribut-zeile input[type="number"],
+div.sheet-noreturn div.sheet-sonderattribut-zeile-max-aktuell input[type="number"] {
+    border                  : 2px solid black;
+	height					: 1.5em;
+	width					: 4em;
 }
 
 div.sheet-noreturn div.sheet-besondere-fertigkeiten-zeile input[type="number"],
@@ -326,7 +341,8 @@ div.sheet-noreturn div.sheet-besondere-fertigkeiten-zeile select {
 }
 
 div.sheet-noreturn div.sheet-titel,
-div.sheet-noreturn div.sheet-sonderattribut-zeile div.sheet-sonderattribut-titel {
+div.sheet-noreturn div.sheet-sonderattribut-zeile div.sheet-sonderattribut-titel,
+div.sheet-noreturn div.sheet-sonderattribut-zeile-max-aktuell div.sheet-sonderattribut-titel {
 	height					: 1.5em;
 }
 

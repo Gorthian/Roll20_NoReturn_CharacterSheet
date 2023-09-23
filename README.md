@@ -18,6 +18,8 @@ https://www.mannifest-games.com/
 * Redesign
   * Erfahrungen / Justice / Chaos übersichtlicher dargestellt
   * Sprachkentnisse auf Seite 1 verschoben
+  * Fertigkeiten können aufgeklappt werden
+  * Adrenalin und Meditation um verfügbare Anwendungen erweitert
 
 2023-09-13 v1.1 alpha
 
