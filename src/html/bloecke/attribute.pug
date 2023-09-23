@@ -34,9 +34,9 @@ mixin attributszeile(attribut)
         div
             input(type="number" name="attr_"+attribut value=1)
         div
-            input(type="number" name="attr_"+attribut+"-mod1")
+            input(type="number" name="attr_"+attribut+"-mod1" style="width:5em;")
         div
-            input(type="number" name="attr_"+attribut+"-mod2")        
+            input(type="number" name="attr_"+attribut+"-mod2" style="width:5em;")        
         div(class="sheet-font-darkgray-highlight") 
             | [
             span(data-i18n=attribut+"_kurz")
@@ -44,19 +44,19 @@ mixin attributszeile(attribut)
 
 //- SEITENINHALT
 h1(data-i18n="attribute")
-    div(class="sheet-attribute")
-        div
-            +kopfzeile
-            +attributszeile("geschick")
-            +attributszeile("staerke")
-            +attributszeile("konstitution")
-            +attributszeile("beweglichkeit")
-        div
-            +kopfzeile
-            +attributszeile("wahrnehmung")
-            +attributszeile("wissen")
-            +attributszeile("charisma")
-            +attributszeile("handwerk")
+div(class="sheet-attribute")
+    div
+        +kopfzeile
+        +attributszeile("geschick")
+        +attributszeile("staerke")
+        +attributszeile("konstitution")
+        +attributszeile("beweglichkeit")
+    div
+        +kopfzeile
+        +attributszeile("wahrnehmung")
+        +attributszeile("wissen")
+        +attributszeile("charisma")
+        +attributszeile("handwerk")
 //
     ********************************
     * ENDE src/html/bloecke/attribute.pug

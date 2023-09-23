@@ -20,6 +20,7 @@ https://www.mannifest-games.com/
   * Sprachkentnisse auf Seite 1 verschoben
   * Fertigkeiten können aufgeklappt werden
   * Adrenalin, Meditation, Blutpunkte und Regenerationspool um verfügbare Anwendungen erweitert
+  * Eingabefelder für Attributsmodifikatoren vergrößert
 
 2023-09-13 v1.1 alpha
 
