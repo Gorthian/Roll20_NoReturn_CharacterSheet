@@ -49,20 +49,20 @@ mixin sonderattributszeile_max_aktuell(attribute)
 div(class="sheet-sonderattribute")
     div
         +sonderattributskopfzeile("wert")
-        +sonderattributszeile("trefferpunkte")
+        +sonderattributszeile("trefferpunkte")        
         div(class="sheet-sonderattribut-zeile")
             div(class="sheet-sonderattribut-titel")
                 span(data-i18n="dmg_schwellwert")
             div
                 input(type="number" name="attr_dmg_schwellwert" readonly="readonly")                
     div 
-        +sonderattributskopfzeile("stufe")
+        +sonderattributskopfzeile("stufe")                
         +sonderattributszeile("schmerztoleranz")
-        +sonderattributszeile("blutpunkte")
     div 
         +sonderattributskopfzeile_max_aktuell("stufe","verbleibend")
         +sonderattributszeile_max_aktuell("adrenalin")
         +sonderattributszeile_max_aktuell("meditation")
+        +sonderattributszeile_max_aktuell("blutpunkte")
 div
     textarea(name="attr_notizen-attribute" class="sheet-textarea-klein")
 div(class="sheet-sonderattribute")
