@@ -13,7 +13,7 @@ https://www.mannifest-games.com/
 
 # Release Notes
 
-2023-09-23 v1.1 alpha
+**2023-09-23 v1.1 released**
 
 * Redesign
   * Erfahrungen / Justice / Chaos übersichtlicher dargestellt
@@ -22,10 +22,6 @@ https://www.mannifest-games.com/
   * Adrenalin, Meditation, Blutpunkte und Regenerationspool um verfügbare Anwendungen erweitert
   * Eingabefelder für Attributsmodifikatoren vergrößert
   * Charaktermerkmale als einfache Eingabefelder ohne aufklappbares Textfeld
-
-2023-09-13 v1.1 alpha
-
-* Redesign
   * Seiten-Navigation nach oben verlegt, Buttons umbenannt und PSI-Seite aktiviert
        * PSI-Kräfte verschoben
   * Manuelle Würfe aus Dicebot entfernt
