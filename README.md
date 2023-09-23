@@ -13,6 +13,12 @@ https://www.mannifest-games.com/
 
 # Release Notes
 
+2023-09-23 v1.1 alpha
+
+* Redesign
+  * Erfahrungen / Justice / Chaos übersichtlicher dargestellt
+  * Sprachkentnisse auf Seite 1 verschoben
+
 2023-09-13 v1.1 alpha
 
 * Redesign
