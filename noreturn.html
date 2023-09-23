@@ -1515,6 +1515,44 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                     </div>
                   </div>
           </div>
+          <!--
+          ********************************
+          * START src/html/bloecke/sprachkentnisse.pug
+          ********************************
+          
+          -->
+          <div class="sheet-box">
+            <h1 data-i18n="sprachkenntnisse"></h1>
+            <div class="sheet-sprachkenntnisse-zeile">
+              <div class="sheet-kopfzeile"><span>&nbsp;</span></div>
+              <div class="sheet-kopfzeile"><span data-i18n="sprache"></span></div>
+              <div class="sheet-kopfzeile"><span data-i18n="stufe"></span></div>
+            </div>
+            <div class="sheet-sprachkenntnisse-zeile">
+              <div>
+                <button class="sheet-button-d6" type="action" name="act_sprachprobe_babel"></button>
+              </div>
+              <div>
+                <input type="text" value="Babel" readonly="readonly"/>
+              </div>
+              <div>
+                <input type="number" name="attr_babel-stufe" value="5"/>
+              </div>
+            </div>
+            <fieldset class="repeating_sprachkenntnisse">
+              <div class="sheet-sprachkenntnisse-zeile">
+                <div>
+                  <button class="sheet-button-d6" type="action" name="act_probe"></button>
+                </div>
+                <div>
+                  <input type="text" name="attr_sprachkenntnisse-sprache"/>
+                </div>
+                <div>
+                  <input type="number" name="attr_sprachkenntnisse-stufe"/>
+                </div>
+              </div>
+            </fieldset>
+          </div>
           <div class="sheet-box" role="section">
             <h1 data-i18n="besondere-fertigkeiten"></h1>
             <div class="sheet-besondere-fertigkeiten-zeile">
@@ -2103,39 +2141,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
       * START src/html/page-two/block-four.pug
       ********************************
       -->
-      <div class="sheet-3cols">
-        <div class="sheet-box">
-          <h1 data-i18n="sprachkenntnisse"></h1>
-          <div class="sheet-sprachkenntnisse-zeile">
-            <div class="sheet-kopfzeile"><span>&nbsp;</span></div>
-            <div class="sheet-kopfzeile"><span data-i18n="sprache"></span></div>
-            <div class="sheet-kopfzeile"><span data-i18n="stufe"></span></div>
-          </div>
-          <div class="sheet-sprachkenntnisse-zeile">
-            <div>
-              <button class="sheet-button-d6" type="action" name="act_sprachprobe_babel"></button>
-            </div>
-            <div>
-              <input type="text" value="Babel" readonly="readonly"/>
-            </div>
-            <div>
-              <input type="number" name="attr_babel-stufe" value="5"/>
-            </div>
-          </div>
-          <fieldset class="repeating_sprachkenntnisse">
-            <div class="sheet-sprachkenntnisse-zeile">
-              <div>
-                <button class="sheet-button-d6" type="action" name="act_probe"></button>
-              </div>
-              <div>
-                <input type="text" name="attr_sprachkenntnisse-sprache"/>
-              </div>
-              <div>
-                <input type="number" name="attr_sprachkenntnisse-stufe"/>
-              </div>
-            </div>
-          </fieldset>
-        </div>
+      <div class="sheet-3cols">   
         <div>
           <!-- MIXIN : noreturn.pug : repeating-textarea-->
           <div class="sheet-box">
