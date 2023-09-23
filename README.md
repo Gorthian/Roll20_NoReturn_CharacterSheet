@@ -21,6 +21,7 @@ https://www.mannifest-games.com/
   * Fertigkeiten können aufgeklappt werden
   * Adrenalin, Meditation, Blutpunkte und Regenerationspool um verfügbare Anwendungen erweitert
   * Eingabefelder für Attributsmodifikatoren vergrößert
+  * Charaktermerkmale als einfache Eingabefelder ohne aufklappbares Textfeld
 
 2023-09-13 v1.1 alpha
 
