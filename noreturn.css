@@ -522,9 +522,6 @@ div.sheet-noreturn details summary:after {
 	content					: url("https://raw.githubusercontent.com/Gorthian/Roll20_NoReturn_CharacterSheet/main/images/bio_hazard_red_20px.png");
 	color					: black;
 	position				: absolute;
-}
-
-div.sheet-noreturn details summary::after{
 	right					: 0em;
 	top						: -0.2em;	
 }
