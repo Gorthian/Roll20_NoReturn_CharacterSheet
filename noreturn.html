@@ -96,9 +96,14 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
           </div>
           <div class="sheet-input-line">
             <label class="sheet-input-label" data-i18n="notizen">          </label>
-            <textarea name="attr_aussehen"> </textarea>
+            <textarea name="attr_aussehen"></textarea>
           </div>
         </div>
+        <!--
+        ********************************
+        * ENDE src/html/bloecke/charakterdaten.pug
+        ********************************
+        -->
         <!--
         ********************************
         * START src/html/bloecke/logo_und_infos.pug
@@ -139,6 +144,11 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
             <textarea name="attr_notizen"></textarea>
           </div>
         </div>
+        <!--
+        ********************************
+        * ENDE src/html/bloecke/logo_und_infos.pug
+        ********************************
+        -->
         <!--
         ********************************
         * START src/html/bloecke/charakterkonditionen.pug
@@ -221,6 +231,11 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                     </div>
           </div>
         </div>
+        <!--
+        ********************************
+        * ENDE src/html/bloecke/charakterkonditionen.pug
+        ********************************
+        -->
       </div>
       <!--
       ********************************
@@ -427,6 +442,11 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
               </div>
             </div>
           </h1>
+          <!--
+          ********************************
+          * ENDE src/html/bloecke/attribute.pug
+          ********************************
+          -->
           <p> </p>
           <!--
           ********************************
@@ -534,6 +554,11 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                         </div>
             </div>
           </div>
+          <!--
+          ********************************
+          * ENDE src/html/bloecke/sonderattribute.pug
+          ********************************
+          -->
         </div>
       </div>
       <!--
@@ -1584,6 +1609,17 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
               </div>
             </fieldset>
           </div>
+          <!--
+          ********************************
+          * ENDE src/html/bloecke/sprachkentnisse.pug
+          ********************************
+          -->
+          <!--
+          ********************************
+          * START src/html/bloecke/besondere_fertigkeiten.pug
+          ********************************
+          
+          -->
           <div class="sheet-box" role="section">
             <h1 data-i18n="besondere-fertigkeiten"></h1>
             <div class="sheet-besondere-fertigkeiten-zeile">
@@ -1619,6 +1655,11 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
               </div>
             </fieldset>
           </div>
+          <!--
+          ********************************
+          * ENDE src/html/bloecke/besondere_fertigkeiten.pug
+          ********************************
+          -->
         </div>
         <!--
         ********************************
@@ -1632,295 +1673,323 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
         
         -->
         <div>
+          <!--
+          ********************************
+          * START src/html/bloecke/koerperzonen.pug
+          ********************************
+          
+          -->
           <div role="section">
             <div class="sheet-trefferzonen" role="section">
               <h1 data-i18n="körperzonen"></h1>
               <div class="sheet-trefferzonen-bild"><img src="https://raw.githubusercontent.com/Gorthian/Roll20_NoReturn_CharacterSheet/main/images/trefferzonen_300px.png"/>
-                        <!-- MIXIN : src/html/page-one/block-three-third-row.pug : schadenszaehler-->
-                        <div class="sheet-tooltip sheet-schadenszaehler sheet-trefferzone-2">
-                          <input type="number" name="attr_schadenszaehler-2" value="0"/><span class="sheet-tooltiptext" data-i18n="tooltip-schadenszaehler"></span>
-                        </div>
-                        <!-- MIXIN : src/html/page-one/block-three-third-row.pug : schadenszaehler-->
-                        <div class="sheet-tooltip sheet-schadenszaehler sheet-trefferzone-3">
-                          <input type="number" name="attr_schadenszaehler-3" value="0"/><span class="sheet-tooltiptext" data-i18n="tooltip-schadenszaehler"></span>
-                        </div>
-                        <!-- MIXIN : src/html/page-one/block-three-third-row.pug : schadenszaehler-->
-                        <div class="sheet-tooltip sheet-schadenszaehler sheet-trefferzone-4">
-                          <input type="number" name="attr_schadenszaehler-4" value="0"/><span class="sheet-tooltiptext" data-i18n="tooltip-schadenszaehler"></span>
-                        </div>
-                        <!-- MIXIN : src/html/page-one/block-three-third-row.pug : schadenszaehler-->
-                        <div class="sheet-tooltip sheet-schadenszaehler sheet-trefferzone-5">
-                          <input type="number" name="attr_schadenszaehler-5" value="0"/><span class="sheet-tooltiptext" data-i18n="tooltip-schadenszaehler"></span>
-                        </div>
-                        <!-- MIXIN : src/html/page-one/block-three-third-row.pug : schadenszaehler-->
-                        <div class="sheet-tooltip sheet-schadenszaehler sheet-trefferzone-6">
-                          <input type="number" name="attr_schadenszaehler-6" value="0"/><span class="sheet-tooltiptext" data-i18n="tooltip-schadenszaehler"></span>
-                        </div>
-                        <!-- MIXIN : src/html/page-one/block-three-third-row.pug : schadenszaehler-->
-                        <div class="sheet-tooltip sheet-schadenszaehler sheet-trefferzone-7">
-                          <input type="number" name="attr_schadenszaehler-7" value="0"/><span class="sheet-tooltiptext" data-i18n="tooltip-schadenszaehler"></span>
-                        </div>
-                        <!-- MIXIN : src/html/page-one/block-three-third-row.pug : schadenszaehler-->
-                        <div class="sheet-tooltip sheet-schadenszaehler sheet-trefferzone-8">
-                          <input type="number" name="attr_schadenszaehler-8" value="0"/><span class="sheet-tooltiptext" data-i18n="tooltip-schadenszaehler"></span>
-                        </div>
-                        <!-- MIXIN : src/html/page-one/block-three-third-row.pug : schadenszaehler-->
-                        <div class="sheet-tooltip sheet-schadenszaehler sheet-trefferzone-9">
-                          <input type="number" name="attr_schadenszaehler-9" value="0"/><span class="sheet-tooltiptext" data-i18n="tooltip-schadenszaehler"></span>
-                        </div>
-                        <!-- MIXIN : src/html/page-one/block-three-third-row.pug : schadenszaehler-->
-                        <div class="sheet-tooltip sheet-schadenszaehler sheet-trefferzone-10">
-                          <input type="number" name="attr_schadenszaehler-10" value="0"/><span class="sheet-tooltiptext" data-i18n="tooltip-schadenszaehler"></span>
-                        </div>
-                        <!-- MIXIN : src/html/page-one/block-three-third-row.pug : schadenszaehler-->
-                        <div class="sheet-tooltip sheet-schadenszaehler sheet-trefferzone-11">
-                          <input type="number" name="attr_schadenszaehler-11" value="0"/><span class="sheet-tooltiptext" data-i18n="tooltip-schadenszaehler"></span>
-                        </div>
-                        <!-- MIXIN : src/html/page-one/block-three-third-row.pug : schadenszaehler-->
-                        <div class="sheet-tooltip sheet-schadenszaehler sheet-trefferzone-12">
-                          <input type="number" name="attr_schadenszaehler-12" value="0"/><span class="sheet-tooltiptext" data-i18n="tooltip-schadenszaehler"></span>
-                        </div>
+                          <!-- MIXIN : src/html/bloecke/koerperzonen.pug : schadenszaehler-->
+                          <div class="sheet-tooltip sheet-schadenszaehler sheet-trefferzone-2">
+                            <input type="number" name="attr_schadenszaehler-2" value="0"/><span class="sheet-tooltiptext" data-i18n="tooltip-schadenszaehler"></span>
+                          </div>
+                          <!-- MIXIN : src/html/bloecke/koerperzonen.pug : schadenszaehler-->
+                          <div class="sheet-tooltip sheet-schadenszaehler sheet-trefferzone-3">
+                            <input type="number" name="attr_schadenszaehler-3" value="0"/><span class="sheet-tooltiptext" data-i18n="tooltip-schadenszaehler"></span>
+                          </div>
+                          <!-- MIXIN : src/html/bloecke/koerperzonen.pug : schadenszaehler-->
+                          <div class="sheet-tooltip sheet-schadenszaehler sheet-trefferzone-4">
+                            <input type="number" name="attr_schadenszaehler-4" value="0"/><span class="sheet-tooltiptext" data-i18n="tooltip-schadenszaehler"></span>
+                          </div>
+                          <!-- MIXIN : src/html/bloecke/koerperzonen.pug : schadenszaehler-->
+                          <div class="sheet-tooltip sheet-schadenszaehler sheet-trefferzone-5">
+                            <input type="number" name="attr_schadenszaehler-5" value="0"/><span class="sheet-tooltiptext" data-i18n="tooltip-schadenszaehler"></span>
+                          </div>
+                          <!-- MIXIN : src/html/bloecke/koerperzonen.pug : schadenszaehler-->
+                          <div class="sheet-tooltip sheet-schadenszaehler sheet-trefferzone-6">
+                            <input type="number" name="attr_schadenszaehler-6" value="0"/><span class="sheet-tooltiptext" data-i18n="tooltip-schadenszaehler"></span>
+                          </div>
+                          <!-- MIXIN : src/html/bloecke/koerperzonen.pug : schadenszaehler-->
+                          <div class="sheet-tooltip sheet-schadenszaehler sheet-trefferzone-7">
+                            <input type="number" name="attr_schadenszaehler-7" value="0"/><span class="sheet-tooltiptext" data-i18n="tooltip-schadenszaehler"></span>
+                          </div>
+                          <!-- MIXIN : src/html/bloecke/koerperzonen.pug : schadenszaehler-->
+                          <div class="sheet-tooltip sheet-schadenszaehler sheet-trefferzone-8">
+                            <input type="number" name="attr_schadenszaehler-8" value="0"/><span class="sheet-tooltiptext" data-i18n="tooltip-schadenszaehler"></span>
+                          </div>
+                          <!-- MIXIN : src/html/bloecke/koerperzonen.pug : schadenszaehler-->
+                          <div class="sheet-tooltip sheet-schadenszaehler sheet-trefferzone-9">
+                            <input type="number" name="attr_schadenszaehler-9" value="0"/><span class="sheet-tooltiptext" data-i18n="tooltip-schadenszaehler"></span>
+                          </div>
+                          <!-- MIXIN : src/html/bloecke/koerperzonen.pug : schadenszaehler-->
+                          <div class="sheet-tooltip sheet-schadenszaehler sheet-trefferzone-10">
+                            <input type="number" name="attr_schadenszaehler-10" value="0"/><span class="sheet-tooltiptext" data-i18n="tooltip-schadenszaehler"></span>
+                          </div>
+                          <!-- MIXIN : src/html/bloecke/koerperzonen.pug : schadenszaehler-->
+                          <div class="sheet-tooltip sheet-schadenszaehler sheet-trefferzone-11">
+                            <input type="number" name="attr_schadenszaehler-11" value="0"/><span class="sheet-tooltiptext" data-i18n="tooltip-schadenszaehler"></span>
+                          </div>
+                          <!-- MIXIN : src/html/bloecke/koerperzonen.pug : schadenszaehler-->
+                          <div class="sheet-tooltip sheet-schadenszaehler sheet-trefferzone-12">
+                            <input type="number" name="attr_schadenszaehler-12" value="0"/><span class="sheet-tooltiptext" data-i18n="tooltip-schadenszaehler"></span>
+                          </div>
               </div>
               <div class="sheet-box" style="text-align:center;width:100%;">
                 <button class="sheet-button-d6" type="action" name="act_trefferzone"></button><span data-i18n="trefferzone-bestimmen"></span>
               </div>
             </div>
           </div>
+          <!--
+          ********************************
+          * ENDE src/html/bloecke/koerperzonen.pug
+          ********************************
+          -->
+          <!--
+          ********************************
+          * START src/html/bloecke/trefferzonen.pug
+          ********************************
+          
+          -->
           <div class="sheet-box" role="section">
             <div class="sheet-trefferzonen-liste">
-                      <!-- MIXIN : src/html/page-one/block-three-third-row.pug : trefferzone-->
-                      <div class="sheet-trefferzonen-eintrag">
-                        <div class="sheet-trefferzone-kopfzeile">
-                          <div class="sheet-kopfzeile"><span data-i18n="zone"></span></div>
-                          <div class="sheet-kopfzeile"><span data-i18n="trefferpunkte_kurz"></span></div>
-                          <div class="sheet-kopfzeile"><span data-i18n="ruestungswert_kurz"></span></div>
-                          <div class="sheet-kopfzeile"><span data-i18n="materialkomponente_kurz"></span></div>
-                        </div>
-                        <div class="sheet-trefferzone-zeile">
-                          <div> <span>12</span></div>
-                          <div>
-                            <input type="number" name="attr_trefferpunkte-zone-12"/>
+                        <!-- MIXIN : src/html/bloecke/trefferzonen.pug : trefferzone-->
+                        <div class="sheet-trefferzonen-eintrag">
+                          <div class="sheet-trefferzone-kopfzeile">
+                            <div class="sheet-kopfzeile"><span data-i18n="zone"></span></div>
+                            <div class="sheet-kopfzeile"><span data-i18n="trefferpunkte_kurz"></span></div>
+                            <div class="sheet-kopfzeile"><span data-i18n="ruestungswert_kurz"></span></div>
+                            <div class="sheet-kopfzeile"><span data-i18n="materialkomponente_kurz"></span></div>
                           </div>
-                          <div>
-                            <input type="number" name="attr_ruestungswert-zone-12"/>
-                          </div>
-                          <div>
-                            <input type="text" maxlength="1" name="attr_mk-zone-12"/>
-                          </div>
-                        </div>
-                      </div>
-                      <!-- MIXIN : src/html/page-one/block-three-third-row.pug : trefferzone-->
-                      <div class="sheet-trefferzonen-eintrag">
-                        <div class="sheet-trefferzone-kopfzeile">
-                          <div class="sheet-kopfzeile"><span data-i18n="zone"></span></div>
-                          <div class="sheet-kopfzeile"><span data-i18n="trefferpunkte_kurz"></span></div>
-                          <div class="sheet-kopfzeile"><span data-i18n="ruestungswert_kurz"></span></div>
-                          <div class="sheet-kopfzeile"><span data-i18n="materialkomponente_kurz"></span></div>
-                        </div>
-                        <div class="sheet-trefferzone-zeile">
-                          <div> <span>11</span></div>
-                          <div>
-                            <input type="number" name="attr_trefferpunkte-zone-11"/>
-                          </div>
-                          <div>
-                            <input type="number" name="attr_ruestungswert-zone-11"/>
-                          </div>
-                          <div>
-                            <input type="text" maxlength="1" name="attr_mk-zone-11"/>
+                          <div class="sheet-trefferzone-zeile">
+                            <div> <span>12</span></div>
+                            <div>
+                              <input type="number" name="attr_trefferpunkte-zone-12"/>
+                            </div>
+                            <div>
+                              <input type="number" name="attr_ruestungswert-zone-12"/>
+                            </div>
+                            <div>
+                              <input type="text" maxlength="1" name="attr_mk-zone-12"/>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                      <!-- MIXIN : src/html/page-one/block-three-third-row.pug : trefferzone-->
-                      <div class="sheet-trefferzonen-eintrag">
-                        <div class="sheet-trefferzone-kopfzeile">
-                          <div class="sheet-kopfzeile"><span data-i18n="zone"></span></div>
-                          <div class="sheet-kopfzeile"><span data-i18n="trefferpunkte_kurz"></span></div>
-                          <div class="sheet-kopfzeile"><span data-i18n="ruestungswert_kurz"></span></div>
-                          <div class="sheet-kopfzeile"><span data-i18n="materialkomponente_kurz"></span></div>
-                        </div>
-                        <div class="sheet-trefferzone-zeile">
-                          <div> <span>6</span></div>
-                          <div>
-                            <input type="number" name="attr_trefferpunkte-zone-6"/>
+                        <!-- MIXIN : src/html/bloecke/trefferzonen.pug : trefferzone-->
+                        <div class="sheet-trefferzonen-eintrag">
+                          <div class="sheet-trefferzone-kopfzeile">
+                            <div class="sheet-kopfzeile"><span data-i18n="zone"></span></div>
+                            <div class="sheet-kopfzeile"><span data-i18n="trefferpunkte_kurz"></span></div>
+                            <div class="sheet-kopfzeile"><span data-i18n="ruestungswert_kurz"></span></div>
+                            <div class="sheet-kopfzeile"><span data-i18n="materialkomponente_kurz"></span></div>
                           </div>
-                          <div>
-                            <input type="number" name="attr_ruestungswert-zone-6"/>
-                          </div>
-                          <div>
-                            <input type="text" maxlength="1" name="attr_mk-zone-6"/>
-                          </div>
-                        </div>
-                      </div>
-                      <!-- MIXIN : src/html/page-one/block-three-third-row.pug : trefferzone-->
-                      <div class="sheet-trefferzonen-eintrag">
-                        <div class="sheet-trefferzone-kopfzeile">
-                          <div class="sheet-kopfzeile"><span data-i18n="zone"></span></div>
-                          <div class="sheet-kopfzeile"><span data-i18n="trefferpunkte_kurz"></span></div>
-                          <div class="sheet-kopfzeile"><span data-i18n="ruestungswert_kurz"></span></div>
-                          <div class="sheet-kopfzeile"><span data-i18n="materialkomponente_kurz"></span></div>
-                        </div>
-                        <div class="sheet-trefferzone-zeile">
-                          <div> <span>10</span></div>
-                          <div>
-                            <input type="number" name="attr_trefferpunkte-zone-10"/>
-                          </div>
-                          <div>
-                            <input type="number" name="attr_ruestungswert-zone-10"/>
-                          </div>
-                          <div>
-                            <input type="text" maxlength="1" name="attr_mk-zone-10"/>
+                          <div class="sheet-trefferzone-zeile">
+                            <div> <span>11</span></div>
+                            <div>
+                              <input type="number" name="attr_trefferpunkte-zone-11"/>
+                            </div>
+                            <div>
+                              <input type="number" name="attr_ruestungswert-zone-11"/>
+                            </div>
+                            <div>
+                              <input type="text" maxlength="1" name="attr_mk-zone-11"/>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                      <!-- MIXIN : src/html/page-one/block-three-third-row.pug : trefferzone-->
-                      <div class="sheet-trefferzonen-eintrag">
-                        <div class="sheet-trefferzone-kopfzeile">
-                          <div class="sheet-kopfzeile"><span data-i18n="zone"></span></div>
-                          <div class="sheet-kopfzeile"><span data-i18n="trefferpunkte_kurz"></span></div>
-                          <div class="sheet-kopfzeile"><span data-i18n="ruestungswert_kurz"></span></div>
-                          <div class="sheet-kopfzeile"><span data-i18n="materialkomponente_kurz"></span></div>
-                        </div>
-                        <div class="sheet-trefferzone-zeile">
-                          <div> <span>5</span></div>
-                          <div>
-                            <input type="number" name="attr_trefferpunkte-zone-5"/>
+                        <!-- MIXIN : src/html/bloecke/trefferzonen.pug : trefferzone-->
+                        <div class="sheet-trefferzonen-eintrag">
+                          <div class="sheet-trefferzone-kopfzeile">
+                            <div class="sheet-kopfzeile"><span data-i18n="zone"></span></div>
+                            <div class="sheet-kopfzeile"><span data-i18n="trefferpunkte_kurz"></span></div>
+                            <div class="sheet-kopfzeile"><span data-i18n="ruestungswert_kurz"></span></div>
+                            <div class="sheet-kopfzeile"><span data-i18n="materialkomponente_kurz"></span></div>
                           </div>
-                          <div>
-                            <input type="number" name="attr_ruestungswert-zone-5"/>
-                          </div>
-                          <div>
-                            <input type="text" maxlength="1" name="attr_mk-zone-5"/>
-                          </div>
-                        </div>
-                      </div>
-                      <!-- MIXIN : src/html/page-one/block-three-third-row.pug : trefferzone-->
-                      <div class="sheet-trefferzonen-eintrag">
-                        <div class="sheet-trefferzone-kopfzeile">
-                          <div class="sheet-kopfzeile"><span data-i18n="zone"></span></div>
-                          <div class="sheet-kopfzeile"><span data-i18n="trefferpunkte_kurz"></span></div>
-                          <div class="sheet-kopfzeile"><span data-i18n="ruestungswert_kurz"></span></div>
-                          <div class="sheet-kopfzeile"><span data-i18n="materialkomponente_kurz"></span></div>
-                        </div>
-                        <div class="sheet-trefferzone-zeile">
-                          <div> <span>9</span></div>
-                          <div>
-                            <input type="number" name="attr_trefferpunkte-zone-9"/>
-                          </div>
-                          <div>
-                            <input type="number" name="attr_ruestungswert-zone-9"/>
-                          </div>
-                          <div>
-                            <input type="text" maxlength="1" name="attr_mk-zone-9"/>
+                          <div class="sheet-trefferzone-zeile">
+                            <div> <span>6</span></div>
+                            <div>
+                              <input type="number" name="attr_trefferpunkte-zone-6"/>
+                            </div>
+                            <div>
+                              <input type="number" name="attr_ruestungswert-zone-6"/>
+                            </div>
+                            <div>
+                              <input type="text" maxlength="1" name="attr_mk-zone-6"/>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                      <!-- MIXIN : src/html/page-one/block-three-third-row.pug : trefferzone-->
-                      <div class="sheet-trefferzonen-eintrag">
-                        <div class="sheet-trefferzone-kopfzeile">
-                          <div class="sheet-kopfzeile"><span data-i18n="zone"></span></div>
-                          <div class="sheet-kopfzeile"><span data-i18n="trefferpunkte_kurz"></span></div>
-                          <div class="sheet-kopfzeile"><span data-i18n="ruestungswert_kurz"></span></div>
-                          <div class="sheet-kopfzeile"><span data-i18n="materialkomponente_kurz"></span></div>
-                        </div>
-                        <div class="sheet-trefferzone-zeile">
-                          <div> <span>4</span></div>
-                          <div>
-                            <input type="number" name="attr_trefferpunkte-zone-4"/>
+                        <!-- MIXIN : src/html/bloecke/trefferzonen.pug : trefferzone-->
+                        <div class="sheet-trefferzonen-eintrag">
+                          <div class="sheet-trefferzone-kopfzeile">
+                            <div class="sheet-kopfzeile"><span data-i18n="zone"></span></div>
+                            <div class="sheet-kopfzeile"><span data-i18n="trefferpunkte_kurz"></span></div>
+                            <div class="sheet-kopfzeile"><span data-i18n="ruestungswert_kurz"></span></div>
+                            <div class="sheet-kopfzeile"><span data-i18n="materialkomponente_kurz"></span></div>
                           </div>
-                          <div>
-                            <input type="number" name="attr_ruestungswert-zone-4"/>
-                          </div>
-                          <div>
-                            <input type="text" maxlength="1" name="attr_mk-zone-4"/>
-                          </div>
-                        </div>
-                      </div>
-                      <!-- MIXIN : src/html/page-one/block-three-third-row.pug : trefferzone-->
-                      <div class="sheet-trefferzonen-eintrag">
-                        <div class="sheet-trefferzone-kopfzeile">
-                          <div class="sheet-kopfzeile"><span data-i18n="zone"></span></div>
-                          <div class="sheet-kopfzeile"><span data-i18n="trefferpunkte_kurz"></span></div>
-                          <div class="sheet-kopfzeile"><span data-i18n="ruestungswert_kurz"></span></div>
-                          <div class="sheet-kopfzeile"><span data-i18n="materialkomponente_kurz"></span></div>
-                        </div>
-                        <div class="sheet-trefferzone-zeile">
-                          <div> <span>8</span></div>
-                          <div>
-                            <input type="number" name="attr_trefferpunkte-zone-8"/>
-                          </div>
-                          <div>
-                            <input type="number" name="attr_ruestungswert-zone-8"/>
-                          </div>
-                          <div>
-                            <input type="text" maxlength="1" name="attr_mk-zone-8"/>
+                          <div class="sheet-trefferzone-zeile">
+                            <div> <span>10</span></div>
+                            <div>
+                              <input type="number" name="attr_trefferpunkte-zone-10"/>
+                            </div>
+                            <div>
+                              <input type="number" name="attr_ruestungswert-zone-10"/>
+                            </div>
+                            <div>
+                              <input type="text" maxlength="1" name="attr_mk-zone-10"/>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                      <!-- MIXIN : src/html/page-one/block-three-third-row.pug : trefferzone-->
-                      <div class="sheet-trefferzonen-eintrag">
-                        <div class="sheet-trefferzone-kopfzeile">
-                          <div class="sheet-kopfzeile"><span data-i18n="zone"></span></div>
-                          <div class="sheet-kopfzeile"><span data-i18n="trefferpunkte_kurz"></span></div>
-                          <div class="sheet-kopfzeile"><span data-i18n="ruestungswert_kurz"></span></div>
-                          <div class="sheet-kopfzeile"><span data-i18n="materialkomponente_kurz"></span></div>
-                        </div>
-                        <div class="sheet-trefferzone-zeile">
-                          <div> <span>3</span></div>
-                          <div>
-                            <input type="number" name="attr_trefferpunkte-zone-3"/>
+                        <!-- MIXIN : src/html/bloecke/trefferzonen.pug : trefferzone-->
+                        <div class="sheet-trefferzonen-eintrag">
+                          <div class="sheet-trefferzone-kopfzeile">
+                            <div class="sheet-kopfzeile"><span data-i18n="zone"></span></div>
+                            <div class="sheet-kopfzeile"><span data-i18n="trefferpunkte_kurz"></span></div>
+                            <div class="sheet-kopfzeile"><span data-i18n="ruestungswert_kurz"></span></div>
+                            <div class="sheet-kopfzeile"><span data-i18n="materialkomponente_kurz"></span></div>
                           </div>
-                          <div>
-                            <input type="number" name="attr_ruestungswert-zone-3"/>
-                          </div>
-                          <div>
-                            <input type="text" maxlength="1" name="attr_mk-zone-3"/>
-                          </div>
-                        </div>
-                      </div>
-                      <!-- MIXIN : src/html/page-one/block-three-third-row.pug : trefferzone-->
-                      <div class="sheet-trefferzonen-eintrag">
-                        <div class="sheet-trefferzone-kopfzeile">
-                          <div class="sheet-kopfzeile"><span data-i18n="zone"></span></div>
-                          <div class="sheet-kopfzeile"><span data-i18n="trefferpunkte_kurz"></span></div>
-                          <div class="sheet-kopfzeile"><span data-i18n="ruestungswert_kurz"></span></div>
-                          <div class="sheet-kopfzeile"><span data-i18n="materialkomponente_kurz"></span></div>
-                        </div>
-                        <div class="sheet-trefferzone-zeile">
-                          <div> <span>7</span></div>
-                          <div>
-                            <input type="number" name="attr_trefferpunkte-zone-7"/>
-                          </div>
-                          <div>
-                            <input type="number" name="attr_ruestungswert-zone-7"/>
-                          </div>
-                          <div>
-                            <input type="text" maxlength="1" name="attr_mk-zone-7"/>
+                          <div class="sheet-trefferzone-zeile">
+                            <div> <span>5</span></div>
+                            <div>
+                              <input type="number" name="attr_trefferpunkte-zone-5"/>
+                            </div>
+                            <div>
+                              <input type="number" name="attr_ruestungswert-zone-5"/>
+                            </div>
+                            <div>
+                              <input type="text" maxlength="1" name="attr_mk-zone-5"/>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                      <!-- MIXIN : src/html/page-one/block-three-third-row.pug : trefferzone-->
-                      <div class="sheet-trefferzonen-eintrag">
-                        <div class="sheet-trefferzone-kopfzeile">
-                          <div class="sheet-kopfzeile"><span data-i18n="zone"></span></div>
-                          <div class="sheet-kopfzeile"><span data-i18n="trefferpunkte_kurz"></span></div>
-                          <div class="sheet-kopfzeile"><span data-i18n="ruestungswert_kurz"></span></div>
-                          <div class="sheet-kopfzeile"><span data-i18n="materialkomponente_kurz"></span></div>
+                        <!-- MIXIN : src/html/bloecke/trefferzonen.pug : trefferzone-->
+                        <div class="sheet-trefferzonen-eintrag">
+                          <div class="sheet-trefferzone-kopfzeile">
+                            <div class="sheet-kopfzeile"><span data-i18n="zone"></span></div>
+                            <div class="sheet-kopfzeile"><span data-i18n="trefferpunkte_kurz"></span></div>
+                            <div class="sheet-kopfzeile"><span data-i18n="ruestungswert_kurz"></span></div>
+                            <div class="sheet-kopfzeile"><span data-i18n="materialkomponente_kurz"></span></div>
+                          </div>
+                          <div class="sheet-trefferzone-zeile">
+                            <div> <span>9</span></div>
+                            <div>
+                              <input type="number" name="attr_trefferpunkte-zone-9"/>
+                            </div>
+                            <div>
+                              <input type="number" name="attr_ruestungswert-zone-9"/>
+                            </div>
+                            <div>
+                              <input type="text" maxlength="1" name="attr_mk-zone-9"/>
+                            </div>
+                          </div>
                         </div>
-                        <div class="sheet-trefferzone-zeile">
-                          <div> <span>2</span></div>
-                          <div>
-                            <input type="number" name="attr_trefferpunkte-zone-2"/>
+                        <!-- MIXIN : src/html/bloecke/trefferzonen.pug : trefferzone-->
+                        <div class="sheet-trefferzonen-eintrag">
+                          <div class="sheet-trefferzone-kopfzeile">
+                            <div class="sheet-kopfzeile"><span data-i18n="zone"></span></div>
+                            <div class="sheet-kopfzeile"><span data-i18n="trefferpunkte_kurz"></span></div>
+                            <div class="sheet-kopfzeile"><span data-i18n="ruestungswert_kurz"></span></div>
+                            <div class="sheet-kopfzeile"><span data-i18n="materialkomponente_kurz"></span></div>
                           </div>
-                          <div>
-                            <input type="number" name="attr_ruestungswert-zone-2"/>
-                          </div>
-                          <div>
-                            <input type="text" maxlength="1" name="attr_mk-zone-2"/>
+                          <div class="sheet-trefferzone-zeile">
+                            <div> <span>4</span></div>
+                            <div>
+                              <input type="number" name="attr_trefferpunkte-zone-4"/>
+                            </div>
+                            <div>
+                              <input type="number" name="attr_ruestungswert-zone-4"/>
+                            </div>
+                            <div>
+                              <input type="text" maxlength="1" name="attr_mk-zone-4"/>
+                            </div>
                           </div>
                         </div>
-                      </div>
+                        <!-- MIXIN : src/html/bloecke/trefferzonen.pug : trefferzone-->
+                        <div class="sheet-trefferzonen-eintrag">
+                          <div class="sheet-trefferzone-kopfzeile">
+                            <div class="sheet-kopfzeile"><span data-i18n="zone"></span></div>
+                            <div class="sheet-kopfzeile"><span data-i18n="trefferpunkte_kurz"></span></div>
+                            <div class="sheet-kopfzeile"><span data-i18n="ruestungswert_kurz"></span></div>
+                            <div class="sheet-kopfzeile"><span data-i18n="materialkomponente_kurz"></span></div>
+                          </div>
+                          <div class="sheet-trefferzone-zeile">
+                            <div> <span>8</span></div>
+                            <div>
+                              <input type="number" name="attr_trefferpunkte-zone-8"/>
+                            </div>
+                            <div>
+                              <input type="number" name="attr_ruestungswert-zone-8"/>
+                            </div>
+                            <div>
+                              <input type="text" maxlength="1" name="attr_mk-zone-8"/>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- MIXIN : src/html/bloecke/trefferzonen.pug : trefferzone-->
+                        <div class="sheet-trefferzonen-eintrag">
+                          <div class="sheet-trefferzone-kopfzeile">
+                            <div class="sheet-kopfzeile"><span data-i18n="zone"></span></div>
+                            <div class="sheet-kopfzeile"><span data-i18n="trefferpunkte_kurz"></span></div>
+                            <div class="sheet-kopfzeile"><span data-i18n="ruestungswert_kurz"></span></div>
+                            <div class="sheet-kopfzeile"><span data-i18n="materialkomponente_kurz"></span></div>
+                          </div>
+                          <div class="sheet-trefferzone-zeile">
+                            <div> <span>3</span></div>
+                            <div>
+                              <input type="number" name="attr_trefferpunkte-zone-3"/>
+                            </div>
+                            <div>
+                              <input type="number" name="attr_ruestungswert-zone-3"/>
+                            </div>
+                            <div>
+                              <input type="text" maxlength="1" name="attr_mk-zone-3"/>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- MIXIN : src/html/bloecke/trefferzonen.pug : trefferzone-->
+                        <div class="sheet-trefferzonen-eintrag">
+                          <div class="sheet-trefferzone-kopfzeile">
+                            <div class="sheet-kopfzeile"><span data-i18n="zone"></span></div>
+                            <div class="sheet-kopfzeile"><span data-i18n="trefferpunkte_kurz"></span></div>
+                            <div class="sheet-kopfzeile"><span data-i18n="ruestungswert_kurz"></span></div>
+                            <div class="sheet-kopfzeile"><span data-i18n="materialkomponente_kurz"></span></div>
+                          </div>
+                          <div class="sheet-trefferzone-zeile">
+                            <div> <span>7</span></div>
+                            <div>
+                              <input type="number" name="attr_trefferpunkte-zone-7"/>
+                            </div>
+                            <div>
+                              <input type="number" name="attr_ruestungswert-zone-7"/>
+                            </div>
+                            <div>
+                              <input type="text" maxlength="1" name="attr_mk-zone-7"/>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- MIXIN : src/html/bloecke/trefferzonen.pug : trefferzone-->
+                        <div class="sheet-trefferzonen-eintrag">
+                          <div class="sheet-trefferzone-kopfzeile">
+                            <div class="sheet-kopfzeile"><span data-i18n="zone"></span></div>
+                            <div class="sheet-kopfzeile"><span data-i18n="trefferpunkte_kurz"></span></div>
+                            <div class="sheet-kopfzeile"><span data-i18n="ruestungswert_kurz"></span></div>
+                            <div class="sheet-kopfzeile"><span data-i18n="materialkomponente_kurz"></span></div>
+                          </div>
+                          <div class="sheet-trefferzone-zeile">
+                            <div> <span>2</span></div>
+                            <div>
+                              <input type="number" name="attr_trefferpunkte-zone-2"/>
+                            </div>
+                            <div>
+                              <input type="number" name="attr_ruestungswert-zone-2"/>
+                            </div>
+                            <div>
+                              <input type="text" maxlength="1" name="attr_mk-zone-2"/>
+                            </div>
+                          </div>
+                        </div>
             </div>
           </div>
+          <!--
+          ********************************
+          * ENDE src/html/bloecke/trefferzonen.pug
+          ********************************
+          -->
+          <!--
+          ********************************
+          * START src/html/bloecke/style_skills.pug
+          ********************************
+          
+          -->
           <div class="sheet-box" role="section">
             <h1 data-i18n="style-skills"></h1>
             <div class="sheet-style-skills-zeile">
@@ -1942,6 +2011,17 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
               </details>
             </fieldset>
           </div>
+          <!--
+          ********************************
+          * ENDE src/html/bloecke/style_skills.pug
+          ********************************
+          -->
+          <!--
+          ********************************
+          * START src/html/bloecke/charaktermerkmale.pug
+          ********************************
+          
+          -->
           <div class="sheet-box">
             <h1 data-i18n="charaktermerkmale"></h1>
             <div class="sheet-charaktermerkmale-zeile">
@@ -1959,6 +2039,11 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
               </details>
             </fieldset>
           </div>
+          <!--
+          ********************************
+          * ENDE src/html/bloecke/charaktermerkmale.pug
+          ********************************
+          -->
         </div>
         <!--
         ********************************
