@@ -554,12 +554,15 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NoReturn_CharacterSheet/issues
                         </div>
             </div>
             <div> 
-                        <!-- MIXIN : src/html/bloecke/sonderattribute.pug : sonderattributszeile-->
-                        <div class="sheet-sonderattribut-zeile">
+                        <!-- MIXIN : src/html/bloecke/sonderattribute.pug : sonderattributszeile_max_aktuell-->
+                        <div class="sheet-sonderattribut-zeile-max-aktuell">
                           <div class="sheet-sonderattribut-titel"><span data-i18n="regeneration-pool"></span></div>
                           <div>
                             <input type="number" name="attr_regeneration-pool" value="0"/>
                             <input type="hidden" name="attr_regeneration-pool-old" value="0"/>
+                          </div>
+                          <div>
+                            <input type="number" name="attr_regeneration-pool_current" value="0"/>
                           </div>
                         </div>
             </div>

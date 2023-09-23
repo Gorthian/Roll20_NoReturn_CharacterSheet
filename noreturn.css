@@ -189,12 +189,12 @@ div.sheet-noreturn .sheet-attribut-zeile {
 
 div.sheet-noreturn .sheet-sonderattribut-zeile {
 	display                 : grid;
-    grid-template-columns   : 12em 4em;
+    grid-template-columns   : 12em 5em;
 }
 
 div.sheet-noreturn .sheet-sonderattribut-zeile-max-aktuell {
 	display                 : grid;
-    grid-template-columns   : 12em repeat(2, 4em);
+    grid-template-columns   : 12em repeat(2, 5em);
 }
 
 div.sheet-noreturn .sheet-fertigkeiten-zeile {	
@@ -298,7 +298,7 @@ div.sheet-noreturn div.sheet-sonderattribut-zeile input[type="number"],
 div.sheet-noreturn div.sheet-sonderattribut-zeile-max-aktuell input[type="number"] {
     border                  : 2px solid black;
 	height					: 1.5em;
-	width					: 4em;
+	width					: 5em;
 }
 
 div.sheet-noreturn div.sheet-besondere-fertigkeiten-zeile input[type="number"],
