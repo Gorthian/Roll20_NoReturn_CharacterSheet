@@ -26,7 +26,7 @@ mixin fertigkeitskopfzeile()
 
 mixin fertigkeitszeile(skill,attribute)
     // MIXIN : src/html/page-one/block-three.pug : fertigkeitszeile
-    details 
+    details(class="sheet-fertigkeiten") 
         summary
             div(class="sheet-fertigkeiten-zeile")
                 div(class="sheet-tooltip")
@@ -44,7 +44,7 @@ mixin fertigkeitszeile(skill,attribute)
                 div
                     input(type="text" name="attr_"+skill+"_mod")
         div 
-            textarea(name="attr_"+skill+"-beschreibung" class="sheet-details-standard")
+            textarea(name="attr_"+skill+"-beschreibung" class="sheet-textarea-klein")
 
 //- SEITENINHALT
 div(class="sheet-3cols")
