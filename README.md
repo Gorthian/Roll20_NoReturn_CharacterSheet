@@ -18,6 +18,7 @@ https://www.mannifest-games.com/
 * Bugfix
     * Text bei "Physiologische Störungen" korrigiert
     * Schmerztoleranz bei neuen Charakteren mit 3 vorbelegen
+    * Standardwert für Spezies auf 0 gesetzt
 
 **2023-12-16 v1.1 HF3**
 
