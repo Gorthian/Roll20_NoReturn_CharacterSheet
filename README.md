@@ -13,6 +13,11 @@ https://www.mannifest-games.com/
 
 # Release Notes
 
+**2024-01-23 v1.1 HF4**
+
+* Bugfix
+    * Text bei "Physiologische Störungen" korrigiert
+
 **2023-12-16 v1.1 HF3**
 
 * Bugfix
